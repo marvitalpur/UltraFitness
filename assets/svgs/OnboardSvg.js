@@ -9,14 +9,14 @@ import Svg, {
   LinearGradient,
   Rect,
 } from 'react-native-svg';
-function BackgroundOverlay() {
+function BackgroundOverlay({width, height}) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       //   xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="414"
-      height="896"
-      viewBox="0 0 414 896">
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}>
       <Defs>
         <LinearGradient
           id="linear-gradient"
@@ -35,8 +35,8 @@ function BackgroundOverlay() {
         stroke="#707070"
         stroke-width="1"
         fill="url(#linear-gradient)">
-        <Rect width="414" height="896" stroke="none" />
-        <Rect x="0.5" y="0.5" width="413" height="895" fill="none" />
+        <Rect width={width} height={height} stroke="none" />
+        <Rect x="0.5" y="0.5" width={width} height={height} fill="none" />
       </G>
     </Svg>
   );
