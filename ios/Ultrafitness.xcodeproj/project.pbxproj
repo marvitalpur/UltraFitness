@@ -18,6 +18,7 @@
 		F9324EC7298D114D009995DA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9324EC6298D114C009995DA /* MaterialIcons.ttf */; };
 		F9324EC9298D11E1009995DA /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9324EC8298D11E1009995DA /* MaterialCommunityIcons.ttf */; };
 		F9B2401B2993CD9F0004B0A8 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B2401A2993CD9F0004B0A8 /* Feather.ttf */; };
+		F9D8264E299B6DC3008A8A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D8264D299B6DC3008A8A2E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 		13B07F961A680F5B00A75B9A /* Ultrafitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ultrafitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Ultrafitness/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Ultrafitness/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Ultrafitness/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Ultrafitness/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Ultrafitness/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Ultrafitness/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Ultrafitness-UltrafitnessTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ultrafitness-UltrafitnessTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +53,7 @@
 		F9324EC6298D114C009995DA /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		F9324EC8298D11E1009995DA /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		F9B2401A2993CD9F0004B0A8 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		F9D8264D299B6DC3008A8A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				F9D8264D299B6DC3008A8A2E /* Assets.xcassets */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -258,6 +261,7 @@
 				F90626E8298D1DFF00EF9635 /* Bahnschrift.ttf in Resources */,
 				F9B2401B2993CD9F0004B0A8 /* Feather.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				F9D8264E299B6DC3008A8A2E /* Assets.xcassets in Resources */,
 				F9324EC9298D11E1009995DA /* MaterialCommunityIcons.ttf in Resources */,
 				F9324EC7298D114D009995DA /* MaterialIcons.ttf in Resources */,
 			);

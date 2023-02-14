@@ -118,7 +118,7 @@ const Login = ({navigation}) => {
               buttonText="Login"
               buttonColor={Colors.primary}
               textColor={Colors.secondary}
-              onPress={() => navigation.navigate('Home')}
+              onPress={() => navigation.navigate('Drawer')}
               height={WIDTH <= 375 ? 40 : 55}
               width={WIDTH <= 375 ? 125 : 175}
             />

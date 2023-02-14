@@ -1,21 +1,34 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {TouchableRipple} from 'react-native-paper';
-import {LogoSvg, MenuSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
+import {
+  BackSvg,
+  LogoSvg,
+  MenuSvg,
+  NotificationSvg,
+} from '../assets/svgs/HeaderSvgs';
 import {WIDTH} from '../assets/constants/Dimensions';
 import {Colors} from '../assets/constants/Colors';
 
-const Header = ({logo}) => {
+const Header = ({logo, navigation, backIcon}) => {
   return (
     <View style={styles.container}>
-      <TouchableRipple style={styles.btn}>
-        <MenuSvg />
+      <TouchableRipple
+        onPress={() =>
+          backIcon ? navigation.closeDrawer() : navigation.openDrawer()
+        }
+        style={styles.btn}>
+        {backIcon ? <BackSvg /> : <MenuSvg />}
       </TouchableRipple>
       {/* <Text>Header</Text> */}
       {logo && <LogoSvg />}
-      <TouchableRipple style={styles.btn}>
-        <NotificationSvg />
-      </TouchableRipple>
+      {backIcon ? (
+        <View style={{width: 50, height: 50}} />
+      ) : (
+        <TouchableRipple style={styles.btn}>
+          <NotificationSvg />
+        </TouchableRipple>
+      )}
     </View>
   );
 };

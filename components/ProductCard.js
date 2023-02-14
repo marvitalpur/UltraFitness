@@ -2,6 +2,7 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {Fonts} from '../assets/constants/Fonts';
 import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
 
 const ProductCard = ({name, image, description, price, index}) => {
   console.log(image);
@@ -48,10 +49,6 @@ const styles = StyleSheet.create({
     height: 175,
     backgroundColor: '#FFFFFF',
     padding: 10,
-    // marginTop: 10,
-    // marginLeft: 5,
-    // marginRight: 17,
-
     borderRadius: 20,
     shadowColor: '#000',
     shadowOffset: {
@@ -64,17 +61,12 @@ const styles = StyleSheet.create({
     elevation: 15,
   },
   productImage: {
-    // width: '100%',
     height: '45%',
-    // backgroundColor: 'blue',
-    // alignItems: 'flex-end',
-    // justifyContent: 'flex-end',
   },
   productName: {
     width: '70%',
     fontFamily: Fonts.default,
     fontWeight: '600',
-    // fontSize: 20,
     letterSpacing: 0.9,
     textTransform: 'capitalize',
     color: '#AAAAAA',
@@ -97,7 +89,7 @@ const styles = StyleSheet.create({
   },
   priceText: {
     textAlign: 'center',
-    // marginTop: 5,
     fontSize: 14,
+    color: Colors.tertiary,
   },
 });

@@ -16,9 +16,12 @@ import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import {CloudSvg} from '../assets/svgs/HomeSvgs';
 import {Fonts} from '../assets/constants/Fonts';
 import {TouchableRipple} from 'react-native-paper';
-import CardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import Products from '../components/Products';
-const Home = () => {
+import ProductCardSm from '../components/ProductCardSm';
+import ProductCardmd from '../components/ProductCardmd';
+import ProductCardlg from '../components/ProductCardlg';
+const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -26,7 +29,7 @@ const Home = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
         <View style={{flex: 1, paddingHorizontal: 25}}>
-          <Header />
+          <Header navigation={navigation} />
           <View style={{flexDirection: 'row', marginTop: 25}}>
             <View style={{alignItems: 'center'}}>
               <Lottie
@@ -58,98 +61,31 @@ const Home = () => {
           {/* Cards start */}
           <View
             style={{
-              // backgroundColor: 'red',
               height: HEIGHT / 4.5,
               flexDirection: 'row',
               marginTop: 45,
             }}>
-            <TouchableRipple
-              style={{
-                flex: 1,
-                backgroundColor: Colors.cards.lightBlue,
-                borderRadius: 20,
-              }}
-              onPress={() => console.log('hi')}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'flex-end',
-                  height: '100%',
-                  paddingLeft: WIDTH < 375 ? 5 : 10,
-                  paddingBottom: WIDTH < 375 ? 10 : 15,
-                }}>
-                <Text
-                  numberOfLines={2}
-                  style={{
-                    width: '70%',
-                    //   fontSize: 18,
-                    color: Colors.primary,
-                    fontFamily: Fonts.default,
-                    fontWeight: '700',
-                    letterSpacing: 0.9,
-                  }}>
-                  Sports Vision Training
-                </Text>
-                <Image
-                  source={Assets.cards.cardImage}
-                  resizeMode="contain"
-                  style={{
-                    height: WIDTH < 375 ? 150 : 250,
-                    position: 'absolute',
-                    top: WIDTH < 375 ? -15 : -35,
-                    right: WIDTH < 375 ? -105 : -85,
-                  }}
-                />
-              </View>
-            </TouchableRipple>
+            <ProductCardmd />
             <View style={{width: 20}} />
             <View style={{flex: 1}}>
-              <TouchableRipple style={styles.bannerSmallBox}>
-                <ImageBackground
-                  source={Assets.backgroundImages.cardBackground1}
-                  resizeMode="cover"
-                  style={styles.image}>
-                  <CardIcon
-                    style={{marginLeft: 'auto'}}
-                    name={'play-circle-outline'}
-                    size={WIDTH < 375 ? 20 : 30}
-                    color={Colors.tertiary}
-                  />
-                  <Text
-                    style={{
-                      marginTop: 'auto',
-                      fontFamily: Fonts.default,
-                      fontSize: WIDTH < 375 ? 12 : 14,
-                      fontWeight: '400',
-                    }}>
-                    Training
-                  </Text>
-                </ImageBackground>
-              </TouchableRipple>
+              <ProductCardSm
+                img={Assets.backgroundImages.cardBackground1}
+                text="Training"
+              />
               <View style={{height: 20}} />
-              <TouchableRipple style={styles.bannerSmallBox}>
-                <ImageBackground
-                  source={Assets.backgroundImages.cardBackground2}
-                  resizeMode="cover"
-                  style={styles.image}>
-                  <CardIcon
-                    style={{marginLeft: 'auto'}}
-                    name={'play-circle-outline'}
-                    size={WIDTH < 375 ? 20 : 30}
-                    color={Colors.tertiary}
-                  />
-                  <Text
-                    style={{
-                      marginTop: 'auto',
-                      fontFamily: Fonts.default,
-                      fontSize: WIDTH < 375 ? 12 : 14,
-                      fontWeight: '400',
-                    }}>
-                    Testing
-                  </Text>
-                </ImageBackground>
-              </TouchableRipple>
+              <ProductCardSm
+                img={Assets.backgroundImages.cardBackground2}
+                text="Training"
+              />
             </View>
+          </View>
+          <View
+            style={{
+              height: HEIGHT / 4.7,
+              flexDirection: 'row',
+              marginTop: 45,
+            }}>
+            <ProductCardlg />
           </View>
         </View>
 
@@ -173,6 +109,4 @@ const styles = StyleSheet.create({
     color: Colors.tertiary,
     letterSpacing: 0.9,
   },
-  bannerSmallBox: {backgroundColor: 'red', flex: 1, borderRadius: 20},
-  image: {flex: 1, padding: WIDTH < 375 ? 5 : 10},
 });

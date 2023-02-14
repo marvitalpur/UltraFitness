@@ -1,8 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Button} from 'react-native-paper';
+import {Button, TouchableRipple} from 'react-native-paper';
 import {Colors} from '../assets/constants/Colors';
-
+import Icon from 'react-native-vector-icons/Feather';
+import Icon2 from 'react-native-vector-icons/MaterialIcons';
 const ButtonComponent = ({
   icon,
   buttonColor,
@@ -14,7 +15,61 @@ const ButtonComponent = ({
   disabled,
 }) => {
   return (
-    <Button
+    <TouchableRipple
+      disabled={disabled}
+      onPress={onPress}
+      style={[
+        styles.container,
+        {height: height, width: width, backgroundColor: buttonColor},
+      ]}>
+      <View
+        style={{
+          width: '100%',
+          height: '100%',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: icon ? 'space-between' : 'center',
+          paddingHorizontal: 15,
+        }}>
+        <Text
+          style={{
+            color: textColor,
+            fontSize: 16,
+            fontFamily: 'Bahnschrift',
+            fontWeight: 400,
+          }}>
+          {buttonText}
+        </Text>
+        {icon === 'logout' ? (
+          <Icon2 name={icon} size={20} color={textColor} />
+        ) : (
+          <Icon name={icon} size={20} color={textColor} />
+        )}
+      </View>
+    </TouchableRipple>
+  );
+};
+
+export default ButtonComponent;
+
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 50,
+    justifyContent: 'center',
+    shadowColor: Colors.tertiary,
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15,
+  },
+});
+
+{
+  /* <Button
       disabled={disabled}
       icon={icon}
       mode="contained"
@@ -46,10 +101,5 @@ const ButtonComponent = ({
       <Text style={{fontSize: 16, fontFamily: 'Bahnschrift', fontWeight: 400}}>
         {buttonText}
       </Text>
-    </Button>
-  );
-};
-
-export default ButtonComponent;
-
-const styles = StyleSheet.create({});
+    </Button> */
+}
