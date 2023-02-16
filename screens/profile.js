@@ -9,74 +9,32 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import {Avatar, TouchableRipple} from 'react-native-paper';
-import {Fonts} from '../assets/constants/Fonts';
+import { Avatar, TouchableRipple } from 'react-native-paper';
+import { Fonts } from '../assets/constants/Fonts';
 import ButtonComponent from '../components/Button';
-import {EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
+import { EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
 import CourseCard from '../components/CourseCard';
-import Products from '../components/Products';
-import ProductCardmd from '../components/ProductCardmd';
-import ProductCardSm from '../components/ProductCardSm';
-import ProductCardlg from '../components/ProductCardlg';
 import WorkOutCard from '../components/WorkOutCard';
-const Profile = ({navigation}) => {
-  const data = [
-    {
-      id: 1,
-      WorkoutName: 'Workout',
-      WorkoutTime: '02 Hours',
-      WorkoutImage: require('../assets/images/dumbbell.png'),
-    },
-    {
-      id: 2,
-      WorkoutName: 'Workout',
-      WorkoutTime: '02 Hours',
-      WorkoutImage: require('../assets/images/running.png'),
-    },
-    {
-      id: 3,
-      WorkoutName: 'Workout',
-      WorkoutTime: '02 Hours',
-      WorkoutImage: require('../assets/images/Imap-food.png'),
-    },
-    {
-      id: 4,
-      WorkoutName: 'Running',
-      WorkoutTime: '12 km',
-      WorkoutImage: require('../assets/images/dumbbell.png'),
-    },
-    {
-      id: 6,
-      WorkoutName: 'Food',
-      WorkoutTime: '1320 Kcal',
-      WorkoutImage: require('../assets/images/running.png'),
-    },
-    {
-      id: 7,
-      WorkoutName: 'Workout',
-      WorkoutTime: '02 Hours',
-      WorkoutImage: require('../assets/images/Imap-food.png'),
-    },
-  ];
+const Profile = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
           <ImageBackground
             source={Assets.backgroundImages.headerBackground1}
             resizeMode="cover"
             style={styles.image}>
-            <View style={{flex: 1, paddingHorizontal: 15}}>
+            <View style={{ flex: 1, paddingHorizontal: 15 }}>
               <Header navigation={navigation} />
-              <View style={{marginTop: 65}}>
+              <View style={{ marginTop: 65 }}>
                 <View
                   style={{
                     marginTop: 40,
@@ -154,64 +112,77 @@ const Profile = ({navigation}) => {
                   </TouchableRipple>
                 </View>
 
-                {/* <SidebarButton /> */}
               </View>
             </View>
           </ImageBackground>
 
-          <View style={{flexDirection: 'row', marginTop: 25}}></View>
-          {/* Cards start */}
-
-          <View
-            style={{
-              height: HEIGHT / 4.7,
+          <View style={{ width: '90%', alignSelf: 'center' }}>
+            {/* Cards start */}
+            <View
+              style={{
+                height: HEIGHT / 6.7,
+                flexDirection: 'row',
+                marginTop: 70,
+                // width: '90%',
+                alignSelf: 'center',
+              }}>
+              <CourseCard
+                CourseName="Complete Course"
+                courseNumber="25"
+                totalCourse="Total Session in roll"
+                totalNumber="25"
+              />
+            </View>
+            <View style={{
+              height: HEIGHT / 3.7,
               flexDirection: 'row',
-              marginTop: 70,
-              width: '90%',
+              marginTop: 10,
+              // width: '90%',
               alignSelf: 'center',
             }}>
-            <CourseCard
-              CourseName="Complete Course"
-              courseNumber="25"
-              totalCourse="Total Session in roll"
-              totalNumber="25"
-            />
-          </View>
+              <FlatList
+                showsHorizontalScrollIndicator={false}
+                horizontal={true}
+                contentContainerStyle={{
+                  flexGrow: 1,
+                  paddingLeft: 5,
+                  paddingRight: 8,
+                }}
+                ItemSeparatorComponent={<View style={{ margin: 5 }} />}
+                data={data}
+                renderItem={({ item, index }) => (
+                  <WorkOutCard
+                    backgroundColor={item.backgroundColor}
+                    item={item}
+                    index={index}
+                    WorkoutImage={item.WorkoutImage}
+                    WorkoutName={item.WorkoutName}
+                    WorkoutTime={item.WorkoutTime}
+                  />
+                )}
+              />
+            </View>
+            <View
+              style={styles.texline}>
+              <Text
+                style={[styles.textstyle, { color: Colors.tertiary, }]}>
+                Activities
+              </Text>
+              <Text
+                style={[styles.textstyle, { color: Colors.primary, }]}>
+                Weekely
+              </Text>
+            </View>
+            <View style={{ backgroundColor: 'yellow' }}>
 
-          <View style={{marginVertical: 10}}>
-            <FlatList
-              horizontal={true}
-              contentContainerStyle={{
-                flexGrow: 1,
-                // backgroundColor: 'red',
-                paddingLeft: 10,
-                paddingRight: 10,
-              }}
-              ItemSeparatorComponent={<View style={{margin: 5}} />}
-              data={data}
-              // scrollEnabled={false}
-              renderItem={({item, index}) => (
-                <WorkOutCard
-                  item={item}
-                  index={index}
-                  WorkoutImage={item.WorkoutImage}
-                  WorkoutName={item.WorkoutName}
-                  WorkoutTime={item.WorkoutTime}
-                  // setActiveButton={setActiveButton}
-                  // activeButton={activeButton}
-                />
-              )}
-            />
+            </View>
           </View>
-          {/* <View style={styles.card}></View> */}
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 };
-
 export default Profile;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -228,4 +199,36 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 224,
   },
+  texline: {
+    width: '100%',
+    paddingLeft: 5,
+    marginBottom: 2,
+    flexDirection: 'row',
+    alignSelf: 'center', justifyContent: 'space-between'
+  },
+
 });
+const data = [
+  {
+    id: 1,
+    WorkoutName: 'Workout',
+    WorkoutTime: '02 Hours',
+    WorkoutImage: require('../assets/images/dumbbell.png'),
+    backgroundColor: '#eaeaea'
+  },
+  {
+    id: 2,
+    WorkoutName: 'Running',
+    WorkoutTime: '02 Hours',
+    WorkoutImage: require('../assets/images/running.png'),
+    backgroundColor: '#ECF9FF'
+  },
+  {
+    id: 3,
+    WorkoutName: 'Food',
+    WorkoutTime: '1320 Kcal',
+    WorkoutImage: require('../assets/images/Imap-food.png'),
+    backgroundColor: '#F1484830'
+  },
+
+];

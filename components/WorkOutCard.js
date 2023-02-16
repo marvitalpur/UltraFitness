@@ -1,78 +1,91 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import { Image, ImageBackground, index, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {TouchableRipple} from 'react-native-paper';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
-import Assets from '../assets';
-import CardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-const WorkOutCard = ({WorkoutImage, WorkoutName, WorkoutTime}) => {
+import { TouchableRipple } from 'react-native-paper';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
+
+const WorkOutCard = ({ index, WorkoutImage, WorkoutName, WorkoutTime, backgroundColor }) => {
   return (
-    <View style={styles.card}>
+    <View style={[styles.card,
+    {
+      backgroundColor: backgroundColor,
+      marginRight: index % 2 == 2 ? 3 : 0,
+      marginLeft: index % 2 == 2 ? 3 : 0,
+    },]}>
       <View
         style={{
           flex: 1,
           zIndex: 1,
           borderRadius: 20,
           overflow: 'hidden',
+          paddingEnd: 50,
+          marginHorizontal: 10,
+
         }}>
         <View>
-          <View style={{width: 60, height: 60, paddingLeft: 10}}>
+          <View style={[styles.productImage, { marginTop: 10 }]}>
             <Image
               source={WorkoutImage}
-              style={{width: '100%', height: '100%'}}
-              resizeMode="contain"
+              style={{
+                width: 36,
+                height: 44,
+                // width: WIDTH / 5.5,
+                // height: WIDTH / 5.5,
+                // marginLeft: 'auto',
+              }}
             />
           </View>
+
         </View>
-        <Text
-          numberOfLines={2}
-          style={{
-            marginTop: 15,
-            paddingLeft: 25,
-            // fontSize: WIDTH < 375 ? 10 : 12,
-            // color: Colors.tertiary,
-            color: '#000',
-            fontFamily: Fonts.default,
-            fontWeight: '300',
-            fontSize: 12,
-
-            lineHeight: WIDTH < 375 ? 13 : 16,
-          }}>
-          {WorkoutName}
-        </Text>
-        <Text
-          numberOfLines={2}
-          style={{
-            paddingLeft: 25,
-
-            marginTop: 15,
-            color: '#aaa',
-            // fontSize: WIDTH < 375 ? 10 : 12,
-            // color: Colors.tertiary,
-            fontFamily: Fonts.default,
-            fontSize: 14,
-            fontWeight: '300',
-
-            lineHeight: WIDTH < 375 ? 13 : 16,
-          }}>
-          {WorkoutTime}
-        </Text>
+        <View style={{
+          marginTop: 40,
+        }}>
+          <Text
+            numberOfLines={2}
+            style={{
+              marginTop: 10,
+              paddingLeft: 10,
+              fontSize: WIDTH < 375 ? 10 : 12,
+              color: Colors.tertiary,
+              color: '#000',
+              fontFamily: Fonts.default,
+              fontWeight: '300',
+              fontSize: 12,
+              lineHeight: WIDTH < 375 ? 13 : 16,
+            }}>
+            {WorkoutName}
+          </Text>
+          <Text
+            numberOfLines={2}
+            style={{
+              paddingLeft: 10,
+              marginTop: 10,
+              color: '#aaa',
+              fontSize: WIDTH < 375 ? 10 : 12,
+              color: Colors.cards.GreyText,
+              fontFamily: Fonts.default,
+              fontSize: 14,
+              fontWeight: '300',
+              lineHeight: WIDTH < 375 ? 13 : 16,
+            }}>
+            {WorkoutTime}
+          </Text>
+        </View>
       </View>
-    </View>
+    </View >
   );
 };
 
 export default WorkOutCard;
 
 const styles = StyleSheet.create({
+
   card: {
-    width: 142,
-    height: 178,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,
+    height: 175,
     backgroundColor: '#FFFFFF',
-    // padding: 4,
+    padding: 10,
     borderRadius: 20,
     shadowColor: '#000',
     shadowOffset: {
@@ -81,11 +94,11 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
+
     elevation: 15,
-    flexDirection: 'row',
   },
   btn: {
-    width: WIDTH < 375 ? 80 : 100,
+    width: WIDTH < 375 ? 50 : 100,
     height: WIDTH < 375 ? 30 : 40,
     borderRadius: 20,
     marginTop: 'auto',
