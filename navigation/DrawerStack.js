@@ -49,7 +49,8 @@ const CustomDrawerContent = props => {
         </View>
         <View style={{paddingHorizontal: 30, marginTop: 25}}>
           <View style={{width: 100, marginBottom: 25}}>
-            <View
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate('Profile')}
               style={{
                 width: 100,
                 height: 100,
@@ -69,7 +70,7 @@ const CustomDrawerContent = props => {
                 }}
                 source={Assets.logos.avatarPlaceholder}
               />
-            </View>
+            </TouchableOpacity>
             <Text
               style={{
                 textAlign: 'center',

@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Onboarding, Signup, Home} from '../screens';
+import {Login, Onboarding, Signup, Home, Profile} from '../screens';
 import DrawerNavigator from './DrawerStack';
 
 const StackNavigator = () => {
@@ -19,6 +19,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Drawer" component={DrawerNavigator} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 };
