@@ -1,30 +1,69 @@
-import { Image, ImageBackground, index, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  index,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
-import { TouchableRipple } from 'react-native-paper';
-import { Colors } from '../assets/constants/Colors';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
+import {TouchableRipple} from 'react-native-paper';
+import {Colors} from '../assets/constants/Colors';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
 
-const WorkOutCard = ({ index, WorkoutImage, WorkoutName, WorkoutTime, backgroundColor }) => {
+const WorkOutCard = ({
+  index,
+  WorkoutImage,
+  WorkoutName,
+  WorkoutTime,
+  backgroundColor,
+  DescriptionText,
+  textcolor,
+  height,
+  boxtext,
+}) => {
   return (
-    <View style={[styles.card,
-    {
-      backgroundColor: backgroundColor,
-      marginRight: index % 2 == 2 ? 3 : 0,
-      marginLeft: index % 2 == 2 ? 3 : 0,
-    },]}>
+    <View
+      style={[
+        styles.card,
+        {
+          height: height,
+          backgroundColor: backgroundColor,
+          marginRight: index % 2 == 2 ? 3 : 0,
+          marginLeft: index % 2 == 2 ? 3 : 0,
+        },
+      ]}>
       <View
         style={{
           flex: 1,
           zIndex: 1,
           borderRadius: 20,
           overflow: 'hidden',
-          paddingEnd: 50,
+          // paddingEnd: 5,
           marginHorizontal: 10,
-
         }}>
+        {boxtext && (
+          <Text
+            style={{
+              textAlign: 'center',
+              // paddingLeft: 10,
+              paddingTop: 10,
+              marginTop: 4,
+              paddingVertical: 10,
+
+              color: '#aaa',
+              fontSize: WIDTH < 375 ? 14 : 14,
+              color: textcolor,
+              fontFamily: Fonts.default,
+              fontWeight: 'bold',
+              lineHeight: WIDTH < 375 ? 13 : 16,
+            }}>
+            {DescriptionText}
+          </Text>
+        )}
         <View>
-          <View style={[styles.productImage, { marginTop: 10 }]}>
+          <View style={[styles.productImage, {marginTop: 10}]}>
             <Image
               source={WorkoutImage}
               style={{
@@ -36,16 +75,17 @@ const WorkOutCard = ({ index, WorkoutImage, WorkoutName, WorkoutTime, background
               }}
             />
           </View>
-
         </View>
-        <View style={{
-          marginTop: 40,
-        }}>
+
+        <View
+          style={{
+            marginTop: 20,
+          }}>
           <Text
             numberOfLines={2}
             style={{
-              marginTop: 10,
-              paddingLeft: 10,
+              marginTop: 40,
+              paddingLeft: 15,
               fontSize: WIDTH < 375 ? 10 : 12,
               color: Colors.tertiary,
               color: '#000',
@@ -73,17 +113,16 @@ const WorkOutCard = ({ index, WorkoutImage, WorkoutName, WorkoutTime, background
           </Text>
         </View>
       </View>
-    </View >
+    </View>
   );
 };
 
 export default WorkOutCard;
 
 const styles = StyleSheet.create({
-
   card: {
     flex: 1,
-    height: 175,
+
     backgroundColor: '#FFFFFF',
     padding: 10,
     borderRadius: 20,

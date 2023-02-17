@@ -16,11 +16,11 @@ import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import {CloudSvg} from '../assets/svgs/HomeSvgs';
 import {Fonts} from '../assets/constants/Fonts';
 import {TouchableRipple} from 'react-native-paper';
-
 import Products from '../components/Products';
 import ProductCardSm from '../components/ProductCardSm';
 import ProductCardmd from '../components/ProductCardmd';
 import ProductCardlg from '../components/ProductCardlg';
+
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>

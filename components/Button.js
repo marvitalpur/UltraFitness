@@ -4,6 +4,7 @@ import {Button, TouchableRipple} from 'react-native-paper';
 import {Colors} from '../assets/constants/Colors';
 import Icon from 'react-native-vector-icons/Feather';
 import Icon2 from 'react-native-vector-icons/MaterialIcons';
+import {BookIcon} from '../assets/svgs/HeaderSvgs';
 const ButtonComponent = ({
   icon,
   buttonColor,
@@ -13,6 +14,8 @@ const ButtonComponent = ({
   height,
   width,
   disabled,
+  icon1,
+  Icon1,
 }) => {
   return (
     <TouchableRipple
@@ -31,6 +34,14 @@ const ButtonComponent = ({
           justifyContent: icon ? 'space-between' : 'center',
           paddingHorizontal: 15,
         }}>
+        {icon1 && (
+          <>
+            <View style={{margin: 5}}>
+              <BookIcon />
+            </View>
+          </>
+        )}
+
         <Text
           style={{
             color: textColor,

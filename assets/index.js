@@ -6,7 +6,7 @@ const Assets = {
     cardBackground3: require('./images/cardBackground3.png'),
     menuBackground: require('./images/menuBackground.png'),
     headerBackground1: require('./images/headerBackground1.png'),
-
+    headerBackground2: require('./images/headerBackground2.png'),
   },
   logos: {
     blueSmall: require('./images/logoLogin.png'),
