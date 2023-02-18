@@ -8,9 +8,9 @@ const RatingsItems = () => {
       <Rating
         type="star"
         ratingCount={5}
-        imageSize={20}
+        imageSize={16}
         // showRating
-        // ratingContainerStyle={{marginTop: 30}}
+        style={{marginTop: 3}}
         ratingTextColor="#000"
         backgroundColor="transparent"
         // onFinishRating={this.ratingCompleted}

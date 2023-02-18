@@ -14,8 +14,8 @@ const GraphCompnent = ({name, image, description, price, index}) => {
       style={[
         styles.card,
         {
-          //   marginRight: index % 2 == 0 ? 5 : 0,
-          //   marginLeft: index % 2 == 0 ? 0 : 5,
+          // marginRight: index % 2 == 10 ? 5 : 10,
+          // marginLeft: index % 2 == 10 ? 10 : 15,
         },
       ]}>
       <>
@@ -30,44 +30,41 @@ const GraphCompnent = ({name, image, description, price, index}) => {
             ]}>
             Activities
           </Text>
-          <Text style={[styles.text, {color: Colors.primary}]}>Weekely</Text>
+          <Text style={[styles.text, {color: Colors.primary}]}>Weekly</Text>
         </View>
-        <View style={styles.bannerSmallBox}>
-          <LineChart
-            bezier
-            data={{
-              labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-              datasets: [
-                {
-                  data: [2, 4, 8, 12, 10, 8],
-                  strokeWidth: 2,
-                },
-              ],
-            }}
-            width={Dimensions.get('window').width - 30}
-            // width={345}
-            height={250}
-            chartConfig={{
-              backgroundColor: '#fff',
-              backgroundGradientFrom: '#fff',
-              backgroundGradientTo: '#fff',
-              decimalPlaces: 2,
-              //   color: (opacity = 1) => `rgba(rgba(0, 180, 216, 1), ${opacity})`,
-              color: (opacity = 1) => `rgba(rgba(0, 180, 216, 1), ${opacity})`,
-              labelColor: (opacity = 0.6) =>
-                `rgba(rgba(0, 0, 2,1), ${opacity})`,
-
-              style: {
-                borderRadius: 20,
+        <LineChart
+          bezier
+          data={{
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [
+              {
+                data: [2, 4, 8, 12, 10, 8],
+                strokeWidth: 2,
               },
-            }}
-            style={{
-              //   marginVertical: 8,
-              borderRadius: 16,
-              color: '#000',
-            }}
-          />
-        </View>
+            ],
+          }}
+          width={Dimensions.get('window').width - 54}
+          // width={345}
+          height={230}
+          chartConfig={{
+            backgroundColor: '#fff',
+            backgroundGradientFrom: '#fff',
+            backgroundGradientTo: '#fff',
+            decimalPlaces: 2,
+            //   color: (opacity = 1) => `rgba(rgba(0, 180, 216, 1), ${opacity})`,
+            color: (opacity = 1) => `rgba(rgba(0, 180, 216, 1), ${opacity})`,
+            labelColor: (opacity = 0.6) => `rgba(rgba(0, 0, 2,1), ${opacity})`,
+
+            style: {
+              borderRadius: 20,
+            },
+          }}
+          style={{
+            //   marginVertical: 8,
+            borderRadius: 16,
+            color: '#000',
+          }}
+        />
       </>
     </View>
   );
@@ -89,17 +86,19 @@ const styles = StyleSheet.create({
     zIndex: 1,
     borderRadius: 20,
     overflow: 'hidden',
-
-    // paddingVertical: 5,
+    paddingBottom: 10,
+    backgroundColor: 'yellow',
+    paddingVertical: 5,
   },
   card: {
     flex: 1,
-    height: 250,
+    height: 290,
     backgroundColor: '#FFFFFF',
     padding: 10,
     paddingTop: 17,
     borderRadius: 20,
     shadowColor: '#000',
+    paddingBottom: 30,
     shadowOffset: {
       width: 0,
       height: 7,

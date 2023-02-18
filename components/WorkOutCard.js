@@ -7,9 +7,9 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {TouchableRipple} from 'react-native-paper';
+
 import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import {Fonts} from '../assets/constants/Fonts';
 
 const WorkOutCard = ({
@@ -30,8 +30,8 @@ const WorkOutCard = ({
         {
           height: height,
           backgroundColor: backgroundColor,
-          marginRight: index % 2 == 2 ? 3 : 0,
-          marginLeft: index % 2 == 2 ? 3 : 0,
+          marginRight: index % 2 == 0 ? 5 : 0,
+          marginLeft: index % 2 == 0 ? 0 : 5,
         },
       ]}>
       <View
@@ -43,35 +43,16 @@ const WorkOutCard = ({
           // paddingEnd: 5,
           marginHorizontal: 10,
         }}>
-        {boxtext && (
-          <Text
-            style={{
-              textAlign: 'center',
-              // paddingLeft: 10,
-              paddingTop: 10,
-              marginTop: 4,
-              paddingVertical: 10,
-
-              color: '#aaa',
-              fontSize: WIDTH < 375 ? 14 : 14,
-              color: textcolor,
-              fontFamily: Fonts.default,
-              fontWeight: 'bold',
-              lineHeight: WIDTH < 375 ? 13 : 16,
-            }}>
-            {DescriptionText}
-          </Text>
-        )}
         <View>
           <View style={[styles.productImage, {marginTop: 10}]}>
             <Image
               source={WorkoutImage}
+              resizeMode="contain"
               style={{
                 width: 36,
                 height: 44,
-                // width: WIDTH / 5.5,
-                // height: WIDTH / 5.5,
                 // marginLeft: 'auto',
+                marginRight: 'auto',
               }}
             />
           </View>
@@ -79,13 +60,14 @@ const WorkOutCard = ({
 
         <View
           style={{
-            marginTop: 20,
+            // marginTop: 20,
+            alignSelf: 'flex-start',
           }}>
           <Text
             numberOfLines={2}
             style={{
-              marginTop: 40,
-              paddingLeft: 15,
+              marginTop: 30,
+              // paddingLeft: 15,
               fontSize: WIDTH < 375 ? 10 : 12,
               color: Colors.tertiary,
               color: '#000',
@@ -99,8 +81,8 @@ const WorkOutCard = ({
           <Text
             numberOfLines={2}
             style={{
-              paddingLeft: 10,
-              marginTop: 10,
+              paddingLeft: 8,
+              marginTop: 8,
               color: '#aaa',
               fontSize: WIDTH < 375 ? 10 : 12,
               color: Colors.cards.GreyText,
@@ -143,5 +125,8 @@ const styles = StyleSheet.create({
     marginTop: 'auto',
     borderWidth: 1,
     borderColor: Colors.tertiary,
+  },
+  productImage: {
+    height: '35%',
   },
 });

@@ -27,7 +27,7 @@ const CourseCard = ({
       ]}>
       <View
         style={{
-          //   height: '50%',
+          height: '50%',
           width: '45%',
           justifyContent: 'center',
           alignItems: 'center',
@@ -42,14 +42,15 @@ const CourseCard = ({
       </View>
       <View
         style={{
-          width: 1,
-          backgroundColor: '#aaa',
-          height: 55,
+          height: '50%',
+          borderWidth: 1,
+          borderColor: '#aaa',
+          borderRadius: 50,
           alignSelf: 'center',
         }}></View>
       <View
         style={{
-          //   height: '50%',
+          height: '50%',
           width: '45%',
           justifyContent: 'center',
           alignItems: 'center',
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
     height: '45%',
   },
   productName: {
-    width: '70%',
+    // width: '70%',
     fontFamily: Fonts.default,
     fontWeight: '600',
     letterSpacing: 0.9,
@@ -104,20 +105,5 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     color: '#AAAAAA',
     marginVertical: 10,
-  },
-  priceBox: {
-    width: '70%',
-    height: 28,
-    backgroundColor: '#ECF9FF',
-    marginLeft: 'auto',
-    borderRadius: 10,
-    marginTop: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  priceText: {
-    textAlign: 'center',
-    fontSize: 14,
-    color: Colors.tertiary,
   },
 });

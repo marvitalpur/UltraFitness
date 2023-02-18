@@ -11,27 +11,7 @@ import Icon from 'react-native-vector-icons/Feather';
 const ColorBox = props => {
   return (
     <View>
-      <View style={styles.header}>
-        {/* <Text style={[styles.headerText, {width: '50%'}]}>
-          Get Something Special For You!
-        </Text> */}
-        {/* <TouchableRipple>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text
-              style={
-                (styles.headerText,
-                {
-                  color: '#3EB1D5',
-                  fontFamily: Fonts.default,
-                  marginRight: 5,
-                })
-              }>
-              See all
-            </Text>
-            <Icon name={'arrow-right'} size={18} color={Colors.primary} />
-          </View>
-        </TouchableRipple> */}
-      </View>
+      <View style={styles.header}></View>
       <FlatList
         data={data}
         showsHorizontalScrollIndicator={false}
@@ -47,8 +27,8 @@ const ColorBox = props => {
               styles.card,
               {
                 backgroundColor: item.backgroundColor,
-                marginRight: index % 5 == 2 ? 15 : 10,
-                marginLeft: index % 5 == 0 ? 10 : 15,
+                marginRight: index % 5 == 2 ? 0 : 10,
+                marginLeft: index % 5 == 0 ? 0 : 15,
               },
             ]}>
             <View style={{height: '55%', alignContent: 'center'}}>
@@ -95,10 +75,11 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 93,
     // backgroundColor: '#FFFFFF',
-    padding: 10,
+    // padding: 10,
     borderRadius: 20,
     shadowColor: '#000',
     justifyContent: 'center',
+    paddingBottom: 13,
     alignItems: 'center',
     shadowOffset: {
       width: 0,
@@ -113,7 +94,7 @@ const styles = StyleSheet.create({
     height: '45%',
   },
   productName: {
-    marginVertical: 8,
+    marginVertical: 10,
     width: '70%',
     fontFamily: Fonts.default,
     fontWeight: '600',
@@ -122,10 +103,11 @@ const styles = StyleSheet.create({
     color: '#ffff',
   },
   productDesc: {
+    marginVertical: 10,
     fontSize: 12,
     fontFamily: Fonts.default,
     fontWeight: '300',
-    color: '#AAAAAA',
+    color: '#ECF9FF',
   },
   priceBox: {
     width: '70%',

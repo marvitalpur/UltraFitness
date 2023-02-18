@@ -20,6 +20,7 @@ import {TouchableRipple} from 'react-native-paper';
 import {EditSvg} from '../assets/svgs/HeaderSvgs';
 import ButtonComponent from '../components/Button';
 import ColorBox from '../components/ColorBox';
+import CardBox from '../components/CardBox';
 const Shope = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -34,6 +35,7 @@ const Shope = ({navigation}) => {
             avatarName={'Rubel Muricio'}
             navigation={navigation}
             // EditIcon={true}
+            header2
             rating
           />
           <View
@@ -42,12 +44,11 @@ const Shope = ({navigation}) => {
               alignSelf: 'center',
               paddingHorizontal: 10,
               justifyContent: 'space-between',
-              marginTop: 10,
+              // marginTop: 10,
               marginBottom: 15,
             }}>
             <Text
               style={{
-                // textAlign: 'center',
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
@@ -55,41 +56,17 @@ const Shope = ({navigation}) => {
               }}>
               Skills:
             </Text>
-
-            <View style={{paddingVertical: 20}}>
+            <View>
               <View
                 style={{
                   height: HEIGHT / 9.9,
                   flexDirection: 'row',
-                  marginTop: 10,
-
-                  // width: '90%',
                   alignSelf: 'center',
                 }}>
-                <FlatList
-                  showsHorizontalScrollIndicator={false}
-                  horizontal={true}
-                  contentContainerStyle={{
-                    flexGrow: 1,
-                    paddingLeft: 5,
-                    paddingRight: 8,
-                    paddingBottom: 8,
-                  }}
-                  ItemSeparatorComponent={<View style={{margin: 5}} />}
-                  data={data}
-                  renderItem={({item, index}) => (
-                    <WorkOutCard
-                      backgroundColor={item.backgroundColor}
-                      item={item}
-                      index={index}
-                      boxtext
-                      DescriptionText={item.DescriptionText}
-                      textcolor={item.textcolor}
-                    />
-                  )}
-                />
+                <CardBox />
               </View>
             </View>
+
             <Text
               style={{
                 // textAlign: 'center',
@@ -99,7 +76,7 @@ const Shope = ({navigation}) => {
                 paddingTop: 10,
                 color: Colors.tertiary,
               }}>
-              Skills:
+              Description:
             </Text>
             <Text
               style={{
@@ -118,7 +95,7 @@ const Shope = ({navigation}) => {
             <Text
               style={{
                 // textAlign: 'center',
-                paddingTop: 30,
+                paddingTop: 20,
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
@@ -131,7 +108,7 @@ const Shope = ({navigation}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                paddingTop: 20,
+                paddingVertical: 15,
               }}>
               <Text
                 style={{
@@ -166,9 +143,14 @@ const Shope = ({navigation}) => {
 
             <View
               style={{
-                // marginTop: 10,
+                height: WIDTH <= 375 ? 40 : 55,
+                width: WIDTH <= 323 ? 233 : 260,
+                marginTop: 10,
                 alignItems: 'center',
                 justifyContent: 'center',
+                borderRadius: 20,
+                backgroundColor: Colors.primary,
+                alignSelf: 'center',
               }}>
               <ButtonComponent
                 icon1
@@ -177,7 +159,7 @@ const Shope = ({navigation}) => {
                 textColor={Colors.secondary}
                 // onPress={() => navigation.goBack()}
                 height={WIDTH <= 375 ? 40 : 55}
-                width={WIDTH <= 375 ? 323 : 323}
+                width={WIDTH <= 323 ? 233 : 260}
               />
             </View>
           </View>
@@ -229,6 +211,5 @@ const data = [
     id: 3,
     DescriptionText: 'Skill Development',
     backgroundColor: '#E7C6C6',
-    textcolor: '#E9A6A6',
   },
 ];

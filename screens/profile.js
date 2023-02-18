@@ -29,76 +29,76 @@ const Profile = ({navigation, route}) => {
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
-        <View>
-          <View style={{flex: 1, paddingBottom: 20}}>
-            <ProfileHeader
-              BGImage={Assets.backgroundImages.headerBackground1}
-              avatarId={'@rubelmuricio'}
-              avatarName={'Rubel Muricio'}
-              navigation={navigation}
-              EditIcon={true}
+        <View style={{flex: 1}}>
+          <ProfileHeader
+            BGImage={Assets.backgroundImages.headerBackground1}
+            avatarId={'Alen Matias'}
+            avatarName={'@Alenmatias'}
+            navigation={navigation}
+            EditIcon={true}
+            header1
+          />
+        </View>
+        <View style={{width: '90%', alignSelf: 'center'}}>
+          {/* Cards start */}
+          <View
+            style={{
+              height: HEIGHT / 6.2,
+              flexDirection: 'row',
+              marginTop: 10,
+              // paddingVertical: 20,
+              // width: '90%',
+              alignSelf: 'center',
+            }}>
+            <CourseCard
+              CourseName="Complete Course"
+              courseNumber="25"
+              totalCourse="Total Session in roll"
+              totalNumber="25"
             />
           </View>
-          <View style={{width: '90%', alignSelf: 'center'}}>
-            {/* Cards start */}
-            <View
-              style={{
-                height: HEIGHT / 5.7,
-                flexDirection: 'row',
-                // marginTop: 10,
-                paddingVertical: 20,
-                // width: '90%',
-                alignSelf: 'center',
-              }}>
-              <CourseCard
-                CourseName="Complete Course"
-                courseNumber="25"
-                totalCourse="Total Session in roll"
-                totalNumber="25"
-              />
-            </View>
-            <View
-              style={{
-                height: HEIGHT / 4.0,
-                flexDirection: 'row',
-                marginTop: 10,
-                // width: '90%',
-                alignSelf: 'center',
-              }}>
-              <FlatList
-                showsHorizontalScrollIndicator={false}
-                horizontal={true}
-                contentContainerStyle={{
-                  flexGrow: 1,
-                  paddingLeft: 5,
-                  paddingRight: 8,
-                  paddingBottom: 10,
-                }}
-                ItemSeparatorComponent={<View style={{margin: 15}} />}
-                data={data}
-                renderItem={({item, index}) => (
-                  <WorkOutCard
-                    backgroundColor={item.backgroundColor}
-                    item={item}
-                    index={index}
-                    WorkoutImage={item.WorkoutImage}
-                    WorkoutName={item.WorkoutName}
-                    WorkoutTime={item.WorkoutTime}
-                  />
-                )}
-              />
-            </View>
+          <View
+            style={{
+              height: HEIGHT / 4.2,
+              // flexDirection: 'row',
+              // marginTop: 10,
+              // width: '90%',
+              alignSelf: 'center',
+            }}>
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              contentContainerStyle={{
+                flexGrow: 1,
+                paddingLeft: 5,
+                paddingRight: 8,
+                paddingBottom: 10,
+              }}
+              ItemSeparatorComponent={<View style={{margin: 15}} />}
+              data={data}
+              renderItem={({item, index}) => (
+                <WorkOutCard
+                  backgroundColor={item.backgroundColor}
+                  item={item}
+                  index={index}
+                  WorkoutImage={item.WorkoutImage}
+                  WorkoutName={item.WorkoutName}
+                  WorkoutTime={item.WorkoutTime}
+                />
+              )}
+            />
+          </View>
 
-            <View
-              style={{
-                // marginTop: -20,
-                paddingTop: 50,
-                height: HEIGHT / 2.2,
-                flexDirection: 'row',
-                // marginTop: 45,
-              }}>
-              <GraphCompnent />
-            </View>
+          <View
+            style={{
+              // marginTop: -20,
+              paddingTop: 20,
+              height: HEIGHT / 2.2,
+              paddingBottom: 20,
+              flexDirection: 'row',
+              // marginTop: 45,
+            }}>
+            <GraphCompnent />
           </View>
         </View>
       </ScrollView>
