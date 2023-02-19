@@ -1,22 +1,22 @@
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import React from 'react';
-import {FlatList} from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
 import ProductCard from './ProductCard';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {TouchableRipple} from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
 const Products = () => {
   return (
     <View>
       <View style={styles.header}>
-        <Text style={[styles.headerText, {width: '50%'}]}>
+        <Text style={[styles.headerText, { width: '50%' }]}>
           Get Something Special For You!
         </Text>
         <TouchableRipple>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Text
               style={
                 (styles.headerText,
@@ -38,8 +38,8 @@ const Products = () => {
           padding: 25,
         }}
         numColumns={2}
-        ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
-        renderItem={({item, index}) => (
+        ItemSeparatorComponent={<View style={{ marginVertical: 15 }} />}
+        renderItem={({ item, index }) => (
           <ProductCard
             index={index}
             name={item.name}

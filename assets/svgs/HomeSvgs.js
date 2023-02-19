@@ -9,7 +9,7 @@ import Svg, {
   LinearGradient,
   Rect,
 } from 'react-native-svg';
-function CloudSvg({width, height}) {
+function CloudSvg({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,5 +54,14 @@ function CloudSvg({width, height}) {
     </Svg>
   );
 }
+const SearchIcon = () => {
+  return (
+    <Svg id="search-normal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <Path id="Vector" d="M18,9A9,9,0,1,1,9,0,9,9,0,0,1,18,9Z" transform="translate(2 2)" fill="none" stroke="#00b4d8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+      <Path id="Vector-2" data-name="Vector" d="M.1,1.97c.53,1.6,1.74,1.76,2.67.36C3.62,1.05,3.06,0,1.52,0A1.406,1.406,0,0,0,.1,1.97Z" transform="translate(18.83 18.72)" fill="none" stroke="#00b4d8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+      <Path id="Vector-3" data-name="Vector" d="M0,0H24V24H0Z" fill="none" opacity="0" />
+    </Svg>
+  )
+}
 
-export {CloudSvg};
+export { CloudSvg, SearchIcon };

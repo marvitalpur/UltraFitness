@@ -1,34 +1,33 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
 import {
-  FlatList,
-  ImageBackground,
+
   StyleSheet,
   Text,
   ScrollView,
-  TouchableOpacity,
   View,
+  FlatList
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
-import {Fonts} from '../assets/constants/Fonts';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
 import ProfileHeader from '../components/profileHeader';
 import Assets from '../assets';
 import WorkOutCard from '../components/WorkOutCard';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {TouchableRipple} from 'react-native-paper';
-import {EditSvg} from '../assets/svgs/HeaderSvgs';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { TouchableRipple } from 'react-native-paper';
+import { EditSvg } from '../assets/svgs/HeaderSvgs';
 import ButtonComponent from '../components/Button';
 import ColorBox from '../components/ColorBox';
 import CardBox from '../components/CardBox';
-const Shope = ({navigation}) => {
+const Shope = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
@@ -40,9 +39,9 @@ const Shope = ({navigation}) => {
           />
           <View
             style={{
-              width: '90%',
+              // width: '90%',
               alignSelf: 'center',
-              paddingHorizontal: 10,
+              paddingHorizontal: 15,
               justifyContent: 'space-between',
               // marginTop: 10,
               marginBottom: 15,
@@ -56,17 +55,30 @@ const Shope = ({navigation}) => {
               }}>
               Skills:
             </Text>
-            <View>
-              <View
-                style={{
-                  height: HEIGHT / 9.9,
-                  flexDirection: 'row',
-                  alignSelf: 'center',
-                }}>
-                <CardBox />
-              </View>
+            <View
+              style={{
+                height: HEIGHT / 9.9,
+                flexDirection: 'row',
+                alignSelf: 'center',
+              }}>
+              <FlatList
+                data={data}
+                showsHorizontalScrollIndicator={false}
+                horizontal={true}
+                contentContainerStyle={{
+                  paddingVertical: 10,
+                  // padding: 10,
+                  // paddingLeft: 5,
+                }}
+                ItemSeparatorComponent={<View style={{}} />}
+                renderItem={({ item, index }) => (
+                  <CardBox name={item.name} backgroundColor={item.backgroundColor}
+                    textcolor={item.textcolor}
+                  />
+                )
+                }
+              />
             </View>
-
             <Text
               style={{
                 // textAlign: 'center',
@@ -100,9 +112,7 @@ const Shope = ({navigation}) => {
                 fontWeight: '600',
                 fontSize: 18,
                 color: Colors.tertiary,
-              }}>
-              Schedule:
-            </Text>
+              }}>Schedule:</Text>
             <View
               style={{
                 flexDirection: 'row',
@@ -133,14 +143,10 @@ const Shope = ({navigation}) => {
               style={{
                 height: HEIGHT / 5.4,
                 flexDirection: 'row',
-                // marginTop: 10,
-
-                // width: '90%',
                 alignSelf: 'center',
               }}>
               <ColorBox />
             </View>
-
             <View
               style={{
                 height: WIDTH <= 375 ? 40 : 55,
@@ -194,22 +200,22 @@ const styles = StyleSheet.create({
     // justifyContent: 'space-between',
   },
 });
-const data = [
+var data = [
+
+
   {
-    id: 1,
-    DescriptionText: 'Homework Assistance',
+    name: 'Homework Assistance',
     backgroundColor: '#FADDBA',
     textcolor: '#F2AC57',
   },
   {
-    id: 2,
-    DescriptionText: 'Social Interaction',
+    name: 'Social Interaction',
     backgroundColor: '#C7EEF8',
     textcolor: '#00B4D8',
   },
   {
-    id: 3,
-    DescriptionText: 'Skill Development',
+    name: 'Skill Development',
     backgroundColor: '#E7C6C6',
+    textcolor: '#E9A6A6',
   },
 ];

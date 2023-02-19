@@ -10,14 +10,14 @@ import {
   View,
   Image,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import {Avatar, TouchableRipple} from 'react-native-paper';
-import {Fonts} from '../assets/constants/Fonts';
-import {EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
+import { Avatar, TouchableRipple } from 'react-native-paper';
+import { Fonts } from '../assets/constants/Fonts';
+import { EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
 import RatingsItems from './RatingsItems';
 
 const ProfileHeader = ({
@@ -35,18 +35,18 @@ const ProfileHeader = ({
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
         <ImageBackground
           source={BGImage}
           resizeMode="cover"
           style={styles.image}>
-          <View style={{flex: 1, paddingHorizontal: 25, marginTop: 25}}>
+          <View style={{ flex: 1, paddingHorizontal: 25, marginTop: 25 }}>
             {header1 && <Header navigation={navigation} />}
             {header2 && (
               <Header
                 navigation={navigation}
                 backIcon={true}
-                // logo={true}
+              // logo={true}
               />
             )}
           </View>
@@ -54,7 +54,7 @@ const ProfileHeader = ({
         <View
           style={{
             flex: 1,
-            paddingHorizontal: 15,
+            paddingHorizontal: 10,
             marginTop: -40,
           }}>
           <View style={{}}>
@@ -95,7 +95,7 @@ const ProfileHeader = ({
                 </TouchableOpacity>
                 <View
                   style={{
-                    paddingHorizontal: 10,
+                    paddingHorizontal: 5,
                     justifyContent: 'center',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -139,7 +139,7 @@ const ProfileHeader = ({
               {rating && (
                 <View
                   style={{
-                    paddingHorizontal: 10,
+                    paddingLeft: 15,
                     marginTop: 50,
                   }}>
                   <RatingsItems />

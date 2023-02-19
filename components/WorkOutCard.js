@@ -5,13 +5,10 @@ import {
   StyleSheet,
   Text,
   View,
+  FlatList
 } from 'react-native';
 import React from 'react';
-
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
-
+import { Fonts } from '../assets/constants/Fonts';
 const WorkOutCard = ({
   index,
   WorkoutImage,
@@ -34,67 +31,53 @@ const WorkOutCard = ({
           marginLeft: index % 2 == 0 ? 0 : 5,
         },
       ]}>
-      <View
-        style={{
-          flex: 1,
-          zIndex: 1,
-          borderRadius: 20,
-          overflow: 'hidden',
-          // paddingEnd: 5,
-          marginHorizontal: 10,
-        }}>
-        <View>
-          <View style={[styles.productImage, {marginTop: 10}]}>
-            <Image
-              source={WorkoutImage}
-              resizeMode="contain"
-              style={{
-                width: 36,
-                height: 44,
-                // marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            />
+      <View style={styles.header}></View>
+      <FlatList
+        data={data}
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+        contentContainerStyle={{
+          // padding: 15,
+          // paddingLeft: 10,
+          paddingBottom: 10
+        }}
+        ItemSeparatorComponent={<View style={{ paddingHorizontal: 15 }} />}
+        renderItem={({ item, index }) => (
+          <View
+            style={[
+              styles.card,
+              {
+                backgroundColor: item.backgroundColor,
+                marginRight: index % 5 == 2 ? 0 : 0,
+                marginLeft: index % 5 == 0 ? 0 : 2,
+              },
+            ]}>
+            <View style={[styles.productImage, { paddingBottom: 10, }]}>
+              <Image
+                source={item.WorkoutImage}
+                resizeMode="contain"
+                style={{
+                  width: 36,
+                  height: 44,
+                  // marginLeft: 'auto',
+                  marginRight: 'auto',
+                }}
+              />
+            </View>
+            <View style={{
+              height: '55%', alignContent: 'center', paddingTop: 15,
+            }}>
+              <Text numberOfLines={1} style={styles.productName}>
+                {item.WorkoutName}
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={[styles.productName, { color: '#AAA', fontSize: 14 }]}>
+                {item.WorkoutTime}
+              </Text>
+            </View>
           </View>
-        </View>
-
-        <View
-          style={{
-            // marginTop: 20,
-            alignSelf: 'flex-start',
-          }}>
-          <Text
-            numberOfLines={2}
-            style={{
-              marginTop: 30,
-              // paddingLeft: 15,
-              fontSize: WIDTH < 375 ? 10 : 12,
-              color: Colors.tertiary,
-              color: '#000',
-              fontFamily: Fonts.default,
-              fontWeight: '300',
-              fontSize: 12,
-              lineHeight: WIDTH < 375 ? 13 : 16,
-            }}>
-            {WorkoutName}
-          </Text>
-          <Text
-            numberOfLines={2}
-            style={{
-              paddingLeft: 8,
-              marginTop: 8,
-              color: '#aaa',
-              fontSize: WIDTH < 375 ? 10 : 12,
-              color: Colors.cards.GreyText,
-              fontFamily: Fonts.default,
-              fontSize: 14,
-              fontWeight: '300',
-              lineHeight: WIDTH < 375 ? 13 : 16,
-            }}>
-            {WorkoutTime}
-          </Text>
-        </View>
-      </View>
+        )} />
     </View>
   );
 };
@@ -104,8 +87,9 @@ export default WorkOutCard;
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-
-    backgroundColor: '#FFFFFF',
+    width: 142,
+    height: 178,
+    // backgroundColor: '#FFFFFF',
     padding: 10,
     borderRadius: 20,
     shadowColor: '#000',
@@ -113,20 +97,57 @@ const styles = StyleSheet.create({
       width: 0,
       height: 7,
     },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
+    // shadowOpacity: 0.43,
+    // shadowRadius: 9.51,
 
-    elevation: 15,
+    // elevation: 15,
   },
-  btn: {
-    width: WIDTH < 375 ? 50 : 100,
-    height: WIDTH < 375 ? 30 : 40,
-    borderRadius: 20,
-    marginTop: 'auto',
-    borderWidth: 1,
-    borderColor: Colors.tertiary,
-  },
-  productImage: {
-    height: '35%',
+  productName: {
+    paddingTop: 15,
+    paddingLeft: -10,
+    width: '100%',
+    fontFamily: Fonts.default,
+    fontWeight: '600',
+    letterSpacing: 0.9,
+    textTransform: 'capitalize',
+    color: '#000',
   },
 });
+const data = [
+  {
+    id: 1,
+    WorkoutName: 'Workout',
+    WorkoutTime: '02 Hours',
+    WorkoutImage: require('../assets/images/dumbbell.png'),
+    backgroundColor: '#eaeaea',
+  },
+  {
+    id: 2,
+    WorkoutName: 'Running',
+    WorkoutTime: '02 Hours',
+    WorkoutImage: require('../assets/images/running.png'),
+    backgroundColor: '#ECF9FF',
+  },
+  {
+    id: 3,
+    WorkoutName: 'Food',
+    WorkoutTime: '1320 Kcal',
+    WorkoutImage: require('../assets/images/Imap-food.png'),
+    backgroundColor: '#E7C6C6',
+  },
+  {
+    id: 4,
+    WorkoutName: 'Workout',
+    WorkoutTime: '02 Hours',
+    WorkoutImage: require('../assets/images/dumbbell.png'),
+    backgroundColor: '#eaeaea',
+  },
+  {
+    id: 5,
+    WorkoutName: 'Running',
+    WorkoutTime: '02 Hours',
+    WorkoutImage: require('../assets/images/running.png'),
+    backgroundColor: '#ECF9FF',
+  },
+];
+
