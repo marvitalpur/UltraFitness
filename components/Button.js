@@ -16,6 +16,8 @@ const ButtonComponent = ({
   disabled,
   icon1,
   Icon1,
+  SvgICon,
+  paddingHorizontal,
 }) => {
   return (
     <TouchableRipple
@@ -51,6 +53,10 @@ const ButtonComponent = ({
           }}>
           {buttonText}
         </Text>
+        {SvgICon && (
+          <View style={{paddingHorizontal: paddingHorizontal}}>{SvgICon}</View>
+        )}
+
         {icon === 'logout' ? (
           <Icon2 name={icon} size={20} color={textColor} />
         ) : (

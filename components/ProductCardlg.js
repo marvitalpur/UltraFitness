@@ -1,16 +1,26 @@
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { TouchableRipple } from 'react-native-paper';
-import { Colors } from '../assets/constants/Colors';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
+import {TouchableRipple} from 'react-native-paper';
+import {Colors} from '../assets/constants/Colors';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
 import Assets from '../assets';
 import CardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchbarCompo from './SeacrBar';
 import Searcbar from './SeacrBar';
-const ProductCardlg = ({ CardImageBG, BtnTouchable1, BtnTouchable2, BoxtbtnText, BoxtText1, BoxtText2 }) => {
+import ButtonComponent from './Button';
+import {SearchIConGrey} from '../assets/svgs/SearchIcon';
+const ProductCardlg = ({
+  CardImageBG,
+  CardImageBGMain,
+  BtnTouchable1,
+  BtnTouchable2,
+  BoxtbtnText,
+  BoxtText1,
+  BoxtText2,
+}) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <Image
         source={CardImageBG}
         resizeMode="contain"
@@ -30,7 +40,7 @@ const ProductCardlg = ({ CardImageBG, BtnTouchable1, BtnTouchable2, BoxtbtnText,
           overflow: 'hidden',
         }}>
         <ImageBackground
-          source={Assets.backgroundImages.cardBackground3}
+          source={CardImageBGMain}
           resizeMode="cover"
           style={{
             flex: 1,
@@ -66,7 +76,7 @@ const ProductCardlg = ({ CardImageBG, BtnTouchable1, BtnTouchable2, BoxtbtnText,
             {BoxtText2}
           </Text>
           {BtnTouchable1 && (
-            <TouchableRipple style={[styles.btn, { borderWidth: 1, }]}>
+            <TouchableRipple style={[styles.btn, {borderWidth: 1}]}>
               <View
                 style={{
                   width: '100%',
@@ -76,7 +86,7 @@ const ProductCardlg = ({ CardImageBG, BtnTouchable1, BtnTouchable2, BoxtbtnText,
                   justifyContent: 'flex-start',
                 }}>
                 <CardIcon
-                  style={{ marginHorizontal: 2.5 }}
+                  style={{marginHorizontal: 2.5}}
                   name={'play-circle-outline'}
                   size={WIDTH < 375 ? 20 : 30}
                   color={Colors.tertiary}
@@ -96,14 +106,27 @@ const ProductCardlg = ({ CardImageBG, BtnTouchable1, BtnTouchable2, BoxtbtnText,
             <TouchableRipple style={styles.btn}>
               <View
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  flexDirection: 'row',
+                  height: WIDTH <= 375 ? 40 : 44,
+                  width: WIDTH <= 323 ? 233 : 175,
+                  // marginTop: 10,
+                  // marginBottom: 10,
                   alignItems: 'center',
-                  justifyContent: 'flex-start',
+                  justifyContent: 'center',
+                  borderRadius: 20,
+                  backgroundColor: Colors.secondary,
+                  alignSelf: 'center',
+                  marginLeft: 70,
                 }}>
-                <Searcbar placeholder="Get Your" />
-
+                <ButtonComponent
+                  paddingHorizontal={5}
+                  SvgICon={<SearchIConGrey />}
+                  buttonText="Get your Mentor Here"
+                  buttonColor={Colors.secondary}
+                  textColor={Colors.cards.GreyText}
+                  // onPress={() => navigation.goBack()}
+                  height={WIDTH <= 375 ? 40 : 54}
+                  width={WIDTH <= 323 ? 233 : 175}
+                />
               </View>
             </TouchableRipple>
           )}
@@ -117,7 +140,6 @@ export default ProductCardlg;
 
 const styles = StyleSheet.create({
   btn: {
-
     width: WIDTH < 375 ? 80 : 100,
     height: WIDTH < 375 ? 30 : 40,
     borderRadius: 20,

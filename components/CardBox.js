@@ -1,37 +1,45 @@
-import { StyleSheet, Text, View, SafeAreaView, FlatList, index, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  FlatList,
+  index,
+  Image,
+} from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { WIDTH } from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
+import {WIDTH} from '../assets/constants/Dimensions';
 
 const CardBox = props => {
   return (
-    <View>
+    <View
+      style={[
+        styles.card,
+        {
+          marginTop: 5,
+          marginBottom: 5,
+          backgroundColor: props.backgroundColor,
+          marginRight: index % 5 == 2 ? 0 : 2,
+          marginLeft: index % 5 == 0 ? 0 : 2,
+        },
+      ]}>
       <View
-        style={[
-          styles.card,
-          {
-            backgroundColor: props.backgroundColor,
-            marginRight: index % 5 == 2 ? 0 : 5,
-            marginLeft: index % 5 == 0 ? 0 : 5,
-          },
-        ]}>
-        <View style={{
-          height: '55%', alignContent: 'center',
+        style={{
+          height: '55%',
+          alignContent: 'center',
           flexDirection: props.flexDirection,
-          marginTop: 10,
+          justifyContent: 'space-around',
+          marginTop: 5,
         }}>
-          <Text numberOfLines={2} style={[styles.productName, { color: props.textcolor }]}>
-            {props.name}
-          </Text>
-          {props.ItemImage && (<View style={styles.productImage}>
-            {props.image}
-          </View>
-
-          )}
-        </View>
-
-
-
+        <Text
+          numberOfLines={2}
+          style={[styles.productName, {color: props.textcolor}]}>
+          {props.name}
+        </Text>
+        {props.ItemImage && (
+          <View style={styles.productImage}>{props.image}</View>
+        )}
       </View>
     </View>
   );
@@ -45,8 +53,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 46,
     // backgroundColor: '#FFFFFF',
-    // padding: 10,
-    borderRadius: 5,
+    padding: 2,
+    borderRadius: 10,
     shadowColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,7 +65,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
 
-    elevation: 15,
+    elevation: 10,
   },
   productImage: {
     height: '40%',
@@ -73,5 +81,3 @@ const styles = StyleSheet.create({
     color: '#ffff',
   },
 });
-
-
