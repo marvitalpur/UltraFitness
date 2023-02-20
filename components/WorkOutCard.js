@@ -48,8 +48,8 @@ const WorkOutCard = ({
               styles.card,
               {
                 backgroundColor: item.backgroundColor,
-                marginRight: index % 5 == 2 ? 0 : 0,
-                marginLeft: index % 5 == 0 ? 0 : 2,
+                marginRight: index % 2 == 2 ? 0 : 0,
+                marginLeft: index % 2 == 0 ? 0 : 0,
               },
             ]}>
             <View style={[styles.productImage, { paddingBottom: 10, }]}>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 7,
+      height: 2,
     },
     // shadowOpacity: 0.43,
     // shadowRadius: 9.51,

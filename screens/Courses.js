@@ -8,17 +8,17 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
 import Header from '../components/Header';
 import Lottie from 'lottie-react-native';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {CloudSvg, SearchIcon} from '../assets/svgs/HomeSvgs';
-import {Fonts} from '../assets/constants/Fonts';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { CloudSvg, SearchIcon } from '../assets/svgs/HomeSvgs';
+import { Fonts } from '../assets/constants/Fonts';
 import ProductCardlg from '../components/ProductCardlg';
 import CardBox from '../components/CardBox';
-import {BackSvg} from '../assets/svgs/HeaderSvgs';
+import { BackSvg } from '../assets/svgs/HeaderSvgs';
 import SessionCompo from '../components/SessionsComponent';
 import {
   CupIcon,
@@ -29,23 +29,23 @@ import {
   SimpleShareI,
   SimpleTeacherI,
   TeacherIconBG,
+  index
 } from '../assets/svgs/SearchIcon';
-import {TouchableRipple} from 'react-native-paper';
-import ButtonComponent from '../components/Button';
 
-const Courses = ({navigation}) => {
+
+const Courses = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
-          <View style={{paddingHorizontal: 15}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
+          <View style={{ paddingHorizontal: 15 }}>
             <Header navigation={navigation} />
           </View>
-          <View style={{flexDirection: 'row', marginTop: 25}}>
-            <View style={{alignItems: 'center', paddingHorizontal: 25}}>
+          <View style={{ flexDirection: 'row', marginTop: 25 }}>
+            <View style={{ alignItems: 'center', paddingHorizontal: 25 }}>
               <Lottie
                 source={Assets.animation.onboardAnimationSun}
                 style={{
@@ -60,42 +60,51 @@ const Courses = ({navigation}) => {
               <CloudSvg />
             </View>
             <View
-              style={{flex: 1, justifyContent: 'space-evenly', marginLeft: 10}}>
+              style={{ flex: 1, justifyContent: 'space-evenly', }}>
               <Text style={styles.text}>Good</Text>
               <Text style={styles.text}>Morning!</Text>
               <Text
                 style={[
                   styles.text,
-                  {letterSpacing: 0.6, fontSize: 12, fontWeight: '300'},
+                  { letterSpacing: 0.6, fontSize: 12, fontWeight: '300' },
                 ]}>
                 23 December 2023
               </Text>
             </View>
           </View>
-          <View
-            style={{
-              height: HEIGHT / 4.7,
-              flexDirection: 'row',
-              marginTop: 45,
-              paddingHorizontal: 25,
-            }}>
-            <ProductCardlg
-              BtnTouchable2
-              CardImageBG={Assets.cards.cardImage9}
-              CardImageBGMain={Assets.cards.cardImage11}
-              //   BoxtText1="Kids Hope"
-              //   BoxtText2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
-              //   BoxtbtnText={'Go Now'}
-            />
+          <View style={{
+            marginRight: index % 2 == 10 ? 5 : 10,
+            marginLeft: index % 2 == 10 ? 10 : 0,
+          }}>
+            <View
+              style={{
+                marginRight: 10,
+                marginLeft: 15,
+                height: HEIGHT / 4.6,
+                flexDirection: 'row',
+                marginTop: 45,
+                // paddingHorizontal: 10
+              }}>
+              <ProductCardlg
+                BtnTouchable2
+                CardImageBG={Assets.cards.cardImage9}
+                CardImageBGMain={Assets.cards.cardImage11}
+                BoxtText1="Kids Hope"
+                BoxtText2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
+                BoxtbtnText={'Go Now'}
+              />
+            </View>
+
           </View>
+
           <View
             style={{
-              height: HEIGHT / 7.6,
+              height: HEIGHT / 5.9,
               flexDirection: 'row',
               alignSelf: 'center',
               //   paddingBottom: 5,
               marginTop: 10,
-              paddingHorizontal: 25,
+              paddingLeft: 15
             }}>
             <FlatList
               data={data1}
@@ -107,7 +116,7 @@ const Courses = ({navigation}) => {
                 marginVertical: 10,
               }}
               ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({item, index}) => (
+              renderItem={({ item, index }) => (
                 <View
                   style={[
                     styles.card,
@@ -139,13 +148,13 @@ const Courses = ({navigation}) => {
             style={{
               paddingHorizontal: 10,
               marginTop: 15,
-              paddingHorizontal: 25,
+              paddingHorizontal: 15,
             }}>
             <Text style={styles.text}>Current Sessions:</Text>
           </View>
           <View
             style={{
-              paddingHorizontal: 25,
+              paddingHorizontal: 15,
             }}>
             <FlatList
               data={data}
@@ -154,7 +163,7 @@ const Courses = ({navigation}) => {
                 marginTop: 10,
               }}
               ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({item, index}) => (
+              renderItem={({ item, index }) => (
                 <SessionCompo
                   index={index}
                   name={item.name}

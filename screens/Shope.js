@@ -1,26 +1,26 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
-import {StyleSheet, Text, ScrollView, View, FlatList} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
-import {Fonts} from '../assets/constants/Fonts';
+import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
 import ProfileHeader from '../components/profileHeader';
 import Assets from '../assets';
 import WorkOutCard from '../components/WorkOutCard';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {TouchableRipple} from 'react-native-paper';
-import {EditSvg} from '../assets/svgs/HeaderSvgs';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { TouchableRipple } from 'react-native-paper';
+import { EditSvg } from '../assets/svgs/HeaderSvgs';
 import ButtonComponent from '../components/Button';
 import ColorBox from '../components/ColorBox';
 import CardBox from '../components/CardBox';
-const Shope = ({navigation}) => {
+const Shope = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
@@ -33,8 +33,7 @@ const Shope = ({navigation}) => {
           <View
             style={{
               // width: '90%',
-
-              paddingHorizontal: 25,
+              paddingLeft: 30
             }}>
             <Text
               style={{
@@ -56,12 +55,12 @@ const Shope = ({navigation}) => {
                 showsHorizontalScrollIndicator={false}
                 horizontal={true}
                 contentContainerStyle={{
-                  paddingVertical: 5,
-                  // padding: 10,
-                  // paddingLeft: 5,
+                  // paddingVertical: 5,
+                  padding: 10,
+                  paddingLeft: 5,
                 }}
                 ItemSeparatorComponent={<View style={{}} />}
-                renderItem={({item, index}) => (
+                renderItem={({ item, index }) => (
                   <CardBox
                     name={item.name}
                     backgroundColor={item.backgroundColor}
@@ -134,9 +133,10 @@ const Shope = ({navigation}) => {
             </View>
             <View
               style={{
-                height: HEIGHT / 6.4,
+                height: HEIGHT / 6.2,
                 flexDirection: 'row',
                 alignSelf: 'center',
+
               }}>
               <ColorBox />
             </View>

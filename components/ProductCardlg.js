@@ -1,15 +1,15 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {TouchableRipple} from 'react-native-paper';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
+import { TouchableRipple } from 'react-native-paper';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
 import CardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchbarCompo from './SeacrBar';
 import Searcbar from './SeacrBar';
 import ButtonComponent from './Button';
-import {SearchIConGrey} from '../assets/svgs/SearchIcon';
+import { SearchIConGrey } from '../assets/svgs/SearchIcon';
 const ProductCardlg = ({
   CardImageBG,
   CardImageBGMain,
@@ -20,7 +20,7 @@ const ProductCardlg = ({
   BoxtText2,
 }) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <Image
         source={CardImageBG}
         resizeMode="contain"
@@ -36,7 +36,7 @@ const ProductCardlg = ({
         style={{
           flex: 1,
           zIndex: 1,
-          borderRadius: 20,
+          borderRadius: 10,
           overflow: 'hidden',
         }}>
         <ImageBackground
@@ -55,7 +55,7 @@ const ProductCardlg = ({
             style={{
               width: '70%',
               fontSize: WIDTH < 375 ? 18 : 24,
-              color: Colors.tertiary,
+              color: Colors.primary,
               fontFamily: Fonts.default,
               fontWeight: '600',
               letterSpacing: 0.9,
@@ -76,7 +76,7 @@ const ProductCardlg = ({
             {BoxtText2}
           </Text>
           {BtnTouchable1 && (
-            <TouchableRipple style={[styles.btn, {borderWidth: 1}]}>
+            <TouchableRipple style={[styles.btn, { borderWidth: 1 }]}>
               <View
                 style={{
                   width: '100%',
@@ -86,7 +86,7 @@ const ProductCardlg = ({
                   justifyContent: 'flex-start',
                 }}>
                 <CardIcon
-                  style={{marginHorizontal: 2.5}}
+                  style={{ marginHorizontal: 2.5 }}
                   name={'play-circle-outline'}
                   size={WIDTH < 375 ? 20 : 30}
                   color={Colors.tertiary}
@@ -103,30 +103,28 @@ const ProductCardlg = ({
             </TouchableRipple>
           )}
           {BtnTouchable2 && (
-            <TouchableRipple style={styles.btn}>
+            <TouchableRipple style={[styles.btn, { borderRadius: 100 }]}>
               <View
                 style={{
-                  height: WIDTH <= 375 ? 40 : 44,
-                  width: WIDTH <= 323 ? 233 : 175,
-                  // marginTop: 10,
-                  // marginBottom: 10,
+                  width: '100%',
+                  height: '100%',
+                  flexDirection: 'row',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: 20,
-                  backgroundColor: Colors.secondary,
-                  alignSelf: 'center',
-                  marginLeft: 70,
+                  justifyContent: 'flex-start',
+                  backgroundColor: '#ffff',
+                  borderRadius: 100
                 }}>
-                <ButtonComponent
-                  paddingHorizontal={5}
-                  SvgICon={<SearchIConGrey />}
-                  buttonText="Get your Mentor Here"
-                  buttonColor={Colors.secondary}
-                  textColor={Colors.cards.GreyText}
-                  // onPress={() => navigation.goBack()}
-                  height={WIDTH <= 375 ? 40 : 54}
-                  width={WIDTH <= 323 ? 233 : 175}
-                />
+                <Text
+                  style={{
+                    fontFamily: Fonts.default,
+                    color: Colors.tertiary,
+                    fontSize: 12,
+                    paddingHorizontal: 5
+                  }}>
+                  {BoxtbtnText}
+                </Text>
+                <View style={{ paddingHorizontal: 5 }}>
+                  <SearchIConGrey /></View>
               </View>
             </TouchableRipple>
           )}
@@ -144,7 +142,8 @@ const styles = StyleSheet.create({
     height: WIDTH < 375 ? 30 : 40,
     borderRadius: 20,
     marginTop: 'auto',
-
     borderColor: Colors.tertiary,
+    // backgroundColor: 'red'
+
   },
 });

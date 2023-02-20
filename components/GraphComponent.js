@@ -1,21 +1,21 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
-import {Fonts} from '../assets/constants/Fonts';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {Dimensions} from 'react-native';
-import {LineChart} from 'react-native-chart-kit';
+import { Fonts } from '../assets/constants/Fonts';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { Dimensions } from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
 const screenWidth = Dimensions.get('window').width;
 
-const GraphCompnent = ({name, image, description, price, index}) => {
+const GraphCompnent = ({ name, image, description, price, index }) => {
   console.log(image);
   return (
     <View
       style={[
         styles.card,
         {
-          // marginRight: index % 2 == 10 ? 5 : 10,
-          // marginLeft: index % 2 == 10 ? 10 : 15,
+          marginRight: index % 2 == 10 ? 5 : 0,
+          marginLeft: index % 2 == 10 ? 10 : 0,
         },
       ]}>
       <>
@@ -30,7 +30,7 @@ const GraphCompnent = ({name, image, description, price, index}) => {
             ]}>
             Activities
           </Text>
-          <Text style={[styles.text, {color: Colors.primary}]}>Weekly</Text>
+          <Text style={[styles.text, { color: Colors.primary }]}>Weekly</Text>
         </View>
         <LineChart
           bezier
@@ -43,9 +43,9 @@ const GraphCompnent = ({name, image, description, price, index}) => {
               },
             ],
           }}
-          width={Dimensions.get('window').width - 54}
+          width={Dimensions.get('window').width - 40}
           // width={345}
-          height={230}
+          height={160}
           chartConfig={{
             backgroundColor: '#fff',
             backgroundGradientFrom: '#fff',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    height: 290,
+    height: 220,
     backgroundColor: '#FFFFFF',
     padding: 10,
     paddingTop: 17,
