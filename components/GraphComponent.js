@@ -23,6 +23,7 @@ const GraphCompnent = ({name, image, description, price, index}) => {
           <Text
             style={[
               styles.text,
+              
               {
                 color: Colors.tertiary,
                 opacity: 0.7,
@@ -43,9 +44,9 @@ const GraphCompnent = ({name, image, description, price, index}) => {
               },
             ],
           }}
-          width={Dimensions.get('window').width - 60}
+          width={Dimensions.get('window').width - 80}
           // width={345}
-          height={160}
+          height={158}
           chartConfig={{
             backgroundColor: '#fff',
             backgroundGradientFrom: '#fff',
@@ -60,7 +61,7 @@ const GraphCompnent = ({name, image, description, price, index}) => {
             },
           }}
           style={{
-            //   marginVertical: 8,
+       
             borderRadius: 16,
             color: '#000',
           }}
@@ -75,11 +76,13 @@ export default GraphCompnent;
 const styles = StyleSheet.create({
   texline: {
     width: '100%',
-    paddingLeft: 5,
+    paddingHorizontal: 5,
     marginBottom: 2,
     flexDirection: 'row',
     alignSelf: 'center',
     justifyContent: 'space-between',
+    marginBottom: 8,
+    
   },
   bannerSmallBox: {
     flex: 1,
@@ -94,11 +97,12 @@ const styles = StyleSheet.create({
     flex: 1,
     // height: 220,
     backgroundColor: '#FFFFFF',
-    // padding: 10,
-    paddingTop: 5,
+    padding: 10,
+    // paddingTop: 5,
     borderRadius: 20,
     shadowColor: '#000',
-    paddingBottom: 30,
+   
+
     shadowOffset: {
       width: 0,
       height: 7,

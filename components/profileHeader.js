@@ -31,127 +31,122 @@ const ProfileHeader = ({
   BGImage,
 }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView
-        bounces={false}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{width: 375, height: 200, aspectRatio: 2}}>
-          <ImageBackground
-            source={BGImage}
-            resizeMode="cover"
-            style={styles.image}>
-            <View style={{flex: 1, paddingHorizontal: 15}}>
-              {header1 && <Header navigation={navigation} />}
-              {header2 && (
-                <Header
-                  navigation={navigation}
-                  backIcon={true}
-                  // logo={true}
-                />
-              )}
-            </View>
-          </ImageBackground>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            paddingHorizontal: 10,
-            marginTop: -18,
-          }}>
-          <View style={{}}>
+    <View style={styles.container}>
+      <View style={{width: 375, height: 200, aspectRatio: 2}}>
+        <ImageBackground
+          source={BGImage}
+          resizeMode="cover"
+          style={styles.image}>
+          <View style={{paddingHorizontal: 10}}>
+            {header1 && <Header navigation={navigation} />}
+            {header2 && (
+              <Header
+                navigation={navigation}
+                backIcon={true}
+                // logo={true}
+              />
+            )}
+          </View>
+        </ImageBackground>
+      </View>
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: 10,
+          marginTop: -18,
+        }}>
+        <View style={{}}>
+          <View
+            style={{
+              overflow: 'visible',
+              // marginTop: 40,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}>
             <View
               style={{
-                overflow: 'visible',
-                // marginTop: 40,
+                width: 200,
+                marginBottom: 2,
                 flexDirection: 'row',
-                justifyContent: 'space-between',
               }}>
-              <View
+              <TouchableOpacity
+                //   onPress={() => props.navigation.navigate('Profile')}
                 style={{
-                  width: 200,
-                  marginBottom: 2,
-                  flexDirection: 'row',
+                  width: 100,
+                  height: 100,
+                  borderWidth: 2,
+                  borderColor: Colors.primary,
+                  borderRadius: 100,
                 }}>
-                <TouchableOpacity
-                  //   onPress={() => props.navigation.navigate('Profile')}
+                <Avatar.Image
+                  size={90}
                   style={{
-                    width: 100,
-                    height: 100,
-                    borderWidth: 2,
-                    borderColor: Colors.primary,
+                    width: '100%',
+                    height: '100%',
                     borderRadius: 100,
-                  }}>
-                  <Avatar.Image
-                    size={90}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 100,
-                      backgroundColor: 'transparent',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                    source={Assets.logos.avatarPlaceholder}
-                  />
-                </TouchableOpacity>
-                <View
-                  style={{
-                    paddingHorizontal: 5,
+                    backgroundColor: 'transparent',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginTop: 45,
-                    //   width: 100,
-                    marginBottom: 25,
-                    //   flexDirection: 'row',
+                  }}
+                  source={Assets.logos.avatarPlaceholder}
+                />
+              </TouchableOpacity>
+              <View
+                style={{
+                  paddingHorizontal: 5,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  marginTop: 45,
+                  //   width: 100,
+                  marginBottom: 25,
+                  //   flexDirection: 'row',
+                }}>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontFamily: Fonts.default,
+                    fontWeight: '600',
+                    fontSize: 18,
+                    color: Colors.tertiary,
                   }}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      fontFamily: Fonts.default,
-                      fontWeight: '600',
-                      fontSize: 18,
-                      color: Colors.tertiary,
-                    }}>
-                    {avatarName}
-                  </Text>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      fontFamily: Fonts.default,
-                      fontWeight: '600',
-                      fontSize: 16,
-                      color: Colors.tertiary,
-                      opacity: 0.43,
-                    }}>
-                    {avatarId}
-                  </Text>
-                </View>
+                  {avatarName}
+                </Text>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontFamily: Fonts.default,
+                    fontWeight: '600',
+                    fontSize: 16,
+                    color: Colors.tertiary,
+                    opacity: 0.43,
+                  }}>
+                  {avatarId}
+                </Text>
               </View>
-              {EditIcon && (
-                <TouchableRipple
-                  style={{
-                    paddingHorizontal: 10,
-                    marginTop: 45,
-                  }}>
-                  <EditSvg />
-                </TouchableRipple>
-              )}
-              {rating && (
-                <View
-                  style={{
-                    paddingLeft: 15,
-                    marginTop: 50,
-                  }}>
-                  <RatingsItems />
-                </View>
-              )}
             </View>
+            {EditIcon && (
+              <TouchableRipple
+                style={{
+                  paddingHorizontal: 10,
+                  marginTop: 45,
+                }}>
+                <EditSvg />
+              </TouchableRipple>
+            )}
+            {rating && (
+              <View
+                style={{
+                  paddingLeft: 15,
+                  marginTop: 50,
+                }}>
+                <RatingsItems />
+              </View>
+            )}
           </View>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </View>
+    </View>
   );
 };
 export default ProfileHeader;

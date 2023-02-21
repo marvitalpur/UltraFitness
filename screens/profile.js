@@ -29,7 +29,7 @@ const Profile = ({navigation, route}) => {
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
+        <View style={{flex: 1,}}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground1}
             avatarId={'Alen Matias'}
@@ -43,10 +43,12 @@ const Profile = ({navigation, route}) => {
           {/* Cards start */}
           <View
             style={{
-              height: HEIGHT / 6.0,
+              height: HEIGHT / 6.2,
               flexDirection: 'row',
               paddingHorizontal: 15,
               alignSelf: 'center',
+              marginTop:'auto',
+              paddingVertical:10
             }}>
             <CourseCard
               CourseName="Complete Course"
@@ -70,10 +72,11 @@ const Profile = ({navigation, route}) => {
           <View
             style={{
               height: HEIGHT / 3.5,
-              paddingBottom: 10,
+              paddingBottom: 15,
               flexDirection: 'row',
               paddingHorizontal: 25,
               marginTop: 25,
+              paddingVertical:10
             }}>
             <GraphCompnent />
           </View>

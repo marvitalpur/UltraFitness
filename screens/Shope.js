@@ -97,6 +97,7 @@ const Shope = ({navigation}) => {
                 color: Colors.tertiary,
                 opacity: 0.43,
                 paddingLeft: 15,
+                paddingTop: 20,
               }}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod.Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -105,14 +106,14 @@ const Shope = ({navigation}) => {
             <Text
               style={{
                 // textAlign: 'center',
-                paddingTop: 5,
+                paddingTop: 20,
                 marginTop: 'auto',
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
                 color: Colors.tertiary,
                 paddingLeft: 15,
-                marginVertical: 10,
+                marginVertical: 15,
               }}>
               Schedule:
             </Text>
@@ -162,6 +163,7 @@ const Shope = ({navigation}) => {
                 borderRadius: 20,
                 backgroundColor: Colors.primary,
                 alignSelf: 'center',
+           marginBottom:10
               }}>
               <ButtonComponent
                 icon1
