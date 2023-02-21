@@ -8,17 +8,17 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
 import Lottie from 'lottie-react-native';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { CloudSvg, SearchIcon } from '../assets/svgs/HomeSvgs';
-import { Fonts } from '../assets/constants/Fonts';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {CloudSvg, SearchIcon} from '../assets/svgs/HomeSvgs';
+import {Fonts} from '../assets/constants/Fonts';
 import ProductCardlg from '../components/ProductCardlg';
 import CardBox from '../components/CardBox';
-import { BackSvg } from '../assets/svgs/HeaderSvgs';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import SessionCompo from '../components/SessionsComponent';
 import {
   CupIcon,
@@ -29,23 +29,22 @@ import {
   SimpleShareI,
   SimpleTeacherI,
   TeacherIconBG,
-  index
+  index,
 } from '../assets/svgs/SearchIcon';
 
-
-const Courses = ({ navigation }) => {
+const Courses = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1 }}>
-          <View style={{ paddingHorizontal: 15 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{flex: 1}}>
+          <View style={{paddingHorizontal: 15}}>
             <Header navigation={navigation} />
           </View>
-          <View style={{ flexDirection: 'row', marginTop: 25 }}>
-            <View style={{ alignItems: 'center', paddingHorizontal: 25 }}>
+          <View style={{flexDirection: 'row', marginTop: 25}}>
+            <View style={{alignItems: 'center', paddingHorizontal: 25}}>
               <Lottie
                 source={Assets.animation.onboardAnimationSun}
                 style={{
@@ -59,23 +58,23 @@ const Courses = ({ navigation }) => {
               />
               <CloudSvg />
             </View>
-            <View
-              style={{ flex: 1, justifyContent: 'space-evenly', }}>
+            <View style={{flex: 1, justifyContent: 'space-evenly'}}>
               <Text style={styles.text}>Good</Text>
               <Text style={styles.text}>Morning!</Text>
               <Text
                 style={[
                   styles.text,
-                  { letterSpacing: 0.6, fontSize: 12, fontWeight: '300' },
+                  {letterSpacing: 0.6, fontSize: 12, fontWeight: '300'},
                 ]}>
                 23 December 2023
               </Text>
             </View>
           </View>
-          <View style={{
-            marginRight: index % 2 == 10 ? 5 : 10,
-            marginLeft: index % 2 == 10 ? 10 : 0,
-          }}>
+          <View
+            style={{
+              marginRight: index % 2 == 10 ? 5 : 10,
+              marginLeft: index % 2 == 10 ? 10 : 0,
+            }}>
             <View
               style={{
                 marginRight: 10,
@@ -94,7 +93,6 @@ const Courses = ({ navigation }) => {
                 BoxtbtnText={'Go Now'}
               />
             </View>
-
           </View>
 
           <View
@@ -104,7 +102,7 @@ const Courses = ({ navigation }) => {
               alignSelf: 'center',
               //   paddingBottom: 5,
               marginTop: 10,
-              paddingLeft: 15
+              paddingLeft: 15,
             }}>
             <FlatList
               data={data1}
@@ -116,7 +114,7 @@ const Courses = ({ navigation }) => {
                 marginVertical: 10,
               }}
               ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({ item, index }) => (
+              renderItem={({item, index}) => (
                 <View
                   style={[
                     styles.card,
@@ -163,7 +161,7 @@ const Courses = ({ navigation }) => {
                 marginTop: 10,
               }}
               ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({ item, index }) => (
+              renderItem={({item, index}) => (
                 <SessionCompo
                   index={index}
                   name={item.name}

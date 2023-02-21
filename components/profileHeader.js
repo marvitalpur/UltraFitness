@@ -36,26 +36,28 @@ const ProfileHeader = ({
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
-        <ImageBackground
-          source={BGImage}
-          resizeMode="cover"
-          style={styles.image}>
-          <View style={{flex: 1, paddingHorizontal: 25, marginTop: 25}}>
-            {header1 && <Header navigation={navigation} />}
-            {header2 && (
-              <Header
-                navigation={navigation}
-                backIcon={true}
-                // logo={true}
-              />
-            )}
-          </View>
-        </ImageBackground>
+        <View style={{width: 375, height: 200, aspectRatio: 2}}>
+          <ImageBackground
+            source={BGImage}
+            resizeMode="cover"
+            style={styles.image}>
+            <View style={{flex: 1, paddingHorizontal: 15}}>
+              {header1 && <Header navigation={navigation} />}
+              {header2 && (
+                <Header
+                  navigation={navigation}
+                  backIcon={true}
+                  // logo={true}
+                />
+              )}
+            </View>
+          </ImageBackground>
+        </View>
         <View
           style={{
             flex: 1,
             paddingHorizontal: 10,
-            marginTop: -45,
+            marginTop: -18,
           }}>
           <View style={{}}>
             <View
@@ -167,6 +169,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
+    height: 'auto',
     height: 224,
     // backgroundColor: '#FFFF00',
     overflow: 'visible',

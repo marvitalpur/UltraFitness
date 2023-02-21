@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
-import { Dimensions } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
+import {Fonts} from '../assets/constants/Fonts';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {Dimensions} from 'react-native';
+import {LineChart} from 'react-native-chart-kit';
 const screenWidth = Dimensions.get('window').width;
 
-const GraphCompnent = ({ name, image, description, price, index }) => {
+const GraphCompnent = ({name, image, description, price, index}) => {
   console.log(image);
   return (
     <View
@@ -30,7 +30,7 @@ const GraphCompnent = ({ name, image, description, price, index }) => {
             ]}>
             Activities
           </Text>
-          <Text style={[styles.text, { color: Colors.primary }]}>Weekly</Text>
+          <Text style={[styles.text, {color: Colors.primary}]}>Weekly</Text>
         </View>
         <LineChart
           bezier
@@ -43,7 +43,7 @@ const GraphCompnent = ({ name, image, description, price, index }) => {
               },
             ],
           }}
-          width={Dimensions.get('window').width - 40}
+          width={Dimensions.get('window').width - 60}
           // width={345}
           height={160}
           chartConfig={{
@@ -92,10 +92,10 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    height: 220,
+    // height: 220,
     backgroundColor: '#FFFFFF',
-    padding: 10,
-    paddingTop: 17,
+    // padding: 10,
+    paddingTop: 5,
     borderRadius: 20,
     shadowColor: '#000',
     paddingBottom: 30,

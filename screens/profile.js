@@ -9,27 +9,27 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { Colors } from '../assets/constants/Colors';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import { Avatar, TouchableRipple } from 'react-native-paper';
-import { Fonts } from '../assets/constants/Fonts';
+import {Avatar, TouchableRipple} from 'react-native-paper';
+import {Fonts} from '../assets/constants/Fonts';
 import ButtonComponent from '../components/Button';
-import { EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
+import {EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
 import CourseCard from '../components/CourseCard';
 import WorkOutCard from '../components/WorkOutCard';
 import GraphCompnent from '../components/GraphComponent';
 import ProfileHeader from '../components/profileHeader';
-const Profile = ({ navigation, route }) => {
+const Profile = ({navigation, route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{flex: 1}}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground1}
             avatarId={'Alen Matias'}
@@ -43,11 +43,8 @@ const Profile = ({ navigation, route }) => {
           {/* Cards start */}
           <View
             style={{
-              height: HEIGHT / 6.6,
+              height: HEIGHT / 6.0,
               flexDirection: 'row',
-              marginTop: 10,
-              // paddingVertical: 10,
-              // width: '90%',
               paddingHorizontal: 15,
               alignSelf: 'center',
             }}>
@@ -60,24 +57,23 @@ const Profile = ({ navigation, route }) => {
           </View>
           <View
             style={{
-              height: HEIGHT / 3.2,
-              // paddingHorizontal: 5,
+              height: HEIGHT / 4.8,
               flexDirection: 'row',
               alignSelf: 'center',
+              marginTop: 'auto',
 
+              // backgroundColor: '#ffff',
             }}>
             <WorkOutCard />
           </View>
 
           <View
             style={{
-              // marginTop: -20,
-              // paddingTop: 10,
-              height: HEIGHT / 2.0,
-              paddingBottom: 5,
+              height: HEIGHT / 3.5,
+              paddingBottom: 10,
               flexDirection: 'row',
-              paddingHorizontal: 15,
-              // marginTop: 45,
+              paddingHorizontal: 25,
+              marginTop: 25,
             }}>
             <GraphCompnent />
           </View>

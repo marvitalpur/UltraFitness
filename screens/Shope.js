@@ -1,26 +1,26 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
-import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
+import {StyleSheet, Text, ScrollView, View, FlatList} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 import ProfileHeader from '../components/profileHeader';
 import Assets from '../assets';
 import WorkOutCard from '../components/WorkOutCard';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { TouchableRipple } from 'react-native-paper';
-import { EditSvg } from '../assets/svgs/HeaderSvgs';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {TouchableRipple} from 'react-native-paper';
+import {EditSvg} from '../assets/svgs/HeaderSvgs';
 import ButtonComponent from '../components/Button';
 import ColorBox from '../components/ColorBox';
 import CardBox from '../components/CardBox';
-const Shope = ({ navigation }) => {
+const Shope = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{flex: 1}}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
@@ -31,24 +31,30 @@ const Shope = ({ navigation }) => {
             rating
           />
           <View
-            style={{
-              // width: '90%',
-              paddingLeft: 30
-            }}>
+            style={
+              {
+                // width: '90%',
+                // paddingLeft: 10,
+              }
+            }>
             <Text
               style={{
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
                 color: Colors.tertiary,
+                paddingLeft: 15,
+                marginTop: 'auto',
+                paddingBottom: 5,
               }}>
               Skills:
             </Text>
             <View
               style={{
-                height: HEIGHT / 7.9,
+                height: HEIGHT / 9.6,
                 //   flexDirection: 'row',
                 alignSelf: 'center',
+                marginTop: 'auto',
               }}>
               <FlatList
                 data={data}
@@ -56,11 +62,11 @@ const Shope = ({ navigation }) => {
                 horizontal={true}
                 contentContainerStyle={{
                   // paddingVertical: 5,
-                  padding: 10,
-                  paddingLeft: 5,
+                  // padding: 10,
+                  paddingLeft: 15,
                 }}
                 ItemSeparatorComponent={<View style={{}} />}
-                renderItem={({ item, index }) => (
+                renderItem={({item, index}) => (
                   <CardBox
                     name={item.name}
                     backgroundColor={item.backgroundColor}
@@ -77,6 +83,7 @@ const Shope = ({ navigation }) => {
                 fontSize: 18,
                 // paddingTop: 10,
                 color: Colors.tertiary,
+                paddingLeft: 15,
               }}>
               Description:
             </Text>
@@ -89,6 +96,7 @@ const Shope = ({ navigation }) => {
                 paddingTop: 5,
                 color: Colors.tertiary,
                 opacity: 0.43,
+                paddingLeft: 15,
               }}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod.Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -97,11 +105,14 @@ const Shope = ({ navigation }) => {
             <Text
               style={{
                 // textAlign: 'center',
-                paddingTop: 10,
+                paddingTop: 5,
+                marginTop: 'auto',
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
                 color: Colors.tertiary,
+                paddingLeft: 15,
+                marginVertical: 10,
               }}>
               Schedule:
             </Text>
@@ -111,6 +122,7 @@ const Shope = ({ navigation }) => {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 paddingVertical: 5,
+                paddingLeft: 15,
               }}>
               <Text
                 style={{
@@ -136,7 +148,7 @@ const Shope = ({ navigation }) => {
                 height: HEIGHT / 6.2,
                 flexDirection: 'row',
                 alignSelf: 'center',
-
+                // paddingHorizontal: 10,
               }}>
               <ColorBox />
             </View>

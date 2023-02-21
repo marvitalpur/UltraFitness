@@ -20,8 +20,8 @@ const CardBox = props => {
           marginTop: 5,
           marginBottom: 5,
           backgroundColor: props.backgroundColor,
-          marginRight: index % 5 == 2 ? 0 : 2,
-          marginLeft: index % 5 == 0 ? 0 : 2,
+          marginRight: index % 5 == 2 ? 0 : 4,
+          marginLeft: index % 5 == 0 ? 0 : 4,
         },
       ]}>
       <View
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     height: 46,
     // backgroundColor: '#FFFFFF',
     padding: 2,
-    borderRadius: 10,
+    borderRadius: 5,
     shadowColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',

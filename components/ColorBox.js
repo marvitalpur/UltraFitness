@@ -1,17 +1,16 @@
-import { StyleSheet, Text, View, SafeAreaView, FlatList } from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView, FlatList} from 'react-native';
 import React from 'react';
 
 import ProductCard from './ProductCard';
-import { Fonts } from '../assets/constants/Fonts';
+import {Fonts} from '../assets/constants/Fonts';
 import Assets from '../assets';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
-import { TouchableRipple } from 'react-native-paper';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {TouchableRipple} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
 const ColorBox = props => {
   return (
     <View>
-      <View style={styles.header}></View>
       <FlatList
         data={data}
         showsHorizontalScrollIndicator={false}
@@ -20,30 +19,41 @@ const ColorBox = props => {
           padding: 15,
           paddingLeft: 10,
         }}
-        ItemSeparatorComponent={<View style={{ marginVertical: 15 }} />}
-        renderItem={({ item, index }) => (
+        ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
+        renderItem={({item, index}) => (
           <View
             style={[
-              styles.card,
+              styles.card2,
               {
                 backgroundColor: item.backgroundColor,
                 marginRight: index % 5 == 2 ? 0 : 10,
                 marginLeft: index % 5 == 0 ? 0 : 15,
               },
             ]}>
-            <View style={{ height: '55%', alignContent: 'center' }}>
-              <Text numberOfLines={1} style={styles.productName}>
-                {item.name}
-              </Text>
-              <View style={{ height: 1, backgroundColor: '#fff' }}></View>
-              <Text
-                numberOfLines={1}
-                style={[styles.productDesc, { textAlign: 'center' }]}>
-                {item.description}
-              </Text>
+            <View
+              style={[
+                styles.card,
+                {
+                  backgroundColor: item.backgroundColor,
+                  marginRight: index % 5 == 2 ? 0 : 2,
+                  marginLeft: index % 5 == 0 ? 0 : 2,
+                },
+              ]}>
+              <View style={{height: '55%', alignContent: 'center'}}>
+                <Text numberOfLines={1} style={styles.productName}>
+                  {item.name}
+                </Text>
+                <View style={{height: 1, backgroundColor: '#fff'}}></View>
+                <Text
+                  numberOfLines={1}
+                  style={[styles.productDesc, {textAlign: 'center'}]}>
+                  {item.description}
+                </Text>
+              </View>
             </View>
           </View>
-        )} />
+        )}
+      />
     </View>
   );
 };
@@ -51,7 +61,6 @@ const ColorBox = props => {
 export default ColorBox;
 
 const styles = StyleSheet.create({
-
   card: {
     width: 52,
     flex: 1,
@@ -62,6 +71,26 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     justifyContent: 'center',
     paddingBottom: 13,
+    alignItems: 'center',
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15,
+  },
+  card2: {
+    // width: 55,
+    // flex: 1,
+    // height: 98,
+    // backgroundColor: '#FFFFFF',
+    padding: 2,
+    borderRadius: 20,
+    shadowColor: '#000',
+    justifyContent: 'center',
+    paddingBottom: 2,
     alignItems: 'center',
     shadowOffset: {
       width: 0,

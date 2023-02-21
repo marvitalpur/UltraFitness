@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
 
 const CourseCard = ({
   name,

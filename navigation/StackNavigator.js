@@ -20,6 +20,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Drawer" component={DrawerNavigator} />
       <Stack.Screen name="Profile" component={Profile} />
+  
     </Stack.Navigator>
   );
 };
