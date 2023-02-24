@@ -8,8 +8,8 @@ import {
   FlatList,
 } from 'react-native';
 import React from 'react';
-import {Fonts} from '../assets/constants/Fonts';
-import {WIDTH} from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
+import { WIDTH } from '../assets/constants/Dimensions';
 const WorkOutCard = ({
   index,
   WorkoutImage,
@@ -33,8 +33,8 @@ const WorkOutCard = ({
           paddingLeft: 25,
           paddingBottom: 10,
         }}
-        ItemSeparatorComponent={<View style={{paddingHorizontal: 15}} />}
-        renderItem={({item, index}) => (
+        ItemSeparatorComponent={<View style={{ paddingHorizontal: 15 }} />}
+        renderItem={({ item, index }) => (
           <View
             style={[
               styles.card,
@@ -45,7 +45,7 @@ const WorkOutCard = ({
                 marginLeft: index % 2 == 0 ? 0 : 5,
               },
             ]}>
-            <View style={[styles.productImage, {paddingBottom: 10}]}>
+            <View style={[styles.productImage, { paddingBottom: 10 }]}>
               <Image
                 source={item.WorkoutImage}
                 resizeMode="contain"
@@ -70,7 +70,7 @@ const WorkOutCard = ({
               </Text>
               <Text
                 numberOfLines={1}
-                style={[styles.productName, {color: '#AAA', fontSize: 14}]}>
+                style={[styles.productName, { color: '#AAA', fontSize: 14 }]}>
                 {item.WorkoutTime}
               </Text>
             </View>

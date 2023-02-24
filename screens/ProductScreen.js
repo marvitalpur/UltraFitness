@@ -7,18 +7,18 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 import RatingsItems from '../components/RatingsItems';
 import ButtonComponent from '../components/Button';
 import ButtonComponent2 from '../components/Botton2';
 
-const ProductScreen = ({navigation, index}) => {
+const ProductScreen = ({ navigation, index }) => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -33,18 +33,18 @@ const ProductScreen = ({navigation, index}) => {
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 25}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 25 }}>
           <Header backIcon navigation={navigation} />
           <View
             style={{
               flex: 1,
               //   backgroundColor: 'green',
             }}>
-            <View style={{alignSelf: 'center', paddingVertical: 15}}>
+            <View style={{ alignSelf: 'center', paddingVertical: 15 }}>
               <Image
                 source={Assets.cards.cardImage1}
-                // style={{width: 76, height: 76, padding: 4}}
+              // style={{width: 76, height: 76, padding: 4}}
               />
             </View>
 
@@ -52,7 +52,7 @@ const ProductScreen = ({navigation, index}) => {
               horizontal
               showsHorizontalScrollIndicator={true}
               data={data}
-              renderItem={({item, index}) => {
+              renderItem={({ item, index }) => {
                 return (
                   <>
                     <View
@@ -65,7 +65,7 @@ const ProductScreen = ({navigation, index}) => {
                       <Image
                         source={item.imageitem}
                         resizeMode="contain"
-                        style={{width: '100%', height: '100%'}}
+                        style={{ width: '100%', height: '100%' }}
                       />
                     </View>
                   </>
@@ -73,10 +73,10 @@ const ProductScreen = ({navigation, index}) => {
               }}
             />
           </View>
-          <View style={{flex: 1, paddingHorizontal: 5}}>
+          <View style={{ flex: 1, paddingHorizontal: 5 }}>
             <View style={styles.ProductText}>
               <Text
-                style={[styles.CenterText, {width: '70%', color: '#00B4D8'}]}>
+                style={[styles.CenterText, { width: '70%', color: '#00B4D8' }]}>
                 Home Equipment Push Up Bars
               </Text>
 
@@ -93,8 +93,8 @@ const ProductScreen = ({navigation, index}) => {
               </Text>
             </View>
 
-            <View style={{flexDirection: 'row'}}>
-              <Text style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={[styles.CenterText, { color: '#000', fontSize: 16 }]}>
                 Reviews :
               </Text>
               <RatingsItems />
@@ -102,7 +102,7 @@ const ProductScreen = ({navigation, index}) => {
             <Text
               style={[
                 styles.CenterText,
-                {color: '#000', fontSize: 16, marginTop: 5},
+                { color: '#000', fontSize: 16, marginTop: 5 },
               ]}
               numberOfLines={1}>
               Description :
@@ -123,7 +123,7 @@ const ProductScreen = ({navigation, index}) => {
               nonumy eirmod tempor
             </Text>
             <Text
-              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
+              style={[styles.CenterText, { color: '#000', fontSize: 16 }]}
               numberOfLines={2}>
               Quantity:
             </Text>
@@ -136,8 +136,8 @@ const ProductScreen = ({navigation, index}) => {
               flexDirection: 'row',
               marginTop: 10,
             }}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{paddingRight: 10}}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ paddingRight: 10 }}>
                 <ButtonComponent2
                   buttonText=""
                   icon={'minus'}
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
 });
 
 const data = [
-  {imageitem: Assets.cards.cardImage1},
-  {imageitem: Assets.cards.cardImage1},
-  {imageitem: Assets.cards.cardImage1},
+  { imageitem: Assets.cards.cardImage1 },
+  { imageitem: Assets.cards.cardImage1 },
+  { imageitem: Assets.cards.cardImage1 },
 ];

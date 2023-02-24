@@ -1,6 +1,6 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Onboarding, Signup, Home, Profile} from '../screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Login, Onboarding, Signup, Home, Profile } from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 

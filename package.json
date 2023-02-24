@@ -1,5 +1,5 @@
 {
-  "name": "ultrasvwellnessperformance",
+  "name": "ultrafitness",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "@react-navigation/drawer": "^6.5.8",
     "@react-navigation/native": "^6.1.3",
     "@react-navigation/native-stack": "^6.9.9",
+    "cache": "^3.0.0",
     "lottie-react-native": "^5.1.5",
     "react": "18.2.0",
     "react-native": "0.71.2",

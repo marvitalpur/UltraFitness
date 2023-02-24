@@ -509,7 +509,7 @@
 				DEVELOPMENT_TEAM = ZBLGJL7988;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "UltraSVWellnessPerformance/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "Ultra SV Wellness  Performance";
+             INFOPLIST_KEY_CFBundleDisplayName = "Ultra Fitness";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,7 +537,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZBLGJL7988;
 				INFOPLIST_FILE = "UltraSVWellnessPerformance/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "Ultra SV Wellness  Performance";
+             INFOPLIST_KEY_CFBundleDisplayName = "Ultra Fitness";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
