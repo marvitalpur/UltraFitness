@@ -1,4 +1,10 @@
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import ProductCard from './ProductCard';
@@ -8,7 +14,14 @@ import {WIDTH} from '../assets/constants/Dimensions';
 import {Colors} from '../assets/constants/Colors';
 import {TouchableRipple} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
-const Products = () => {
+
+const Products = ({navigation}) => {
+  const handlePress = ({onPress}) => {
+    {
+      onPress;
+    }
+  };
+
   return (
     <View>
       <View style={styles.header}>
@@ -40,14 +53,20 @@ const Products = () => {
         numColumns={2}
         ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
         renderItem={({item, index}) => (
-          <ProductCard
-            index={index}
-            name={item.name}
-            price={item.price}
-            description={item.description}
-            image={item.image}
-          />
-        )}></FlatList>
+          <TouchableOpacity
+            onPress={handlePress}
+            activeOpacity={0.75}
+            style={{justifyContent: 'space-evenly', width: '50%'}}>
+            <ProductCard
+              index={index}
+              name={item.name}
+              price={item.price}
+              description={item.description}
+              image={item.image}
+            />
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 };
@@ -111,5 +130,6 @@ var data = [
     price: '36',
     description: 'jkskbycsdubfg',
     image: Assets.cards.cardImage6,
+    onPress: () => navigation.naviagate('ProductSCreen'),
   },
 ];

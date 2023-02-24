@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* UltrafitnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* UltrafitnessTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-Ultrafitness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Ultrafitness.a */; };
+		00E356F31AD99517003FC87E /* UltraSVWellnessPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* UltraSVWellnessPerformanceTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-UltraSVWellnessPerformance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-UltraSVWellnessPerformance.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-Ultrafitness-UltrafitnessTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Ultrafitness-UltrafitnessTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		F90626E8298D1DFF00EF9635 /* Bahnschrift.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F90626E7298D1DFF00EF9635 /* Bahnschrift.ttf */; };
 		F9324EC7298D114D009995DA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9324EC6298D114C009995DA /* MaterialIcons.ttf */; };
@@ -27,27 +27,27 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Ultrafitness;
+			remoteInfo = "UltraSVWellnessPerformance";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* UltrafitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltrafitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* UltraSVWellnessPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UltraSVWellnessPerformanceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* UltrafitnessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltrafitnessTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Ultrafitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ultrafitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Ultrafitness/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Ultrafitness/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Ultrafitness/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Ultrafitness/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Ultrafitness/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Ultrafitness-UltrafitnessTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ultrafitness-UltrafitnessTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-Ultrafitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ultrafitness.debug.xcconfig"; path = "Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-Ultrafitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ultrafitness.release.xcconfig"; path = "Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-Ultrafitness-UltrafitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ultrafitness-UltrafitnessTests.debug.xcconfig"; path = "Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-Ultrafitness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ultrafitness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Ultrafitness/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-Ultrafitness-UltrafitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ultrafitness-UltrafitnessTests.release.xcconfig"; path = "Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* UltraSVWellnessPerformanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UltraSVWellnessPerformanceTests.m"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* UltraSVWellnessPerformance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UltraSVWellnessPerformance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "UltraSVWellnessPerformance/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "UltraSVWellnessPerformance/AppDelegate.mm"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "UltraSVWellnessPerformance/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "UltraSVWellnessPerformance/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "UltraSVWellnessPerformance/main.m"; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-UltraSVWellnessPerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraSVWellnessPerformance.debug.xcconfig"; path = "Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-UltraSVWellnessPerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraSVWellnessPerformance.release.xcconfig"; path = "Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.debug.xcconfig"; path = "Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-UltraSVWellnessPerformance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UltraSVWellnessPerformance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "UltraSVWellnessPerformance/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.release.xcconfig"; path = "Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F90626E7298D1DFF00EF9635 /* Bahnschrift.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bahnschrift.ttf; path = ../assets/fonts/Bahnschrift.ttf; sourceTree = "<group>"; };
 		F9324EC6298D114C009995DA /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-Ultrafitness-UltrafitnessTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,20 +69,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-Ultrafitness.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-UltraSVWellnessPerformance.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* UltrafitnessTests */ = {
+		00E356EF1AD99517003FC87E /* UltraSVWellnessPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* UltrafitnessTests.m */,
+				00E356F21AD99517003FC87E /* UltraSVWellnessPerformanceTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = UltrafitnessTests;
+			path = "UltraSVWellnessPerformanceTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -93,7 +93,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Ultrafitness */ = {
+		13B07FAE1A68108700A75B9A /* UltraSVWellnessPerformance */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -104,15 +104,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Ultrafitness;
+			name = "UltraSVWellnessPerformance";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-Ultrafitness.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Ultrafitness-UltrafitnessTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-UltraSVWellnessPerformance.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,9 +131,9 @@
 				F90626E7298D1DFF00EF9635 /* Bahnschrift.ttf */,
 				F9324EC8298D11E1009995DA /* MaterialCommunityIcons.ttf */,
 				F9324EC6298D114C009995DA /* MaterialIcons.ttf */,
-				13B07FAE1A68108700A75B9A /* Ultrafitness */,
+				13B07FAE1A68108700A75B9A /* UltraSVWellnessPerformance */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* UltrafitnessTests */,
+				00E356EF1AD99517003FC87E /* UltraSVWellnessPerformanceTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -146,8 +146,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Ultrafitness.app */,
-				00E356EE1AD99517003FC87E /* UltrafitnessTests.xctest */,
+				13B07F961A680F5B00A75B9A /* UltraSVWellnessPerformance.app */,
+				00E356EE1AD99517003FC87E /* UltraSVWellnessPerformanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,10 +155,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-Ultrafitness.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-Ultrafitness.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-Ultrafitness-UltrafitnessTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-Ultrafitness-UltrafitnessTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-UltraSVWellnessPerformance.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-UltraSVWellnessPerformance.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -166,9 +166,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* UltrafitnessTests */ = {
+		00E356ED1AD99517003FC87E /* UltraSVWellnessPerformanceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UltrafitnessTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UltraSVWellnessPerformanceTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -182,14 +182,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = UltrafitnessTests;
-			productName = UltrafitnessTests;
-			productReference = 00E356EE1AD99517003FC87E /* UltrafitnessTests.xctest */;
+			name = UltraSVWellnessPerformanceTests;
+			productName = UltraSVWellnessPerformanceTests;
+			productReference = 00E356EE1AD99517003FC87E /* UltraSVWellnessPerformanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Ultrafitness */ = {
+		13B07F861A680F5B00A75B9A /* UltraSVWellnessPerformance */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Ultrafitness" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UltraSVWellnessPerformance" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -204,9 +204,9 @@
 			);
 			dependencies = (
 			);
-			name = Ultrafitness;
-			productName = Ultrafitness;
-			productReference = 13B07F961A680F5B00A75B9A /* Ultrafitness.app */;
+			name = "UltraSVWellnessPerformance";
+			productName = "UltraSVWellnessPerformance";
+			productReference = 13B07F961A680F5B00A75B9A /* UltraSVWellnessPerformance.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Ultrafitness" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "UltraSVWellnessPerformance" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,8 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Ultrafitness */,
-				00E356ED1AD99517003FC87E /* UltrafitnessTests */,
+				13B07F861A680F5B00A75B9A /* UltraSVWellnessPerformance */,
+				00E356ED1AD99517003FC87E /* UltraSVWellnessPerformanceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,15 +292,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -318,7 +318,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Ultrafitness-UltrafitnessTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -340,7 +340,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Ultrafitness-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-UltraSVWellnessPerformance-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -353,15 +353,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -370,15 +370,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness/Pods-Ultrafitness-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance/Pods-UltraSVWellnessPerformance-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -387,15 +387,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ultrafitness-UltrafitnessTests/Pods-Ultrafitness-UltrafitnessTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests/Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -424,7 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* UltrafitnessTests.m in Sources */,
+				00E356F31AD99517003FC87E /* UltraSVWellnessPerformanceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +442,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Ultrafitness */;
+			target = 13B07F861A680F5B00A75B9A /* UltraSVWellnessPerformance */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -450,14 +450,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Ultrafitness-UltrafitnessTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = UltrafitnessTests/Info.plist;
+				INFOPLIST_FILE = "UltraSVWellnessPerformanceTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,17 +471,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ultrafitness.app/Ultrafitness";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltraSVWellnessPerformance.app/UltraSVWellnessPerformance";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Ultrafitness-UltrafitnessTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-UltraSVWellnessPerformance-UltraSVWellnessPerformanceTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = UltrafitnessTests/Info.plist;
+				INFOPLIST_FILE = "UltraSVWellnessPerformanceTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,20 +495,21 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ultrafitness.app/Ultrafitness";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltraSVWellnessPerformance.app/UltraSVWellnessPerformance";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-Ultrafitness.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-UltraSVWellnessPerformance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZBLGJL7988;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Ultrafitness/Info.plist;
+				INFOPLIST_FILE = "UltraSVWellnessPerformance/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Ultra SV Wellness  Performance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,7 +521,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Ultrafitness;
+				PRODUCT_NAME = "UltraSVWellnessPerformance";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -529,13 +530,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-Ultrafitness.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-UltraSVWellnessPerformance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZBLGJL7988;
-				INFOPLIST_FILE = Ultrafitness/Info.plist;
+				INFOPLIST_FILE = "UltraSVWellnessPerformance/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Ultra SV Wellness  Performance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,7 +549,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Ultrafitness;
+				PRODUCT_NAME = "UltraSVWellnessPerformance";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -693,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UltrafitnessTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UltraSVWellnessPerformanceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -702,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Ultrafitness" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UltraSVWellnessPerformance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -711,7 +713,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Ultrafitness" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "UltraSVWellnessPerformance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

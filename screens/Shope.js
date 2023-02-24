@@ -6,7 +6,6 @@ import {Colors} from '../assets/constants/Colors';
 import {Fonts} from '../assets/constants/Fonts';
 import ProfileHeader from '../components/profileHeader';
 import Assets from '../assets';
-import WorkOutCard from '../components/WorkOutCard';
 import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import {TouchableRipple} from 'react-native-paper';
 import {EditSvg} from '../assets/svgs/HeaderSvgs';
@@ -25,7 +24,7 @@ const Shope = ({navigation}) => {
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
             avatarName={'Rubel Muricio'}
-            navigation={navigation}
+            navigation={navigation.goBack()}
             // EditIcon={true}
             header2
             rating
@@ -149,7 +148,7 @@ const Shope = ({navigation}) => {
                 height: HEIGHT / 6.2,
                 flexDirection: 'row',
                 alignSelf: 'center',
-                // paddingHorizontal: 10,
+                paddingHorizontal: 5,
               }}>
               <ColorBox />
             </View>
@@ -163,7 +162,7 @@ const Shope = ({navigation}) => {
                 borderRadius: 20,
                 backgroundColor: Colors.primary,
                 alignSelf: 'center',
-           marginBottom:10
+                marginBottom: 10,
               }}>
               <ButtonComponent
                 icon1

@@ -2,6 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Login, Onboarding, Signup, Home, Profile} from '../screens';
 import DrawerNavigator from './DrawerStack';
+import ProductScreen from '../screens/ProductScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -20,7 +21,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Drawer" component={DrawerNavigator} />
       <Stack.Screen name="Profile" component={Profile} />
-  
+      <Stack.Screen name="ProductSCreen" component={ProductScreen} />
     </Stack.Navigator>
   );
 };

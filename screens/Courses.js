@@ -31,6 +31,7 @@ import {
   TeacherIconBG,
   index,
 } from '../assets/svgs/SearchIcon';
+import CardLG from '../components/CArdComponentLG';
 
 const Courses = ({navigation}) => {
   return (
@@ -97,40 +98,26 @@ const Courses = ({navigation}) => {
 
           <View
             style={{
-              height: HEIGHT / 5.9,
+              height: HEIGHT / 9.9,
               flexDirection: 'row',
               alignSelf: 'center',
               //   paddingBottom: 5,
-              marginTop: 10,
-              paddingLeft: 15,
+              marginTop: 15,
+              // paddingLeft: 15,
             }}>
             <FlatList
               data={data1}
               showsHorizontalScrollIndicator={false}
               horizontal={true}
               contentContainerStyle={{
-                // paddingVertical: 25,
+                paddingHorizontal: 12,
                 // marginBottom: -15,
-                marginVertical: 10,
               }}
               ItemSeparatorComponent={<View style={{}} />}
               renderItem={({item, index}) => (
-                <View
-                  style={[
-                    styles.card,
-                    {
-                      backgroundColor: item.imagebackgroundColor1,
-                      marginRight: index % 5 == 2 ? 0 : 5,
-                      marginLeft: index % 5 == 0 ? 0 : 5,
-                      width: 140,
-                      height: 75,
-                      opacity: 0.8,
-                      marginTop: 5,
-                      marginBottom: 25,
-                    },
-                  ]}>
-                  <CardBox
-                    flexDirection={'row'}
+                <View style={{}}>
+                  <CardLG
+                    // flexDirection={'row'}
                     ItemImage={true}
                     image={item.image}
                     name={item.name}
@@ -250,24 +237,24 @@ var data = [
 ];
 var data1 = [
   {
-    name: 'Homework Assistance',
+    name: `Homework \nAssistance`,
     backgroundColor: '#FADDBA',
     imagebackgroundColor1: '#FADDBA',
     textcolor: '#F2AC57',
     image: <SimpleTeacherI />,
   },
   {
-    name: 'Social Interaction',
+    name: `Social \nInteraction`,
     backgroundColor: '#C7EEF8',
     imagebackgroundColor1: '#C7EEF8',
-    textcolor: '#00B4D8',
+    textcolor: '#FFFF',
     image: <SimpleShareI />,
   },
   {
-    name: 'Skill Development',
+    name: 'Skill \n Development',
     backgroundColor: '#E7C6C6',
     imagebackgroundColor1: '#E7C6C6',
-    textcolor: '#E9A6A6',
+    textcolor: '#fff',
     image: <SimpleCupI />,
   },
 ];
