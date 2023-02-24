@@ -26,6 +26,7 @@ const Assets = {
     cardImage10: require('./images/cardImage10.png'),
     cardImage11: require('./images/cardImage11.png'),
   },
+
   animation: {
     onboardAnimation2: require('./animation/animationOnboarding2.json'),
     onboardAnimation3: require('./animation/animationOnboarding3.json'),
