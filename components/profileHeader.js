@@ -10,14 +10,14 @@ import {
   View,
   Image,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import {Avatar, TouchableRipple} from 'react-native-paper';
-import {Fonts} from '../assets/constants/Fonts';
-import {EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
+import { Avatar, TouchableRipple } from 'react-native-paper';
+import { Fonts } from '../assets/constants/Fonts';
+import { EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
 import RatingsItems from './RatingsItems';
 
 const ProfileHeader = ({
@@ -32,18 +32,18 @@ const ProfileHeader = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={{width: 375, height: 200, aspectRatio: 2}}>
+      <View style={{ width: 375, height: 200, aspectRatio: 2 }}>
         <ImageBackground
           source={BGImage}
           resizeMode="cover"
           style={styles.image}>
-          <View style={{paddingHorizontal: 10}}>
+          <View style={{ paddingHorizontal: 10 }}>
             {header1 && <Header navigation={navigation} />}
             {header2 && (
               <Header
                 navigation={navigation}
                 backIcon={true}
-                // logo={true}
+              // logo={true}
               />
             )}
           </View>

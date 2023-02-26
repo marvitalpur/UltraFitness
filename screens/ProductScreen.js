@@ -17,6 +17,8 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import RatingsItems from '../components/RatingsItems';
 import ButtonComponent from '../components/Button';
 import ButtonComponent2 from '../components/Botton2';
+import { FAB } from 'react-native-paper';
+
 
 const ProductScreen = ({ navigation, index }) => {
   const [count, setCount] = useState(0);
@@ -34,8 +36,8 @@ const ProductScreen = ({ navigation, index }) => {
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1, paddingHorizontal: 25 }}>
-          <Header backIcon navigation={navigation} />
+        <View style={{ paddingHorizontal: 15, width: '100%', height: '100%' }}>
+          <HeaderComponent navigation={navigation} />
           <View
             style={{
               flex: 1,
@@ -62,6 +64,7 @@ const ProductScreen = ({ navigation, index }) => {
                         marginRight: index % 5 == 2 ? 0 : 3,
                         marginLeft: index % 5 == 0 ? 0 : 3,
                       }}>
+
                       <Image
                         source={item.imageitem}
                         resizeMode="contain"
@@ -97,7 +100,9 @@ const ProductScreen = ({ navigation, index }) => {
               <Text style={[styles.CenterText, { color: '#000', fontSize: 16 }]}>
                 Reviews :
               </Text>
-              <RatingsItems />
+              <View style={{ marginTop: 7 }}>
+                <RatingsItems />
+              </View>
             </View>
             <Text
               style={[
@@ -112,7 +117,6 @@ const ProductScreen = ({ navigation, index }) => {
                 styles.subTitle,
                 {
                   color: '#000',
-                  paddingVertical: 10,
                   fontSize: 12,
                   fontWeight: '205',
                   opacity: 0.5,
@@ -136,35 +140,71 @@ const ProductScreen = ({ navigation, index }) => {
               flexDirection: 'row',
               marginTop: 10,
             }}>
-            <View style={{ flexDirection: 'row' }}>
-              <View style={{ paddingRight: 10 }}>
-                <ButtonComponent2
-                  buttonText=""
-                  icon={'minus'}
-                  buttonColor={'#fff'}
-                  textColor={Colors.secondary}
+
+            <View style={{ flexDirection: 'row', }}>
+              <View style={[styles.headerContainer, {
+                paddingRight: 10
+
+
+              }]}>
+                <FAB
+                  style={[
+                    styles.fab,
+                    {
+
+                      height: WIDTH < 375 ? 40 : 55,
+                      width: WIDTH < 375 ? 40 : 55,
+                    },
+                  ]}
+                  size="small"
+                  icon="minus"
+                  color={Colors.tertiary}
                   onPress={decrement}
-                  height={WIDTH <= 375 ? 40 : 55}
-                  width={WIDTH <= 375 ? 125 : 55}
                 />
+
+
               </View>
-              <ButtonComponent2
-                icon={'plus'}
-                buttonColor={'#fff'}
-                textColor={Colors.secondary}
-                onPress={increment}
-                height={WIDTH <= 375 ? 40 : 55}
-                width={WIDTH <= 375 ? 125 : 55}
-              />
+              <View style={[styles.headerContainer, {
+                justifyContent: 'space-around'
+
+              }]}>
+
+                <FAB
+                  style={[
+                    styles.fab,
+                    {
+                      height: WIDTH < 375 ? 40 : 55,
+                      width: WIDTH < 375 ? 40 : 55,
+                    },
+                  ]}
+                  size="small"
+                  icon="plus"
+                  color={Colors.tertiary}
+                  onPress={increment}
+                />
+
+              </View>
             </View>
-            <ButtonComponent2
-              buttonText={count}
-              buttonColor={Colors.primary}
-              textColor={'#000'}
-              onPress={() => navigation.navigate('Drawer')}
-              height={WIDTH <= 375 ? 40 : 55}
-              width={WIDTH <= 375 ? 125 : 189}
-            />
+            <View style={[styles.headerContainer, {
+              justifyContent: 'space-around'
+
+            }]}>
+
+
+            </View>
+
+            <View style={[styles.headerContainer, {
+              borderRadius: 10, justifyContent: 'center',
+              alignItems: 'center',
+              height: WIDTH < 375 ? 40 : 55,
+              width: WIDTH < 375 ? 125 : 189, backgroundColor: '#A1A1A1'
+            }]}
+            >
+              <Text>{count}</Text>
+            </View>
+
+
+
           </View>
           <View
             style={{
@@ -174,6 +214,7 @@ const ProductScreen = ({ navigation, index }) => {
               flexDirection: 'row',
               marginTop: 10,
             }}>
+
             <ButtonComponent2
               icon={'arrowleft'}
               buttonText="Back"
@@ -195,10 +236,29 @@ const ProductScreen = ({ navigation, index }) => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 };
 
+const HeaderComponent = ({ navigation }) => {
+  return (
+    <View style={styles.headerContainer}>
+      <FAB
+        style={[
+          styles.fab,
+          {
+            height: WIDTH < 375 ? 40 : 55,
+            width: WIDTH < 375 ? 40 : 55,
+          },
+        ]}
+        size="small"
+        icon="arrow-left"
+        color={Colors.tertiary}
+        onPress={() => navigation.goBack()}
+      />
+    </View>
+  );
+};
 export default ProductScreen;
 
 const styles = StyleSheet.create({
@@ -235,7 +295,22 @@ const styles = StyleSheet.create({
     fontWeight: 200,
     color: Colors.secondary,
     marginTop: 0,
-    marginBottom: 10,
+    // marginBottom: 10,
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingTop: 10,
+  },
+  fab: {
+    height: 55,
+    width: 55,
+    borderRadius: 5,
+    backgroundColor: '#fff',
+    // opacity: 0.06,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
@@ -244,3 +319,4 @@ const data = [
   { imageitem: Assets.cards.cardImage1 },
   { imageitem: Assets.cards.cardImage1 },
 ];
+

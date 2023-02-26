@@ -1,13 +1,14 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
-import {Fonts} from '../assets/constants/Fonts';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const ProductCard = ({name, image, description, price, index}) => {
+const ProductCard = ({ name, image, description, price, index }) => {
   console.log(image);
   return (
-    <View
+    <TouchableOpacity
       style={[
         styles.card,
         {
@@ -26,7 +27,7 @@ const ProductCard = ({name, image, description, price, index}) => {
           }}
         />
       </View>
-      <View style={{height: '55%'}}>
+      <View style={{ height: '55%' }}>
         <Text numberOfLines={1} style={styles.productName}>
           {name}
         </Text>
@@ -37,7 +38,7 @@ const ProductCard = ({name, image, description, price, index}) => {
           <Text style={styles.priceText}>${price}/kg</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -6,30 +6,74 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {FlatList} from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
 import ProductCard from './ProductCard';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {TouchableRipple} from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation } from '@react-navigation/native';
 
-const Products = ({navigation}) => {
-  const handlePress = ({onPress}) => {
+
+
+
+const Products = ({ }) => {
+  const navigation = useNavigation();
+  const data = [
     {
-      onPress;
-    }
-  };
+      name: 'product 1',
+      price: '36',
+      description: 'jkskbycsdubfg',
+      image: Assets.cards.cardImage1,
+      onPress: () => navigation.navigate('ProductSCreen')
+    },
+    {
+      name: 'product 1',
+      price: '36',
+      description: 'jkskbycsdubfg',
+      image: Assets.cards.cardImage2,
+      onPress: () => navigation.navigate('ProductSCreen')
+    },
+    {
+      name: 'product 1',
+      price: '36',
+      description: 'jkskbycsdubfg',
+      image: Assets.cards.cardImage3,
+      onPress: () => navigation.navigate('ProductSCreen')
+    },
+    {
+      name: 'product 1',
+      price: '36',
+      description: 'jkskbycsdubfg',
+      image: Assets.cards.cardImage4,
+      onPress: () => navigation.navigate('ProductSCreen')
+    },
+    {
+      name: 'product 1',
+      price: '36',
+      description: 'jkskbycsdubfg',
+      image: Assets.cards.cardImage5,
+      onPress: () => navigation.navigate('ProductSCreen')
+    },
+    {
+      name: 'product 1',
+      price: '36',
+      description: 'jkskbycsdubfg',
+      image: Assets.cards.cardImage6,
+      onPress: () => navigation.navigate('ProductSCreen')
+    },
+  ];
 
   return (
     <View>
       <View style={styles.header}>
-        <Text style={[styles.headerText, {width: '50%'}]}>
+        <Text style={[styles.headerText, { width: '50%' }]}>
           Get Something Special For You!
         </Text>
         <TouchableRipple>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Text
               style={
                 (styles.headerText,
@@ -51,12 +95,12 @@ const Products = ({navigation}) => {
           padding: 25,
         }}
         numColumns={2}
-        ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
-        renderItem={({item, index}) => (
+        ItemSeparatorComponent={<View style={{ marginVertical: 15 }} />}
+        renderItem={({ item, index }) => (
           <TouchableOpacity
-            onPress={handlePress}
+            onPress={item.onPress}
             activeOpacity={0.75}
-            style={{justifyContent: 'space-evenly', width: '50%'}}>
+            style={{ justifyContent: 'space-evenly', width: '50%' }}>
             <ProductCard
               index={index}
               name={item.name}
@@ -93,43 +137,3 @@ const styles = StyleSheet.create({
     height: '50%',
   },
 });
-
-var data = [
-  {
-    name: 'product 1',
-    price: '36',
-    description: 'jkskbycsdubfg',
-    image: Assets.cards.cardImage1,
-  },
-  {
-    name: 'product 1',
-    price: '36',
-    description: 'jkskbycsdubfg',
-    image: Assets.cards.cardImage2,
-  },
-  {
-    name: 'product 1',
-    price: '36',
-    description: 'jkskbycsdubfg',
-    image: Assets.cards.cardImage3,
-  },
-  {
-    name: 'product 1',
-    price: '36',
-    description: 'jkskbycsdubfg',
-    image: Assets.cards.cardImage4,
-  },
-  {
-    name: 'product 1',
-    price: '36',
-    description: 'jkskbycsdubfg',
-    image: Assets.cards.cardImage5,
-  },
-  {
-    name: 'product 1',
-    price: '36',
-    description: 'jkskbycsdubfg',
-    image: Assets.cards.cardImage6,
-    onPress: () => navigation.naviagate('ProductSCreen'),
-  },
-];
