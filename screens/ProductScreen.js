@@ -233,6 +233,7 @@ const ProductScreen = ({navigation, route, index}) => {
               justifyContent: 'space-between',
               flexDirection: 'row',
               paddingBottom: 15,
+              marginVertical: 5,
             }}>
             <ButtonComponent2
               icon={'arrowleft'}
