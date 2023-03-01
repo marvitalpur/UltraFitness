@@ -21,6 +21,7 @@ const ProductCardSm = ({img, text}) => {
   );
 };
 
+
 export default ProductCardSm;
 
 const styles = StyleSheet.create({

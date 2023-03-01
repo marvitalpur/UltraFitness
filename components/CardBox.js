@@ -34,7 +34,10 @@ const CardBox = props => {
         }}>
         <Text
           numberOfLines={2}
-          style={[styles.productName, {color: props.textcolor}]}>
+          style={[
+            styles.productName,
+            {color: props.textcolor, paddingHorizontal: 5},
+          ]}>
           {props.name}
         </Text>
         {props.ItemImage && (

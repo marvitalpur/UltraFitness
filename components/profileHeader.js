@@ -10,14 +10,14 @@ import {
   View,
   Image,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { Colors } from '../assets/constants/Colors';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import { Avatar, TouchableRipple } from 'react-native-paper';
-import { Fonts } from '../assets/constants/Fonts';
-import { EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
+import {Avatar, TouchableRipple} from 'react-native-paper';
+import {Fonts} from '../assets/constants/Fonts';
+import {BackSvg, EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
 import RatingsItems from './RatingsItems';
 
 const ProfileHeader = ({
@@ -32,20 +32,14 @@ const ProfileHeader = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={{ width: 375, height: 200, aspectRatio: 2 }}>
+      <View style={{width: 375, height: 200, aspectRatio: 2}}>
         <ImageBackground
           source={BGImage}
           resizeMode="cover"
           style={styles.image}>
-          <View style={{ paddingHorizontal: 10 }}>
+          <View style={{paddingHorizontal: 15, marginTop: 25}}>
             {header1 && <Header navigation={navigation} />}
-            {header2 && (
-              <Header
-                navigation={navigation}
-                backIcon={true}
-              // logo={true}
-              />
-            )}
+            {header2 && <HeaderComponent navigation={navigation} />}
           </View>
         </ImageBackground>
       </View>
@@ -149,6 +143,16 @@ const ProfileHeader = ({
     </View>
   );
 };
+const HeaderComponent = ({navigation}) => {
+  return (
+    <View style={styles.headerContainer}>
+      <TouchableRipple onPress={() => navigation.goBack()} style={styles.btn}>
+        <BackSvg />
+      </TouchableRipple>
+    </View>
+  );
+};
+
 export default ProfileHeader;
 const styles = StyleSheet.create({
   container: {
@@ -176,6 +180,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
     justifyContent: 'space-between',
+  },
+  btn: {
+    height: 50,
+    width: 50,
+    borderRadius: 10,
+    // marginLeft: 20,
+    // marginVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.secondary,
+    shadowColor: Colors.tertiary,
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15,
   },
 });
 const data = [

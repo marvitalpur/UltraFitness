@@ -33,7 +33,7 @@ import {
 } from '../assets/svgs/SearchIcon';
 import CardLG from '../components/CArdComponentLG';
 
-const Courses = ({navigation}) => {
+const CoursesScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -150,6 +150,7 @@ const Courses = ({navigation}) => {
               ItemSeparatorComponent={<View style={{}} />}
               renderItem={({item, index}) => (
                 <SessionCompo
+                  progresscompo
                   index={index}
                   name={item.name}
                   backgroundColor={item.backgroundColor}
@@ -168,7 +169,7 @@ const Courses = ({navigation}) => {
   );
 };
 
-export default Courses;
+export default CoursesScreen;
 
 const styles = StyleSheet.create({
   container: {

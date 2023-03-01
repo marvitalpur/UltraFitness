@@ -7,21 +7,23 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import RatingsItems from '../components/RatingsItems';
 import ButtonComponent from '../components/Button';
 import ButtonComponent2 from '../components/Botton2';
-import { FAB } from 'react-native-paper';
+import {FAB, TouchableRipple} from 'react-native-paper';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 
+const ProductScreen = ({navigation, route, index}) => {
+  const {ProductImaig1} = route.params;
 
-const ProductScreen = ({ navigation, index }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(5);
 
   const increment = () => {
     setCount(count + 1);
@@ -35,18 +37,30 @@ const ProductScreen = ({ navigation, index }) => {
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ paddingHorizontal: 15, width: '100%', height: '100%' }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View
+          style={{
+            paddingHorizontal: 15,
+            width: '100%',
+            height: '100%',
+            marginTop: 15,
+          }}>
           <HeaderComponent navigation={navigation} />
           <View
             style={{
               flex: 1,
               //   backgroundColor: 'green',
             }}>
-            <View style={{ alignSelf: 'center', paddingVertical: 15 }}>
+            <View style={{alignSelf: 'center'}}>
               <Image
-                source={Assets.cards.cardImage1}
-              // style={{width: 76, height: 76, padding: 4}}
+                source={ProductImaig1}
+                resizeMode="contain"
+                style={{
+                  height: WIDTH <= 375 ? 180 : 276,
+                  width: WIDTH <= 323 ? 180 : 276,
+                  marginRight: index % 5 == 2 ? 0 : 0,
+                  marginLeft: index % 5 == 0 ? 0 : 0,
+                }}
               />
             </View>
 
@@ -54,7 +68,7 @@ const ProductScreen = ({ navigation, index }) => {
               horizontal
               showsHorizontalScrollIndicator={true}
               data={data}
-              renderItem={({ item, index }) => {
+              renderItem={({item, index}) => {
                 return (
                   <>
                     <View
@@ -64,11 +78,10 @@ const ProductScreen = ({ navigation, index }) => {
                         marginRight: index % 5 == 2 ? 0 : 3,
                         marginLeft: index % 5 == 0 ? 0 : 3,
                       }}>
-
                       <Image
                         source={item.imageitem}
                         resizeMode="contain"
-                        style={{ width: '100%', height: '100%' }}
+                        style={{width: '100%', height: '100%'}}
                       />
                     </View>
                   </>
@@ -76,10 +89,10 @@ const ProductScreen = ({ navigation, index }) => {
               }}
             />
           </View>
-          <View style={{ flex: 1, paddingHorizontal: 5 }}>
+          <View style={{flex: 1, paddingHorizontal: 5}}>
             <View style={styles.ProductText}>
               <Text
-                style={[styles.CenterText, { width: '70%', color: '#00B4D8' }]}>
+                style={[styles.CenterText, {width: '70%', color: '#00B4D8'}]}>
                 Home Equipment Push Up Bars
               </Text>
 
@@ -96,18 +109,18 @@ const ProductScreen = ({ navigation, index }) => {
               </Text>
             </View>
 
-            <View style={{ flexDirection: 'row' }}>
-              <Text style={[styles.CenterText, { color: '#000', fontSize: 16 }]}>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
                 Reviews :
               </Text>
-              <View style={{ marginTop: 7 }}>
+              <View style={{marginTop: 7}}>
                 <RatingsItems />
               </View>
             </View>
             <Text
               style={[
                 styles.CenterText,
-                { color: '#000', fontSize: 16, marginTop: 5 },
+                {color: '#000', fontSize: 16, marginTop: 5},
               ]}
               numberOfLines={1}>
               Description :
@@ -127,7 +140,7 @@ const ProductScreen = ({ navigation, index }) => {
               nonumy eirmod tempor
             </Text>
             <Text
-              style={[styles.CenterText, { color: '#000', fontSize: 16 }]}
+              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
               numberOfLines={2}>
               Quantity:
             </Text>
@@ -140,71 +153,78 @@ const ProductScreen = ({ navigation, index }) => {
               flexDirection: 'row',
               marginTop: 10,
             }}>
-
-            <View style={{ flexDirection: 'row', }}>
-              <View style={[styles.headerContainer, {
-                paddingRight: 10
-
-
-              }]}>
+            <View style={{flexDirection: 'row'}}>
+              <View
+                style={[
+                  styles.headerContainer,
+                  {
+                    paddingRight: 10,
+                  },
+                ]}>
                 <FAB
                   style={[
                     styles.fab,
                     {
-
+                      opacity: 0.5,
+                      backgroundColor: '#707070',
                       height: WIDTH < 375 ? 40 : 55,
                       width: WIDTH < 375 ? 40 : 55,
+                      // color: '#0000',
                     },
                   ]}
                   size="small"
                   icon="minus"
-                  color={Colors.tertiary}
+                  color="black"
                   onPress={decrement}
                 />
-
-
               </View>
-              <View style={[styles.headerContainer, {
-                justifyContent: 'space-around'
-
-              }]}>
-
+              <View
+                style={[
+                  styles.headerContainer,
+                  {
+                    justifyContent: 'space-around',
+                  },
+                ]}>
                 <FAB
                   style={[
                     styles.fab,
                     {
+                      backgroundColor: Colors.primary,
                       height: WIDTH < 375 ? 40 : 55,
                       width: WIDTH < 375 ? 40 : 55,
                     },
                   ]}
                   size="small"
                   icon="plus"
-                  color={Colors.tertiary}
+                  color={'#fff'}
                   onPress={increment}
                 />
-
               </View>
             </View>
-            <View style={[styles.headerContainer, {
-              justifyContent: 'space-around'
+            <View
+              style={[
+                styles.headerContainer,
+                {
+                  justifyContent: 'space-around',
+                },
+              ]}></View>
 
-            }]}>
-
-
+            <View
+              style={[
+                styles.headerContainer,
+                {
+                  opacity: 0.25,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  color: '#0000',
+                  height: WIDTH < 375 ? 40 : 55,
+                  width: WIDTH < 375 ? 125 : 189,
+                  backgroundColor: '#A1A1A1',
+                },
+              ]}>
+              <Text style={{color: '#000'}}>{count}</Text>
             </View>
-
-            <View style={[styles.headerContainer, {
-              borderRadius: 10, justifyContent: 'center',
-              alignItems: 'center',
-              height: WIDTH < 375 ? 40 : 55,
-              width: WIDTH < 375 ? 125 : 189, backgroundColor: '#A1A1A1'
-            }]}
-            >
-              <Text>{count}</Text>
-            </View>
-
-
-
           </View>
           <View
             style={{
@@ -212,9 +232,8 @@ const ProductScreen = ({ navigation, index }) => {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexDirection: 'row',
-              marginTop: 10,
+              paddingBottom: 15,
             }}>
-
             <ButtonComponent2
               icon={'arrowleft'}
               buttonText="Back"
@@ -236,32 +255,27 @@ const ProductScreen = ({ navigation, index }) => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView >
+    </SafeAreaView>
   );
 };
 
-const HeaderComponent = ({ navigation }) => {
+const HeaderComponent = ({navigation}) => {
   return (
     <View style={styles.headerContainer}>
-      <FAB
-        style={[
-          styles.fab,
-          {
-            height: WIDTH < 375 ? 40 : 55,
-            width: WIDTH < 375 ? 40 : 55,
-          },
-        ]}
-        size="small"
-        icon="arrow-left"
-        color={Colors.tertiary}
-        onPress={() => navigation.goBack()}
-      />
+      <TouchableRipple onPress={() => navigation.goBack()} style={styles.btn}>
+        <BackSvg />
+      </TouchableRipple>
     </View>
   );
 };
 export default ProductScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.secondary,
+  },
+
   ProductText: {
     marginTop: WIDTH < 375 ? 25 : 18,
     marginBottom: 10,
@@ -312,11 +326,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  fabHeader: {
+    height: 50,
+    width: 50,
+    borderRadius: 10,
+    // marginLeft: 20,
+    // marginVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.secondary,
+    shadowColor: Colors.tertiary,
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+  },
+  btn: {
+    height: 50,
+    width: 50,
+    borderRadius: 10,
+    // marginLeft: 20,
+    // marginVertical: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.secondary,
+    shadowColor: Colors.tertiary,
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 5,
+  },
 });
 
 const data = [
-  { imageitem: Assets.cards.cardImage1 },
-  { imageitem: Assets.cards.cardImage1 },
-  { imageitem: Assets.cards.cardImage1 },
+  {imageitem: Assets.cards.cardImage1},
+  {imageitem: Assets.cards.cardImage1},
+  {imageitem: Assets.cards.cardImage1},
 ];
-

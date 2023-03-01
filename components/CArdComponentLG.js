@@ -16,7 +16,7 @@ const CardLG = props => {
     <View
       style={{
         backgroundColor: props.backgroundColor,
-        padding: 2.5,
+        padding: 3.5,
         flex: 1,
         borderRadius: 10,
         marginRight: index % 5 == 2 ? 0 : 3,
@@ -40,12 +40,16 @@ const CardLG = props => {
             alignItems: 'center',
             justifyContent: 'flex-start',
             // width: 100,
+
             // paddingLeft: 8,
           }}>
           <View style={{flex: 1, flexWrap: 'wrap'}}>
             <Text
               numberOfLines={2}
-              style={[styles.productName, {color: props.textcolor}]}>
+              style={[
+                styles.productName,
+                {color: props.textcolor, textAlign: 'center'},
+              ]}>
               {props.name}
             </Text>
           </View>
@@ -69,8 +73,8 @@ const styles = StyleSheet.create({
     padding: 2,
     borderRadius: 10,
     shadowColor: '#000',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
     shadowOffset: {
       width: 0,
       height: 7,
@@ -83,7 +87,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   productName: {
-    paddingHorizontal: 5,
+    // textAlign: 'center',
+    paddingHorizontal: 10,
     fontFamily: Fonts.default,
     fontWeight: '600',
     letterSpacing: 0.9,

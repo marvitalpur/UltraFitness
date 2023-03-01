@@ -1,16 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { TouchableRipple } from 'react-native-paper';
+import {TouchableRipple} from 'react-native-paper';
 import {
   BackSvg,
   LogoSvg,
   MenuSvg,
   NotificationSvg,
 } from '../assets/svgs/HeaderSvgs';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
 
-const Header = ({ logo, navigation, backIcon }) => {
+const Header = ({logo, navigation, backIcon}) => {
   return (
     <View style={styles.container}>
       <TouchableRipple
@@ -23,7 +23,7 @@ const Header = ({ logo, navigation, backIcon }) => {
       {/* <Text>Header</Text> */}
       {logo && <LogoSvg />}
       {backIcon ? (
-        <View style={{ width: 50, height: 50 }} />
+        <View style={{width: 50, height: 50}} />
       ) : (
         <TouchableRipple style={styles.btn}>
           <NotificationSvg />
