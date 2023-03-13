@@ -1,35 +1,28 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
 import {
-  FlatList,
-  ImageBackground,
+
   StyleSheet,
   Text,
   ScrollView,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Header from '../components/Header';
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
 import Assets from '../assets';
-import {Avatar, TouchableRipple} from 'react-native-paper';
-import {Fonts} from '../assets/constants/Fonts';
-import ButtonComponent from '../components/Button';
-import {EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
+import { Fonts } from '../assets/constants/Fonts';
 import CourseCard from '../components/CourseCard';
 import WorkOutCard from '../components/WorkOutCard';
 import GraphCompnent from '../components/GraphComponent';
 import ProfileHeader from '../components/profileHeader';
-const Profile = ({navigation, route}) => {
+const Profile = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, backgroundColor: 'blue'}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, backgroundColor: 'blue' }}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground1}
             avatarId={'Alen Matias'}
@@ -46,6 +39,7 @@ const Profile = ({navigation, route}) => {
             // height: HEIGHT / 6.1,
             // flexDirection: 'row',
             paddingHorizontal: 15,
+            backgroundColor: 'yellow',
             // alignSelf: 'center',
             // marginTop: 'auto',
             // paddingVertical: 10,

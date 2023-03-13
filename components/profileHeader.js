@@ -10,14 +10,14 @@ import {
   View,
   Image,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import {Avatar, TouchableRipple} from 'react-native-paper';
-import {Fonts} from '../assets/constants/Fonts';
-import {BackSvg, EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
+import { Avatar, TouchableRipple } from 'react-native-paper';
+import { Fonts } from '../assets/constants/Fonts';
+import { BackSvg, EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
 import RatingsItems from './RatingsItems';
 
 const ProfileHeader = ({
@@ -33,12 +33,12 @@ const ProfileHeader = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={{width: 375, height: 200, aspectRatio: 2}}>
+      <View style={{ flex: 1 }}>
         <ImageBackground
           source={BGImage}
           resizeMode="cover"
           style={styles.image}>
-          <View style={{padding: 25}}>
+          <View style={{ paddingHorizontal: 15 }}>
             {header1 && <Header navigation={navigation} />}
             {header2 && <HeaderComponent onPress={onPress} />}
           </View>
@@ -48,7 +48,8 @@ const ProfileHeader = ({
         style={{
           flex: 1,
           paddingHorizontal: 10,
-          marginTop: -18,
+          position: 'absolute',
+          top: 5
         }}>
         <View style={{}}>
           <View
@@ -150,9 +151,9 @@ const ProfileHeader = ({
     </View>
   );
 };
-const HeaderComponent = ({navigation, onPress}) => {
+const HeaderComponent = ({ navigation, onPress }) => {
   return (
-    <View style={styles.headerContainer}>
+    <View style={[styles.headerContainer, { paddingTop: 25 }]}>
       <TouchableRipple onPress={onPress} style={styles.btn}>
         <BackSvg />
       </TouchableRipple>
