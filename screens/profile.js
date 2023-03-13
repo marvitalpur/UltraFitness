@@ -9,27 +9,27 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { Colors } from '../assets/constants/Colors';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import { Avatar, TouchableRipple } from 'react-native-paper';
-import { Fonts } from '../assets/constants/Fonts';
+import {Avatar, TouchableRipple} from 'react-native-paper';
+import {Fonts} from '../assets/constants/Fonts';
 import ButtonComponent from '../components/Button';
-import { EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
+import {EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
 import CourseCard from '../components/CourseCard';
 import WorkOutCard from '../components/WorkOutCard';
 import GraphCompnent from '../components/GraphComponent';
 import ProfileHeader from '../components/profileHeader';
-const Profile = ({ navigation, route }) => {
+const Profile = ({navigation, route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{flex: 1, backgroundColor: 'blue'}}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground1}
             avatarId={'Alen Matias'}
@@ -39,48 +39,53 @@ const Profile = ({ navigation, route }) => {
             header1
           />
         </View>
-        <View style={{}}>
-          {/* Cards start */}
-          <View
-            style={{
-              height: HEIGHT / 6.1,
-              flexDirection: 'row',
-              paddingHorizontal: 15,
-              alignSelf: 'center',
-              marginTop: 'auto',
-              paddingVertical: 10,
-            }}>
-            <CourseCard
-              CourseName="Complete Course"
-              courseNumber="25"
-              totalCourse="Total Session in roll"
-              totalNumber="25"
-            />
-          </View>
-          <View
-            style={{
-              height: HEIGHT / 3.8,
-              flexDirection: 'row',
-              alignSelf: 'center',
-              marginTop: 'auto',
 
-              // backgroundColor: '#ffff',
-            }}>
-            <WorkOutCard />
-          </View>
+        <View
+          style={{
+            flex: 1,
+            // height: HEIGHT / 6.1,
+            // flexDirection: 'row',
+            paddingHorizontal: 15,
+            // alignSelf: 'center',
+            // marginTop: 'auto',
+            // paddingVertical: 10,
+            // backgroundColor: 'red',
+          }}>
+          <CourseCard
+            CourseName="Complete Course"
+            courseNumber="25"
+            totalCourse="Total Session in roll"
+            totalNumber="25"
+          />
+        </View>
+        <View
+          style={{
+            flex: 1,
+            padding: 5,
+            paddingTop: 15,
+            // backgroundColor: 'green',
+            // height: HEIGHT / 3.8,
+            // flexDirection: 'row',
+            // alignSelf: 'center',
+            marginTop: 'auto',
+            // backgroundColor: '#ffff',
+          }}>
+          <WorkOutCard />
+        </View>
 
-          <View
-            style={{
-              height: HEIGHT / 3.3,
-              // paddingBottom: 15,
-              flexDirection: 'row',
-              paddingHorizontal: 25,
-              marginTop: 15,
-              // paddingVertical: 10,
-              marginBottom: 25,
-            }}>
-            <GraphCompnent />
-          </View>
+        <View
+          style={{
+            flex: 1,
+            // backgroundColor: 'yellow',
+            // height: HEIGHT / 3.3,
+            // // paddingBottom: 15,
+            // flexDirection: 'row',
+            paddingHorizontal: 25,
+            // marginTop: 15,
+            // paddingVertical: 10,
+            // marginBottom: 25,
+          }}>
+          <GraphCompnent />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -91,6 +96,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.secondary,
+    paddingBottom: 'auto',
   },
   text: {
     fontFamily: Fonts.default,

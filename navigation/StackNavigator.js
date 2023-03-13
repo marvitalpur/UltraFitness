@@ -24,7 +24,6 @@ const StackNavigator = () => {
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="ProductSCreen" component={ProductScreen} />
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
-      <Stack.Screen name="Shope" component={Shope} />
     </Stack.Navigator>
   );
 };

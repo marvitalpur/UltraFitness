@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     top: -50,
-    left: 50,
+    left: 40,
   },
   logo: {
     width: WIDTH <= 375 ? 45 : 50,

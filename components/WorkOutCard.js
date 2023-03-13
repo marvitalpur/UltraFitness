@@ -8,8 +8,8 @@ import {
   FlatList,
 } from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { WIDTH } from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
+import {WIDTH} from '../assets/constants/Dimensions';
 const WorkOutCard = ({
   index,
   WorkoutImage,
@@ -23,18 +23,18 @@ const WorkOutCard = ({
 }) => {
   return (
     <View style={[]}>
-      <View style={styles.header}></View>
       <FlatList
         data={data}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
         contentContainerStyle={{
           // padding: 15,
-          paddingLeft: 25,
+          paddingLeft: 15,
           paddingBottom: 10,
+          // padding: 5,
         }}
-        ItemSeparatorComponent={<View style={{ paddingHorizontal: 15 }} />}
-        renderItem={({ item, index }) => (
+        ItemSeparatorComponent={<View style={{paddingHorizontal: 15}} />}
+        renderItem={({item, index}) => (
           <View
             style={[
               styles.card,
@@ -45,7 +45,7 @@ const WorkOutCard = ({
                 marginLeft: index % 2 == 0 ? 0 : 5,
               },
             ]}>
-            <View style={[styles.productImage, { paddingBottom: 10 }]}>
+            <View style={[styles.productImage, {paddingBottom: 10}]}>
               <Image
                 source={item.WorkoutImage}
                 resizeMode="contain"
@@ -70,7 +70,7 @@ const WorkOutCard = ({
               </Text>
               <Text
                 numberOfLines={1}
-                style={[styles.productName, { color: '#AAA', fontSize: 14 }]}>
+                style={[styles.productName, {color: '#AAA', fontSize: 14}]}>
                 {item.WorkoutTime}
               </Text>
             </View>
@@ -91,9 +91,10 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     // backgroundColor: '#FFFFFF',
     flex: 1,
-    height: 175,
+    // height: 175,
     backgroundColor: '#FFFFFF',
     padding: 10,
+    paddingTop: 25,
     borderRadius: 20,
     shadowColor: '#000',
     shadowOffset: {
@@ -102,11 +103,10 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
-
     elevation: 15,
   },
   productName: {
-    paddingTop: 15,
+    paddingTop: 5,
     // paddingLeft: -10,
     width: '100%',
     fontFamily: Fonts.default,

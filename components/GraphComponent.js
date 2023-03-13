@@ -14,8 +14,10 @@ const GraphCompnent = ({name, image, description, price, index}) => {
       style={[
         styles.card,
         {
+          paddingBottom: 5,
           marginRight: index % 2 == 10 ? 5 : 0,
           marginLeft: index % 2 == 10 ? 10 : 0,
+          // backgroundColor: 'red',
         },
       ]}>
       <>
@@ -23,7 +25,7 @@ const GraphCompnent = ({name, image, description, price, index}) => {
           <Text
             style={[
               styles.text,
-              
+
               {
                 color: Colors.tertiary,
                 opacity: 0.7,
@@ -44,9 +46,9 @@ const GraphCompnent = ({name, image, description, price, index}) => {
               },
             ],
           }}
-          width={Dimensions.get('window').width - 80}
-          // width={345}
-          height={158}
+          width={Dimensions.get('window').width - 50}
+          height={170}
+          // height={Dimensions.get('window').width}
           chartConfig={{
             backgroundColor: '#fff',
             backgroundGradientFrom: '#fff',
@@ -61,7 +63,6 @@ const GraphCompnent = ({name, image, description, price, index}) => {
             },
           }}
           style={{
-       
             borderRadius: 16,
             color: '#000',
           }}
@@ -75,33 +76,32 @@ export default GraphCompnent;
 
 const styles = StyleSheet.create({
   texline: {
-    width: '100%',
-    paddingHorizontal: 5,
-    marginBottom: 2,
+    // width: '100%',
+    paddingHorizontal: 15,
+    // marginBottom: 2,
     flexDirection: 'row',
-    alignSelf: 'center',
+    // alignSelf: 'center',
     justifyContent: 'space-between',
-    marginBottom: 8,
-    
+    // marginBottom: 8,
   },
   bannerSmallBox: {
     flex: 1,
     zIndex: 1,
     borderRadius: 20,
     overflow: 'hidden',
-    paddingBottom: 10,
+    paddingBottom: 15,
     backgroundColor: 'yellow',
     paddingVertical: 5,
   },
   card: {
     flex: 1,
     // height: 220,
-    backgroundColor: '#FFFFFF',
-    padding: 10,
+    backgroundColor: '#fff',
+    // paddingBottom: 5,
+    marginBottom: 'auto',
     // paddingTop: 5,
     borderRadius: 20,
     shadowColor: '#000',
-   
 
     shadowOffset: {
       width: 0,

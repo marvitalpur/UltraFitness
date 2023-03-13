@@ -30,7 +30,7 @@ const Home = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
         <View style={{flex: 1, paddingHorizontal: 25}}>
-          <Header navigation={navigation} />
+          <Header headercompo1 navigation={navigation} />
           <View style={{flexDirection: 'row', marginTop: 25}}>
             <View style={{alignItems: 'center'}}>
               <Lottie

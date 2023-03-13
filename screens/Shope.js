@@ -24,7 +24,7 @@ const Shope = ({navigation}) => {
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
             avatarName={'Rubel Muricio'}
-            navigation={navigation.goBack()}
+            onPress={() => navigation.goBack()}
             // EditIcon={true}
             header2
             rating
@@ -96,7 +96,7 @@ const Shope = ({navigation}) => {
                 color: Colors.tertiary,
                 opacity: 0.43,
                 paddingLeft: 15,
-                paddingTop: 20,
+                paddingTop: 10,
               }}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod.Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -105,14 +105,14 @@ const Shope = ({navigation}) => {
             <Text
               style={{
                 // textAlign: 'center',
-                paddingTop: 20,
+                paddingTop: 10,
                 marginTop: 'auto',
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
                 color: Colors.tertiary,
                 paddingLeft: 15,
-                marginVertical: 15,
+                // marginVertical: 15,
               }}>
               Schedule:
             </Text>

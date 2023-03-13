@@ -26,11 +26,7 @@ const ButtonComponent2 = ({
       onPress={onPress}
       style={[
         styles.container,
-        {
-          height: height,
-          width: width,
-          backgroundColor: buttonColor,
-        },
+        {height: height, width: width, backgroundColor: buttonColor},
       ]}>
       <View
         style={{

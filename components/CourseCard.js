@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
 
 const CourseCard = ({
   name,
@@ -27,7 +27,7 @@ const CourseCard = ({
       ]}>
       <View
         style={{
-          height: '50%',
+          // height: '50%',
           width: '45%',
           justifyContent: 'center',
           alignItems: 'center',
@@ -72,12 +72,14 @@ export default CourseCard;
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    height: 91,
+    // height: 91,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    // padding: 4,
+    // padding: 5,
     borderRadius: 20,
+    paddingTop: 15,
+    paddingBottom: 25,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -104,6 +106,5 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.default,
     fontWeight: '300',
     color: '#AAAAAA',
-    marginVertical: 10,
   },
 });

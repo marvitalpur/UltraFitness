@@ -118,10 +118,7 @@ const ProductScreen = ({navigation, route, index}) => {
               </View>
             </View>
             <Text
-              style={[
-                styles.CenterText,
-                {color: '#000', fontSize: 16, marginTop: 5},
-              ]}
+              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
               numberOfLines={1}>
               Description :
             </Text>
@@ -151,20 +148,28 @@ const ProductScreen = ({navigation, route, index}) => {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexDirection: 'row',
-              marginTop: 10,
+              // marginTop: 10,
+              // backgroundColor: 'pink',
             }}>
-            <View style={{flexDirection: 'row'}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                flex: 1,
+                justifyContent: 'space-between',
+              }}>
               <View
                 style={[
                   styles.headerContainer,
                   {
-                    paddingRight: 10,
+                    // paddingRight: 10,
+                    // backgroundColor: 'blue',
                   },
                 ]}>
                 <FAB
                   style={[
                     styles.fab,
                     {
+                      backgroundColor: 'red',
                       opacity: 0.5,
                       backgroundColor: '#707070',
                       height: WIDTH < 375 ? 40 : 55,
@@ -182,6 +187,7 @@ const ProductScreen = ({navigation, route, index}) => {
                 style={[
                   styles.headerContainer,
                   {
+                    // backgroundColor: 'green',
                     justifyContent: 'space-around',
                   },
                 ]}>
@@ -201,15 +207,18 @@ const ProductScreen = ({navigation, route, index}) => {
                 />
               </View>
             </View>
-            <View
-              style={[
-                styles.headerContainer,
-                {
-                  justifyContent: 'space-around',
-                },
-              ]}></View>
 
-            <View
+            <View style={{flex: 2, alignItems: 'flex-end'}}>
+              <ButtonComponent2
+                buttonText={count}
+                buttonColor={'#A1A1A1'}
+                textColor={'#444546'}
+                onPress={() => navigation.navigate('Drawer')}
+                height={WIDTH <= 375 ? 55 : 55}
+                width={WIDTH <= 375 ? 125 : 189}
+              />
+            </View>
+            {/* <View
               style={[
                 styles.headerContainer,
                 {
@@ -224,35 +233,32 @@ const ProductScreen = ({navigation, route, index}) => {
                 },
               ]}>
               <Text style={{color: '#000'}}>{count}</Text>
-            </View>
+            </View> */}
           </View>
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              paddingBottom: 15,
-              marginVertical: 5,
-            }}>
-            <ButtonComponent2
-              icon={'arrowleft'}
-              buttonText="Back"
-              buttonColor={'#000'}
-              textColor={'#fff'}
-              onPress={() => navigation.navigate('Drawer')}
-              height={WIDTH <= 375 ? 40 : 55}
-              width={WIDTH <= 375 ? 125 : 121}
-            />
-            <ButtonComponent2
-              icon={'shoppingcart'}
-              buttonText="Add to cart"
-              buttonColor={Colors.primary}
-              textColor={'#fff'}
-              onPress={() => navigation.navigate('Drawer')}
-              height={WIDTH <= 375 ? 40 : 55}
-              width={WIDTH <= 375 ? 125 : 189}
-            />
+
+          <View style={{flexDirection: 'row', paddingBottom: 20}}>
+            <View style={{flex: 1, alignItems: 'flex-start'}}>
+              <ButtonComponent2
+                icon={'arrowleft'}
+                buttonText="Back"
+                buttonColor={'#000'}
+                textColor={'#fff'}
+                onPress={() => navigation.navigate('Drawer')}
+                height={WIDTH <= 375 ? 40 : 68}
+                width={WIDTH <= 375 ? 125 : 121}
+              />
+            </View>
+            <View style={{flex: 1, alignItems: 'flex-end'}}>
+              <ButtonComponent2
+                icon={'shoppingcart'}
+                buttonText="Add to cart"
+                buttonColor={Colors.primary}
+                textColor={'#fff'}
+                onPress={() => navigation.navigate('Drawer')}
+                height={WIDTH <= 375 ? 40 : 68}
+                width={WIDTH <= 375 ? 125 : 189}
+              />
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -262,8 +268,18 @@ const ProductScreen = ({navigation, route, index}) => {
 
 const HeaderComponent = ({navigation}) => {
   return (
-    <View style={styles.headerContainer}>
-      <TouchableRipple onPress={() => navigation.goBack()} style={styles.btn}>
+    <View style={{}}>
+      <TouchableRipple
+        onPress={() => navigation.goBack()}
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: '#fff',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 10,
+          elevation: 15,
+        }}>
         <BackSvg />
       </TouchableRipple>
     </View>
@@ -316,7 +332,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: 10,
   },
   fab: {
     height: 55,

@@ -7,7 +7,6 @@ import {
   MenuSvg,
   NotificationSvg,
 } from '../assets/svgs/HeaderSvgs';
-import {WIDTH} from '../assets/constants/Dimensions';
 import {Colors} from '../assets/constants/Colors';
 
 const Header = ({logo, navigation, backIcon}) => {

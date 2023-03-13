@@ -29,6 +29,7 @@ const ProfileHeader = ({
   header1,
   header2,
   BGImage,
+  onPress,
 }) => {
   return (
     <View style={styles.container}>
@@ -37,9 +38,9 @@ const ProfileHeader = ({
           source={BGImage}
           resizeMode="cover"
           style={styles.image}>
-          <View style={{paddingHorizontal: 15, marginTop: 25}}>
+          <View style={{padding: 25}}>
             {header1 && <Header navigation={navigation} />}
-            {header2 && <HeaderComponent navigation={navigation} />}
+            {header2 && <HeaderComponent onPress={onPress} />}
           </View>
         </ImageBackground>
       </View>
@@ -123,7 +124,10 @@ const ProfileHeader = ({
               <TouchableRipple
                 style={{
                   paddingHorizontal: 10,
-                  marginTop: 45,
+                  // marginTop: 45,
+                  position: 'absolute',
+                  right: 0,
+                  top: 55,
                 }}>
                 <EditSvg />
               </TouchableRipple>
@@ -132,7 +136,10 @@ const ProfileHeader = ({
               <View
                 style={{
                   paddingLeft: 15,
-                  marginTop: 50,
+                  // marginTop: 50,
+                  position: 'absolute',
+                  marginTop: 55,
+                  right: 0,
                 }}>
                 <RatingsItems />
               </View>
@@ -143,10 +150,10 @@ const ProfileHeader = ({
     </View>
   );
 };
-const HeaderComponent = ({navigation}) => {
+const HeaderComponent = ({navigation, onPress}) => {
   return (
     <View style={styles.headerContainer}>
-      <TouchableRipple onPress={() => navigation.goBack()} style={styles.btn}>
+      <TouchableRipple onPress={onPress} style={styles.btn}>
         <BackSvg />
       </TouchableRipple>
     </View>

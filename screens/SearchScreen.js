@@ -92,26 +92,26 @@ const SearchScreen = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
         <View style={{flex: 1}}>
-          <View style={{paddingHorizontal: 15, marginTop: 25}}>
+          <View style={{padding: 25, flex: 1}}>
             <HeaderComponent navigation={navigation} />
           </View>
           <View
             style={{
               flexDirection: 'row',
-              marginTop: 25,
               paddingHorizontal: 25,
+              flex: 1,
             }}>
-            <View style={{width: '100%'}}>
+            <View style={{flex: 1}}>
               <Searcbar placeholder={'Search Mentor Here...'} />
             </View>
           </View>
 
           <View
             style={{
-              height: HEIGHT / 8.9,
-              flexDirection: 'row',
-              alignSelf: 'center',
-              marginTop: 15,
+              // height: HEIGHT / 8.9,
+              // flexDirection: 'row',
+              // alignSelf: 'center',
+
               paddingBottom: 25,
             }}>
             <FlatList
@@ -142,7 +142,7 @@ const SearchScreen = ({navigation}) => {
           <View
             style={{
               paddingHorizontal: 10,
-              marginTop: 5,
+
               paddingHorizontal: 15,
               marginVertica: 20,
             }}>
@@ -165,7 +165,8 @@ const SearchScreen = ({navigation}) => {
                   backgroundColor={item.backgroundColor}
                   textColor={item.textcolor}
                 />
-              )}></FlatList>
+              )}
+            />
           </View>
         </View>
       </ScrollView>
