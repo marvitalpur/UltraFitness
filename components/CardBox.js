@@ -36,7 +36,7 @@ const CardBox = props => {
           numberOfLines={2}
           style={[
             styles.productName,
-            {color: props.textcolor, paddingHorizontal: 5},
+            {color: props.textcolor, paddingHorizontal: 10},
           ]}>
           {props.name}
         </Text>

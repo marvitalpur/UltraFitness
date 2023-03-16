@@ -223,16 +223,16 @@ const SessionCompo = ({
                   flexDirection: 'row',
                   paddingRight: 15,
                 }}>
-                <Text style={[styles.progressName, {paddingRight: 5}]}>
-                  Reviews :
-                </Text>
+                <Text style={[styles.progressName, {}]}>Reviews :</Text>
                 <RatingsItems />
               </View>
-              <CardBox
-                name="Social Interection"
-                backgroundColor={backgroundColor}
-                textcolor={textColor}
-              />
+              <View style={{paddingHorizontal: 5}}>
+                <CardBox
+                  name="Social Interection"
+                  backgroundColor={backgroundColor}
+                  textcolor={textColor}
+                />
+              </View>
             </View>
           </View>
         </>

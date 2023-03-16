@@ -7,21 +7,21 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import RatingsItems from '../components/RatingsItems';
 import ButtonComponent from '../components/Button';
 import ButtonComponent2 from '../components/Botton2';
-import { FAB, TouchableRipple } from 'react-native-paper';
-import { BackSvg } from '../assets/svgs/HeaderSvgs';
+import {FAB, TouchableRipple} from 'react-native-paper';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 
-const ProductScreen = ({ navigation, route, index }) => {
-  const { ProductImaig1 } = route.params;
+const ProductScreen = ({navigation, route, index}) => {
+  const {ProductImaig1} = route.params;
 
   const [count, setCount] = useState(5);
 
@@ -32,12 +32,17 @@ const ProductScreen = ({ navigation, route, index }) => {
   const decrement = () => {
     setCount(count - 1);
   };
+  const data = [
+    {imageitem: ProductImaig1},
+    {imageitem: ProductImaig1},
+    {imageitem: ProductImaig1},
+  ];
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
         <View
           style={{
             paddingHorizontal: 15,
@@ -51,7 +56,7 @@ const ProductScreen = ({ navigation, route, index }) => {
               flex: 1,
               //   backgroundColor: 'green',
             }}>
-            <View style={{ alignSelf: 'center', padding: 25 }}>
+            <View style={{alignSelf: 'center', padding: 25}}>
               <Image
                 source={ProductImaig1}
                 resizeMode="contain"
@@ -68,7 +73,7 @@ const ProductScreen = ({ navigation, route, index }) => {
               horizontal
               showsHorizontalScrollIndicator={true}
               data={data}
-              renderItem={({ item, index }) => {
+              renderItem={({item, index}) => {
                 return (
                   <>
                     <View
@@ -77,12 +82,11 @@ const ProductScreen = ({ navigation, route, index }) => {
                         width: WIDTH <= 323 ? 233 : 76,
                         marginRight: index % 5 == 2 ? 0 : 3,
                         marginLeft: index % 5 == 0 ? 0 : 3,
-
                       }}>
                       <Image
                         source={item.imageitem}
                         resizeMode="contain"
-                        style={{ width: '100%', height: '100%' }}
+                        style={{width: '100%', height: '100%'}}
                       />
                     </View>
                   </>
@@ -90,10 +94,10 @@ const ProductScreen = ({ navigation, route, index }) => {
               }}
             />
           </View>
-          <View style={{ flex: 1, paddingHorizontal: 5 }}>
+          <View style={{flex: 1, paddingHorizontal: 5}}>
             <View style={styles.ProductText}>
               <Text
-                style={[styles.CenterText, { width: '70%', color: '#00B4D8' }]}>
+                style={[styles.CenterText, {width: '70%', color: '#00B4D8'}]}>
                 Home Equipment Push Up Bars
               </Text>
 
@@ -110,16 +114,16 @@ const ProductScreen = ({ navigation, route, index }) => {
               </Text>
             </View>
 
-            <View style={{ flexDirection: 'row' }}>
-              <Text style={[styles.CenterText, { color: '#000', fontSize: 16 }]}>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
                 Reviews :
               </Text>
-              <View style={{ marginTop: 7 }}>
+              <View style={{marginTop: 7}}>
                 <RatingsItems />
               </View>
             </View>
             <Text
-              style={[styles.CenterText, { color: '#000', fontSize: 16 }]}
+              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
               numberOfLines={1}>
               Description :
             </Text>
@@ -138,15 +142,16 @@ const ProductScreen = ({ navigation, route, index }) => {
               nonumy eirmod tempor
             </Text>
             <Text
-              style={[styles.CenterText, { color: '#000', fontSize: 16 }]}
+              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
               numberOfLines={2}>
               Quantity:
             </Text>
           </View>
           <View
             style={{
-              flex: 1, alignItems: 'flex-start', flexDirection: 'row',
-
+              flex: 1,
+              alignItems: 'flex-start',
+              flexDirection: 'row',
             }}>
             <View
               style={{
@@ -166,7 +171,6 @@ const ProductScreen = ({ navigation, route, index }) => {
                   style={[
                     styles.fab,
                     {
-
                       backgroundColor: 'red',
                       opacity: 0.5,
                       backgroundColor: '#707070',
@@ -207,8 +211,7 @@ const ProductScreen = ({ navigation, route, index }) => {
               </View>
             </View>
 
-
-            <View style={{ flex: 1, paddingLeft: 15 }}>
+            <View style={{flex: 1, paddingLeft: 25}}>
               <ButtonComponent2
                 buttonText={count}
                 buttonColor={'#A1A1A1'}
@@ -216,13 +219,12 @@ const ProductScreen = ({ navigation, route, index }) => {
                 onPress={() => navigation.navigate('Drawer')}
                 width={WIDTH <= 375 ? 198 : 198}
                 height={WIDTH <= 375 ? 55 : 68}
-
               />
             </View>
           </View>
-
-          <View style={{ paddingBottom: 20 }}>
-            <View style={{ flex: 1, alignItems: 'flex-start', flexDirection: 'row', }}>
+          <View style={{paddingBottom: 20}}>
+            <View
+              style={{flex: 1, alignItems: 'flex-start', flexDirection: 'row'}}>
               <ButtonComponent2
                 icon={'arrowleft'}
                 buttonText="Back"
@@ -233,20 +235,18 @@ const ProductScreen = ({ navigation, route, index }) => {
                 height={WIDTH <= 375 ? 55 : 68}
                 width={WIDTH <= 375 ? 125 : 121}
               />
-              <View style={{ flex: 1, paddingLeft: 15 }}>
+              <View style={{flex: 1, paddingLeft: 25}}>
                 <ButtonComponent2
                   icon={'shoppingcart'}
                   buttonText="Add to cart"
                   buttonColor={Colors.primary}
                   textColor={'#fff'}
                   onPress={() => navigation.navigate('Drawer')}
-                  height={WIDTH <= 375 ? 55 : 98}
+                  height={WIDTH <= 375 ? 55 : 68}
                   width={WIDTH <= 375 ? 198 : 198}
-
                 />
               </View>
             </View>
-
           </View>
         </View>
       </ScrollView>
@@ -254,7 +254,7 @@ const ProductScreen = ({ navigation, route, index }) => {
   );
 };
 
-const HeaderComponent = ({ navigation }) => {
+const HeaderComponent = ({navigation}) => {
   return (
     <View style={{}}>
       <TouchableRipple
@@ -282,7 +282,6 @@ const styles = StyleSheet.create({
   },
 
   ProductText: {
-
     paddingVertical: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -365,9 +364,3 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
-
-const data = [
-  { imageitem: Assets.cards.cardImage1 },
-  { imageitem: Assets.cards.cardImage1 },
-  { imageitem: Assets.cards.cardImage1 },
-];
