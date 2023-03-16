@@ -31,25 +31,24 @@ const Shope = ({navigation}) => {
           />
         </View>
 
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <View style={{flex: 1, top: 10}}>
+        <View style={{padding: 5
+        
+        }}>
+          <View style={{paddinTop: 15, paddingHorizontal: 15}}>
             <Text
               style={{
-                fontFamily: Fonts.default,
-                fontWeight: '600',
                 fontSize: 18,
-                color: Colors.tertiary,
-                paddingLeft: 15,
-                marginTop: 'auto',
-                marginBottom: 'auto',
-                // backgroundColor: 'red',
+                fontSize: 18,
+                marginVertical: 5,
+                fontWeight: 'bold',
+                color: '#000000',
               }}>
               Skills:
             </Text>
           </View>
           <View
             style={{
-              // height: HEIGHT / 8.9,
+              height: HEIGHT / 11.9,
               flex: 1,
               //   flexDirection: 'row',
               alignSelf: 'center',
@@ -80,11 +79,10 @@ const Shope = ({navigation}) => {
             <Text
               style={{
                 flex: 1,
-                // textAlign: 'center',
+
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
-                // paddingTop: 10,
                 color: Colors.tertiary,
                 paddingLeft: 15,
               }}>
@@ -98,8 +96,10 @@ const Shope = ({navigation}) => {
                 fontSize: 14,
                 color: Colors.tertiary,
                 opacity: 0.43,
-                paddingLeft: 15,
-                paddingTop: 15,
+                paddingHorizontal: 15,
+                padding: 5,
+                // paddingLeft: 15,
+                // paddingTop: 15,
               }}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod.Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -158,24 +158,20 @@ const Shope = ({navigation}) => {
           </View>
           <View
             style={{
-              height: WIDTH <= 375 ? 40 : 55,
-              width: WIDTH <= 323 ? 233 : 260,
-              marginTop: 10,
+              marginTop: 15,
               alignItems: 'center',
               justifyContent: 'center',
-              borderRadius: 20,
-              backgroundColor: Colors.primary,
-              alignSelf: 'center',
               marginBottom: 10,
             }}>
             <ButtonComponent
               icon1
+              borderRadius={14}
               buttonText="Book Appointment"
               buttonColor={Colors.primary}
               textColor={Colors.secondary}
               // onPress={() => navigation.goBack()}
-              height={WIDTH <= 375 ? 40 : 55}
-              width={WIDTH <= 323 ? 233 : 260}
+              height={WIDTH <= 375 ? 55 : 55}
+              width={WIDTH <= 323 ? 260 : 300}
             />
           </View>
         </View>

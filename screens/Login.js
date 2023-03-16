@@ -115,6 +115,7 @@ const Login = ({navigation}) => {
               justifyContent: 'space-evenly',
             }}>
             <ButtonComponent
+              borderRadius={50}
               buttonText="Login"
               buttonColor={Colors.primary}
               textColor={Colors.secondary}

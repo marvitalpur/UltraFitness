@@ -46,7 +46,6 @@ const ProfileHeader = ({
             style={{
               flex: 1,
               paddingHorizontal: 10,
-
               bottom: -110,
             }}>
             <View style={{}}>

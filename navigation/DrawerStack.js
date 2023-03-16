@@ -120,8 +120,9 @@ const CustomDrawerContent = props => {
             />
           )}
         />
-        <View style={{paddingLeft: 25}}>
+        <View style={{padding: 25}}>
           <ButtonComponent
+            borderRadius={50}
             icon="logout"
             buttonText="Logout"
             buttonColor={Colors.secondary}

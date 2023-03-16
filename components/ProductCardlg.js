@@ -47,9 +47,9 @@ const ProductCardlg = ({
           style={{
             height: WIDTH < 390 && WIDTH >= 375 ? 165 : WIDTH < 375 ? 135 : 200,
             position: 'absolute',
-            top: WIDTH < 390 && WIDTH >= 375 ? -35 : WIDTH < 375 ? -30 : -40,
+            top: WIDTH < 390 && WIDTH >= 375 ? -10 : WIDTH < 375 ? -10 : -40,
             right:
-              WIDTH < 390 && WIDTH >= 375 ? -140 : WIDTH < 375 ? -160 : -130,
+              WIDTH < 390 && WIDTH >= 375 ? -140 : WIDTH < 375 ? -140 : -130,
             zIndex: 10,
           }}
         />
@@ -135,7 +135,7 @@ const ProductCardlg = ({
               }}
               style={[
                 {
-                  marginTop: 15,
+                  marginTop: 25,
                   width: WIDTH < 375 ? 120 : 165,
                   height: WIDTH < 375 ? 40 : 54,
                 },

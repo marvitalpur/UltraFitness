@@ -18,6 +18,7 @@ const ButtonComponent = ({
   Icon1,
   SvgICon,
   paddingHorizontal,
+  borderRadius,
 }) => {
   return (
     <TouchableRipple
@@ -25,7 +26,12 @@ const ButtonComponent = ({
       onPress={onPress}
       style={[
         styles.container,
-        {height: height, width: width, backgroundColor: buttonColor},
+        {
+          height: height,
+          width: width,
+          backgroundColor: buttonColor,
+          borderRadius: borderRadius
+        },
       ]}>
       <View
         style={{

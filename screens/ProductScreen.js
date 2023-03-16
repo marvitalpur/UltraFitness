@@ -45,10 +45,12 @@ const ProductScreen = ({navigation, route, index}) => {
         contentContainerStyle={{flexGrow: 1}}>
         <View
           style={{
-            paddingHorizontal: 15,
+            paddingTop: 25,
+            padding: 15,
+            // paddingHorizontal: 15,
             width: '100%',
             height: '100%',
-            marginTop: 15,
+            // marginTop: 15,
           }}>
           <HeaderComponent navigation={navigation} />
           <View
@@ -94,31 +96,36 @@ const ProductScreen = ({navigation, route, index}) => {
               }}
             />
           </View>
-          <View style={{flex: 1, paddingHorizontal: 5}}>
-            <View style={styles.ProductText}>
-              <Text
-                style={[styles.CenterText, {width: '70%', color: '#00B4D8'}]}>
-                Home Equipment Push Up Bars
-              </Text>
+          <View style={{}}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <View>
+                <Text style={[styles.CenterText, {color: '#00B4D8'}]}>
+                  Home Equipment {'\n'}Push Up Bars
+                </Text>
+              </View>
 
-              <Text
-                style={[
-                  styles.PriceText,
-                  {
-                    color: '#000',
-                    fontFamily: Fonts.default,
-                    marginRight: 5,
-                  },
-                ]}>
-                120s
-              </Text>
+              <View style={{}}>
+                <Text
+                  style={[
+                    // styles.PriceText,
+                    {
+                      fontSize: 42,
+                      color: '#000',
+                      fontFamily: Fonts.default,
+                      // marginRight: 5,
+                    },
+                  ]}>
+                  120<Text style={{fontSize: 20}}>$</Text>
+                </Text>
+              </View>
             </View>
 
             <View style={{flexDirection: 'row'}}>
               <Text style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
                 Reviews :
               </Text>
-              <View style={{marginTop: 7}}>
+              <View style={{marginTop: 3}}>
                 <RatingsItems />
               </View>
             </View>
@@ -135,6 +142,7 @@ const ProductScreen = ({navigation, route, index}) => {
                   fontSize: 12,
                   fontWeight: '205',
                   opacity: 0.5,
+                  paddingTop: 4,
                 },
               ]}
               numberOfLines={2}>
@@ -142,14 +150,23 @@ const ProductScreen = ({navigation, route, index}) => {
               nonumy eirmod tempor
             </Text>
             <Text
-              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
+              style={[
+                styles.CenterText,
+                {
+                  color: '#000',
+                  fontSize: 16,
+                  paddingVertical: 10,
+                  paddingTop: 15,
+                },
+              ]}
               numberOfLines={2}>
               Quantity:
             </Text>
           </View>
           <View
             style={{
-              flex: 1,
+              // flex: 1,
+              paddingVertical: 15,
               alignItems: 'flex-start',
               flexDirection: 'row',
             }}>
@@ -173,7 +190,7 @@ const ProductScreen = ({navigation, route, index}) => {
                     {
                       backgroundColor: 'red',
                       opacity: 0.5,
-                      backgroundColor: '#707070',
+                      backgroundColor: '#7E7C7B30',
                       height: WIDTH < 375 ? 55 : 55,
                       width: WIDTH < 375 ? 55 : 55,
                       // color: '#0000',
@@ -211,10 +228,10 @@ const ProductScreen = ({navigation, route, index}) => {
               </View>
             </View>
 
-            <View style={{flex: 1, paddingLeft: 25}}>
+            <View style={{flex: 1, paddingLeft: 5}}>
               <ButtonComponent2
                 buttonText={count}
-                buttonColor={'#A1A1A1'}
+                buttonColor={'#7E7C7B30'}
                 textColor={'#444546'}
                 onPress={() => navigation.navigate('Drawer')}
                 width={WIDTH <= 375 ? 198 : 198}
@@ -222,7 +239,7 @@ const ProductScreen = ({navigation, route, index}) => {
               />
             </View>
           </View>
-          <View style={{paddingBottom: 20}}>
+          <View style={{paddingBottom: 15}}>
             <View
               style={{flex: 1, alignItems: 'flex-start', flexDirection: 'row'}}>
               <ButtonComponent2
@@ -235,7 +252,7 @@ const ProductScreen = ({navigation, route, index}) => {
                 height={WIDTH <= 375 ? 55 : 68}
                 width={WIDTH <= 375 ? 125 : 121}
               />
-              <View style={{flex: 1, paddingLeft: 25}}>
+              <View style={{flex: 1, paddingLeft: 5}}>
                 <ButtonComponent2
                   icon={'shoppingcart'}
                   buttonText="Add to cart"
@@ -294,10 +311,11 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.default,
     color: Colors.tertiary,
     lineHeight: 22,
+    // paddingVertical: 5,
     // marginTop: 5,
   },
   PriceText: {
-    fontSize: 22,
+    fontSize: 42,
     // height: '55%',
     fontWeight: 'bold',
     fontFamily: Fonts.default,

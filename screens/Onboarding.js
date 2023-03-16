@@ -362,6 +362,7 @@ const Indicators = ({
           />
         </Animated.View>
         <ButtonComponent
+          borderRadius={50}
           buttonText="Next"
           icon="arrow-right"
           buttonColor={Colors.secondary}

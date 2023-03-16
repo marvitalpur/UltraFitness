@@ -143,7 +143,6 @@ const SearchScreen = ({navigation}) => {
           <View
             style={{
               paddingHorizontal: 10,
-
               paddingHorizontal: 15,
               marginVertica: 20,
             }}>

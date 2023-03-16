@@ -218,15 +218,15 @@ const SessionCompo = ({
               }}>
               <View
                 style={{
-                  marginTop: 20,
-                  marginVertical: 10,
+                  // marginTop: 20,
+                  // marginVertical: 10,
                   flexDirection: 'row',
                   paddingRight: 15,
                 }}>
                 <Text style={[styles.progressName, {}]}>Reviews :</Text>
                 <RatingsItems />
               </View>
-              <View style={{paddingHorizontal: 5}}>
+              <View style={{}}>
                 <CardBox
                   name="Social Interection"
                   backgroundColor={backgroundColor}

@@ -17,8 +17,7 @@ const CardBox = props => {
       style={[
         styles.card,
         {
-          marginTop: 5,
-          marginBottom: 5,
+          paddingBottom: 10,
           backgroundColor: props.backgroundColor,
           marginRight: index % 5 == 2 ? 0 : 4,
           marginLeft: index % 5 == 0 ? 0 : 4,
@@ -36,7 +35,7 @@ const CardBox = props => {
           numberOfLines={2}
           style={[
             styles.productName,
-            {color: props.textcolor, paddingHorizontal: 10},
+            {color: props.textcolor, paddingHorizontal: 5},
           ]}>
           {props.name}
         </Text>
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 46,
     // backgroundColor: '#FFFFFF',
-    padding: 2,
+    padding: 3,
     borderRadius: 5,
     shadowColor: '#000',
     justifyContent: 'center',

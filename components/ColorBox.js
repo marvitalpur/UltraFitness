@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
       width: 0,
       height: 7,
     },
-    // shadowOpacity: 0.43,
-    // shadowRadius: 9.51,
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
 
-    // elevation: 15,
+    elevation: 15,
   },
   card2: {
     // width: 55,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
 
-    elevation: 15,
+    // elevation: 15,
   },
   productImage: {
     height: '45%',
