@@ -15,7 +15,7 @@ const Searcbar = ({setIsTyping, text, setText, onPressLeft, placeholder}) => {
           }}>
           <TextInput
             onSubmitEditing={() => setIsTyping(true)}
-            autoFocus={true}
+            autoFocus={false}
             placeholder={placeholder}
             placeholderTextColor={'rgba(50, 50, 50, 0.5)'}
             value={text}

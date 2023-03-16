@@ -46,10 +46,7 @@ const CardLG = props => {
           <View style={{flex: 1, flexWrap: 'wrap'}}>
             <Text
               numberOfLines={2}
-              style={[
-                styles.productName,
-                {color: props.textcolor, textAlign: 'center'},
-              ]}>
+              style={[styles.productName, {color: props.textcolor}]}>
               {props.name}
             </Text>
           </View>
@@ -70,7 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 46,
     // backgroundColor: '#FFFFFF',
-    padding: 2,
+    padding: 1,
     borderRadius: 10,
     shadowColor: '#000',
     // justifyContent: 'center',

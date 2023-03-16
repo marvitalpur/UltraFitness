@@ -10,14 +10,14 @@ import {
   View,
   Image,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { Colors } from '../assets/constants/Colors';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import { Avatar, TouchableRipple } from 'react-native-paper';
-import { Fonts } from '../assets/constants/Fonts';
-import { BackSvg, EditSvg, NotificationSvg } from '../assets/svgs/HeaderSvgs';
+import {Avatar, TouchableRipple} from 'react-native-paper';
+import {Fonts} from '../assets/constants/Fonts';
+import {BackSvg, EditSvg, NotificationSvg} from '../assets/svgs/HeaderSvgs';
 import RatingsItems from './RatingsItems';
 
 const ProfileHeader = ({
@@ -33,127 +33,127 @@ const ProfileHeader = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={{ flex: 1 }}>
+      <View style={{flex: 1}}>
         <ImageBackground
           source={BGImage}
           resizeMode="cover"
           style={styles.image}>
-          <View style={{ paddingHorizontal: 15 }}>
+          <View style={{paddingHorizontal: 15}}>
             {header1 && <Header navigation={navigation} />}
             {header2 && <HeaderComponent onPress={onPress} />}
           </View>
-        </ImageBackground>
-      </View>
-      <View
-        style={{
-          flex: 1,
-          paddingHorizontal: 10,
-          position: 'absolute',
-          top: 5
-        }}>
-        <View style={{}}>
           <View
             style={{
-              overflow: 'visible',
-              // marginTop: 40,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
+              flex: 1,
+              paddingHorizontal: 10,
+
+              bottom: -110,
             }}>
-            <View
-              style={{
-                width: 200,
-                marginBottom: 2,
-                flexDirection: 'row',
-              }}>
-              <TouchableOpacity
-                //   onPress={() => props.navigation.navigate('Profile')}
-                style={{
-                  width: 100,
-                  height: 100,
-                  borderWidth: 2,
-                  borderColor: Colors.primary,
-                  borderRadius: 100,
-                }}>
-                <Avatar.Image
-                  size={90}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: 100,
-                    backgroundColor: 'transparent',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                  source={Assets.logos.avatarPlaceholder}
-                />
-              </TouchableOpacity>
+            <View style={{}}>
               <View
                 style={{
-                  paddingHorizontal: 5,
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  overflow: 'visible',
+                  // marginTop: 40,
+                  flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginTop: 45,
-                  //   width: 100,
-                  marginBottom: 25,
-                  //   flexDirection: 'row',
                 }}>
-                <Text
+                <View
                   style={{
-                    textAlign: 'center',
-                    fontFamily: Fonts.default,
-                    fontWeight: '600',
-                    fontSize: 18,
-                    color: Colors.tertiary,
+                    width: 200,
+                    marginBottom: 2,
+                    flexDirection: 'row',
                   }}>
-                  {avatarName}
-                </Text>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    fontFamily: Fonts.default,
-                    fontWeight: '600',
-                    fontSize: 16,
-                    color: Colors.tertiary,
-                    opacity: 0.43,
-                  }}>
-                  {avatarId}
-                </Text>
+                  <TouchableOpacity
+                    //   onPress={() => props.navigation.navigate('Profile')}
+                    style={{
+                      width: 100,
+                      height: 100,
+                      borderWidth: 2,
+                      borderColor: Colors.primary,
+                      borderRadius: 100,
+                    }}>
+                    <Avatar.Image
+                      size={90}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 100,
+                        backgroundColor: 'transparent',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                      source={Assets.logos.avatarPlaceholder}
+                    />
+                  </TouchableOpacity>
+                  <View
+                    style={{
+                      paddingHorizontal: 5,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      marginTop: 45,
+                      //   width: 100,
+                      marginBottom: 25,
+                      //   flexDirection: 'row',
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        fontFamily: Fonts.default,
+                        fontWeight: '600',
+                        fontSize: 18,
+                        color: Colors.tertiary,
+                      }}>
+                      {avatarName}
+                    </Text>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        fontFamily: Fonts.default,
+                        fontWeight: '600',
+                        fontSize: 16,
+                        color: Colors.tertiary,
+                        opacity: 0.43,
+                      }}>
+                      {avatarId}
+                    </Text>
+                  </View>
+                </View>
+                {EditIcon && (
+                  <TouchableRipple
+                    style={{
+                      paddingHorizontal: 10,
+                      // marginTop: 45,
+                      position: 'absolute',
+                      right: 0,
+                      top: 55,
+                    }}>
+                    <EditSvg />
+                  </TouchableRipple>
+                )}
+                {rating && (
+                  <View
+                    style={{
+                      paddingLeft: 15,
+                      // marginTop: 50,
+                      position: 'absolute',
+                      marginTop: 55,
+                      right: 0,
+                    }}>
+                    <RatingsItems />
+                  </View>
+                )}
               </View>
             </View>
-            {EditIcon && (
-              <TouchableRipple
-                style={{
-                  paddingHorizontal: 10,
-                  // marginTop: 45,
-                  position: 'absolute',
-                  right: 0,
-                  top: 55,
-                }}>
-                <EditSvg />
-              </TouchableRipple>
-            )}
-            {rating && (
-              <View
-                style={{
-                  paddingLeft: 15,
-                  // marginTop: 50,
-                  position: 'absolute',
-                  marginTop: 55,
-                  right: 0,
-                }}>
-                <RatingsItems />
-              </View>
-            )}
           </View>
-        </View>
+        </ImageBackground>
       </View>
     </View>
   );
 };
-const HeaderComponent = ({ navigation, onPress }) => {
+const HeaderComponent = ({navigation, onPress}) => {
   return (
-    <View style={[styles.headerContainer, { paddingTop: 25 }]}>
+    <View style={[styles.headerContainer, {paddingTop: 25}]}>
       <TouchableRipple onPress={onPress} style={styles.btn}>
         <BackSvg />
       </TouchableRipple>

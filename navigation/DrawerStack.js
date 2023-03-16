@@ -163,7 +163,7 @@ const SidebarButton = ({
         shadowOpacity: 0.43,
         shadowRadius: 9.51,
 
-        elevation: 12,
+        // elevation: 12,
       }}>
       <View
         style={{

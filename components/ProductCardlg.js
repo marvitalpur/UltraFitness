@@ -19,22 +19,41 @@ const ProductCardlg = ({
   BoxtbtnText,
   BoxtText1,
   BoxtText2,
+  image1,
+  image2,
   onPress,
 }) => {
   const navigation = useNavigation();
   return (
     <View style={{flex: 1}}>
-      <Image
-        source={CardImageBG}
-        resizeMode="contain"
-        style={{
-          height: WIDTH < 390 && WIDTH >= 375 ? 165 : WIDTH < 375 ? 135 : 200,
-          position: 'absolute',
-          top: WIDTH < 390 && WIDTH >= 375 ? -35 : WIDTH < 375 ? -30 : -40,
-          right: WIDTH < 390 && WIDTH >= 375 ? -170 : WIDTH < 375 ? -180 : -160,
-          zIndex: 10,
-        }}
-      />
+      {image1 && (
+        <Image
+          source={CardImageBG}
+          resizeMode="contain"
+          style={{
+            height: WIDTH < 390 && WIDTH >= 375 ? 165 : WIDTH < 375 ? 135 : 200,
+            position: 'absolute',
+            top: WIDTH < 390 && WIDTH >= 375 ? -35 : WIDTH < 375 ? -30 : -40,
+            right:
+              WIDTH < 390 && WIDTH >= 375 ? -170 : WIDTH < 375 ? -180 : -160,
+            zIndex: 10,
+          }}
+        />
+      )}
+      {image2 && (
+        <Image
+          source={CardImageBG}
+          resizeMode="contain"
+          style={{
+            height: WIDTH < 390 && WIDTH >= 375 ? 165 : WIDTH < 375 ? 135 : 200,
+            position: 'absolute',
+            top: WIDTH < 390 && WIDTH >= 375 ? -35 : WIDTH < 375 ? -30 : -40,
+            right:
+              WIDTH < 390 && WIDTH >= 375 ? -140 : WIDTH < 375 ? -160 : -130,
+            zIndex: 10,
+          }}
+        />
+      )}
       <View
         style={{
           flex: 1,
@@ -114,14 +133,20 @@ const ProductCardlg = ({
               onPress={() => {
                 navigation.navigate('SearchScreen');
               }}
-              style={[styles.btn, {borderRadius: 100}]}>
+              style={[
+                {
+                  marginTop: 15,
+                  width: WIDTH < 375 ? 120 : 165,
+                  height: WIDTH < 375 ? 40 : 54,
+                },
+              ]}>
               <View
                 style={{
-                  width: '100%',
-                  height: '100%',
+                  padding: 5,
                   flexDirection: 'row',
                   alignItems: 'center',
-                  justifyContent: 'flex-start',
+                  justifyContent: 'space-between',
+
                   backgroundColor: '#ffff',
                   borderRadius: 100,
                 }}>

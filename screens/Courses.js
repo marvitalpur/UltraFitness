@@ -86,6 +86,7 @@ const CoursesScreen = ({navigation}) => {
                 // paddingHorizontal: 10
               }}>
               <ProductCardlg
+                image2
                 BtnTouchable2
                 CardImageBG={Assets.cards.cardImage9}
                 CardImageBGMain={Assets.cards.cardImage11}
@@ -110,7 +111,8 @@ const CoursesScreen = ({navigation}) => {
               showsHorizontalScrollIndicator={false}
               horizontal={true}
               contentContainerStyle={{
-                paddingHorizontal: 12,
+                flexGrow: 1,
+                paddingHorizontal: 15,
                 // marginBottom: -15,
               }}
               ItemSeparatorComponent={<View style={{}} />}
@@ -138,13 +140,16 @@ const CoursesScreen = ({navigation}) => {
             <Text style={styles.text}>Current Sessions:</Text>
           </View>
           <View
-            style={{
-              paddingHorizontal: 15,
-            }}>
+            style={
+              {
+                // paddingHorizontal: 15,
+              }
+            }>
             <FlatList
               data={data}
               contentContainerStyle={{
                 // padding: 25,
+                flexGrow: 1,
                 marginTop: 10,
               }}
               ItemSeparatorComponent={<View style={{}} />}

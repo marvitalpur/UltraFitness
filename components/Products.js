@@ -22,61 +22,67 @@ const Products = ({}) => {
     {
       name: 'product 1',
       price: '36',
-      description: 'jkskbycsdubfg',
+      description: 'Home Equipment',
       image: Assets.cards.cardImage1,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
           ProductImaig1: Assets.cards.cardImage1,
+          ItemImaig1: Assets.cards.cardImage1,
         }),
     },
     {
       name: 'product 1',
       price: '36',
-      description: 'jkskbycsdubfg',
+      description: 'Home Equipment',
       image: Assets.cards.cardImage2,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
           ProductImaig1: Assets.cards.cardImage2,
+          ItemImaig1: Assets.cards.cardImage2,
         }),
     },
     {
       name: 'product 1',
       price: '36',
-      description: 'jkskbycsdubfg',
+      description: 'Home Equipment',
       image: Assets.cards.cardImage3,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
           ProductImaig1: Assets.cards.cardImage3,
+          ItemImaig1: Assets.cards.cardImage3,
         }),
     },
     {
       name: 'product 1',
       price: '36',
-      description: 'jkskbycsdubfg',
+      description: 'Home Equipment',
       image: Assets.cards.cardImage4,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
           ProductImaig1: Assets.cards.cardImage4,
+          ItemImaig1: Assets.cards.cardImage4,
         }),
     },
     {
       name: 'product 1',
       price: '36',
-      description: 'jkskbycsdubfg',
+      description: 'Home Equipment',
       image: Assets.cards.cardImage5,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
           ProductImaig1: Assets.cards.cardImage5,
+          ItemImaig1: Assets.cards.cardImage5,
         }),
     },
     {
       name: 'product 1',
       price: '36',
-      description: 'jkskbycsdubfg',
+      description: 'Home Equipment',
       image: Assets.cards.cardImage6,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
           ProductImaig1: Assets.cards.cardImage6,
+          ItemImaig1: Assets.cards.cardImage6,
         }),
     },
   ];

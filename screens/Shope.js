@@ -1,25 +1,25 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
-import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
+import {StyleSheet, Text, ScrollView, View, FlatList} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 import ProfileHeader from '../components/profileHeader';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { TouchableRipple } from 'react-native-paper';
-import { EditSvg } from '../assets/svgs/HeaderSvgs';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {TouchableRipple} from 'react-native-paper';
+import {EditSvg} from '../assets/svgs/HeaderSvgs';
 import ButtonComponent from '../components/Button';
 import ColorBox from '../components/ColorBox';
 import CardBox from '../components/CardBox';
-const Shope = ({ navigation }) => {
+const Shope = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1, }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{flex: 1}}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
@@ -29,13 +29,10 @@ const Shope = ({ navigation }) => {
             header2
             rating
           />
-          <View
-            style={
-              {
-                // width: '90%',
-                // paddingLeft: 10,
-              }
-            }>
+        </View>
+
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <View style={{flex: 1, top: 10}}>
             <Text
               style={{
                 fontFamily: Fonts.default,
@@ -44,38 +41,45 @@ const Shope = ({ navigation }) => {
                 color: Colors.tertiary,
                 paddingLeft: 15,
                 marginTop: 'auto',
-                paddingBottom: 5,
+                marginBottom: 'auto',
+                // backgroundColor: 'red',
               }}>
               Skills:
             </Text>
-            <View
-              style={{
-                height: HEIGHT / 9.6,
-                //   flexDirection: 'row',
-                alignSelf: 'center',
-                marginTop: 'auto',
-              }}>
-              <FlatList
-                data={data}
-                showsHorizontalScrollIndicator={false}
-                horizontal={true}
-                contentContainerStyle={{
-                  // paddingVertical: 5,
-                  // padding: 10,
-                  paddingLeft: 15,
-                }}
-                ItemSeparatorComponent={<View style={{}} />}
-                renderItem={({ item, index }) => (
-                  <CardBox
-                    name={item.name}
-                    backgroundColor={item.backgroundColor}
-                    textcolor={item.textcolor}
-                  />
-                )}
-              />
-            </View>
+          </View>
+          <View
+            style={{
+              // height: HEIGHT / 8.9,
+              flex: 1,
+              //   flexDirection: 'row',
+              alignSelf: 'center',
+              marginTop: 'auto',
+              // paddingBottom: 10,
+              // backgroundColor: 'green',
+            }}>
+            <FlatList
+              data={data}
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              contentContainerStyle={{
+                // paddingVertical: 5,
+                // padding: 10,
+                paddingLeft: 15,
+              }}
+              ItemSeparatorComponent={<View style={{}} />}
+              renderItem={({item, index}) => (
+                <CardBox
+                  name={item.name}
+                  backgroundColor={item.backgroundColor}
+                  textcolor={item.textcolor}
+                />
+              )}
+            />
+          </View>
+          <View style={{}}>
             <Text
               style={{
+                flex: 1,
                 // textAlign: 'center',
                 fontFamily: Fonts.default,
                 fontWeight: '600',
@@ -92,88 +96,87 @@ const Shope = ({ navigation }) => {
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 14,
-                paddingTop: 5,
                 color: Colors.tertiary,
                 opacity: 0.43,
                 paddingLeft: 15,
-                paddingTop: 10,
+                paddingTop: 15,
               }}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod.Lorem ipsum dolor sit amet, consetetur sadipscing
               elitr, sed diam nonumy eirmod.
             </Text>
+          </View>
+          <Text
+            style={{
+              // textAlign: 'center',
+              marginTop: 'auto',
+              fontFamily: Fonts.default,
+              fontWeight: '600',
+              fontSize: 18,
+              color: Colors.tertiary,
+              paddingLeft: 15,
+              // marginVertical: 15,
+              paddingTop: 5,
+            }}>
+            Schedule:
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingTop: 10,
+              paddingLeft: 15,
+            }}>
             <Text
               style={{
                 // textAlign: 'center',
-                paddingTop: 10,
-                marginTop: 'auto',
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
                 color: Colors.tertiary,
-                paddingLeft: 15,
-                // marginVertical: 15,
+                alignSelf: 'flex-start',
               }}>
-              Schedule:
+              August 2023
             </Text>
-            <View
+            <TouchableRipple
               style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                paddingVertical: 5,
-                paddingLeft: 15,
+                paddingHorizontal: 10,
+                //   marginTop: 45,
               }}>
-              <Text
-                style={{
-                  // textAlign: 'center',
-                  fontFamily: Fonts.default,
-                  fontWeight: '600',
-                  fontSize: 18,
-                  color: Colors.tertiary,
-                  alignSelf: 'flex-start',
-                }}>
-                August 2023
-              </Text>
-              <TouchableRipple
-                style={{
-                  paddingHorizontal: 10,
-                  //   marginTop: 45,
-                }}>
-                <EditSvg />
-              </TouchableRipple>
-            </View>
-            <View
-              style={{
-                height: HEIGHT / 6.2,
-                flexDirection: 'row',
-                alignSelf: 'center',
-                paddingHorizontal: 5,
-              }}>
-              <ColorBox />
-            </View>
-            <View
-              style={{
-                height: WIDTH <= 375 ? 40 : 55,
-                width: WIDTH <= 323 ? 233 : 260,
-                marginTop: 10,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 20,
-                backgroundColor: Colors.primary,
-                alignSelf: 'center',
-                marginBottom: 10,
-              }}>
-              <ButtonComponent
-                icon1
-                buttonText="Book Appointment"
-                buttonColor={Colors.primary}
-                textColor={Colors.secondary}
-                // onPress={() => navigation.goBack()}
-                height={WIDTH <= 375 ? 40 : 55}
-                width={WIDTH <= 323 ? 233 : 260}
-              />
-            </View>
+              <EditSvg />
+            </TouchableRipple>
+          </View>
+          <View
+            style={{
+              height: HEIGHT / 6.2,
+              flexDirection: 'row',
+              alignSelf: 'center',
+              paddingHorizontal: 5,
+            }}>
+            <ColorBox />
+          </View>
+          <View
+            style={{
+              height: WIDTH <= 375 ? 40 : 55,
+              width: WIDTH <= 323 ? 233 : 260,
+              marginTop: 10,
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: 20,
+              backgroundColor: Colors.primary,
+              alignSelf: 'center',
+              marginBottom: 10,
+            }}>
+            <ButtonComponent
+              icon1
+              buttonText="Book Appointment"
+              buttonColor={Colors.primary}
+              textColor={Colors.secondary}
+              // onPress={() => navigation.goBack()}
+              height={WIDTH <= 375 ? 40 : 55}
+              width={WIDTH <= 323 ? 233 : 260}
+            />
           </View>
         </View>
       </ScrollView>

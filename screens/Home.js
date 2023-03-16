@@ -87,6 +87,7 @@ const Home = ({navigation}) => {
               marginTop: 45,
             }}>
             <ProductCardlg
+              image1
               BtnTouchable1
               CardImageBG={Assets.cards.cardImage7}
               CardImageBGMain={Assets.backgroundImages.cardBackground3}

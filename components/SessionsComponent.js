@@ -46,65 +46,67 @@ const SessionCompo = ({
     <>
       {progresscompo && (
         <>
-          <View
-            style={[
-              styles.card,
-              {
-                flexDirection: 'row',
-                marginBottom: 10,
-                // backgroundColor: backgroundColor,
-                marginRight: index % 2 == 2 ? 0 : 5,
-                marginLeft: index % 2 == 0 ? 0 : 5,
-              },
-            ]}>
+          <View style={{width: '100%', padding: 15}}>
             <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                // marginTop: 10,
-                // paddingHorizontal: 5,
-                // paddingVertical: 5,
-              }}>
-              <View style={{width: 64, height: 64}}>
-                <View style={{width: '20%'}}>{image}</View>
-              </View>
-              <View style={{width: '32%', marginTop: 10}}>
-                <Text numberOfLines={1} style={styles.name}>
-                  {name}
-                </Text>
-                <Text
-                  numberOfLines={1}
-                  style={[
-                    styles.progressName,
-                    {color: progresstextColor, marginTop: 5},
-                  ]}>
-                  {progressName}
-                </Text>
-              </View>
-              <View style={{}}>
-                <Text
-                  style={[
-                    styles.progressName,
-                    {textAlign: 'right', fontSize: 12, paddingHorizontal: 10},
-                  ]}>
-                  22 video
-                </Text>
-                <View
-                  style={{
-                    marginTop: 18,
-                    paddingHorizontal: 5,
-                    backgroundColor: backgroundColor,
-                    justifyContent: 'center',
-                    paddingVertical: 5,
-                    marginLeft: 15,
-                    borderRadius: 10,
-                  }}>
-                  <Progress.Bar
-                    progress={0.3}
-                    width={110}
-                    showsText={true}
-                    color={progressColor}
-                  />
+              style={[
+                styles.card,
+                {
+                  flexDirection: 'row',
+                  // marginBottom: 5,
+                  // backgroundColor: backgroundColor,
+                  // marginRight: index % 2 == 2 ? 0 : 5,
+                  // marginLeft: index % 2 == 0 ? 0 : 5,
+                },
+              ]}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  // marginTop: 10,
+                  // paddingHorizontal: 5,
+                  // paddingVertical: 5,
+                }}>
+                <View style={{width: 64, height: 64}}>
+                  <View style={{width: '20%'}}>{image}</View>
+                </View>
+                <View style={{width: '32%', marginTop: 10}}>
+                  <Text numberOfLines={1} style={styles.name}>
+                    {name}
+                  </Text>
+                  <Text
+                    numberOfLines={1}
+                    style={[
+                      styles.progressName,
+                      {color: progresstextColor, marginTop: 5},
+                    ]}>
+                    {progressName}
+                  </Text>
+                </View>
+                <View style={{}}>
+                  <Text
+                    style={[
+                      styles.progressName,
+                      {textAlign: 'right', fontSize: 12, paddingHorizontal: 10},
+                    ]}>
+                    22 video
+                  </Text>
+                  <View
+                    style={{
+                      marginTop: 18,
+                      paddingHorizontal: 5,
+                      backgroundColor: backgroundColor,
+                      justifyContent: 'center',
+                      paddingVertical: 5,
+                      marginLeft: 15,
+                      borderRadius: 10,
+                    }}>
+                    <Progress.Bar
+                      progress={0.5}
+                      width={110}
+                      showsText={true}
+                      color={progressColor}
+                    />
+                  </View>
                 </View>
               </View>
             </View>
@@ -128,7 +130,7 @@ const SessionCompo = ({
                     // justifyContent: 'space-between',
                   }}>
                   <Avatar.Image
-                    size={78}
+                    size={68}
                     style={{
                       // width: '100%',
                       // height: '100%',
@@ -166,6 +168,7 @@ const SessionCompo = ({
                         fontWeight: '600',
                         fontSize: 16,
                         color: Colors.tertiary,
+                        paddingLeft: 5,
 
                         opacity: 0.43,
                       }}>
@@ -243,8 +246,8 @@ export default SessionCompo;
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    // height: 86,
-    // width: '100%',
+    height: 86,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
@@ -257,7 +260,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
-
     elevation: 15,
   },
   container: {
@@ -269,7 +271,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // marginVertical: 10,
     overflow: 'hidden',
-    marginTop: -25,
+    // marginTop: -15,
   },
   image: {
     flex: 1,
@@ -278,8 +280,8 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     flexDirection: 'row',
     overflow: 'hidden',
-    borderRadius: 40,
-    backgroundColor: '#000000a0',
+    borderRadius: 10,
+    // backgroundColor: '#000000a0',
     // margin: 5,
   },
   text: {
@@ -291,7 +293,7 @@ const styles = StyleSheet.create({
   },
   box: {
     width: '100%',
-    marginTop: 20,
+    marginTop: 10,
     // paddingHorizontal: 10,
     // padding: 10,
     borderRadius: 25,
