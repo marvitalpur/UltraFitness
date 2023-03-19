@@ -46,7 +46,7 @@ const SessionCompo = ({
     <>
       {progresscompo && (
         <>
-          <View style={{width: '100%', padding: 15}}>
+          <View style={{width: '100%', padding: 10}}>
             <View
               style={[
                 styles.card,

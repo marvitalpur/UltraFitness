@@ -1,9 +1,10 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Onboarding, Signup, Home, Profile, Shope} from '../screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Login, Onboarding, Signup, Home, Profile, Shope } from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 import SearchScreen from '../screens/SearchScreen';
+import InstructorDetails from '../screens/InstructorDetails';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -24,6 +25,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="ProductSCreen" component={ProductScreen} />
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
+      <Stack.Screen name="InstructorDetails" component={InstructorDetails} />
     </Stack.Navigator>
   );
 };

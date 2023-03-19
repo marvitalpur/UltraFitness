@@ -1,25 +1,25 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
-import {StyleSheet, Text, ScrollView, View, FlatList} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
-import {Fonts} from '../assets/constants/Fonts';
+import { StyleSheet, Text, ScrollView, View, FlatList } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
 import ProfileHeader from '../components/profileHeader';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {TouchableRipple} from 'react-native-paper';
-import {EditSvg} from '../assets/svgs/HeaderSvgs';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { TouchableRipple } from 'react-native-paper';
+import { EditSvg } from '../assets/svgs/HeaderSvgs';
 import ButtonComponent from '../components/Button';
 import ColorBox from '../components/ColorBox';
 import CardBox from '../components/CardBox';
-const Shope = ({navigation}) => {
+const Shope = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
           <ProfileHeader
             BGImage={Assets.backgroundImages.headerBackground2}
             avatarId={'@rubelmuricio'}
@@ -31,55 +31,46 @@ const Shope = ({navigation}) => {
           />
         </View>
 
-        <View style={{padding: 5
-        
+        <View style={{
+          marginTop: 45
+
+
         }}>
-          <View style={{paddinTop: 15, paddingHorizontal: 15}}>
+          <View style={{ paddingHorizontal: 15, marginTop: 30 }}>
             <Text
               style={{
                 fontSize: 18,
                 fontSize: 18,
-                marginVertical: 5,
                 fontWeight: 'bold',
                 color: '#000000',
               }}>
               Skills:
             </Text>
           </View>
-          <View
-            style={{
-              height: HEIGHT / 11.9,
-              flex: 1,
-              //   flexDirection: 'row',
-              alignSelf: 'center',
-              marginTop: 'auto',
-              // paddingBottom: 10,
-              // backgroundColor: 'green',
-            }}>
-            <FlatList
-              data={data}
-              showsHorizontalScrollIndicator={false}
-              horizontal={true}
-              contentContainerStyle={{
-                // paddingVertical: 5,
-                // padding: 10,
-                paddingLeft: 15,
-              }}
-              ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({item, index}) => (
-                <CardBox
-                  name={item.name}
-                  backgroundColor={item.backgroundColor}
-                  textcolor={item.textcolor}
-                />
-              )}
-            />
-          </View>
+
+          <FlatList
+            data={data}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            contentContainerStyle={{
+              // paddingVertical: 5,
+              padding: 10,
+              paddingLeft: 15,
+            }}
+            ItemSeparatorComponent={<View style={{}} />}
+            renderItem={({ item, index }) => (
+              <CardBox
+                name={item.name}
+                backgroundColor={item.backgroundColor}
+                textcolor={item.textcolor}
+              />
+            )}
+          />
+
           <View style={{}}>
             <Text
               style={{
                 flex: 1,
-
                 fontFamily: Fonts.default,
                 fontWeight: '600',
                 fontSize: 18,
@@ -116,7 +107,7 @@ const Shope = ({navigation}) => {
               color: Colors.tertiary,
               paddingLeft: 15,
               // marginVertical: 15,
-              paddingTop: 5,
+              // paddingTop: 5,
             }}>
             Schedule:
           </Text>
@@ -125,7 +116,7 @@ const Shope = ({navigation}) => {
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-between',
-              paddingTop: 10,
+              // paddingTop: 10,
               paddingLeft: 15,
             }}>
             <Text
@@ -141,7 +132,7 @@ const Shope = ({navigation}) => {
             </Text>
             <TouchableRipple
               style={{
-                paddingHorizontal: 10,
+                // paddingHorizontal: 10,
                 //   marginTop: 45,
               }}>
               <EditSvg />
@@ -149,19 +140,19 @@ const Shope = ({navigation}) => {
           </View>
           <View
             style={{
-              height: HEIGHT / 6.2,
+              // height: HEIGHT / 6.2,
               flexDirection: 'row',
               alignSelf: 'center',
-              paddingHorizontal: 5,
+              // paddingHorizontal: 5,
             }}>
             <ColorBox />
           </View>
           <View
             style={{
-              marginTop: 15,
+              // marginTop: 15,
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: 10,
+              // marginBottom: 10,
             }}>
             <ButtonComponent
               icon1
@@ -176,7 +167,7 @@ const Shope = ({navigation}) => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 };
 export default Shope;
@@ -184,6 +175,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.secondary,
+    // backgroundColor: 'yellow'
   },
   text: {
     fontFamily: Fonts.default,

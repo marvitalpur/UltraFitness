@@ -9,7 +9,7 @@ import {
 } from '../assets/svgs/HeaderSvgs';
 import { Colors } from '../assets/constants/Colors';
 
-const Header = ({ logo, navigation, backIcon }) => {
+const Header = ({ logo, navigation, backIcon, headertex, }) => {
   return (
     <View style={styles.container}>
       <TouchableRipple
@@ -19,7 +19,9 @@ const Header = ({ logo, navigation, backIcon }) => {
         style={styles.btn}>
         {backIcon ? <BackSvg /> : <MenuSvg />}
       </TouchableRipple>
-      {/* <Text>Header</Text> */}
+      {headertex && (
+        <Text>{headertex}</Text>
+      )}
       {logo && <LogoSvg />}
       {backIcon ? (
         <View style={{ width: 50, height: 50 }} />

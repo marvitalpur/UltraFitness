@@ -1,16 +1,16 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {TouchableRipple} from 'react-native-paper';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
+import { TouchableRipple } from 'react-native-paper';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
 import CardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchbarCompo from './SeacrBar';
 import Searcbar from './SeacrBar';
 import ButtonComponent from './Button';
-import {SearchIConGrey} from '../assets/svgs/SearchIcon';
-import {useNavigation} from '@react-navigation/native';
+import { SearchIConGrey } from '../assets/svgs/SearchIcon';
+import { useNavigation } from '@react-navigation/native';
 const ProductCardlg = ({
   CardImageBG,
   CardImageBGMain,
@@ -25,7 +25,7 @@ const ProductCardlg = ({
 }) => {
   const navigation = useNavigation();
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       {image1 && (
         <Image
           source={CardImageBG}
@@ -102,7 +102,7 @@ const ProductCardlg = ({
               onPress={() => {
                 navigation.navigate('Courses');
               }}
-              style={[styles.btn, {borderWidth: 1}]}>
+              style={[styles.btn, { borderWidth: 1 }]}>
               <View
                 style={{
                   width: '100%',
@@ -112,7 +112,7 @@ const ProductCardlg = ({
                   justifyContent: 'flex-start',
                 }}>
                 <CardIcon
-                  style={{marginHorizontal: 2.5}}
+                  style={{ marginHorizontal: 2.5 }}
                   name={'play-circle-outline'}
                   size={WIDTH < 375 ? 20 : 30}
                   color={Colors.tertiary}
@@ -135,7 +135,7 @@ const ProductCardlg = ({
               }}
               style={[
                 {
-                  marginTop: 25,
+                  marginTop: 15,
                   width: WIDTH < 375 ? 120 : 165,
                   height: WIDTH < 375 ? 40 : 54,
                 },
@@ -159,7 +159,7 @@ const ProductCardlg = ({
                   }}>
                   {BoxtbtnText}
                 </Text>
-                <View style={{paddingHorizontal: 5}}>
+                <View style={{ paddingHorizontal: 5 }}>
                   <SearchIConGrey />
                 </View>
               </View>

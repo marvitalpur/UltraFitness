@@ -1,51 +1,33 @@
-import {
-  Image,
-  ImageBackground,
-  ScrollView,
-  StyleSheet,
-  Text,
-  FlatList,
-  View,
-} from 'react-native';
-import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
-import Header from '../components/Header';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native'
+import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import Header from '../components/Header'
+import { CloudSvg } from '../assets/svgs/HomeSvgs';
 import Lottie from 'lottie-react-native';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {CloudSvg, SearchIcon} from '../assets/svgs/HomeSvgs';
-import {Fonts} from '../assets/constants/Fonts';
+import { HEIGHT } from '../assets/constants/Dimensions';
+import ProductCardmd from '../components/ProductCardmd';
 import ProductCardlg from '../components/ProductCardlg';
-import CardBox from '../components/CardBox';
-import {BackSvg} from '../assets/svgs/HeaderSvgs';
-import SessionCompo from '../components/SessionsComponent';
-import {
-  CupIcon,
-  SearchIConGrey,
-  ShareICon,
-  ShareIConBG,
-  SimpleCupI,
-  SimpleShareI,
-  SimpleTeacherI,
-  TeacherIconBG,
-  index,
-} from '../assets/svgs/SearchIcon';
 import CardLG from '../components/CArdComponentLG';
+import { FlatList } from 'react-native';
+import { CupIcon, ShareIConBG, SimpleCupI, SimpleShareI, TeacherIconBG } from '../assets/svgs/SearchIcon';
+import SessionCompo from '../components/SessionsComponent';
 
-const CoursesScreen = ({navigation}) => {
+const Courses = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView
-        bounces={false}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
-          <View style={{paddingHorizontal: 15}}>
-            <Header navigation={navigation} />
+    <>
+      <SafeAreaView style={styles.container}>
+        <ScrollView
+          bounces={false}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ flexGrow: 1 }}>
+          <View style={{ flex: 1, paddingHorizontal: 25 }}>
+            <Header
+              headercompo1 navigation={navigation}
+            />
           </View>
-          <View style={{flexDirection: 'row', marginTop: 25}}>
-            <View style={{alignItems: 'center', paddingHorizontal: 25}}>
+          <View style={{ flexDirection: 'row', marginTop: 25 }}>
+            <View style={{ alignItems: 'center', paddingLeft: 15 }}>
               <Lottie
                 source={Assets.animation.onboardAnimationSun}
                 style={{
@@ -59,76 +41,64 @@ const CoursesScreen = ({navigation}) => {
               />
               <CloudSvg />
             </View>
-            <View style={{flex: 1, justifyContent: 'space-evenly'}}>
+            <View
+              style={{ flex: 1, justifyContent: 'space-evenly', marginLeft: 10 }}>
               <Text style={styles.text}>Good</Text>
               <Text style={styles.text}>Morning!</Text>
               <Text
                 style={[
                   styles.text,
-                  {letterSpacing: 0.6, fontSize: 12, fontWeight: '300'},
+                  { letterSpacing: 0.6, fontSize: 12, fontWeight: '300' },
                 ]}>
                 23 December 2023
               </Text>
             </View>
           </View>
+          <FlatList
+            data={data1}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            contentContainerStyle={{
+              flexGrow: 1,
+              paddingHorizontal: 15,
+              // marginBottom: -15,
+            }}
+            ItemSeparatorComponent={<View style={{}} />}
+            renderItem={({ item, index }) => (
+              <View
+                style={{
+                  // paddingLeft: 5,
+                  height: HEIGHT / 8.7,
+                  flexDirection: 'row',
+                  marginTop: 35,
+                }}>
+                <CardLG
+                  // flexDirection={'row'}
+                  ItemImage={true}
+                  image={item.image}
+                  name={item.name}
+                  progressName={item.progressName}
+                  backgroundColor={item.backgroundColor}
+                  textcolor={item.textcolor}
+                />
+              </View>
+            )}
+          />
           <View
             style={{
-              marginRight: index % 2 == 10 ? 5 : 10,
-              marginLeft: index % 2 == 10 ? 10 : 0,
-            }}>
-            <View
-              style={{
-                marginRight: 10,
-                marginLeft: 15,
-                height: HEIGHT / 4.6,
-                flexDirection: 'row',
-                marginTop: 45,
-                // paddingHorizontal: 10
-              }}>
-              <ProductCardlg
-                image2
-                BtnTouchable2
-                CardImageBG={Assets.cards.cardImage9}
-                CardImageBGMain={Assets.cards.cardImage11}
-                BoxtText1="Kids Hope"
-                BoxtText2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
-                BoxtbtnText={'Go Now'}
-              />
-            </View>
-          </View>
-
-          <View
-            style={{
-              height: HEIGHT / 9.9,
+              height: HEIGHT / 4.7,
               flexDirection: 'row',
-              alignSelf: 'center',
-              //   paddingBottom: 5,
-              marginTop: 15,
-              // paddingLeft: 15,
+              marginTop: 45,
+              paddingHorizontal: 15
             }}>
-            <FlatList
-              data={data1}
-              showsHorizontalScrollIndicator={false}
-              horizontal={true}
-              contentContainerStyle={{
-                flexGrow: 1,
-                paddingHorizontal: 15,
-                // marginBottom: -15,
-              }}
-              ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({item, index}) => (
-                <View style={{}}>
-                  <CardLG
-                    // flexDirection={'row'}
-                    ItemImage={true}
-                    image={item.image}
-                    name={item.name}
-                    progressName={item.progressName}
-                    backgroundColor={item.backgroundColor}
-                    textcolor={item.textcolor}
-                  />
-                </View>
-              )}
+            <ProductCardlg
+              image2
+              BtnTouchable2
+              CardImageBG={Assets.cards.cardImage9}
+              CardImageBGMain={Assets.cards.cardImage11}
+              BoxtText1="Kids Hope"
+              BoxtText2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
+              BoxtbtnText={'Get your Mentor Here'}
             />
           </View>
           <View
@@ -140,20 +110,19 @@ const CoursesScreen = ({navigation}) => {
             <Text style={styles.text}>Current Sessions:</Text>
           </View>
           <View
-            style={
-              {
-                // paddingHorizontal: 15,
-              }
-            }>
+            style={{
+              height: 200,
+              // backgroundColor: 'red',
+              // paddingHorizontal: 15,
+            }}>
             <FlatList
               data={data}
               contentContainerStyle={{
-                // padding: 25,
                 flexGrow: 1,
-                marginTop: 10,
+                // marginTop: 20,
               }}
               ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({item, index}) => (
+              renderItem={({ item, index }) => (
                 <SessionCompo
                   progresscompo
                   index={index}
@@ -168,46 +137,50 @@ const CoursesScreen = ({navigation}) => {
                 />
               )}></FlatList>
           </View>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+        </ScrollView>
+      </SafeAreaView>
 
-export default CoursesScreen;
-
+    </>
+  )
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.secondary,
+
   },
   text: {
-    fontFamily: Fonts.default,
+    // fontFamily: Fonts.default,
     fontWeight: '600',
     fontSize: 18,
-    color: Colors.tertiary,
+    // color: Colors.tertiary,
+    color: '#000',
     letterSpacing: 0.9,
   },
-  card: {
-    // width: '90%',
 
-    flex: 1,
-    height: 86,
-    // backgroundColor: '#FFFFFF',
-    borderRadius: 10,
-    shadowColor: '#000',
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
-
-    elevation: 15,
+})
+var data1 = [
+  {
+    name: `Homework \nAssistance`,
+    backgroundColor: '#FADDBA',
+    imagebackgroundColor1: '#FADDBA',
+    textcolor: '#F2AC57',
+    image: <SimpleShareI />
   },
-});
+  {
+    name: `Social \nInteraction`,
+    backgroundColor: '#C7EEF8',
+    imagebackgroundColor1: '#C7EEF8',
+    textcolor: '#FFFF',
+    image: <SimpleShareI />
+  },
+  {
+    name: 'Skill \n Development',
+    backgroundColor: '#E7C6C6',
+    imagebackgroundColor1: '#E7C6C6',
+    textcolor: '#fff',
+    image: <SimpleCupI />
+  },
+];
 var data = [
   {
     name: `Session Name`,
@@ -241,26 +214,6 @@ var data = [
     image1: <CupIcon />,
   },
 ];
-var data1 = [
-  {
-    name: `Homework \nAssistance`,
-    backgroundColor: '#FADDBA',
-    imagebackgroundColor1: '#FADDBA',
-    textcolor: '#F2AC57',
-    image: <SimpleTeacherI />,
-  },
-  {
-    name: `Social \nInteraction`,
-    backgroundColor: '#C7EEF8',
-    imagebackgroundColor1: '#C7EEF8',
-    textcolor: '#FFFF',
-    image: <SimpleShareI />,
-  },
-  {
-    name: 'Skill \n Development',
-    backgroundColor: '#E7C6C6',
-    imagebackgroundColor1: '#E7C6C6',
-    textcolor: '#fff',
-    image: <SimpleCupI />,
-  },
-];
+
+export default Courses
+

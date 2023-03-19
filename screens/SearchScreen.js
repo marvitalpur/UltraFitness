@@ -8,17 +8,17 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
 import Header from '../components/Header';
 import Lottie from 'lottie-react-native';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {CloudSvg, SearchIcon} from '../assets/svgs/HomeSvgs';
-import {Fonts} from '../assets/constants/Fonts';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { CloudSvg, SearchIcon } from '../assets/svgs/HomeSvgs';
+import { Fonts } from '../assets/constants/Fonts';
 import ProductCardlg from '../components/ProductCardlg';
 import CardBox from '../components/CardBox';
-import {BackSvg} from '../assets/svgs/HeaderSvgs';
+import { BackSvg } from '../assets/svgs/HeaderSvgs';
 import SessionCompo from '../components/SessionsComponent';
 import Searcbar from '../components/SeacrBar';
 import {
@@ -33,9 +33,9 @@ import {
   index,
 } from '../assets/svgs/SearchIcon';
 import CardLG from '../components/CArdComponentLG';
-import {FAB, TouchableRipple} from 'react-native-paper';
+import { FAB, TouchableRipple } from 'react-native-paper';
 
-const SearchScreen = ({navigation}) => {
+const SearchScreen = ({ navigation }) => {
   var Carddata = [
     {
       backgroundColor: '#B0E8F3',
@@ -90,9 +90,9 @@ const SearchScreen = ({navigation}) => {
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1}}>
-          <View style={{padding: 15, flex: 1, paddingTop: 25}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
+          <View style={{ padding: 15, flex: 1, paddingTop: 25 }}>
             <HeaderComponent navigation={navigation} />
           </View>
           <View
@@ -101,7 +101,7 @@ const SearchScreen = ({navigation}) => {
               paddingHorizontal: 15,
               flex: 1,
             }}>
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
               <Searcbar placeholder={'Search Mentor Here...'} />
             </View>
           </View>
@@ -125,7 +125,7 @@ const SearchScreen = ({navigation}) => {
                 // marginBottom: -15,
               }}
               ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({item, index}) => (
+              renderItem={({ item, index }) => (
                 <View style={{}}>
                   <CardLG
                     // flexDirection={'row'}
@@ -149,15 +149,15 @@ const SearchScreen = ({navigation}) => {
             <Text style={styles.text}>Top Suggested Mentors:</Text>
           </View>
 
-          <View style={{marginTop: 15}}>
+          <View style={{ marginTop: 15 }}>
             <FlatList
               data={Carddata}
               contentContainerStyle={{
                 padding: 15,
                 // marginTop: 10,
               }}
-              ItemSeparatorComponent={<View style={{paddingVertical: 10}} />}
-              renderItem={({item, index}) => (
+              ItemSeparatorComponent={<View style={{ paddingVertical: 10 }} />}
+              renderItem={({ item, index }) => (
                 <SessionCompo
                   onPress={item.onpress}
                   BGCardImag={item.BGCardImag}
@@ -173,7 +173,7 @@ const SearchScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({navigation}) => {
+const HeaderComponent = ({ navigation }) => {
   return (
     <View style={styles.headerContainer}>
       <TouchableRipple onPress={() => navigation.goBack()} style={styles.btn}>
