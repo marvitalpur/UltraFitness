@@ -5,13 +5,13 @@ import CardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Colors} from '../assets/constants/Colors';
 import {WIDTH} from '../assets/constants/Dimensions';
 import {Fonts} from '../assets/constants/Fonts';
-const ProductCardSm = ({img, text}) => {
+const ProductCardSm = ({img, text, OnpresCard}) => {
   return (
-    <TouchableRipple style={styles.bannerSmallBox}>
+    <TouchableRipple onPress={OnpresCard} style={styles.bannerSmallBox}>
       <ImageBackground source={img} resizeMode="cover" style={styles.image}>
         <CardIcon
           style={{marginLeft: 'auto'}}
-          name={'play-circle-outline'}
+          name={'qrcode'}
           size={WIDTH < 375 ? 20 : 30}
           color={Colors.tertiary}
         />
@@ -20,7 +20,6 @@ const ProductCardSm = ({img, text}) => {
     </TouchableRipple>
   );
 };
-
 
 export default ProductCardSm;
 

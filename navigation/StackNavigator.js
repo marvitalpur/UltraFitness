@@ -1,10 +1,13 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Login, Onboarding, Signup, Home, Profile, Shope } from '../screens';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Login, Onboarding, Signup, Home, Profile, Shope} from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 import SearchScreen from '../screens/SearchScreen';
 import InstructorDetails from '../screens/InstructorDetails';
+import BookingDetail from '../screens/BookingDetail';
+import QRScreen from '../screens/QRScreen';
+import PaymentScreen from '../screens/PaymentScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -26,6 +29,9 @@ const StackNavigator = () => {
       <Stack.Screen name="ProductSCreen" component={ProductScreen} />
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
       <Stack.Screen name="InstructorDetails" component={InstructorDetails} />
+      <Stack.Screen name="BookingDetail" component={BookingDetail} />
+      <Stack.Screen name="QRCode" component={QRScreen} />
+      <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
     </Stack.Navigator>
   );
 };

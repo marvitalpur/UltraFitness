@@ -7,6 +7,7 @@ const Assets = {
     menuBackground: require('./images/menuBackground.png'),
     headerBackground1: require('./images/headerBackground1.png'),
     headerBackground2: require('./images/headerBackground2.png'),
+    QRcode: require('../assets/images/QR.png'),
   },
   logos: {
     blueSmall: require('./images/logoLogin.png'),

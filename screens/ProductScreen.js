@@ -19,6 +19,7 @@ import ButtonComponent from '../components/Button';
 import ButtonComponent2 from '../components/Botton2';
 import {FAB, TouchableRipple} from 'react-native-paper';
 import {BackSvg} from '../assets/svgs/HeaderSvgs';
+import PopUp from '../components/Popup';
 
 const ProductScreen = ({navigation, route, index}) => {
   const {ProductImaig1} = route.params;
@@ -37,237 +38,246 @@ const ProductScreen = ({navigation, route, index}) => {
     {imageitem: ProductImaig1},
     {imageitem: ProductImaig1},
   ];
+  const [modalVisible, setModalVisible] = useState(false);
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView
-        bounces={false}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View
-          style={{
-            paddingTop: 25,
-            padding: 15,
-            // paddingHorizontal: 15,
-            width: '100%',
-            height: '100%',
-            // marginTop: 15,
-          }}>
-          <HeaderComponent navigation={navigation} />
+    <>
+      <SafeAreaView style={styles.container}>
+        <ScrollView
+          bounces={false}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{flexGrow: 1}}>
           <View
             style={{
-              flex: 1,
-              //   backgroundColor: 'green',
+              paddingTop: 25,
+              padding: 15,
+              // paddingHorizontal: 15,
+              width: '100%',
+              height: '100%',
+              // marginTop: 15,
             }}>
-            <View style={{alignSelf: 'center', padding: 25}}>
-              <Image
-                source={ProductImaig1}
-                resizeMode="contain"
-                style={{
-                  height: WIDTH <= 375 ? 180 : 276,
-                  width: WIDTH <= 323 ? 180 : 276,
-                  marginRight: index % 5 == 2 ? 0 : 0,
-                  marginLeft: index % 5 == 0 ? 0 : 0,
+            <HeaderComponent navigation={navigation} />
+            <View
+              style={{
+                flex: 1,
+                //   backgroundColor: 'green',
+              }}>
+              <View style={{alignSelf: 'center', padding: 25}}>
+                <Image
+                  source={ProductImaig1}
+                  resizeMode="contain"
+                  style={{
+                    height: WIDTH <= 375 ? 180 : 276,
+                    width: WIDTH <= 323 ? 180 : 276,
+                    marginRight: index % 5 == 2 ? 0 : 0,
+                    marginLeft: index % 5 == 0 ? 0 : 0,
+                  }}
+                />
+              </View>
+
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={true}
+                data={data}
+                renderItem={({item, index}) => {
+                  return (
+                    <>
+                      <View
+                        style={{
+                          height: WIDTH <= 375 ? 40 : 76,
+                          width: WIDTH <= 323 ? 233 : 76,
+                          marginRight: index % 5 == 2 ? 0 : 3,
+                          marginLeft: index % 5 == 0 ? 0 : 3,
+                        }}>
+                        <Image
+                          source={item.imageitem}
+                          resizeMode="contain"
+                          style={{width: '100%', height: '100%'}}
+                        />
+                      </View>
+                    </>
+                  );
                 }}
               />
             </View>
+            <View style={{}}>
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <View>
+                  <Text style={[styles.CenterText, {color: '#00B4D8'}]}>
+                    Home Equipment {'\n'}Push Up Bars
+                  </Text>
+                </View>
 
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={true}
-              data={data}
-              renderItem={({item, index}) => {
-                return (
-                  <>
-                    <View
-                      style={{
-                        height: WIDTH <= 375 ? 40 : 76,
-                        width: WIDTH <= 323 ? 233 : 76,
-                        marginRight: index % 5 == 2 ? 0 : 3,
-                        marginLeft: index % 5 == 0 ? 0 : 3,
-                      }}>
-                      <Image
-                        source={item.imageitem}
-                        resizeMode="contain"
-                        style={{width: '100%', height: '100%'}}
-                      />
-                    </View>
-                  </>
-                );
-              }}
-            />
-          </View>
-          <View style={{}}>
-            <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <View>
-                <Text style={[styles.CenterText, {color: '#00B4D8'}]}>
-                  Home Equipment {'\n'}Push Up Bars
-                </Text>
+                <View style={{}}>
+                  <Text
+                    style={[
+                      // styles.PriceText,
+                      {
+                        fontSize: 42,
+                        color: '#000',
+                        fontFamily: Fonts.default,
+                        // marginRight: 5,
+                      },
+                    ]}>
+                    120<Text style={{fontSize: 20}}>$</Text>
+                  </Text>
+                </View>
               </View>
 
-              <View style={{}}>
+              <View style={{flexDirection: 'row'}}>
                 <Text
-                  style={[
-                    // styles.PriceText,
-                    {
-                      fontSize: 42,
-                      color: '#000',
-                      fontFamily: Fonts.default,
-                      // marginRight: 5,
-                    },
-                  ]}>
-                  120<Text style={{fontSize: 20}}>$</Text>
+                  style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
+                  Reviews :
                 </Text>
+                <View style={{marginTop: 3}}>
+                  <RatingsItems />
+                </View>
               </View>
-            </View>
-
-            <View style={{flexDirection: 'row'}}>
-              <Text style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
-                Reviews :
+              <Text
+                style={[styles.CenterText, {color: '#000', fontSize: 16}]}
+                numberOfLines={1}>
+                Description :
               </Text>
-              <View style={{marginTop: 3}}>
-                <RatingsItems />
-              </View>
+              <Text
+                style={[
+                  styles.subTitle,
+                  {
+                    color: '#000',
+                    fontSize: 12,
+                    fontWeight: '205',
+                    opacity: 0.5,
+                    paddingTop: 4,
+                  },
+                ]}
+                numberOfLines={2}>
+                Lorem ipsum dolor sit amet, consetetur sscing elitr, sed diam
+                nonumy eirmod tempor
+              </Text>
+              <Text
+                style={[
+                  styles.CenterText,
+                  {
+                    color: '#000',
+                    fontSize: 16,
+                    paddingVertical: 10,
+                    paddingTop: 15,
+                  },
+                ]}
+                numberOfLines={2}>
+                Quantity:
+              </Text>
             </View>
-            <Text
-              style={[styles.CenterText, {color: '#000', fontSize: 16}]}
-              numberOfLines={1}>
-              Description :
-            </Text>
-            <Text
-              style={[
-                styles.subTitle,
-                {
-                  color: '#000',
-                  fontSize: 12,
-                  fontWeight: '205',
-                  opacity: 0.5,
-                  paddingTop: 4,
-                },
-              ]}
-              numberOfLines={2}>
-              Lorem ipsum dolor sit amet, consetetur sscing elitr, sed diam
-              nonumy eirmod tempor
-            </Text>
-            <Text
-              style={[
-                styles.CenterText,
-                {
-                  color: '#000',
-                  fontSize: 16,
-                  paddingVertical: 10,
-                  paddingTop: 15,
-                },
-              ]}
-              numberOfLines={2}>
-              Quantity:
-            </Text>
-          </View>
-          <View
-            style={{
-              // flex: 1,
-              paddingVertical: 15,
-              alignItems: 'flex-start',
-              flexDirection: 'row',
-            }}>
             <View
               style={{
+                // flex: 1,
+                paddingVertical: 15,
+                alignItems: 'flex-start',
                 flexDirection: 'row',
-                // // flex: 1,
-                // justifyContent: 'space-between',
               }}>
               <View
-                style={[
-                  styles.headerContainer,
-                  {
-                    // paddingRight: 10,
-                    // backgroundColor: 'blue',
-                  },
-                ]}>
-                <FAB
+                style={{
+                  flexDirection: 'row',
+                  // // flex: 1,
+                  // justifyContent: 'space-between',
+                }}>
+                <View
                   style={[
-                    styles.fab,
+                    styles.headerContainer,
                     {
-                      backgroundColor: 'red',
-                      opacity: 0.5,
-                      backgroundColor: '#7E7C7B30',
-                      height: WIDTH < 375 ? 55 : 55,
-                      width: WIDTH < 375 ? 55 : 55,
-                      // color: '#0000',
+                      // paddingRight: 10,
+                      // backgroundColor: 'blue',
                     },
-                  ]}
-                  size="small"
-                  icon="minus"
-                  color="black"
-                  onPress={decrement}
-                />
-              </View>
-              <View
-                style={[
-                  styles.headerContainer,
-                  {
-                    paddingLeft: 15,
-                    // backgroundColor: 'green',
-                    justifyContent: 'space-around',
-                  },
-                ]}>
-                <FAB
+                  ]}>
+                  <FAB
+                    style={[
+                      styles.fab,
+                      {
+                        backgroundColor: 'red',
+                        opacity: 0.5,
+                        backgroundColor: '#7E7C7B30',
+                        height: WIDTH < 375 ? 55 : 55,
+                        width: WIDTH < 375 ? 55 : 55,
+                        // color: '#0000',
+                      },
+                    ]}
+                    size="small"
+                    icon="minus"
+                    color="black"
+                    onPress={decrement}
+                  />
+                </View>
+                <View
                   style={[
-                    styles.fab,
+                    styles.headerContainer,
                     {
-                      backgroundColor: Colors.primary,
-                      height: WIDTH < 375 ? 55 : 55,
-                      // width: WIDTH < 375 ? 55 : 55,
+                      paddingLeft: 15,
+                      // backgroundColor: 'green',
+                      justifyContent: 'space-around',
                     },
-                  ]}
-                  size="small"
-                  icon="plus"
-                  color={'#fff'}
-                  onPress={increment}
-                />
+                  ]}>
+                  <FAB
+                    style={[
+                      styles.fab,
+                      {
+                        backgroundColor: Colors.primary,
+                        height: WIDTH < 375 ? 55 : 55,
+                        // width: WIDTH < 375 ? 55 : 55,
+                      },
+                    ]}
+                    size="small"
+                    icon="plus"
+                    color={'#fff'}
+                    onPress={increment}
+                  />
+                </View>
               </View>
-            </View>
 
-            <View style={{flex: 1, paddingLeft: 5}}>
-              <ButtonComponent2
-                buttonText={count}
-                buttonColor={'#7E7C7B30'}
-                textColor={'#444546'}
-                onPress={() => navigation.navigate('Drawer')}
-                width={WIDTH <= 375 ? 198 : 198}
-                height={WIDTH <= 375 ? 55 : 68}
-              />
-            </View>
-          </View>
-          <View style={{paddingBottom: 15}}>
-            <View
-              style={{flex: 1, alignItems: 'flex-start', flexDirection: 'row'}}>
-              <ButtonComponent2
-                icon={'arrowleft'}
-                buttonText="Back"
-                buttonColor={'#000'}
-                textColor={'#fff'}
-                onPress={() => navigation.navigate('Drawer')}
-                nPress={() => navigation.navigate('Drawer')}
-                height={WIDTH <= 375 ? 55 : 68}
-                width={WIDTH <= 375 ? 125 : 121}
-              />
               <View style={{flex: 1, paddingLeft: 5}}>
+                <ButtonComponent2
+                  buttonText={count}
+                  buttonColor={'#7E7C7B30'}
+                  textColor={'#444546'}
+                  onPress={() => navigation.navigate('Drawer')}
+                  width={WIDTH <= 375 ? 198 : 198}
+                  height={WIDTH <= 375 ? 55 : 68}
+                />
+              </View>
+            </View>
+            <View style={{paddingBottom: 15}}>
+              <View style={{flexDirection: 'row'}}>
                 <ButtonComponent2
                   icon={'shoppingcart'}
                   buttonText="Add to cart"
-                  buttonColor={Colors.primary}
+                  buttonColor={'#000'}
                   textColor={'#fff'}
-                  onPress={() => navigation.navigate('Drawer')}
+                  onPress={() => setModalVisible(true)}
                   height={WIDTH <= 375 ? 55 : 68}
-                  width={WIDTH <= 375 ? 198 : 198}
+                  width={WIDTH <= 375 ? 130 : 164}
                 />
+                <View style={{flex: 1, paddingLeft: 5}}>
+                  <ButtonComponent2
+                    icon={'shoppingcart'}
+                    buttonText="Buy Now"
+                    buttonColor={Colors.primary}
+                    textColor={'#fff'}
+                    onPress={() => navigation.navigate('Drawer')}
+                    height={WIDTH <= 375 ? 55 : 68}
+                    width={WIDTH <= 375 ? 130 : 164}
+                  />
+                </View>
               </View>
             </View>
           </View>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+        </ScrollView>
+      </SafeAreaView>
+      <PopUp
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        onPress={() => {
+          setModalVisible(false);
+        }}
+      />
+    </>
   );
 };
 

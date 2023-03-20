@@ -19,6 +19,7 @@ const ButtonComponent = ({
   SvgICon,
   paddingHorizontal,
   borderRadius,
+  btnfonSize,
 }) => {
   return (
     <TouchableRipple
@@ -30,7 +31,7 @@ const ButtonComponent = ({
           height: height,
           width: width,
           backgroundColor: buttonColor,
-          borderRadius: borderRadius
+          borderRadius: borderRadius,
         },
       ]}>
       <View
@@ -53,7 +54,7 @@ const ButtonComponent = ({
         <Text
           style={{
             color: textColor,
-            fontSize: 16,
+            fontSize: btnfonSize,
             fontFamily: 'Bahnschrift',
             fontWeight: 400,
           }}>

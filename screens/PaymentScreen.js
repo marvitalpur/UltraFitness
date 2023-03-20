@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import ButtonComponent from '../components/Button';
 import Header from '../components/Header';
 
-const BookingDetail = ({navigation}) => {
+const PaymentScreen = ({navigation}) => {
   const [data, setData] = useState({
     fullName: '',
     contactNo: '',
@@ -43,7 +43,6 @@ const BookingDetail = ({navigation}) => {
             setText={setData}
             formKey="fullName"
           />
-
           <View style={{marginVertical: 10}} />
           <Input
             placeholder="Email Address"
@@ -120,8 +119,6 @@ const BookingDetail = ({navigation}) => {
   );
 };
 
-export default BookingDetail;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -166,3 +163,5 @@ const styles = StyleSheet.create({
     padding: 5,
   },
 });
+
+export default PaymentScreen;

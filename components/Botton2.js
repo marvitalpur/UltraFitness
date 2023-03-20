@@ -19,6 +19,7 @@ const ButtonComponent2 = ({
   SvgICon,
   paddingHorizontal,
   borderRadius,
+  btnfonSize,
 }) => {
   return (
     <TouchableRipple
@@ -35,7 +36,7 @@ const ButtonComponent2 = ({
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
-          paddingHorizontal: 15,
+          paddingHorizontal: 5,
         }}>
         {icon1 && (
           <>
@@ -53,7 +54,7 @@ const ButtonComponent2 = ({
         <Text
           style={{
             color: textColor,
-            fontSize: 16,
+            fontSize: btnfonSize,
             fontFamily: 'Bahnschrift',
             fontWeight: 400,
           }}>

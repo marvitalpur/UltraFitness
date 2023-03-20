@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { TouchableRipple } from 'react-native-paper';
+import {TouchableRipple} from 'react-native-paper';
 import {
   BackSvg,
   LogoSvg,
   MenuSvg,
   NotificationSvg,
 } from '../assets/svgs/HeaderSvgs';
-import { Colors } from '../assets/constants/Colors';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 
-const Header = ({ logo, navigation, backIcon, headertex, }) => {
+const Header = ({logo, navigation, backIcon, headertex}) => {
   return (
     <View style={styles.container}>
       <TouchableRipple
@@ -19,12 +20,10 @@ const Header = ({ logo, navigation, backIcon, headertex, }) => {
         style={styles.btn}>
         {backIcon ? <BackSvg /> : <MenuSvg />}
       </TouchableRipple>
-      {headertex && (
-        <Text>{headertex}</Text>
-      )}
+      {headertex && <Text style={styles.headertex}>{headertex}</Text>}
       {logo && <LogoSvg />}
       {backIcon ? (
-        <View style={{ width: 50, height: 50 }} />
+        <View style={{width: 50, height: 50}} />
       ) : (
         <TouchableRipple style={styles.btn}>
           <NotificationSvg />
@@ -62,5 +61,14 @@ const styles = StyleSheet.create({
     shadowRadius: 9.51,
 
     elevation: 15,
+  },
+  headertex: {
+    fontSize: 22,
+    color: Colors.tertiary,
+    fontFamily: Fonts.default,
+    fontWeight: '600',
+    fontSize: 22,
+    color: Colors.tertiary,
+    // letterSpacing: 0.9,
   },
 });
