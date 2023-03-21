@@ -20,6 +20,8 @@ import ButtonComponent2 from '../components/Botton2';
 import {FAB, TouchableRipple} from 'react-native-paper';
 import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import PopUp from '../components/Popup';
+import MyModal from '../components/Popup';
+import Mymodal from '../components/Popup';
 
 const ProductScreen = ({navigation, route, index}) => {
   const {ProductImaig1} = route.params;
@@ -29,7 +31,6 @@ const ProductScreen = ({navigation, route, index}) => {
   const increment = () => {
     setCount(count + 1);
   };
-
   const decrement = () => {
     setCount(count - 1);
   };
@@ -73,7 +74,6 @@ const ProductScreen = ({navigation, route, index}) => {
                   }}
                 />
               </View>
-
               <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={true}
@@ -107,7 +107,6 @@ const ProductScreen = ({navigation, route, index}) => {
                     Home Equipment {'\n'}Push Up Bars
                   </Text>
                 </View>
-
                 <View style={{}}>
                   <Text
                     style={[
@@ -123,7 +122,6 @@ const ProductScreen = ({navigation, route, index}) => {
                   </Text>
                 </View>
               </View>
-
               <View style={{flexDirection: 'row'}}>
                 <Text
                   style={[styles.CenterText, {color: '#000', fontSize: 16}]}>
@@ -270,11 +268,13 @@ const ProductScreen = ({navigation, route, index}) => {
           </View>
         </ScrollView>
       </SafeAreaView>
-      <PopUp
+      <Mymodal
         modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-        onPress={() => {
-          setModalVisible(false);
+        setModalVisible={modalVisible}
+        onPress={() => setModalVisible(false)}
+        modaltext1="Added To cart"
+        cartbtn={() => {
+          navigation.navigate('CartScreen');
         }}
       />
     </>

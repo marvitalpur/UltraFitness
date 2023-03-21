@@ -8,10 +8,11 @@ import InstructorDetails from '../screens/InstructorDetails';
 import BookingDetail from '../screens/BookingDetail';
 import QRScreen from '../screens/QRScreen';
 import PaymentScreen from '../screens/PaymentScreen';
+import CartScreen from '../screens/CartScreen';
+import GoogleMapsScreen from '../screens/GoogleMapsScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
-
   return (
     <Stack.Navigator
       screenOptions={{
@@ -32,6 +33,8 @@ const StackNavigator = () => {
       <Stack.Screen name="BookingDetail" component={BookingDetail} />
       <Stack.Screen name="QRCode" component={QRScreen} />
       <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
+      <Stack.Screen name="CartScreen" component={CartScreen} />
+      <Stack.Screen name="GoogleMapsScreen" component={GoogleMapsScreen} />
     </Stack.Navigator>
   );
 };
