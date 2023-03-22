@@ -5,22 +5,16 @@ import {
   FlatList,
   ScrollView,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Header from '../components/Header';
-import Assets from '../assets';
 import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import {Fonts} from '../assets/constants/Fonts';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import RatingsItems from '../components/RatingsItems';
-import ButtonComponent from '../components/Button';
 import ButtonComponent2 from '../components/Botton2';
 import {FAB, TouchableRipple} from 'react-native-paper';
 import {BackSvg} from '../assets/svgs/HeaderSvgs';
-import PopUp from '../components/Popup';
-import MyModal from '../components/Popup';
 import Mymodal from '../components/Popup';
 
 const ProductScreen = ({navigation, route, index}) => {
@@ -259,6 +253,7 @@ const ProductScreen = ({navigation, route, index}) => {
                     buttonColor={Colors.primary}
                     textColor={'#fff'}
                     onPress={() => navigation.navigate('Drawer')}
+                    // onPress={() => navigation.navigate('Drawer')}
                     height={WIDTH <= 375 ? 55 : 68}
                     width={WIDTH <= 375 ? 130 : 164}
                   />

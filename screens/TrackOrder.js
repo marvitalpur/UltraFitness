@@ -43,67 +43,6 @@ const BookingDetail = ({navigation}) => {
             setText={setData}
             formKey="fullName"
           />
-
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Email Address"
-            text={data.password}
-            setText={setData}
-            formKey="Email"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Start Date"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="Start Date"
-            iconname="Calendar"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="End Date"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="End Date"
-            iconname="Calendar"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Time Slot"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="End Date"
-            iconname="Calendar"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Exercise Type"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="End Date"
-            iconname="down"
-            textColor={Colors.tertiary}
-          />
-          <View
-            style={{
-              marginVertical: 10,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Input
-              placeholder={'Exercise Type'}
-              gender={true}
-              text={data.gender}
-              setText={setData}
-              formKey="gender"
-              textColor={Colors.tertiary}
-            />
-          </View>
           <View
             style={{
               marginTop: 15,

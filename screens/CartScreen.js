@@ -19,6 +19,8 @@ import CartItems from '../components/CartITems';
 import TableData from '../components/TableData';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
+import {TouchableRipple} from 'react-native-paper';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 const CartScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -26,10 +28,12 @@ const CartScreen = ({navigation}) => {
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 25}}>
-          <Header headercompo1 navigation={navigation} />
-
-          {/* Cards start */}
+        <View
+          style={{
+            paddingTop: 25,
+            padding: 15,
+          }}>
+          <HeaderComponent navigation={navigation} />
         </View>
         <CartItems />
         <View
@@ -98,7 +102,25 @@ const CartScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
+const HeaderComponent = ({navigation}) => {
+  return (
+    <View style={{}}>
+      <TouchableRipple
+        onPress={() => navigation.goBack()}
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: '#fff',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 10,
+          elevation: 15,
+        }}>
+        <BackSvg />
+      </TouchableRipple>
+    </View>
+  );
+};
 export default CartScreen;
 
 const styles = StyleSheet.create({

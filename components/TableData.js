@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     flex: 1,
-    // padding: 10,
+    padding: 5,
     // borderRightWidth: 1,
     borderRightColor: '#000',
 

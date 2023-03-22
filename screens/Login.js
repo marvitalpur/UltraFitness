@@ -73,6 +73,7 @@ const Login = ({navigation}) => {
             text={data.username}
             setText={setData}
             formKey="username"
+            textColor={Colors.primary}
           />
           <View style={{marginVertical: 15}} />
           <Input
@@ -80,6 +81,7 @@ const Login = ({navigation}) => {
             text={data.password}
             setText={setData}
             formKey="password"
+            textColor={Colors.primary}
           />
           <View
             style={{

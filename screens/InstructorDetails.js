@@ -57,10 +57,9 @@ const InstructorDetails = ({navigation}) => {
                 btnfonSize={WIDTH <= 375 ? 12 : 14}
                 borderRadius={14}
                 buttonText="Book Now"
-                buttonColor={Colors.primary}
-                textColor={Colors.secondary}
+                buttonColor={Colors.secondary}
+                textColor={Colors.tertiary}
                 onPress={() => navigation.navigate('BookingDetail')}
-                // onPress={() => navigation.navigate('InstructorDetails')}
                 height={WIDTH <= 375 ? 55 : 55}
                 width={WIDTH <= 323 ? 90 : 127}
               />

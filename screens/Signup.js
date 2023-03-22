@@ -45,6 +45,7 @@ const Signup = ({navigation}) => {
           text={data.fullName}
           setText={setData}
           formKey="fullName"
+          textColor={Colors.primary}
         />
         <View style={{marginVertical: 10}} />
         <Input
@@ -52,6 +53,7 @@ const Signup = ({navigation}) => {
           text={data.contactNo}
           setText={setData}
           formKey="contactNo"
+          textColor={Colors.primary}
         />
         <View style={{marginVertical: 10}} />
         <View
@@ -65,12 +67,14 @@ const Signup = ({navigation}) => {
             text={data.gender}
             setText={setData}
             formKey="gender"
+            textColor={Colors.primary}
           />
           <Input
             gender={true}
             text={data.gender}
             setText={setData}
             formKey="gender"
+            textColor={Colors.primary}
           />
         </View>
         <View style={{marginVertical: 10}} />
@@ -79,6 +83,7 @@ const Signup = ({navigation}) => {
           text={data.email}
           setText={setData}
           formKey="email"
+          textColor={Colors.primary}
         />
         <View style={{marginVertical: 10}} />
         <Input
@@ -86,6 +91,7 @@ const Signup = ({navigation}) => {
           text={data.password}
           setText={setData}
           formKey="password"
+          textColor={Colors.primary}
         />
         <View style={{marginVertical: 10}} />
         <Input
@@ -93,7 +99,9 @@ const Signup = ({navigation}) => {
           text={data.confirmPassword}
           setText={setData}
           formKey="confirmPassword"
+          textColor={Colors.primary}
         />
+        1
         <TouchableOpacity
           style={styles.touchable}
           onPress={() => setAgree(!agree)}>

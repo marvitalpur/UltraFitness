@@ -5,7 +5,15 @@ import {Colors} from '../assets/constants/Colors';
 import {Fonts} from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
 import {WIDTH} from '../assets/constants/Dimensions';
-const Input = ({text, setText, placeholder, formKey, gender, iconname}) => {
+const Input = ({
+  text,
+  setText,
+  placeholder,
+  formKey,
+  gender,
+  iconname,
+  textColor,
+}) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const onChangeHandler = (value, name) => {
     // how to handle for each state field
@@ -27,11 +35,11 @@ const Input = ({text, setText, placeholder, formKey, gender, iconname}) => {
           placeholder={placeholder}
           value={text}
           onChangeText={text => onChangeHandler(text, formKey)}
-          right={<TextInput.Icon icon={iconname}  iconColor="#00B4D8"/>}
+          right={<TextInput.Icon icon={iconname} iconColor="#00B4D8" />}
           activeUnderlineColor="transparent"
           underlineColor="transparent"
           selectionColor="#000"
-          placeholderTextColor={Colors.primary}
+          placeholderTextColor={textColor}
           theme={{roundness: 10}}
           style={{
             // fontFamily: Fonts.default,
@@ -64,78 +72,6 @@ const GenderMenu = ({value, onChangeHandler, formKey}) => {
 
   const openMenu = () => setVisible(true);
 
-  const closeMenu = () => setVisible(false);
-  return (
-    <Menu
-      visible={visible}
-      onDismiss={closeMenu}
-      style={{
-        width: WIDTH / 2.5,
-        // marginLeft: 20,
-      }}
-      contentStyle={{
-        backgroundColor: Colors.secondary,
-        borderRadius: 10,
-      }}
-      anchor={
-        <TouchableRipple onPress={openMenu} style={styles.inputBtn}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingHorizontal: 10,
-            }}>
-            <Text
-              style={[
-                styles.btnText,
-                {
-                  opacity: value.length < 1 ? 0.5 : 1,
-                  color: value.length < 1 ? Colors.primary : Colors.tertiary,
-                },
-              ]}>
-              {value ? value : 'Select Gender'}
-            </Text>
-            <Icon
-              name="chevron-down"
-              size={20}
-              color={value.length < 1 ? Colors.primary : Colors.tertiary}
-              style={{marginLeft: 5}}
-            />
-          </View>
-        </TouchableRipple>
-      }>
-      <>
-        <Menu.Item
-          onPress={() => {
-            closeMenu();
-            onChangeHandler('Male', formKey);
-          }}
-          title="Male"
-        />
-        <Menu.Item
-          onPress={() => {
-            closeMenu();
-            onChangeHandler('Female', formKey);
-          }}
-          title="Female"
-        />
-        <Menu.Item
-          onPress={() => {
-            closeMenu();
-            onChangeHandler('Others', formKey);
-          }}
-          title="Others"
-        />
-      </>
-    </Menu>
-  );
-};
-
-const ExerciseType = ({value, onChangeHandler, formKey}) => {
-  const [visible, setVisible] = useState(false);
-
-  const openMenu = () => setVisible(true);
   const closeMenu = () => setVisible(false);
   return (
     <Menu

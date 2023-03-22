@@ -10,6 +10,7 @@ import QRScreen from '../screens/QRScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import CartScreen from '../screens/CartScreen';
 import GoogleMapsScreen from '../screens/GoogleMapsScreen';
+import CheckoutCart from '../screens/CheckoutCart';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -35,6 +36,7 @@ const StackNavigator = () => {
       <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
       <Stack.Screen name="CartScreen" component={CartScreen} />
       <Stack.Screen name="GoogleMapsScreen" component={GoogleMapsScreen} />
+      <Stack.Screen name="CheckoutCart" component={CheckoutCart} />
     </Stack.Navigator>
   );
 };

@@ -39,20 +39,19 @@ const Mymodal = ({
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
         <TouchableOpacity
-          style={[styles.button, styles.buttonClose]}
+          style={[styles.button, styles.buttonOpen]}
           onPress={onPress}>
-          <Text style={[styles.textStyle]}>Close</Text>
+          <Text style={[styles.textStyle, {color: '#000'}]}>Close</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={[styles.button, styles.buttonOpen]}
+          style={[styles.button, styles.buttonClose]}
           onPress={cartbtn}>
-          <Text style={[styles.textStyle, {color: '#000'}]}>Cart</Text>
+          <Text style={[styles.textStyle]}>Cart</Text>
         </TouchableOpacity>
       </View>
     </Overlay>
   );
 };
-
 const styles = StyleSheet.create({
   centeredView: {
     // flex: 1,
