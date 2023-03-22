@@ -1,18 +1,19 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {Colors} from '../assets/constants/Colors';
-import {FAB} from 'react-native-paper';
-import {WIDTH} from '../assets/constants/Dimensions';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Colors } from '../assets/constants/Colors';
+import { FAB } from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Input from '../components/Input';
 import Icon from 'react-native-vector-icons/Feather';
 import ButtonComponent from '../components/Button';
 import Header from '../components/Header';
+import DropDown from 'react-native-paper-dropdown';
 
-const BookingDetail = ({navigation}) => {
+const BookingDetail = ({ navigation }) => {
   const [data, setData] = useState({
     fullName: '',
     contactNo: '',
@@ -30,13 +31,13 @@ const BookingDetail = ({navigation}) => {
         enableAutomaticScroll={true}
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1, paddingHorizontal: 25}}>
+        contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 25 }}>
         <Header
           headercompo1
           navigation={navigation}
           headertex="Booking details"
         />
-        <View style={{marginTop: 25, flex: 1}}>
+        <View style={{ marginTop: 25, flex: 1 }}>
           <Input
             placeholder="Full Name"
             text={data.fullName}
@@ -44,7 +45,7 @@ const BookingDetail = ({navigation}) => {
             formKey="fullName"
           />
 
-          <View style={{marginVertical: 10}} />
+          <View style={{ marginVertical: 10 }} />
           <Input
             placeholder="Email Address"
             text={data.password}
@@ -52,7 +53,7 @@ const BookingDetail = ({navigation}) => {
             formKey="Email"
             textColor={Colors.tertiary}
           />
-          <View style={{marginVertical: 10}} />
+          <View style={{ marginVertical: 10 }} />
           <Input
             placeholder="Start Date"
             text={data.confirmPassword}
@@ -61,7 +62,7 @@ const BookingDetail = ({navigation}) => {
             iconname="Calendar"
             textColor={Colors.tertiary}
           />
-          <View style={{marginVertical: 10}} />
+          <View style={{ marginVertical: 10 }} />
           <Input
             placeholder="End Date"
             text={data.confirmPassword}
@@ -70,7 +71,7 @@ const BookingDetail = ({navigation}) => {
             iconname="Calendar"
             textColor={Colors.tertiary}
           />
-          <View style={{marginVertical: 10}} />
+          <View style={{ marginVertical: 10 }} />
           <Input
             placeholder="Time Slot"
             text={data.confirmPassword}
@@ -79,7 +80,7 @@ const BookingDetail = ({navigation}) => {
             iconname="Calendar"
             textColor={Colors.tertiary}
           />
-          <View style={{marginVertical: 10}} />
+          <View style={{ marginVertical: 10 }} />
           <Input
             placeholder="Exercise Type"
             text={data.confirmPassword}
@@ -88,22 +89,8 @@ const BookingDetail = ({navigation}) => {
             iconname="down"
             textColor={Colors.tertiary}
           />
-          <View
-            style={{
-              marginVertical: 10,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Input
-              placeholder={'Exercise Type'}
-              gender={true}
-              text={data.gender}
-              setText={setData}
-              formKey="gender"
-              textColor={Colors.tertiary}
-            />
-          </View>
+          <DropDown />
+
           <View
             style={{
               marginTop: 15,
@@ -115,7 +102,7 @@ const BookingDetail = ({navigation}) => {
               buttonText="BBok now"
               buttonColor={Colors.primary}
               textColor={Colors.secondary}
-              onPress={() => navigation.goBack()}
+              onPress={() => navigation.navigate('GoogleMapsScreen')}
               height={WIDTH <= 375 ? 55 : 55}
               width={WIDTH <= 375 ? 300 : 335}
             />

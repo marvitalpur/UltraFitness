@@ -1,65 +1,128 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
-import {SelectList} from 'react-native-dropdown-select-list';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {Fonts} from '../assets/constants/Fonts';
 
-const Dropdow = ({placeholder}) => {
-  const [selected, setSelected] = useState('');
 
-  const data = [
-    {key: '1', value: 'Mobiles', disabled: true},
-    {key: '2', value: 'Appliances'},
-    {key: '3', value: 'Cameras'},
-    {key: '4', value: 'Computers', disabled: true},
-    {key: '5', value: 'Vegetables'},
-    {key: '6', value: 'Diary Products'},
-    {key: '7', value: 'Drinks'},
-  ];
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  FlatList,
+} from 'react-native';
+import React, { useRef, useState } from 'react';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
+
+import Icon from 'react-native-vector-icons/Feather';
+const countries = [
+
+  { country: 'Western Sahara', code: '212', iso: 'EH' },
+  { country: 'Yemen', code: '967', iso: 'YE' },
+  { country: 'Zambia', code: '260', iso: 'ZM' },
+  { country: 'Zimbabwe', code: '263', iso: 'ZW' },
+];
+const App = () => {
+  const [search, setSearch] = useState('');
+  const [clicked, setClicked] = useState(false);
+  const [data, setData] = useState(countries);
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const searchRef = useRef();
+  const onSearch = search => {
+    if (search !== '') {
+      let tempData = data.filter(item => {
+        return item.country.toLowerCase().indexOf(search.toLowerCase()) > -1;
+      });
+      setData(tempData);
+    } else {
+      setData(countries);
+    }
+  };
   return (
-    <View style={styles.inputBtn}>
-      <SelectList
+    <View style={{ flex: 1 }}>
+      <TouchableOpacity
         style={{
-          backgroundColor: '#fafa',
-          borderWidth: 0,
-          borderColor: 'transparent',
+          width: WIDTH / 2.5,
+          // height: 50,
+          borderRadius: 10,
+          paddingLeft: 5,
+          // marginLeft: 20,
+          // marginVertical: 10,
+          justifyContent: 'center',
+          backgroundColor: Colors.secondary,
+          shadowColor: Colors.tertiary,
+          shadowOffset: {
+            width: 0,
+            height: 7,
+          }
         }}
-        placeholder={placeholder}
-        search={false}
-        setSelected={val => setSelected(val)}
-        data={data}
-        save="value"
-      />
+        onPress={() => {
+          setClicked(!clicked);
+        }}>
+        <Text style={{ fontWeight: '600' }}>
+          {selectedCountry == '' ? 'Select Country' : selectedCountry}
+        </Text>
+        <Icon name={clicked ? "" : ""} />
+
+      </TouchableOpacity>
+      {clicked ? (
+        <View
+          style={{
+            elevation: 5,
+            marginTop: 20,
+            height: 300,
+            alignSelf: 'center',
+            width: '90%',
+            backgroundColor: '#fff',
+            borderRadius: 10,
+          }}>
+          <TextInput
+            placeholder="Search.."
+            value={search}
+            ref={searchRef}
+            onChangeText={txt => {
+              onSearch(txt);
+              setSearch(txt);
+            }}
+            style={{
+              width: '100%',
+              height: 50,
+              alignSelf: 'center',
+              borderWidth: 0.2,
+              borderColor: '#8e8e8e',
+              borderRadius: 7,
+              marginTop: 20,
+              paddingLeft: 20,
+            }}
+          />
+
+          <FlatList
+            data={data}
+            renderItem={({ item, index }) => {
+              return (
+                <TouchableOpacity
+                  style={{
+                    width: '100%',
+                    alignSelf: 'center',
+                    height: 50,
+                    justifyContent: 'center',
+                    borderBottomWidth: 0.5,
+                    borderColor: '#8e8e8e',
+                  }}
+                  onPress={() => {
+                    setSelectedCountry(item.country);
+                    setClicked(!clicked);
+                    onSearch('');
+                    setSearch('');
+                  }}>
+                  <Text style={{ fontWeight: '600' }}>{item.country}</Text>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+      ) : null}
     </View>
   );
 };
 
-export default Dropdow;
-
-const styles = StyleSheet.create({
-  inputBtn: {
-    // width: WIDTH / 2.5,
-    // height: 50,
-    borderRadius: 10,
-    paddingLeft: 5,
-    // marginLeft: 20,
-    // marginVertical: 10,
-    justifyContent: 'center',
-    backgroundColor: Colors.secondary,
-    shadowColor: Colors.tertiary,
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
-
-    elevation: 15,
-  },
-  btnText: {
-    fontSize: 14,
-    fontFamily: Fonts.default,
-    fontWeight: '200',
-  },
-});
+export default App;
