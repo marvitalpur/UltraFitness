@@ -1,15 +1,15 @@
-import { View, Text } from 'react-native';
+import {View, Text} from 'react-native';
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Provider as PaperProvider } from 'react-native-paper';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import RootStack from './navigation/RootStack';
 import ProductScreen from './screens/ProductScreen';
 export default function App() {
   return (
     <SafeAreaProvider>
       <PaperProvider>
-        <GestureHandlerRootView style={{ flex: 1 }}>
+        <GestureHandlerRootView style={{flex: 1}}>
           <RootStack />
         </GestureHandlerRootView>
       </PaperProvider>

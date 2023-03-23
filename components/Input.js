@@ -77,10 +77,12 @@ const GenderMenu = ({value, onChangeHandler, formKey}) => {
     <Menu
       visible={visible}
       onDismiss={closeMenu}
-      style={{
-        width: WIDTH / 2.5,
-        // marginLeft: 20,
-      }}
+      style={
+        {
+          // width: WIDTH / 2.5,
+          // marginLeft: 20,
+        }
+      }
       contentStyle={{
         backgroundColor: Colors.secondary,
         borderRadius: 10,

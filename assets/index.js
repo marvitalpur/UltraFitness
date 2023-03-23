@@ -36,6 +36,7 @@ const Assets = {
     onboardAnimation3: require('./animation/animationOnboarding3.json'),
     onboardAnimationSun: require('./animation/animationSun.json'),
     loginAnimation: require('./animation/animationLogin.json'),
+    animationRides: require('../assets/animation/animationRides.json'),
   },
 };
 

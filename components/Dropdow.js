@@ -1,80 +1,52 @@
-
-
+import React, {useRef, useState} from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
   Image,
   TextInput,
+  StyleSheet,
   FlatList,
 } from 'react-native';
-import React, { useRef, useState } from 'react';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
-
 import Icon from 'react-native-vector-icons/Feather';
-const countries = [
 
-  { country: 'Western Sahara', code: '212', iso: 'EH' },
-  { country: 'Yemen', code: '967', iso: 'YE' },
-  { country: 'Zambia', code: '260', iso: 'ZM' },
-  { country: 'Zimbabwe', code: '263', iso: 'ZW' },
+const fruits = [
+  {name: 'Apple', id: 1},
+  {name: 'Banana', id: 2},
+  {name: 'Orange', id: 3},
+  {name: 'Mango', id: 4},
 ];
-const App = () => {
+const Dropdown = () => {
   const [search, setSearch] = useState('');
   const [clicked, setClicked] = useState(false);
-  const [data, setData] = useState(countries);
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [data, setData] = useState(fruits);
+  const [selectedFruit, setSelectedFruit] = useState('');
   const searchRef = useRef();
   const onSearch = search => {
     if (search !== '') {
       let tempData = data.filter(item => {
-        return item.country.toLowerCase().indexOf(search.toLowerCase()) > -1;
+        return item.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
       });
       setData(tempData);
     } else {
-      setData(countries);
+      setData(fruits);
     }
   };
+
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <TouchableOpacity
-        style={{
-          width: WIDTH / 2.5,
-          // height: 50,
-          borderRadius: 10,
-          paddingLeft: 5,
-          // marginLeft: 20,
-          // marginVertical: 10,
-          justifyContent: 'center',
-          backgroundColor: Colors.secondary,
-          shadowColor: Colors.tertiary,
-          shadowOffset: {
-            width: 0,
-            height: 7,
-          }
-        }}
+        style={styles.inputBtn}
         onPress={() => {
           setClicked(!clicked);
         }}>
-        <Text style={{ fontWeight: '600' }}>
-          {selectedCountry == '' ? 'Select Country' : selectedCountry}
+        <Text style={styles.btnText}>
+          {selectedFruit == '' ? 'Fruit' : selectedFruit}
         </Text>
-        <Icon name={clicked ? "" : ""} />
-
+        <Icon name={clicked ? 'chevron-up' : 'chevron-down'} />
       </TouchableOpacity>
       {clicked ? (
-        <View
-          style={{
-            elevation: 5,
-            marginTop: 20,
-            height: 300,
-            alignSelf: 'center',
-            width: '90%',
-            backgroundColor: '#fff',
-            borderRadius: 10,
-          }}>
+        <View style={[styles.btnText, {flex: 1}]}>
           <TextInput
             placeholder="Search.."
             value={search}
@@ -83,21 +55,12 @@ const App = () => {
               onSearch(txt);
               setSearch(txt);
             }}
-            style={{
-              width: '100%',
-              height: 50,
-              alignSelf: 'center',
-              borderWidth: 0.2,
-              borderColor: '#8e8e8e',
-              borderRadius: 7,
-              marginTop: 20,
-              paddingLeft: 20,
-            }}
+            style={[styles.btnText]}
           />
 
           <FlatList
             data={data}
-            renderItem={({ item, index }) => {
+            renderItem={({item, index}) => {
               return (
                 <TouchableOpacity
                   style={{
@@ -109,12 +72,12 @@ const App = () => {
                     borderColor: '#8e8e8e',
                   }}
                   onPress={() => {
-                    setSelectedCountry(item.country);
+                    setSelectedFruit(item.name);
                     setClicked(!clicked);
                     onSearch('');
                     setSearch('');
                   }}>
-                  <Text style={{ fontWeight: '600' }}>{item.country}</Text>
+                  <Text style={{fontWeight: '600'}}>{item.name}</Text>
                 </TouchableOpacity>
               );
             }}
@@ -125,4 +88,23 @@ const App = () => {
   );
 };
 
-export default App;
+export default Dropdown;
+
+const styles = StyleSheet.create({
+  inputBtn: {
+    width: '100%',
+    height: 50,
+    borderRadius: 10,
+    flexDirection: 'row',
+    paddingLeft: 5,
+    paddingTop: 15,
+    paddingHorizontal: 25,
+    justifyContent: 'space-between',
+    backgroundColor: 'yellow',
+  },
+  btnText: {
+    paddingHorizontal: 10,
+    fontSize: 14,
+    fontWeight: '200',
+  },
+});
