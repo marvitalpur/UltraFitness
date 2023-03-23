@@ -41,7 +41,7 @@ const Dropdown = () => {
           setClicked(!clicked);
         }}>
         <Text style={styles.btnText}>
-          {selectedFruit == '' ? 'Fruit' : selectedFruit}
+          {selectedFruit == '' ? 'State' : selectedFruit}
         </Text>
         <Icon name={clicked ? 'chevron-up' : 'chevron-down'} />
       </TouchableOpacity>
@@ -57,7 +57,6 @@ const Dropdown = () => {
             }}
             style={[styles.btnText]}
           />
-
           <FlatList
             data={data}
             renderItem={({item, index}) => {
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingHorizontal: 25,
     justifyContent: 'space-between',
-    backgroundColor: 'yellow',
+    // backgroundColor: 'yellow',
   },
   btnText: {
     paddingHorizontal: 10,

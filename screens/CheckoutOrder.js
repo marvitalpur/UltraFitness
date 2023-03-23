@@ -19,6 +19,7 @@ import Lottie from 'lottie-react-native';
 import {Fonts} from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
 import Assets from '../assets';
+import {RiderIcon1, RiderIcon2, RiderIcon3} from '../assets/svgs/HomeSvgs';
 
 const CheckoutOrder = ({navigation}) => {
   const [checked, setChecked] = useState();
@@ -62,21 +63,32 @@ const CheckoutOrder = ({navigation}) => {
               autoPlay
               loop
             />
-          </View>
+            <View style={{}} />
+            <Text style={[styles.heading2]}>Complete Successfully</Text>
+            <Text numberOfLines={4} style={styles.text2}>
+              Your ordering information will be forwarded to your email
+            </Text>
 
-          <View style={{}} />
-          <Text style={[styles.heading2]}>Complete Successfully</Text>
+            <Text
+              numberOfLines={2}
+              style={[styles.text2, {color: Colors.tertiary}]}>
+              example_mail@.com
+            </Text>
+            <View style={{marginTop: 15}} />
+          </View>
+          <RiderIcon1 />
+          <Text numberOfLines={4} style={styles.text2}>
+            We will inform you when the package is ready
+          </Text>
+          <RiderIcon2 />
           <Text numberOfLines={4} style={styles.text2}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
             pretium tempor.
           </Text>
-          <Text
-            numberOfLines={2}
-            style={[styles.text2, {color: Colors.tertiary}]}>
-            example_mail@.com
+          <RiderIcon3 />
+          <Text numberOfLines={4} style={styles.text2}>
+            Your products will be shipped in{'\n'} 2-3 days
           </Text>
-
-          <View style={{marginTop: 15}} />
           <View
             style={{
               marginTop: 15,
@@ -144,5 +156,6 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.default,
     fontSize: 18,
     color: Colors.tertiary,
+    textAlign: 'center',
   },
 });
