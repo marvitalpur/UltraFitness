@@ -1,22 +1,19 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 // import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-
-import {Fonts} from '../assets/constants/Fonts';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import Input from '../components/Input';
-
 import ButtonComponent from '../components/Button';
 import Header from '../components/Header';
-import Mymodal from '../components/Popup';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import DropdownInput from '../components/Dropdow';
+
 
 const BookingDetail = (
-  {
-    // navigation
-  },
+  { navigation },
 ) => {
   const [data, setData] = useState({
     fullName: '',
@@ -30,88 +27,91 @@ const BookingDetail = (
   return (
     <>
       <SafeAreaView style={styles.container}>
-        {/* <KeyboardAwareScrollView
+        <KeyboardAwareScrollView
           keyboardShouldPersistTaps="handled"
           enableOnAndroid={true}
           enableAutomaticScroll={true}
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{flexGrow: 1, paddingHorizontal: 25}}> */}
-        {/* <Header
-          headercompo1
-          navigation={navigation}
-          headertex="Booking details"
-        /> */}
-        <View style={{marginTop: 25}} />
-        <View style={{marginTop: 25, flex: 1}}>
-          <Input
-            placeholder="Full Name"
-            text={data.fullName}
-            setText={setData}
-            formKey="fullName"
+          contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 25 }}>
+          <Header
+            headercompo1
+            navigation={navigation}
+            headertex="Booking details"
           />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Email Address"
-            text={data.password}
-            setText={setData}
-            formKey="Email"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Start Date"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="Start Date"
-            iconname="calendar"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="End Date"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="End Date"
-            iconname="calendar"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Time Slot"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="End Date"
-            iconname="clockcircle"
-            textColor={Colors.tertiary}
-          />
-          <View style={{marginVertical: 10}} />
-          <Input
-            placeholder="Exercise Type"
-            text={data.confirmPassword}
-            setText={setData}
-            formKey="End Date"
-            iconname="clockcircle"
-            textColor={Colors.tertiary}
-          />
-          <View
-            style={{
-              marginTop: 15,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <ButtonComponent
-              borderRadius={10}
-              buttonText="Book now"
-              buttonColor={Colors.primary}
-              textColor={Colors.secondary}
-              onPress={() => navigation.navigate('GoogleMapsScreen')}
-              height={WIDTH <= 375 ? 55 : 55}
-              width={WIDTH <= 375 ? 300 : 335}
+
+          <View style={{ marginTop: 25 }} />
+          <View style={{ marginTop: 25, flex: 1 }}>
+            <Input
+              placeholder="Full Name"
+              text={data.fullName}
+              setText={setData}
+              formKey="fullName"
             />
+            <View style={{ marginVertical: 10 }} />
+            <Input
+              placeholder="Email Address"
+              text={data.password}
+              setText={setData}
+              formKey="Email"
+              textColor={Colors.tertiary}
+            />
+            <View style={{ marginVertical: 10 }} />
+            <Input
+              placeholder="Start Date"
+              text={data.confirmPassword}
+              setText={setData}
+              formKey="Start Date"
+              iconname="calendar"
+              textColor={Colors.tertiary}
+            />
+            <View style={{ marginVertical: 10 }} />
+            <Input
+              placeholder="End Date"
+              text={data.confirmPassword}
+              setText={setData}
+              formKey="End Date"
+              iconname="calendar"
+              textColor={Colors.tertiary}
+            />
+            <View style={{ marginVertical: 10 }} />
+            <Input
+              placeholder="Time Slot"
+              text={data.confirmPassword}
+              setText={setData}
+              formKey="End Date"
+              iconname="clock"
+              textColor={Colors.tertiary}
+            />
+            <View style={{ marginVertical: 10 }} />
+            <Input
+              placeholder="Exercise Type"
+              text={data.confirmPassword}
+              setText={setData}
+              formKey="End Date"
+              iconname="calendar"
+              textColor={Colors.tertiary}
+            />
+            <DropdownInput />
+            <View
+              style={{
+                marginTop: 15,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <ButtonComponent
+                borderRadius={10}
+                buttonText="Book now"
+                buttonColor={Colors.primary}
+                textColor={Colors.secondary}
+                onPress={() => navigation.navigate('GoogleMapsScreen')}
+                height={WIDTH <= 375 ? 55 : 55}
+                width={WIDTH <= 375 ? 300 : 335}
+              />
+            </View>
           </View>
-        </View>
-        {/* </KeyboardAwareScrollView> */}
+
+        </KeyboardAwareScrollView>
       </SafeAreaView>
     </>
   );

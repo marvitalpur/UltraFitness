@@ -6,17 +6,17 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {FlatList} from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
 import ProductCard from './ProductCard';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {TouchableRipple} from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-const Products = ({}) => {
+const Products = ({ }) => {
   const navigation = useNavigation();
   const data = [
     {
@@ -31,7 +31,7 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 1',
+      name: 'product 2',
       price: '36',
       description: 'Home Equipment',
       image: Assets.cards.cardImage2,
@@ -42,7 +42,7 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 1',
+      name: 'product 3',
       price: '36',
       description: 'Home Equipment',
       image: Assets.cards.cardImage3,
@@ -53,7 +53,7 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 1',
+      name: 'product 4',
       price: '36',
       description: 'Home Equipment',
       image: Assets.cards.cardImage4,
@@ -64,7 +64,7 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 1',
+      name: 'product 5',
       price: '36',
       description: 'Home Equipment',
       image: Assets.cards.cardImage5,
@@ -75,7 +75,7 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 1',
+      name: 'product 6',
       price: '36',
       description: 'Home Equipment',
       image: Assets.cards.cardImage6,
@@ -90,11 +90,11 @@ const Products = ({}) => {
   return (
     <View>
       <View style={styles.header}>
-        <Text style={[styles.headerText, {width: '50%'}]}>
+        <Text style={[styles.headerText, { width: '50%' }]}>
           Get Something Special For You!
         </Text>
         <TouchableRipple>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Text
               style={
                 (styles.headerText,
@@ -116,12 +116,12 @@ const Products = ({}) => {
           padding: 25,
         }}
         numColumns={2}
-        ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
-        renderItem={({item, index}) => (
+        ItemSeparatorComponent={<View style={{ marginVertical: 15 }} />}
+        renderItem={({ item, index }) => (
           <TouchableOpacity
             onPress={item.onPress}
             activeOpacity={0.75}
-            style={{justifyContent: 'space-evenly', width: '50%'}}>
+            style={{ justifyContent: 'space-evenly', width: '50%' }}>
             <ProductCard
               index={index}
               name={item.name}

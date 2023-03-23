@@ -1,17 +1,17 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Lottie from 'lottie-react-native';
-import {Colors} from '../assets/constants/Colors';
+import { Colors } from '../assets/constants/Colors';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import Input from '../components/Input';
 import Icon from 'react-native-vector-icons/Feather';
 import ButtonComponent from '../components/Button';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [data, setData] = useState({
     username: '',
     password: '',
@@ -25,7 +25,7 @@ const Login = ({navigation}) => {
         enableAutomaticScroll={true}
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
         <View
           style={{
             width: WIDTH,
@@ -53,7 +53,7 @@ const Login = ({navigation}) => {
           </View>
           <Lottie
             source={Assets.animation.loginAnimation}
-            style={{width: WIDTH, height: HEIGHT / 2.5}}
+            style={{ width: WIDTH, height: HEIGHT / 2.5 }}
             autoPlay
             loop
           />
@@ -67,7 +67,7 @@ const Login = ({navigation}) => {
               resizeMode="contain"
             />
           </View>
-          <View style={{marginVertical: 5}} />
+          <View style={{ marginVertical: 5 }} />
           <Input
             placeholder="Username"
             text={data.username}
@@ -75,7 +75,7 @@ const Login = ({navigation}) => {
             formKey="username"
             textColor={Colors.primary}
           />
-          <View style={{marginVertical: 15}} />
+          <View style={{ marginVertical: 15 }} />
           <Input
             placeholder="Password"
             text={data.password}
@@ -98,13 +98,13 @@ const Login = ({navigation}) => {
                 size={20}
                 color={rememberMe ? Colors.primary : Colors.tertiary}
               />
-              <Text style={[styles.text, {marginLeft: 5}]}>Remember me</Text>
+              <Text style={[styles.text, { marginLeft: 5 }]}>Remember me</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.touchable}>
               <Text
                 style={[
                   styles.text,
-                  {textDecorationLine: 'underline', color: Colors.primary},
+                  { textDecorationLine: 'underline', color: Colors.primary },
                 ]}>
                 Forgot Password?
               </Text>
@@ -126,16 +126,16 @@ const Login = ({navigation}) => {
               height={WIDTH <= 375 ? 40 : 55}
               width={WIDTH <= 375 ? 125 : 175}
             />
-            <Text style={[styles.text, {color: Colors.tertiary, opacity: 0.5}]}>
+            <Text style={[styles.text, { color: Colors.tertiary, opacity: 0.5 }]}>
               Or
             </Text>
             <TouchableOpacity
-              style={[styles.touchable, {width: 175}]}
+              style={[styles.touchable, { width: 175 }]}
               onPress={() => navigation.navigate('Signup')}>
               <Text
                 style={[
                   styles.text,
-                  {textDecorationLine: 'underline', color: Colors.primary},
+                  { textDecorationLine: 'underline', color: Colors.primary },
                 ]}>
                 Create Your Account?
               </Text>
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginRight: 2.5,
   },
-  contentContainer: {flex: 1, paddingHorizontal: 25},
+  contentContainer: { flex: 1, paddingHorizontal: 25 },
   loginTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',

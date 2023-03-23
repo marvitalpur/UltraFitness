@@ -5,19 +5,21 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
-import {FlatList} from 'react-native-gesture-handler';
+import React, { useState } from 'react';
+import { FlatList } from 'react-native-gesture-handler';
 
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {FAB, TouchableRipple} from 'react-native-paper';
-import {useNavigation} from '@react-navigation/native';
-import {Image} from 'react-native';
-import {Checkbox} from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { FAB, TouchableRipple } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { Image } from 'react-native';
+import { Checkbox } from 'react-native-paper';
+import ButtonComponent2 from './Botton2';
+import { color } from 'react-native-reanimated';
 
-const CartItems = ({carddata}) => {
+const CartItems = ({ carddata, card1, card2, colorbtn }) => {
   const [count, setCount] = useState(5);
   const [checked, setChecked] = useState();
 
@@ -31,144 +33,271 @@ const CartItems = ({carddata}) => {
   const data = [
     {
       description: 'Home Equipment\nPush Up Bars',
+      description1: 'OD - 424923192 - N',
+      description2: '₹37.00',
       image: Assets.cards.cardImage1,
+      colorbtn: '#FFB900',
+      btntext: "In Transit"
     },
     {
+
       description: 'Home Equipment\nPush Up Bars',
+      description1: 'OD - 424923192 - N',
+      description2: '₹37.00',
       image: Assets.cards.cardImage2,
+      colorbtn: Colors.primary,
+      btntext: 'Delivered'
     },
   ];
 
+
+
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={data}
-        contentContainerStyle={{paddingHorizontal: 10}}
+        contentContainerStyle={{ paddingHorizontal: 10 }}
         // numColumns={2}
-        ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
-        renderItem={({item, index}) => (
+        ItemSeparatorComponent={<View style={{ marginVertical: 15 }} />}
+        renderItem={({ item, index }) => (
           <>
-            <View style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
-              <View style={{justifyContent: 'center'}}>
-                <Checkbox
-                  size={12}
-                  color="#000"
-                  status={checked ? 'checked' : 'unchecked'}
-                  onPress={() => {
-                    setChecked(!checked);
-                  }}
-                />
-              </View>
-
-              <View
-                style={[
-                  styles.card,
-                  {
-                    // padding: index % 2 == 0 ? 5 : 0,
-                    marginRight: index % 2 == 0 ? 5 : 0,
-                    marginLeft: index % 2 == 0 ? 0 : 5,
-                  },
-                ]}>
+            {card1 && (
+              <View style={{ flexDirection: 'row', flex: 1, marginVertical: 10 }}>
+                <View style={{ justifyContent: 'center' }}>
+                  <Checkbox
+                    size={12}
+                    color="#000"
+                    status={checked ? 'checked' : 'unchecked'}
+                    onPress={() => {
+                      setChecked(!checked);
+                    }}
+                  />
+                </View>
                 <View
                   style={[
-                    // styles.headerContainer,
+                    styles.card,
                     {
-                      // padding: 5,
-                      flexDirection: 'row',
-                      // width: WIDTH / 5.5,
-                      // height: WIDTH / 4.2,
-                      // paddingRight: 10,
-                      // backgroundColor: 'blue',
+                      // padding: index % 2 == 0 ? 5 : 0,
+                      marginRight: index % 2 == 0 ? 5 : 0,
+                      marginLeft: index % 2 == 0 ? 0 : 5,
                     },
                   ]}>
-                  <View style={styles.productImage}>
-                    <Image
-                      source={item.image}
-                      resizeMode="contain"
-                      style={{
-                        width: WIDTH / 5.6,
-                        height: WIDTH / 4.9,
-                        marginLeft: 'auto',
-                      }}
-                    />
-                  </View>
-                  <View style={{width: WIDTH / 4.6, paddingTop: 15}}>
-                    <Text numberOfLines={2} style={styles.productDesc}>
-                      {item.description}
-                    </Text>
-                  </View>
                   <View
                     style={[
-                      styles.headerContainer,
+                      // styles.headerContainer,
                       {
-                        // backgroundColor: 'green',
-                        padding: 15,
+                        // padding: 5,
+                        flexDirection: 'row',
+                        // width: WIDTH / 5.5,
+                        // height: WIDTH / 4.2,
+                        // paddingRight: 10,
+                        // backgroundColor: 'blue',
                       },
                     ]}>
-                    <FAB
+                    <View style={styles.productImage}>
+                      <Image
+                        source={item.image}
+                        resizeMode="contain"
+                        style={{
+                          width: WIDTH / 5.6,
+                          height: WIDTH / 4.9,
+                          marginLeft: 'auto',
+                        }}
+                      />
+                    </View>
+                    <View style={{ width: WIDTH / 4.6, paddingTop: 15 }}>
+                      <Text numberOfLines={2} style={styles.productDesc}>
+                        {item.description}
+                      </Text>
+                    </View>
+                    <View
                       style={[
-                        styles.fab,
+                        styles.headerContainer,
                         {
-                          backgroundColor: 'red',
-                          // opacity: 0.5,
-                          backgroundColor: Colors.tertiary,
-                          height: WIDTH < 375 ? 44 : 48,
-                          width: WIDTH < 375 ? 48 : 51,
-
-                          // width: WIDTH / 7.5,
-                          // height: WIDTH / 7.5,
-                          // color: '#ffff',
+                          // backgroundColor: 'green',
+                          padding: 15,
                         },
-                      ]}
-                      size="small"
-                      icon="minus"
-                      color="white"
-                      onPress={decrement}
-                    />
-                    <FAB
-                      style={[
-                        styles.fab,
-                        {
-                          backgroundColor: 'red',
-                          // opacity: 0.5,
-                          backgroundColor: Colors.secondary,
-                          height: WIDTH < 375 ? 44 : 48,
-                          width: WIDTH < 375 ? 48 : 51,
+                      ]}>
+                      <FAB
+                        style={[
+                          styles.fab,
+                          {
+                            backgroundColor: 'red',
+                            // opacity: 0.5,
+                            backgroundColor: Colors.tertiary,
+                            height: WIDTH < 375 ? 44 : 48,
+                            width: WIDTH < 375 ? 48 : 51,
 
-                          // color: '#0000',
-                        },
-                      ]}
-                      // size="small"
-                      icon={count}
-                      color="black"
+                            // width: WIDTH / 7.5,
+                            // height: WIDTH / 7.5,
+                            // color: '#ffff',
+                          },
+                        ]}
+                        size="small"
+                        icon="minus"
+                        color="white"
+                        onPress={decrement}
+                      />
+                      <FAB
+                        style={[
+                          styles.fab,
+                          {
+                            backgroundColor: 'red',
+                            // opacity: 0.5,
+                            backgroundColor: Colors.secondary,
+                            height: WIDTH < 375 ? 44 : 48,
+                            width: WIDTH < 375 ? 48 : 51,
+
+                            // color: '#0000',
+                          },
+                        ]}
+                        // size="small"
+                        icon={count}
+                        color="black"
                       // onPress={count}
-                    />
-                    <FAB
-                      style={[
-                        styles.fab,
-                        {
-                          backgroundColor: 'red',
-                          // opacity: 0.5,
-                          backgroundColor: Colors.primary,
-                          height: WIDTH < 375 ? 44 : 48,
-                          width: WIDTH < 375 ? 48 : 51,
+                      />
+                      <FAB
+                        style={[
+                          styles.fab,
+                          {
+                            backgroundColor: 'red',
+                            // opacity: 0.5,
+                            backgroundColor: Colors.primary,
+                            height: WIDTH < 375 ? 44 : 48,
+                            width: WIDTH < 375 ? 48 : 51,
 
-                          color: '#FFFF',
-                        },
-                      ]}
-                      size="small"
-                      icon="plus"
-                      color="white"
-                      onPress={decrement}
-                    />
+                            color: '#FFFF',
+                          },
+                        ]}
+                        size="small"
+                        icon="plus"
+                        color="white"
+                        onPress={decrement}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
-            </View>
+            )}
+            {card2 && (
+              <View style={{ flexDirection: 'row', flex: 1, marginVertical: 10 }}>
+
+                <View
+                  style={[
+                    styles.card,
+                    {
+                      height: 140,
+                      paddingHorizontal: 15,
+                      // padding: index % 2 == 0 ? 5 : 0,
+                      marginRight: index % 2 == 0 ? 5 : 0,
+                      marginLeft: index % 2 == 0 ? 0 : 5,
+                    },
+                  ]}>
+                  <View
+                    style={[
+                      // styles.headerContainer,
+                      {
+                        // padding: 5,
+                        marginTop: 5,
+                        flexDirection: 'row',
+                        // width: WIDTH / 5.5,
+                        // height: WIDTH / 4.2,
+                        // paddingRight: 10,
+                        // backgroundColor: 'blue',
+                      },
+                    ]}>
+                    <View style={{ width: WIDTH / 4.6, paddingTop: 15 }}>
+                      <Text numberOfLines={2} style={[styles.productDesc, { fontSize: 16, color: Colors.tertiary }]}>
+                        {item.description1}
+                      </Text>
+                      <Text numberOfLines={2} style={[styles.productDesc, { fontSize: 14, color: '#00C569' }]}>
+                        {item.description2}
+                      </Text>
+                      <View
+                        style={{
+                          marginTop: 5,
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginBottom: 10,
+                        }}>
+                        <ButtonComponent2
+                          borderRadius={14}
+                          buttonText={item.btntext}
+                          buttonColor={item.colorbtn}
+                          textColor={Colors.secondary}
+                          onPress={() => navigation.navigate('GoogleMapsScreen')}
+                          // onPress={() => navigation.navigate('GoogleMapsScreen')}
+                          height={WIDTH <= 375 ? 25 : 30}
+                          width={WIDTH <= 323 ? 60 : 80}
+                        />
+                      </View>
+                    </View>
+                    <View style={[styles.productImage, { flexWrap: 'wrap', }]}>
+                      <Image
+                        source={item.image}
+                        resizeMode="contain"
+                        style={{
+                          width: WIDTH / 8.6,
+                          height: WIDTH / 8.9,
+                          marginLeft: 'auto',
+                        }}
+                      />
+                      <Image
+                        source={item.image}
+                        resizeMode="contain"
+                        style={{
+                          width: WIDTH / 8.6,
+                          height: WIDTH / 8.9,
+                          marginLeft: 'auto',
+                        }}
+                      />
+                      <Image
+                        source={item.image}
+                        resizeMode="contain"
+                        style={{
+                          width: WIDTH / 8.6,
+                          height: WIDTH / 8.9,
+                          marginLeft: 'auto',
+                        }}
+                      />
+                      <View
+                        style={[
+                          styles.headerContainer,
+                          {
+                            // backgroundColor: 'green',
+                            padding: 15,
+                          },
+                        ]}>
+                        <FAB
+                          style={[
+                            styles.fab,
+                            {
+                              backgroundColor: 'red',
+                              // opacity: 0.5,
+                              backgroundColor: Colors.primary,
+                              height: WIDTH < 375 ? 44 : 48,
+                              width: WIDTH < 375 ? 48 : 51,
+
+                              color: '#FFFF',
+                            },
+                          ]}
+                          size="small"
+                          icon="plus"
+                          color="white"
+                          onPress={decrement}
+                        />
+                      </View>
+
+                    </View>
+                  </View>
+                </View>
+              </View>
+            )}
           </>
         )}
       />
     </View>
+
   );
 };
 
