@@ -8,7 +8,6 @@ import {Fonts} from '../assets/constants/Fonts';
 import ButtonComponent from '../components/Button';
 import Input from '../components/Input';
 import MapView, {Marker} from 'react-native-maps';
-import PickerExample from '../components/Dropdow';
 import Radiobutton from '../components/Radiobutton';
 import Dropdown from '../components/Dropdow';
 
@@ -28,7 +27,6 @@ const GoogleMapsScreen = ({navigation}) => {
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -36,7 +34,12 @@ const GoogleMapsScreen = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
         <View style={{flex: 1, paddingHorizontal: 25}}>
-          <Header headercompo1 navigation={navigation} />
+          <Header
+            navigation={navigation}
+            onlybackbutton
+            backIcon
+            headertex={'Details'}
+          />
           {/* Cards start */}
           <View style={styles.Mapcontainer}>
             <MapView
@@ -97,7 +100,22 @@ const GoogleMapsScreen = ({navigation}) => {
             textColor={Colors.tertiary}
           />
           <View style={{marginTop: 25}} />
-          <Dropdown />
+          <View
+            style={
+              {
+                // flexDirection: 'row',
+                // alignItems: 'center',
+                // justifyContent: 'space-between',
+              }
+            }>
+            <Input
+              gender={true}
+              text={data.gender}
+              setText={setData}
+              formKey="gender"
+              textColor={Colors.primary}
+            />
+          </View>
           <View style={{marginTop: 25}} />
           <Input
             placeholder="Email"
@@ -156,7 +174,7 @@ const GoogleMapsScreen = ({navigation}) => {
             buttonText="Continue"
             buttonColor={Colors.tertiary}
             textColor={Colors.secondary}
-            onPress={() => navigation.navigate('CheckoutOrder')}
+            onPress={() => navigation.navigate('CheckoutCart')}
             height={WIDTH <= 375 ? 55 : 55}
             width={WIDTH <= 323 ? 260 : 300}
           />

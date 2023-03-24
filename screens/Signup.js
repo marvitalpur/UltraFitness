@@ -70,6 +70,8 @@ const Signup = ({navigation}) => {
             textColor={Colors.primary}
           />
           <Input
+            color={Colors.primary}
+            color2={Colors.tertiary}
             gender={true}
             text={data.gender}
             setText={setData}
@@ -101,7 +103,6 @@ const Signup = ({navigation}) => {
           formKey="confirmPassword"
           textColor={Colors.primary}
         />
-        1
         <TouchableOpacity
           style={styles.touchable}
           onPress={() => setAgree(!agree)}>
@@ -171,13 +172,23 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   fab: {
-    height: 55,
-    width: 55,
-    borderRadius: 5,
-    backgroundColor: 'rgba(0, 180, 216, 0.06)',
-    // opacity: 0.06,
-    alignItems: 'center',
+    height: 50,
+    width: 50,
+    borderRadius: 10,
+    // marginLeft: 20,
+    // marginVertical: 10,
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.secondary,
+    shadowColor: Colors.tertiary,
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15,
   },
   loginText: {
     fontSize: WIDTH <= 375 ? 25 : 30,

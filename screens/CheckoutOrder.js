@@ -7,28 +7,26 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import Table from '../components/TableData';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import ButtonComponent from '../components/Button';
-import { TouchableRipple } from 'react-native-paper';
-import { BackSvg } from '../assets/svgs/HeaderSvgs';
+import {TouchableRipple} from 'react-native-paper';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import Lottie from 'lottie-react-native';
-import { Fonts } from '../assets/constants/Fonts';
-import Icon from 'react-native-vector-icons/Feather';
+import {Fonts} from '../assets/constants/Fonts';
+import {RiderIcon1, RiderIcon2, RiderIcon3} from '../assets/svgs/HomeSvgs';
 import Assets from '../assets';
-import { RiderIcon1, RiderIcon2, RiderIcon3 } from '../assets/svgs/HomeSvgs';
 
-const CheckoutOrder = ({ navigation }) => {
+const CheckoutOrder = ({navigation}) => {
   const [checked, setChecked] = useState();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
         <View
           style={{
             justifyContent: 'center',
@@ -38,7 +36,14 @@ const CheckoutOrder = ({ navigation }) => {
           }}>
           <Text
             style={[
-              styles.text, { fontWeight: '300', fontFamily: Fonts.default, fontSize: 22, marginTop: 25 },]}>
+              styles.text,
+              {
+                fontWeight: '300',
+                fontFamily: Fonts.default,
+                fontSize: 22,
+                marginTop: 25,
+              },
+            ]}>
             Checkout
           </Text>
           <View
@@ -47,7 +52,7 @@ const CheckoutOrder = ({ navigation }) => {
               // height: HEIGHT / 2.5,
               // alignItems: 'center',
               // marginTop: 20,
-              alignItems: 'center'
+              alignItems: 'center',
             }}>
             <View
               style={{
@@ -56,8 +61,7 @@ const CheckoutOrder = ({ navigation }) => {
                 position: 'absolute',
                 right: 30,
                 top: -35,
-              }}>
-            </View>
+              }}></View>
             <Lottie
               source={Assets.animation.animationRides}
               style={{
@@ -73,24 +77,24 @@ const CheckoutOrder = ({ navigation }) => {
             </Text>
             <Text
               numberOfLines={2}
-              style={[styles.text2, { color: Colors.tertiary, marginTop: 10 }]}>
+              style={[styles.text2, {color: Colors.tertiary, marginTop: 10}]}>
               example_mail@.com
             </Text>
           </View>
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <RiderIcon1 />
           <Text numberOfLines={4} style={styles.text2}>
             We will inform you when the {'\n'}package is ready
           </Text>
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <RiderIcon2 />
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <Text numberOfLines={4} style={styles.text2}>
             Your products will be shipped in{'\n'} 2-3 days
           </Text>
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <RiderIcon3 />
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <Text numberOfLines={4} style={styles.text2}>
             You will receive an email when the{'\n'}package is delivered
           </Text>
@@ -106,24 +110,21 @@ const CheckoutOrder = ({ navigation }) => {
               buttonText="Go to Dashboard"
               buttonColor={Colors.primary}
               textColor={Colors.secondary}
-              onPress={() => navigation.navigate('Drawer', { screen: 'Home' })}
+              onPress={() => navigation.navigate('MyOrders')}
               height={WIDTH <= 375 ? 55 : 55}
               width={WIDTH <= 323 ? 260 : 300}
             />
-
           </View>
-
         </View>
-
       </ScrollView>
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({ navigation }) => {
+const HeaderComponent = ({navigation}) => {
   return (
     <View style={{}}>
       <TouchableRipple
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate('CheckoutOrder')}
         style={{
           width: 50,
           height: 50,

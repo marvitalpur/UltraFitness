@@ -10,20 +10,33 @@ import {
 import {Colors} from '../assets/constants/Colors';
 import {Fonts} from '../assets/constants/Fonts';
 
-const Header = ({logo, navigation, backIcon, headertex}) => {
+const Header = ({
+  logo,
+  navigation,
+  backIcon,
+  headertex,
+  backIcon1,
+  onlybackbutton,
+}) => {
   return (
     <View style={styles.container}>
       <TouchableRipple
         onPress={() =>
-          backIcon ? navigation.closeDrawer() : navigation.openDrawer()
+          backIcon1
+            ? navigation.goBack()
+            : onlybackbutton
+            ? navigation.goBack()
+            : backIcon
+            ? navigation.closeDrawer()
+            : navigation.openDrawer()
         }
         style={styles.btn}>
-        {backIcon ? <BackSvg /> : <MenuSvg />}
+        {backIcon1 ? <BackSvg /> : backIcon ? <BackSvg /> : <MenuSvg />}
       </TouchableRipple>
       {headertex && <Text style={styles.headertex}>{headertex}</Text>}
       {logo && <LogoSvg />}
       {backIcon ? (
-        <View style={{width: 50, height: 50}} />
+        <View style={{}}></View>
       ) : (
         <TouchableRipple style={styles.btn}>
           <NotificationSvg />

@@ -19,6 +19,8 @@ const Mymodal = ({
   cartbtn,
   onPress,
   modaltext1,
+  button1,
+  button2,
 }) => {
   return (
     <Overlay
@@ -38,15 +40,17 @@ const Mymodal = ({
         <Text style={styles.modalText}>{modaltext1}</Text>
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-        <TouchableOpacity
-          style={[styles.button, styles.buttonOpen]}
-          onPress={onPress}>
-          <Text style={[styles.textStyle, {color: '#000'}]}>Close</Text>
-        </TouchableOpacity>
+        {button1 && (
+          <TouchableOpacity
+            style={[styles.button, styles.buttonOpen]}
+            onPress={onPress}>
+            <Text style={[styles.textStyle, {color: '#000'}]}>{button1}</Text>
+          </TouchableOpacity>
+        )}
         <TouchableOpacity
           style={[styles.button, styles.buttonClose]}
           onPress={cartbtn}>
-          <Text style={[styles.textStyle]}>Cart</Text>
+          <Text style={[styles.textStyle]}>{button2}</Text>
         </TouchableOpacity>
       </View>
     </Overlay>
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     fontFamily: 'NoirPro-SemiBold',
   },
   modalText: {
-    padding: 15,
+    padding: 10,
     textAlign: 'center',
     fontSize: 18,
     color: '#000000',

@@ -18,6 +18,7 @@ import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import Radiobutton from '../components/Radiobutton';
 import {Fonts} from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
+import Header from '../components/Header';
 
 const CheckoutCart = ({navigation}) => {
   const [checked, setChecked] = useState();
@@ -30,9 +31,13 @@ const CheckoutCart = ({navigation}) => {
         <View
           style={{
             paddingTop: 25,
-            padding: 15,
           }}>
-          <HeaderComponent navigation={navigation} />
+          <Header
+            navigation={navigation}
+            onlybackbutton
+            backIcon
+            headertex={'Cart'}
+          />
         </View>
         <View
           style={{
@@ -193,7 +198,7 @@ const CheckoutCart = ({navigation}) => {
             buttonText="Proceed to Checkout"
             buttonColor={Colors.tertiary}
             textColor={Colors.secondary}
-            onPress={() => navigation.navigate('GoogleMapsScreen')}
+            onPress={() => navigation.navigate('CheckoutOrder')}
             height={WIDTH <= 375 ? 55 : 55}
             width={WIDTH <= 323 ? 260 : 300}
           />

@@ -18,11 +18,15 @@ const InstructorDetails = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
         <View style={{flex: 1, paddingHorizontal: 20}}>
-          <Header
+          {/* <Header
             headercompo1
             navigation={navigation}
+          
             headertex="Instructor Details"
-          />
+          /> */}
+          <View style={{paddingHorizontal: 15}}>
+            <Header navigation={navigation} backIcon1 />
+          </View>
           <View
             style={{
               flexDirection: 'row',

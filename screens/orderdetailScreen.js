@@ -5,32 +5,29 @@ import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
 import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import {Fonts} from '../assets/constants/Fonts';
-import ProductCard from '../components/ProductCard';
-import Products from '../components/Products';
 import CartItems from '../components/CartITems';
-import TableData from '../components/TableData';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
 import {TouchableRipple} from 'react-native-paper';
 import {BackSvg} from '../assets/svgs/HeaderSvgs';
-const MyOrders = ({navigation}) => {
+
+const OrderdetailScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
-        <View
-          style={{
-            paddingTop: 25,
-            padding: 15,
-          }}>
-          <HeaderComponent navigation={navigation} />
+        <View style={{paddingHorizontal: 25}}>
+          <Header
+            navigation={navigation}
+            onlybackbutton
+            backIcon
+            headertex={'Cart'}
+          />
         </View>
-        <View style={{padding: 25, flexDirection: 'row'}}>
-          <Text>Sept 23, 210</Text>
-        </View>
-        <CartItems card2 />
+        <View style={{marginVertical: 15}} />
+        <CartItems card1 />
         <View
           style={{
             width: '25%',
@@ -43,6 +40,57 @@ const MyOrders = ({navigation}) => {
             marginHorizontal: 25,
           }}
         />
+        <View
+          style={{
+            marginTop: 25,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 25,
+          }}>
+          <Text style={styles.text}>Summary</Text>
+        </View>
+        <View style={{paddingHorizontal: 25, paddingTop: 25}}>
+          <Table />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 25,
+          }}>
+          <Text style={styles.text}>Total Amount:</Text>
+          <Text style={styles.text}>$215.00</Text>
+        </View>
+        <View
+          style={{
+            width: '70%',
+            alignSelf: 'center',
+            marginTop: 25,
+            borderBottomColor: '#707070 ',
+            backgroundColor: '#707070 ',
+            opacity: 0.6,
+            borderBottomWidth: 2,
+            marginHorizontal: 25,
+          }}
+        />
+        <View
+          style={{
+            marginTop: 25,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 10,
+          }}>
+          <ButtonComponent
+            borderRadius={14}
+            buttonText="Proceed to Checkout"
+            buttonColor={Colors.tertiary}
+            textColor={Colors.secondary}
+            onPress={() => navigation.navigate('GoogleMapsScreen')}
+            // onPress={() => navigation.navigate('GoogleMapsScreen')}
+            height={WIDTH <= 375 ? 55 : 55}
+            width={WIDTH <= 323 ? 260 : 300}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -66,7 +114,6 @@ const HeaderComponent = ({navigation}) => {
     </View>
   );
 };
-export default MyOrders;
 
 const styles = StyleSheet.create({
   container: {
@@ -85,3 +132,5 @@ const styles = StyleSheet.create({
     padding: 5,
   },
 });
+
+export default OrderdetailScreen;

@@ -12,6 +12,7 @@ import CartScreen from '../screens/CartScreen';
 import GoogleMapsScreen from '../screens/GoogleMapsScreen';
 import CheckoutCart from '../screens/CheckoutCart';
 import CheckoutOrder from '../screens/CheckoutOrder';
+import MyOrders from '../screens/MyOrder';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -39,6 +40,7 @@ const StackNavigator = () => {
       <Stack.Screen name="GoogleMapsScreen" component={GoogleMapsScreen} />
       <Stack.Screen name="CheckoutCart" component={CheckoutCart} />
       <Stack.Screen name="CheckoutOrder" component={CheckoutOrder} />
+      <Stack.Screen name="MyOrders" component={MyOrders} />
     </Stack.Navigator>
   );
 };

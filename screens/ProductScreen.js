@@ -268,6 +268,8 @@ const ProductScreen = ({navigation, route, index}) => {
         setModalVisible={modalVisible}
         onPress={() => setModalVisible(false)}
         modaltext1="Added To cart"
+        button1={'Close'}
+        button2=" Cart "
         cartbtn={() => {
           navigation.navigate('CartScreen');
         }}

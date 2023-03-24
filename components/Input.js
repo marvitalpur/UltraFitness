@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
-import { Menu, TextInput, TouchableRipple } from 'react-native-paper';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Menu, TextInput, TouchableRipple} from 'react-native-paper';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
-import { WIDTH } from '../assets/constants/Dimensions';
+import {WIDTH} from '../assets/constants/Dimensions';
 const Input = ({
   text,
   setText,
@@ -30,44 +30,43 @@ const Input = ({
           onChangeHandler={onChangeHandler}
           formKey={formKey}
         />
-      )
-        : (
-          <TextInput
-            placeholder={placeholder}
-            value={text}
-            onChangeText={text => onChangeHandler(text, formKey)}
-            right={<TextInput.Icon icon={iconname} iconColor="#00B4D8" />}
-            activeUnderlineColor="transparent"
-            underlineColor="transparent"
-            selectionColor="#000"
-            placeholderTextColor={textColor}
-            theme={{ roundness: 10 }}
-            style={{
-              // fontFamily: Fonts.default,
-              fontWeight: '400',
-              height: 50,
-              opacity: text.length < 1 ? 0.5 : 1,
-              fontSize: 14,
-              borderRadius: 10,
-              backgroundColor: Colors.secondary,
-              shadowColor: Colors.tertiary,
-              shadowOffset: {
-                width: 0,
-                height: 7,
-              },
-              shadowOpacity: 0.43,
-              shadowRadius: 9.51,
-              elevation: 15,
-            }}
-          />
-        )}
+      ) : (
+        <TextInput
+          placeholder={placeholder}
+          value={text}
+          onChangeText={text => onChangeHandler(text, formKey)}
+          right={<TextInput.Icon icon={iconname} iconColor="#00B4D8" />}
+          activeUnderlineColor="transparent"
+          underlineColor="transparent"
+          selectionColor="#000"
+          placeholderTextColor={textColor}
+          theme={{roundness: 10}}
+          style={{
+            // fontFamily: Fonts.default,
+            fontWeight: '400',
+            height: 50,
+            opacity: text.length < 1 ? 0.5 : 1,
+            fontSize: 14,
+            borderRadius: 10,
+            backgroundColor: Colors.secondary,
+            shadowColor: Colors.tertiary,
+            shadowOffset: {
+              width: 0,
+              height: 7,
+            },
+            shadowOpacity: 0.43,
+            shadowRadius: 9.51,
+            elevation: 15,
+          }}
+        />
+      )}
     </>
   );
 };
 
 export default Input;
 
-const GenderMenu = ({ value, onChangeHandler, formKey }) => {
+const GenderMenu = ({value, onChangeHandler, formKey, color1, color2}) => {
   const [visible, setVisible] = useState(false);
 
   const openMenu = () => setVisible(true);
@@ -101,7 +100,7 @@ const GenderMenu = ({ value, onChangeHandler, formKey }) => {
                 styles.btnText,
                 {
                   opacity: value.length < 1 ? 0.5 : 1,
-                  color: value.length < 1 ? Colors.primary : Colors.tertiary,
+                  color: value.length < 1 ? color1 : color2,
                 },
               ]}>
               {value ? value : 'Select Gender'}
@@ -110,7 +109,7 @@ const GenderMenu = ({ value, onChangeHandler, formKey }) => {
               name="chevron-down"
               size={20}
               color={value.length < 1 ? Colors.primary : Colors.tertiary}
-              style={{ marginLeft: 5 }}
+              style={{marginLeft: 5}}
             />
           </View>
         </TouchableRipple>
@@ -144,7 +143,7 @@ const GenderMenu = ({ value, onChangeHandler, formKey }) => {
 
 const styles = StyleSheet.create({
   inputBtn: {
-    width: WIDTH / 2.5,
+    // width: WIDTH,
     height: 50,
     borderRadius: 10,
     paddingLeft: 5,
