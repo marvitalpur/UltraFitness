@@ -1,107 +1,107 @@
-import {
-  Image,
-  ImageBackground,
-  ImageBase,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
 import Header from '../components/Header';
-import Lottie from 'lottie-react-native';
-import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {CloudSvg} from '../assets/svgs/HomeSvgs';
-import {Fonts} from '../assets/constants/Fonts';
-import {TouchableRipple} from 'react-native-paper';
-import Products from '../components/Products';
-import ProductCardSm from '../components/ProductCardSm';
-import ProductCardmd from '../components/ProductCardmd';
-import ProductCardlg from '../components/ProductCardlg';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
+import CartItems from '../components/CartITems';
+import Table from '../components/TableData';
+import ButtonComponent from '../components/Button';
+import { TouchableRipple } from 'react-native-paper';
+import { BackSvg } from '../assets/svgs/HeaderSvgs';
 
-const ProductDetailScreen = ({navigation}) => {
+const ProductDetailScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 25}}>
-          <Header navigation={navigation} />
-          <View style={{flexDirection: 'row', marginTop: 25}}>
-            <View style={{alignItems: 'center'}}>
-              <Lottie
-                source={Assets.animation.onboardAnimationSun}
-                style={{
-                  width: 80,
-                  height: 80,
-                  marginBottom: -35,
-                  marginLeft: -1,
-                }}
-                autoPlay
-                loop
-              />
-              <CloudSvg />
-            </View>
-            <View
-              style={{flex: 1, justifyContent: 'space-evenly', marginLeft: 10}}>
-              <Text style={styles.text}>Good</Text>
-              <Text style={styles.text}>Morning!</Text>
-              <Text
-                style={[
-                  styles.text,
-                  {letterSpacing: 0.6, fontSize: 12, fontWeight: '300'},
-                ]}>
-                23 December 2023
-              </Text>
-            </View>
-          </View>
-          {/* Cards start */}
-          <View
-            style={{
-              height: HEIGHT / 4.5,
-              flexDirection: 'row',
-              marginTop: 45,
-            }}>
-            <ProductCardmd />
-            <View style={{width: 20}} />
-            <View style={{flex: 1}}>
-              <ProductCardSm
-                img={Assets.backgroundImages.cardBackground1}
-                text="Training"
-              />
-              <View style={{height: 20}} />
-              <ProductCardSm
-                img={Assets.backgroundImages.cardBackground2}
-                text="Training"
-              />
-            </View>
-          </View>
-          <View
-            style={{
-              height: HEIGHT / 4.7,
-              flexDirection: 'row',
-              marginTop: 45,
-            }}>
-            <ProductCardlg
-              BtnTouchable1
-              CardImageBG={Assets.cards.cardImage7}
-              CardImageBGMain={Assets.backgroundImages.cardBackground3}
-              BoxtText1="Kids Hope"
-              BoxtText2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
-              BoxtbtnText={'Go Now'}
-            />
-          </View>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ paddingHorizontal: 15 }}>
+          <Header
+            navigation={navigation}
+            onlybackbutton
+            backIcon
+            headertex={'Cart'}
+          />
+        </View>
+        <View style={{ marginTop: 25, paddingHorizontal: 5 }}>
+          <CartItems card3 />
         </View>
 
-        <Products />
+        <View
+          style={{
+            marginTop: 25,
+            paddingTop: 25,
+            width: '25%',
+            alignSelf: 'center',
+            borderBottomColor: '#707070 ',
+            backgroundColor: '#707070 ',
+            opacity: 0.6,
+            borderBottomWidth: 2,
+            marginHorizontal: 25,
+          }}
+        />
+        <View
+          style={{
+            marginTop: 25,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 25,
+          }}>
+          <Text style={styles.text}>Summary</Text>
+        </View>
+        <View style={{ paddingHorizontal: 25, paddingTop: 25 }}>
+          <Table />
+        </View>
+        <View
+          style={{
+            width: '80%',
+            alignSelf: 'center',
+            marginVertical: 25,
+            borderBottomColor: '#707070 ',
+            backgroundColor: '#707070 ',
+            opacity: 0.6,
+            borderBottomWidth: 2,
+            marginHorizontal: 25,
+          }}
+        />
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 25,
+          }}>
+          <Text style={styles.text}>Total Amount:</Text>
+          <Text style={styles.text}>$215.00</Text>
+        </View>
+
+        <View
+          style={{
+            marginTop: 25,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 10,
+          }}>
+          <ButtonComponent
+            icon1
+            borderRadius={14}
+            buttonText="Proceed to Checkout"
+            buttonColor={Colors.primary}
+            textColor={Colors.secondary}
+            onPress={() => navigation.navigate('OrderTracker')}
+            // onPress={() => navigation.navigate('GoogleMapsScreen')}
+            height={WIDTH <= 375 ? 55 : 55}
+            width={WIDTH <= 323 ? 260 : 300}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
+
+
 
 export default ProductDetailScreen;
 
@@ -116,5 +116,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: Colors.tertiary,
     letterSpacing: 0.9,
+  },
+  boldtext: {
+    textAlign: 'center',
+    padding: 5,
   },
 });

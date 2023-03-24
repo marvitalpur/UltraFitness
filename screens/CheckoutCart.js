@@ -7,30 +7,31 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
-import {TouchableRipple} from 'react-native-paper';
-import {BackSvg} from '../assets/svgs/HeaderSvgs';
+import { TouchableRipple } from 'react-native-paper';
+import { BackSvg } from '../assets/svgs/HeaderSvgs';
 import Radiobutton from '../components/Radiobutton';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
 import Header from '../components/Header';
 
-const CheckoutCart = ({navigation}) => {
+const CheckoutCart = ({ navigation }) => {
   const [checked, setChecked] = useState();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
         <View
           style={{
-            paddingTop: 25,
+
+            paddingHorizontal: 15
           }}>
           <Header
             navigation={navigation}
@@ -73,7 +74,7 @@ const CheckoutCart = ({navigation}) => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
             pretium tempor.
           </Text>
-          <View style={{marginTop: 15}} />
+          <View style={{ marginTop: 15 }} />
           <Text
             style={[
               styles.text,
@@ -85,13 +86,13 @@ const CheckoutCart = ({navigation}) => {
             ]}>
             Delivery Address
           </Text>
-          <View style={{marginTop: 5, flexDirection: 'row'}}>
+          <View style={{ marginTop: 5, flexDirection: 'row' }}>
             <Radiobutton
               checked={checked}
               setChecked={setChecked}
               onPress={() => setChecked(!checked)}
             />
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
               <Text style={[styles.nametext]}>Annie Smith</Text>
               <Text numberOfLines={2} style={[styles.nametext]}>
                 example_mail@.com
@@ -106,10 +107,10 @@ const CheckoutCart = ({navigation}) => {
                 style={[
                   styles.nametext,
 
-                  {color: Colors.cards.GreyText, fontSize: 14},
+                  { color: Colors.cards.GreyText, fontSize: 14 },
                 ]}>
                 edit
-                <Icon name="edit" size={14} style={{paddingLeft: 5}} />
+                <Icon name="edit" size={14} style={{ paddingLeft: 5 }} />
               </Text>
             </View>
           </View>
@@ -126,25 +127,25 @@ const CheckoutCart = ({navigation}) => {
             ]}>
             Payment Method
           </Text>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Icon
               name="check-square"
               size={14}
-              style={{paddingTop: 11, paddingRight: 5}}
+              style={{ paddingTop: 11, paddingRight: 5 }}
             />
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
               <Text
                 numberOfLines={2}
-                style={[styles.nametext, {color: '#000'}]}>
+                style={[styles.nametext, { color: '#000' }]}>
                 use this card
               </Text>
             </View>
             <View style={{}}>
               <Text
                 numberOfLines={2}
-                style={[styles.nametext, {color: '#000'}]}>
+                style={[styles.nametext, { color: '#000' }]}>
                 Add new
-                <Icon name="plus" size={14} style={{paddingLeft: 5}} />
+                <Icon name="plus" size={14} style={{ paddingLeft: 5 }} />
               </Text>
             </View>
           </View>
@@ -161,9 +162,21 @@ const CheckoutCart = ({navigation}) => {
           }}>
           <Text style={styles.text}>Summary</Text>
         </View>
-        <View style={{paddingHorizontal: 25, paddingTop: 25}}>
+        <View style={{ paddingHorizontal: 25, paddingTop: 25 }}>
           <Table />
         </View>
+        <View
+          style={{
+            width: '80%',
+            alignSelf: 'center',
+            marginVertical: 15,
+            borderBottomColor: '#707070 ',
+            backgroundColor: '#707070 ',
+            opacity: 0.6,
+            borderBottomWidth: 1,
+            marginHorizontal: 25,
+          }}
+        />
         <View
           style={{
             flexDirection: 'row',
@@ -174,18 +187,7 @@ const CheckoutCart = ({navigation}) => {
           <Text style={styles.text}>Total Amount:</Text>
           <Text style={styles.text}>$215.00</Text>
         </View>
-        <View
-          style={{
-            width: '70%',
-            alignSelf: 'center',
-            // marginTop: 25,
-            borderBottomColor: '#707070 ',
-            backgroundColor: '#707070 ',
-            opacity: 0.6,
-            borderBottomWidth: 1,
-            marginHorizontal: 25,
-          }}
-        />
+
         <View
           style={{
             marginTop: 15,
@@ -207,7 +209,7 @@ const CheckoutCart = ({navigation}) => {
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({navigation}) => {
+const HeaderComponent = ({ navigation }) => {
   return (
     <View style={{}}>
       <TouchableRipple

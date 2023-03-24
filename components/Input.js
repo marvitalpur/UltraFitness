@@ -1,10 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
-import {Menu, TextInput, TouchableRipple} from 'react-native-paper';
-import {Colors} from '../assets/constants/Colors';
-import {Fonts} from '../assets/constants/Fonts';
+import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Menu, TextInput, TouchableRipple } from 'react-native-paper';
+import { Colors } from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
-import {WIDTH} from '../assets/constants/Dimensions';
+import { WIDTH } from '../assets/constants/Dimensions';
 const Input = ({
   text,
   setText,
@@ -12,6 +12,7 @@ const Input = ({
   formKey,
   gender,
   iconname,
+
   textColor,
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -40,7 +41,7 @@ const Input = ({
           underlineColor="transparent"
           selectionColor="#000"
           placeholderTextColor={textColor}
-          theme={{roundness: 10}}
+          theme={{ roundness: 10 }}
           style={{
             // fontFamily: Fonts.default,
             fontWeight: '400',
@@ -66,7 +67,7 @@ const Input = ({
 
 export default Input;
 
-const GenderMenu = ({value, onChangeHandler, formKey, color1, color2}) => {
+const GenderMenu = ({ value, onChangeHandler, formKey, color1, color2, Valueinput, }) => {
   const [visible, setVisible] = useState(false);
 
   const openMenu = () => setVisible(true);
@@ -103,13 +104,13 @@ const GenderMenu = ({value, onChangeHandler, formKey, color1, color2}) => {
                   color: value.length < 1 ? color1 : color2,
                 },
               ]}>
-              {value ? value : 'Select Gender'}
+              {value ? value : Valueinput}
             </Text>
             <Icon
               name="chevron-down"
               size={20}
-              color={value.length < 1 ? Colors.primary : Colors.tertiary}
-              style={{marginLeft: 5}}
+              color={value.length < 1 ? color1 : color2}
+              style={{ marginLeft: 5 }}
             />
           </View>
         </TouchableRipple>

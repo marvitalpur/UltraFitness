@@ -1,6 +1,6 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Onboarding, Signup, Home, Profile, Shope} from '../screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Login, Onboarding, Signup, Home, Profile, Shope } from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 import SearchScreen from '../screens/SearchScreen';
@@ -13,6 +13,8 @@ import GoogleMapsScreen from '../screens/GoogleMapsScreen';
 import CheckoutCart from '../screens/CheckoutCart';
 import CheckoutOrder from '../screens/CheckoutOrder';
 import MyOrders from '../screens/MyOrder';
+import ProductDetailScreen from '../screens/ProductDetailScreen';
+import OrderTracker from '../screens/TrackOrder';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -41,6 +43,10 @@ const StackNavigator = () => {
       <Stack.Screen name="CheckoutCart" component={CheckoutCart} />
       <Stack.Screen name="CheckoutOrder" component={CheckoutOrder} />
       <Stack.Screen name="MyOrders" component={MyOrders} />
+      <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
+      <Stack.Screen name="OrderTracker" component={OrderTracker} />
+
+
     </Stack.Navigator>
   );
 };

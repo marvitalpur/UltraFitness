@@ -1,17 +1,17 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../assets/constants/Colors';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Colors } from '../assets/constants/Colors';
 import Header from '../components/Header';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import ButtonComponent from '../components/Button';
 import Input from '../components/Input';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import Radiobutton from '../components/Radiobutton';
 import Dropdown from '../components/Dropdow';
 
-const GoogleMapsScreen = ({navigation}) => {
+const GoogleMapsScreen = ({ navigation }) => {
   const [checked, setChecked] = useState();
   const [data, setData] = useState({
     fullName: '',
@@ -32,8 +32,8 @@ const GoogleMapsScreen = ({navigation}) => {
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 25}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 25 }}>
           <Header
             navigation={navigation}
             onlybackbutton
@@ -46,10 +46,10 @@ const GoogleMapsScreen = ({navigation}) => {
               style={styles.map}
               region={region}
               onRegionChange={setRegion}>
-              <Marker coordinate={{latitude: 37.78825, longitude: -122.4324}} />
+              <Marker coordinate={{ latitude: 37.78825, longitude: -122.4324 }} />
             </MapView>
           </View>
-          <View style={{marginTop: 25}} />
+          <View style={{ marginTop: 25 }} />
           <Input
             placeholder="Full Name"
             text={data.fullName}
@@ -57,7 +57,7 @@ const GoogleMapsScreen = ({navigation}) => {
             formKey="fullName"
             textColor={Colors.tertiary}
           />
-          <View style={{marginTop: 25}} />
+          <View style={{ marginTop: 25 }} />
           <Input
             placeholder="Address"
             text={data.fullName}
@@ -65,7 +65,7 @@ const GoogleMapsScreen = ({navigation}) => {
             formKey="Address"
             textColor={Colors.tertiary}
           />
-          <View style={{marginTop: 25}} />
+          <View style={{ marginTop: 25 }} />
           <Input
             placeholder="Zip code "
             text={data.fullName}
@@ -73,7 +73,7 @@ const GoogleMapsScreen = ({navigation}) => {
             formKey="Zip Code"
             textColor={Colors.tertiary}
           />
-          <View style={{marginTop: 25}}>
+          <View style={{ marginTop: 25 }}>
             <Input
               placeholder="City"
               text={data.fullName}
@@ -82,7 +82,7 @@ const GoogleMapsScreen = ({navigation}) => {
               textColor={Colors.tertiary}
             />
           </View>
-          <View style={{marginTop: 25}}>
+          <View style={{ marginTop: 25 }}>
             <Input
               placeholder="state"
               text={data.fullName}
@@ -91,7 +91,7 @@ const GoogleMapsScreen = ({navigation}) => {
               textColor={Colors.tertiary}
             />
           </View>
-          <View style={{marginTop: 25}} />
+          <View style={{ marginTop: 25 }} />
           <Input
             placeholder="phone number "
             text={data.fullName}
@@ -99,7 +99,7 @@ const GoogleMapsScreen = ({navigation}) => {
             formKey="phone number "
             textColor={Colors.tertiary}
           />
-          <View style={{marginTop: 25}} />
+          <View style={{ marginTop: 25 }} />
           <View
             style={
               {
@@ -114,15 +114,18 @@ const GoogleMapsScreen = ({navigation}) => {
               setText={setData}
               formKey="gender"
               textColor={Colors.primary}
+
+              Valueinput={"State"}
             />
           </View>
-          <View style={{marginTop: 25}} />
+          <View style={{ marginTop: 25 }} />
           <Input
             placeholder="Email"
             text={data.fullName}
             setText={setData}
             formKey="Email"
             textColor={Colors.tertiary}
+
           />
         </View>
         <View
@@ -133,7 +136,7 @@ const GoogleMapsScreen = ({navigation}) => {
             paddingHorizontal: 25,
           }}>
           <Text style={styles.text}>Payment Method</Text>
-          <View style={{flexDirection: 'row', paddingTop: 10}}>
+          <View style={{ flexDirection: 'row', paddingTop: 10 }}>
             <Radiobutton
               onPress={() => setChecked(!checked)}
               checked={checked}
@@ -142,12 +145,12 @@ const GoogleMapsScreen = ({navigation}) => {
             <Text
               style={[
                 styles.text,
-                {fontSize: 14, color: '#4A4A4A', paddingTop: 8},
+                { fontSize: 14, color: '#4A4A4A', paddingTop: 8 },
               ]}>
               Credit Card
             </Text>
           </View>
-          <View style={{flexDirection: 'row', paddingTop: 10}}>
+          <View style={{ flexDirection: 'row', paddingTop: 10 }}>
             <Radiobutton
               onPress={() => setChecked(!checked)}
               checked={checked}
@@ -156,7 +159,7 @@ const GoogleMapsScreen = ({navigation}) => {
             <Text
               style={[
                 styles.text,
-                {fontSize: 14, color: '#4A4A4A', paddingTop: 8},
+                { fontSize: 14, color: '#4A4A4A', paddingTop: 8 },
               ]}>
               Debit Card
             </Text>

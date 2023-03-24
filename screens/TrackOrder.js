@@ -1,18 +1,19 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {Colors} from '../assets/constants/Colors';
-import {FAB} from 'react-native-paper';
-import {WIDTH} from '../assets/constants/Dimensions';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Colors } from '../assets/constants/Colors';
+import { FAB } from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import Input from '../components/Input';
 import Icon from 'react-native-vector-icons/Feather';
 import ButtonComponent from '../components/Button';
 import Header from '../components/Header';
+import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 
-const BookingDetail = ({navigation}) => {
+const OrderTracker = ({ navigation }) => {
   const [data, setData] = useState({
     fullName: '',
     contactNo: '',
@@ -30,42 +31,40 @@ const BookingDetail = ({navigation}) => {
         enableAutomaticScroll={true}
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1, paddingHorizontal: 25}}>
-        <Header
-          headercompo1
-          navigation={navigation}
-          headertex="Booking details"
-        />
-        <View style={{marginTop: 25, flex: 1}}>
-          <Input
-            placeholder="Full Name"
-            text={data.fullName}
-            setText={setData}
-            formKey="fullName"
+        contentContainerStyle={{ flexGrow: 1, }}>
+        <View style={{ paddingHorizontal: 15 }}>
+          <Header
+            navigation={navigation}
+            onlybackbutton
+            backIcon
+            headertex={'Track Orders'}
           />
-          <View
-            style={{
-              marginTop: 15,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <ButtonComponent
-              borderRadius={10}
-              buttonText="BBok now"
-              buttonColor={Colors.primary}
-              textColor={Colors.secondary}
-              onPress={() => navigation.goBack()}
-              height={WIDTH <= 375 ? 55 : 55}
-              width={WIDTH <= 375 ? 300 : 335}
-            />
-          </View>
+        </View>
+        <View style={{ flex: 1 }}>
+          <ProgressSteps progressBarColor={'#ebebe4'}>
+            <ProgressStep label="First Step">
+              <View style={{ alignItems: 'center' }}>
+                <Text>This is the content within step 1!</Text>
+              </View>
+            </ProgressStep>
+            <ProgressStep label="Second Step">
+              <View style={{ alignItems: 'center' }}>
+                <Text>This is the content within step 2!</Text>
+              </View>
+            </ProgressStep>
+            <ProgressStep label="Third Step">
+              <View style={{ alignItems: 'center' }}>
+                <Text>This is the content within step 3!</Text>
+              </View>
+            </ProgressStep>
+          </ProgressSteps>
         </View>
       </KeyboardAwareScrollView>
     </SafeAreaView>
   );
 };
 
-export default BookingDetail;
+export default OrderTracker;
 
 const styles = StyleSheet.create({
   container: {

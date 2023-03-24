@@ -5,21 +5,21 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
-import {FlatList} from 'react-native-gesture-handler';
-
-import {Fonts} from '../assets/constants/Fonts';
+import React, { useState } from 'react';
+import { FlatList } from 'react-native-gesture-handler';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {FAB, TouchableRipple} from 'react-native-paper';
-import {useNavigation} from '@react-navigation/native';
-import {Image} from 'react-native';
-import {Checkbox} from 'react-native-paper';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { FAB, TouchableRipple } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { Image } from 'react-native';
+import { Checkbox } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/AntDesign';
 import ButtonComponent2 from './Botton2';
-import {color} from 'react-native-reanimated';
 
-const CartItems = ({carddata, card1, card2, colorbtn}) => {
+
+const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
   const [count, setCount] = useState(5);
   const [checked, setChecked] = useState();
 
@@ -76,20 +76,22 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
   ];
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <View>
         {card1 && (
           <>
             <FlatList
               data={data}
-              contentContainerStyle={{paddingHorizontal: 10}}
+              contentContainerStyle={{ paddingHorizontal: 10 }}
               // numColumns={2}
-              ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
-              renderItem={({item, index}) => (
+              ItemSeparatorComponent={<View style={{ marginVertical: 5 }} />}
+              renderItem={({ item, index }) => (
                 <>
+
                   <View
-                    style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
-                    <View style={{justifyContent: 'center'}}>
+                    style={{ flexDirection: 'row', flex: 1, marginVertical: 10 }}>
+
+                    <View style={{ justifyContent: 'center' }}>
                       <Checkbox
                         size={12}
                         color="#000"
@@ -99,6 +101,7 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                         }}
                       />
                     </View>
+
                     <View
                       style={[
                         styles.card,
@@ -108,15 +111,23 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                           marginLeft: index % 2 == 0 ? 0 : 5,
                         },
                       ]}>
+                      <TouchableOpacity style={{
+                        width: 26, height: 26,
+                        justifyContent: 'center', alignItems: 'center',
+                        backgroundColor: 'red', borderRadius: 100,
+                        position: 'absolute', right: -5, top: -10
+                      }}>
+                        <Icon name='close' color={'#fff'} size={20} />
+                      </TouchableOpacity>
                       <View
                         style={[
                           // styles.headerContainer,
                           {
-                            // padding: 5,
+                            padding: 5,
                             flexDirection: 'row',
-                            // width: WIDTH / 5.5,
-                            // height: WIDTH / 4.2,
-                            // paddingRight: 10,
+                            width: WIDTH / 5.5,
+                            height: WIDTH / 4.2,
+                            paddingRight: 10,
                             // backgroundColor: 'blue',
                           },
                         ]}>
@@ -131,7 +142,7 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                             }}
                           />
                         </View>
-                        <View style={{width: WIDTH / 4.6, paddingTop: 15}}>
+                        <View style={{ width: WIDTH / 4.6, paddingTop: 15 }}>
                           <Text numberOfLines={2} style={styles.productDesc}>
                             {item.description}
                           </Text>
@@ -164,24 +175,22 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                             color="white"
                             onPress={decrement}
                           />
-                          <FAB
-                            style={[
-                              styles.fab,
-                              {
-                                backgroundColor: 'red',
-                                // opacity: 0.5,
-                                backgroundColor: Colors.secondary,
-                                height: WIDTH < 375 ? 44 : 48,
-                                width: WIDTH < 375 ? 48 : 51,
+                          <View style={[styles.fab, {
+                            backgroundColor: Colors.secondary,
+                            height: WIDTH < 375 ? 44 : 48,
+                            width: WIDTH < 375 ? 48 : 51,
+                            paddingHorizontal: 5,
+                            backgroundColor: Colors.secondary,
+                            shadowColor: Colors.tertiary,
+                            shadowOffset: {
+                              width: 0,
+                              height: 7,
+                            },
+                            elevation: 15,
 
-                                // color: '#0000',
-                              },
-                            ]}
-                            // size="small"
-                            icon={count}
-                            color="black"
-                            // onPress={count}
-                          />
+                          }]}>
+                            <Text>{count}</Text>
+                          </View>
                           <FAB
                             style={[
                               styles.fab,
@@ -215,18 +224,18 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
           <>
             <FlatList
               data={data1}
-              contentContainerStyle={{paddingHorizontal: 10}}
+              contentContainerStyle={{ paddingHorizontal: 10 }}
               // numColumns={2}
-              ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
-              renderItem={({item, index}) => (
+              ItemSeparatorComponent={<View style={{ marginVertical: 10 }} />}
+              renderItem={({ item, index }) => (
                 <View>
                   <View
-                    style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
+                    style={{ flexDirection: 'row', flex: 1, }}>
                     <View
                       style={[
                         styles.card,
                         {
-                          marginTop: 15,
+
                           height: 100,
                           elevation: 0.5,
                           paddingHorizontal: 15,
@@ -242,6 +251,7 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                             // padding: 5,
 
                             flexDirection: 'row',
+
                             // justifyContent: 'space-around',
                             // width: WIDTH / 5.5,
                             // height: WIDTH / 4.2,
@@ -249,12 +259,12 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                             // backgroundColor: 'blue',
                           },
                         ]}>
-                        <View style={{width: WIDTH / 2.9}}>
+                        <View style={{ width: WIDTH / 2.5, }}>
                           <Text
                             numberOfLines={2}
                             style={[
                               styles.productDesc,
-                              {fontSize: 16, color: Colors.tertiary},
+                              { fontSize: 16, color: Colors.tertiary },
                             ]}>
                             {item.description1}
                           </Text>
@@ -262,26 +272,24 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                             numberOfLines={2}
                             style={[
                               styles.productDesc,
-                              {fontSize: 14, color: '#00C569'},
+                              { fontSize: 14, color: '#00C569' },
                             ]}>
                             {item.description2}
                           </Text>
-                          <View style={{marginTop: 15}}>
+                          <View style={{ marginTop: 15 }}>
                             <ButtonComponent2
                               borderRadius={14}
                               buttonText={item.btntext}
                               buttonColor={item.colorbtn}
                               textColor={Colors.secondary}
-                              onPress={() =>
-                                navigation.navigate('GoogleMapsScreen')
-                              }
+                              onPress={onPress}
                               // onPress={() => navigation.navigate('GoogleMapsScreen')}
                               height={WIDTH <= 375 ? 25 : 30}
                               width={WIDTH <= 323 ? 60 : 80}
                             />
                           </View>
                         </View>
-                        <View style={{width: WIDTH / 4.6, paddingTop: 15}} />
+                        <View style={{ width: WIDTH / 4.6, paddingTop: 15 }} />
                         <View
                           style={[
                             styles.productImage,
@@ -341,6 +349,87 @@ const CartItems = ({carddata, card1, card2, colorbtn}) => {
                     </View>
                   </View>
                 </View>
+              )}
+            />
+          </>
+        )}
+        {card3 && (
+          <>
+            <FlatList
+              data={data}
+              contentContainerStyle={{ paddingHorizontal: 10 }}
+              // numColumns={2}
+              ItemSeparatorComponent={<View style={{ marginVertical: 5 }} />}
+              renderItem={({ item, index }) => (
+                <>
+
+                  <View
+                    style={{ flexDirection: 'row', flex: 1, marginVertical: 10 }}>
+                    <View
+                      style={[
+                        styles.card,
+                        {
+                          // padding: index % 2 == 0 ? 5 : 0,
+                          marginRight: index % 2 == 0 ? 5 : 0,
+                          marginLeft: index % 2 == 0 ? 0 : 5,
+                        },
+                      ]}>
+                      <View
+                        style={[
+                          // styles.headerContainer,
+                          {
+                            padding: 5,
+                            flexDirection: 'row',
+                            width: WIDTH / 5.5,
+                            height: WIDTH / 4.2,
+                            paddingRight: 10,
+                            // backgroundColor: 'blue',
+                          },
+                        ]}>
+                        <View style={styles.productImage}>
+                          <Image
+                            source={item.image}
+                            resizeMode="contain"
+                            style={{
+                              width: WIDTH / 5.6,
+                              height: WIDTH / 4.9,
+                              marginLeft: 'auto',
+                            }}
+                          />
+                        </View>
+                        <View style={{ width: WIDTH / 2.2, paddingTop: 15, paddingLeft: 10 }}>
+                          <Text numberOfLines={2} style={[styles.productDesc, { fontSize: 16, }]}>
+                            {item.description}
+                          </Text>
+                        </View>
+                        <View
+                          style={[
+                            styles.headerContainer,
+                            {
+                              flexDirection: 'column', width: WIDTH / 3.9,
+                              // backgroundColor: 'green',
+                            },
+                          ]}>
+                          <View style={{ marginTop: 5 }}>
+                            <ButtonComponent2
+                              borderRadius={14}
+                              buttonText={item.btntext}
+                              buttonColor={item.colorbtn}
+                              textColor={Colors.secondary}
+                              onPress={onPress}
+                              // onPress={() => navigation.navigate('GoogleMapsScreen')}
+                              height={WIDTH <= 375 ? 25 : 30}
+                              width={WIDTH <= 323 ? 60 : 80}
+                            />
+                          </View>
+                          <Text style={[styles.productDesc, { fontSize: 30, color: Colors.tertiary }]}>
+                            $12.00
+                          </Text>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </>
               )}
             />
           </>
