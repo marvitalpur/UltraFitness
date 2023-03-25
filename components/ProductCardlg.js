@@ -21,11 +21,12 @@ const ProductCardlg = ({
   BoxtText2,
   image1,
   image2,
+  image3,
   onPress,
 }) => {
   const navigation = useNavigation();
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: Colors.cards.lightBlue, }}>
       {image1 && (
         <Image
           source={CardImageBG}
@@ -54,6 +55,21 @@ const ProductCardlg = ({
           }}
         />
       )}
+      {
+        image3 && (
+          <Image
+            source={Assets.cards.cardImage}
+            resizeMode="contain"
+            style={{
+              height: WIDTH < 390 && WIDTH >= 375 ? 180 : WIDTH < 375 ? 150 : 230,
+              position: 'absolute',
+              top: WIDTH < 390 && WIDTH >= 375 ? -25 : WIDTH < 375 ? -20 : -35,
+              right:
+                WIDTH < 390 && WIDTH >= 375 ? -100 : WIDTH < 375 ? -110 : -90,
+            }}
+          />
+        )
+      }
       <View
         style={{
           flex: 1,
@@ -142,13 +158,13 @@ const ProductCardlg = ({
               ]}>
               <View
                 style={{
-                  padding: 5,
+                  paddingHorizontal: 10,
                   flexDirection: 'row',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-
                   backgroundColor: '#ffff',
                   borderRadius: 100,
+                  paddingVertical: 2
                 }}>
                 <Text
                   style={{
@@ -156,10 +172,12 @@ const ProductCardlg = ({
                     color: Colors.tertiary,
                     fontSize: 12,
                     paddingHorizontal: 5,
+
+
                   }}>
                   {BoxtbtnText}
                 </Text>
-                <View style={{ paddingHorizontal: 5 }}>
+                <View style={{}}>
                   <SearchIConGrey />
                 </View>
               </View>

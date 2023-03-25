@@ -15,6 +15,7 @@ import CheckoutOrder from '../screens/CheckoutOrder';
 import MyOrders from '../screens/MyOrder';
 import ProductDetailScreen from '../screens/ProductDetailScreen';
 import OrderTracker from '../screens/TrackOrder';
+import SportsScreen from '../screens/sportsScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -45,6 +46,7 @@ const StackNavigator = () => {
       <Stack.Screen name="MyOrders" component={MyOrders} />
       <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
       <Stack.Screen name="OrderTracker" component={OrderTracker} />
+      <Stack.Screen name="SportsScreen" component={SportsScreen} />
 
 
     </Stack.Navigator>

@@ -1,28 +1,32 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {ScrollView} from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native-gesture-handler';
 import Header from '../components/Header';
 import Assets from '../assets';
-import {Colors} from '../assets/constants/Colors';
+import { Colors } from '../assets/constants/Colors';
 
-const QRScreen = ({navigation}) => {
+const QRScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 25}}>
-          <Header headertex={'QR Code'} navigation={navigation} />
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 25 }}>
+          <Header
+            navigation={navigation}
+            headertex="QR Code"
+            backIcon1
+          />
           <View style={styles.textView}>
             <Image
               source={Assets.backgroundImages.QRcode}
               resizeMode="contain"
-              style={{borderRadius: 15, width: '100%'}}
+              style={{ borderRadius: 15, width: '100%' }}
             />
           </View>
-          <View style={{marginTop: 25}}>
+          <View style={{ marginTop: 25 }}>
             <Text style={styles.Text}>
               Scan QR Code for {'\n'}booking appointment
             </Text>
@@ -36,7 +40,7 @@ const QRScreen = ({navigation}) => {
 export default QRScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: Colors.secondary},
+  container: { flex: 1, backgroundColor: Colors.secondary },
   Text: {
     textAlign: 'center',
     fontSize: 18,

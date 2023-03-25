@@ -3,26 +3,17 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Colors } from '../assets/constants/Colors';
-import { FAB } from 'react-native-paper';
-import { WIDTH } from '../assets/constants/Dimensions';
-import Assets from '../assets';
-import { Fonts } from '../assets/constants/Fonts';
-import Input from '../components/Input';
-import Icon from 'react-native-vector-icons/Feather';
-import ButtonComponent from '../components/Button';
+
 import Header from '../components/Header';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
+import StepIndicator from 'react-native-step-indicator';
+import MyStepIndicator from '../components/steps';
+
 
 const OrderTracker = ({ navigation }) => {
-  const [data, setData] = useState({
-    fullName: '',
-    contactNo: '',
-    gender: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
-  const [agree, setAgree] = useState(false);
+
+  const Lables = ['20/18 \n 10:00 AM', '20/18 \n 10:00 AM', '20/18 \n 10:00 AM', '', '', '',]
+
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAwareScrollView
@@ -40,25 +31,17 @@ const OrderTracker = ({ navigation }) => {
             headertex={'Track Orders'}
           />
         </View>
-        <View style={{ flex: 1 }}>
-          <ProgressSteps progressBarColor={'#ebebe4'}>
-            <ProgressStep label="First Step">
-              <View style={{ alignItems: 'center' }}>
-                <Text>This is the content within step 1!</Text>
-              </View>
-            </ProgressStep>
-            <ProgressStep label="Second Step">
-              <View style={{ alignItems: 'center' }}>
-                <Text>This is the content within step 2!</Text>
-              </View>
-            </ProgressStep>
-            <ProgressStep label="Third Step">
-              <View style={{ alignItems: 'center' }}>
-                <Text>This is the content within step 3!</Text>
-              </View>
-            </ProgressStep>
-          </ProgressSteps>
+        <View style={{ flex: 1, marginTop: 25, }}>
+          <StepIndicator
+            currentPosition={3}
+            labelSize={22}
+            labelColor='#000'
+            direction='vertical'
+            customStyles={styles.custom}
+            labels={Lables} />
+
         </View>
+
       </KeyboardAwareScrollView>
     </SafeAreaView>
   );
@@ -78,35 +61,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 10,
   },
-  fab: {
-    height: 55,
-    width: 55,
-    borderRadius: 5,
-    backgroundColor: 'rgba(0, 180, 216, 0.06)',
-    // opacity: 0.06,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  loginText: {
-    fontSize: WIDTH <= 375 ? 25 : 30,
-    fontFamily: Fonts.default,
-    fontWeight: '700',
-    marginRight: 2.5,
-  },
-  loginTextContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 25,
-  },
-  logo: {
-    width: WIDTH <= 375 ? 45 : 50,
-    height: WIDTH <= 375 ? 45 : 50,
-  },
-  touchable: {
-    marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 5,
-  },
+  custom: {
+    stepIndicatorSize: 30,
+    currentStepIndicatorSize: 30,
+    separatorStrokeWidth: 3,
+    currentStepStrokeWidth: 5,
+    stepStrokeCurrentColor: '#00B4D8',
+    stepStrokeWidth: 4,
+    stepStrokeFinishedColor: '#00B4D8',
+    stepStrokeUnFinishedColor: '#aaaaaa',
+    separatorFinishedColor: '#00B4D8',
+    separatorUnFinishedColor: '#aaaaaa',
+    stepIndicatorFinishedColor: '#00B4D8',
+    stepIndicatorUnFinishedColor: '#ffffff',
+    stepIndicatorCurrentColor: '#ffffff',
+    stepIndicatorLabelFontSize: 13,
+    currentStepIndicatorLabelFontSize: 13,
+    stepIndicatorLabelCurrentColor: '#00B4D8',
+    stepIndicatorLabelFinishedColor: '#ffffff',
+    stepIndicatorLabelUnFinishedColor: '#aaaaaa',
+    labelColor: '#999999',
+    labelSize: 13,
+    currentStepLabelColor: '#00B4D8'
+  }
+
 });

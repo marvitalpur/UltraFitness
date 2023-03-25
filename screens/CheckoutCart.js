@@ -30,7 +30,6 @@ const CheckoutCart = ({ navigation }) => {
         contentContainerStyle={{ flexGrow: 1 }}>
         <View
           style={{
-
             paddingHorizontal: 15
           }}>
           <Header

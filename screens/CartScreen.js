@@ -18,7 +18,7 @@ const CartScreen = ({ navigation }) => {
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ padding: 25 }}>
+        <View style={{ paddingHorizontal: 15 }}>
           <Header
             navigation={navigation}
             onlybackbutton
@@ -26,8 +26,10 @@ const CartScreen = ({ navigation }) => {
             headertex={'Cart'}
           />
         </View>
-        <View style={{ marginTop: 25 }} />
-        <CartItems card1 />
+        <View style={{ marginTop: 25, paddingHorizontal: 5 }} >
+          <CartItems card1 />
+        </View>
+
         <View
           style={{
             marginTop: 25,

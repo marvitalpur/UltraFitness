@@ -1,45 +1,47 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import ButtonComponent from '../components/Button';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {Avatar} from 'react-native-paper';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { Avatar } from 'react-native-paper';
 import Assets from '../assets';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import MyCalendar from '../components/MyCalendar';
 
-const InstructorDetails = ({navigation}) => {
+const InstructorDetails = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 20}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 20 }}>
           {/* <Header
             headercompo1
             navigation={navigation}
           
             headertex="Instructor Details"
           /> */}
-          <View style={{paddingHorizontal: 15}}>
-            <Header navigation={navigation} backIcon1 />
-          </View>
+          <Header
+            navigation={navigation}
+            // headertex="Booking details"
+            backIcon1
+          />
           <View
             style={{
               flexDirection: 'row',
               marginTop: 25,
               justifyContent: 'space-between',
             }}>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
               <Avatar.Image
                 size={90}
                 style={{}}
                 source={Assets.logos.avatarPlaceholder}
               />
-              <View style={{paddingLeft: 10, marginTop: 25, paddingRight: 5}}>
+              <View style={{ paddingLeft: 10, marginTop: 25, paddingRight: 5 }}>
                 <Text style={styles.text}>Kelvin Cole</Text>
                 <Text
                   style={[
@@ -55,7 +57,7 @@ const InstructorDetails = ({navigation}) => {
                 </Text>
               </View>
             </View>
-            <View style={{alignItems: 'center', marginTop: 15}}>
+            <View style={{ alignItems: 'center', flex: 1, marginTop: 5 }}>
               <ButtonComponent
                 // icon1
                 btnfonSize={WIDTH <= 375 ? 12 : 14}
@@ -65,9 +67,10 @@ const InstructorDetails = ({navigation}) => {
                 textColor={Colors.tertiary}
                 onPress={() => navigation.navigate('BookingDetail')}
                 height={WIDTH <= 375 ? 55 : 55}
-                width={WIDTH <= 323 ? 90 : 127}
+                width={WIDTH <= 323 ? 100 : 127}
               />
             </View>
+
           </View>
           <View
             style={{
@@ -81,10 +84,10 @@ const InstructorDetails = ({navigation}) => {
                 styles.text,
                 {
                   lineHeight: 14,
-                  fontFamily: Fonts.default,
+                  // fontFamily: Fonts.default,
                   fontSize: WIDTH <= 375 ? 10 : 12,
-                  fontWeight: 200,
-                  color: Colors.tertiary,
+                  fontWeight: '200',
+                  color: Colors.cards.GreyText,
                   marginTop: 0,
                   paddingTop: 10,
                 },
@@ -113,7 +116,7 @@ const InstructorDetails = ({navigation}) => {
                 flexDirection: 'row',
                 // justifyContent: 'space-around',
               }}>
-              <View style={[styles.btn, {marginRight: 10}]}>
+              <View style={[styles.btn, { marginRight: 10 }]}>
                 <Text style={styles.text1}>5:30 PM to7::30 PM</Text>
               </View>
               <View style={styles.btn}>
@@ -121,7 +124,7 @@ const InstructorDetails = ({navigation}) => {
               </View>
             </View>
           </View>
-          <View style={{marginTop: 10}}>
+          <View style={{ marginTop: 10, height: HEIGHT / 1.0, }}>
             <MyCalendar />
           </View>
         </View>

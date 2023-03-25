@@ -1,20 +1,21 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {TouchableRipple} from 'react-native-paper';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
+import { TouchableRipple } from 'react-native-paper';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import Assets from '../assets';
 
-const ProductCardmd = () => {
+const ProductCardmd = ({ onPress }) => {
   return (
     <TouchableRipple
+
       style={{
         flex: 1,
         backgroundColor: Colors.cards.lightBlue,
         borderRadius: 20,
       }}
-      onPress={() => console.log('hi')}>
+      onPress={onPress}>
       <View
         style={{
           flexDirection: 'row',

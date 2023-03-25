@@ -1,18 +1,18 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 // import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Fonts} from '../assets/constants/Fonts';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Fonts } from '../assets/constants/Fonts';
 import Input from '../components/Input';
 import ButtonComponent from '../components/Button';
 import Header from '../components/Header';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DropdownInput from '../components/Dropdow';
 import Mymodal from '../components/Popup';
 
-const BookingDetail = ({navigation}) => {
+const BookingDetail = ({ navigation }) => {
   const [data, setData] = useState({
     fullName: '',
     contactNo: '',
@@ -31,22 +31,22 @@ const BookingDetail = ({navigation}) => {
           enableAutomaticScroll={true}
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{flexGrow: 1, paddingHorizontal: 25}}>
+          contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 25 }}>
           <Header
             navigation={navigation}
             headertex="Booking details"
             backIcon1
           />
 
-          <View style={{marginTop: 25}} />
-          <View style={{marginTop: 25, flex: 1}}>
+          <View style={{ marginTop: 25 }} />
+          <View style={{ marginTop: 25, flex: 1 }}>
             <Input
               placeholder="Full Name"
               text={data.fullName}
               setText={setData}
               formKey="fullName"
             />
-            <View style={{marginVertical: 10}} />
+            <View style={{ marginVertical: 10 }} />
             <Input
               placeholder="Email Address"
               text={data.password}
@@ -54,7 +54,7 @@ const BookingDetail = ({navigation}) => {
               formKey="Email"
               textColor={Colors.tertiary}
             />
-            <View style={{marginVertical: 10}} />
+            <View style={{ marginVertical: 10 }} />
             <Input
               placeholder="Start Date"
               text={data.confirmPassword}
@@ -63,7 +63,7 @@ const BookingDetail = ({navigation}) => {
               iconname="calendar"
               textColor={Colors.tertiary}
             />
-            <View style={{marginVertical: 10}} />
+            <View style={{ marginVertical: 10 }} />
             <Input
               placeholder="End Date"
               text={data.confirmPassword}
@@ -72,7 +72,7 @@ const BookingDetail = ({navigation}) => {
               iconname="calendar"
               textColor={Colors.tertiary}
             />
-            <View style={{marginVertical: 10}} />
+            <View style={{ marginVertical: 10 }} />
             <Input
               placeholder="Time Slot"
               text={data.confirmPassword}
@@ -81,7 +81,7 @@ const BookingDetail = ({navigation}) => {
               iconname="clock"
               textColor={Colors.tertiary}
             />
-            <View style={{marginVertical: 10}} />
+            <View style={{ marginVertical: 10 }} />
             <Input
               placeholder="Exercise Type"
               text={data.confirmPassword}
@@ -90,7 +90,7 @@ const BookingDetail = ({navigation}) => {
               iconname="calendar"
               textColor={Colors.tertiary}
             />
-            <View style={{marginVertical: 10}} />
+            <View style={{ marginVertical: 10 }} />
             <View style={{}}>
               <Input
                 gender={true}

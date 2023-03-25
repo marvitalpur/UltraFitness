@@ -21,9 +21,11 @@ const Courses = ({ navigation }) => {
           bounces={false}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ flex: 1, paddingHorizontal: 25 }}>
+          <View style={{ paddingHorizontal: 15 }}>
             <Header
-              headercompo1 navigation={navigation}
+              navigation={navigation}
+              headertex="Kids Hope"
+              backIcon1
             />
           </View>
           <View style={{ flexDirection: 'row', marginTop: 25 }}>

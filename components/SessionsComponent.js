@@ -8,8 +8,9 @@ import {
   ImageBackground,
 } from 'react-native';
 import React from 'react';
-import {Fonts} from '../assets/constants/Fonts';
-import {Colors} from '../assets/constants/Colors';
+import { Fonts } from '../assets/constants/Fonts';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
 
 import {
   ProgressBar,
@@ -19,17 +20,14 @@ import {
   FAB,
 } from 'react-native-paper';
 import * as Progress from 'react-native-progress';
-
 import Assets from '../assets';
 import RatingsItems from './RatingsItems';
 import CardBox from './CardBox';
 
+
 const SessionCompo = ({
   name,
   image,
-  text,
-  description,
-  price,
   textColor,
   index,
   backgroundColor,
@@ -41,12 +39,13 @@ const SessionCompo = ({
   SessionCompo,
   progresscompo,
   BGCardImag,
+  ExerciseCompo,
 }) => {
   return (
     <>
       {progresscompo && (
         <>
-          <View style={{width: '100%', padding: 10}}>
+          <View style={{ width: '100%', padding: 10 }}>
             <View
               style={[
                 styles.card,
@@ -66,10 +65,10 @@ const SessionCompo = ({
                   // paddingHorizontal: 5,
                   // paddingVertical: 5,
                 }}>
-                <View style={{width: 64, height: 64}}>
-                  <View style={{width: '20%'}}>{image}</View>
+                <View style={{}}>
+                  <View style={{}}>{image}</View>
                 </View>
-                <View style={{width: '32%', marginTop: 10}}>
+                <View style={{ marginTop: 10 }}>
                   <Text numberOfLines={1} style={styles.name}>
                     {name}
                   </Text>
@@ -77,7 +76,7 @@ const SessionCompo = ({
                     numberOfLines={1}
                     style={[
                       styles.progressName,
-                      {color: progresstextColor, marginTop: 5},
+                      { color: progresstextColor, marginTop: 5 },
                     ]}>
                     {progressName}
                   </Text>
@@ -86,7 +85,7 @@ const SessionCompo = ({
                   <Text
                     style={[
                       styles.progressName,
-                      {textAlign: 'right', fontSize: 12, paddingHorizontal: 10},
+                      { textAlign: 'right', fontSize: 12, paddingHorizontal: 10 },
                     ]}>
                     22 video
                   </Text>
@@ -178,7 +177,7 @@ const SessionCompo = ({
                 </View>
                 <TouchableRipple
                   onPress={onPress}
-                  style={[styles.btn, {borderRadius: 100}]}>
+                  style={[styles.btn, { borderRadius: 100 }]}>
                   <View
                     style={{
                       alignSelf: 'flex-end',
@@ -209,24 +208,25 @@ const SessionCompo = ({
                 </TouchableRipple>
               </ImageBackground>
             </View>
-            <View
-              style={{
-                paddingHorizontal: 10,
-                marginTop: 10,
-                flexDirection: 'row',
-                paddingBottom: 10,
-              }}>
-              <View
-                style={{
-                  // marginTop: 20,
-                  // marginVertical: 10,
-                  flexDirection: 'row',
-                  paddingRight: 15,
-                }}>
-                <Text style={[styles.progressName, {}]}>Reviews :</Text>
-                <RatingsItems />
+
+            <View style={{
+              width: WIDTH / 2.5, flexDirection: 'row',
+              justifyContent: 'space-between',
+              padding: 15
+            }}>
+              <View style={{ width: WIDTH / 2.5, marginTop: 10 }}>
+                <Text
+                  numberOfLines={2}
+                  style={[
+                    styles.productDesc,
+                    { fontSize: 14, color: '#00C569' },
+                  ]}>
+                  <Text style={[styles.progressName, {}]}>Reviews :</Text>
+                  <RatingsItems />
+
+                </Text>
               </View>
-              <View style={{}}>
+              <View style={{ width: WIDTH / 2.5, }}>
                 <CardBox
                   name="Social Interection"
                   backgroundColor={backgroundColor}
@@ -234,9 +234,53 @@ const SessionCompo = ({
                 />
               </View>
             </View>
+
           </View>
+
         </>
       )}
+
+      {ExerciseCompo && (
+
+        <>
+          <View style={{}}>
+            <View
+              style={[
+                styles.card,
+                {
+                  height: 165,
+                  flexDirection: 'row',
+                  marginBottom: 5,
+                  backgroundColor: backgroundColor,
+                  marginRight: index % 2 == 2 ? 0 : 5,
+                  marginLeft: index % 2 == 0 ? 0 : 5,
+                },
+              ]}>
+              <View style={{ paddingHorizental: 12 }}>
+                <Text
+                  style={[
+                    styles.progressName,
+                    {},
+                  ]}>
+                  Excersie Name
+                </Text>
+                <Text
+                  numberOfLines={3}
+                  style={[
+
+                    { marginTop: 5, fontSize: 12, paddingHorizontal: 10 },
+                  ]}>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                </Text>
+              </View>
+              <View style={{}}>{image}</View>
+            </View>
+          </View>
+
+
+        </>
+      )}
+
     </>
   );
 };

@@ -92,8 +92,12 @@ const SearchScreen = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}>
         <View style={{ flex: 1 }}>
-          <View style={{ padding: 15, flex: 1, paddingTop: 25 }}>
-            <HeaderComponent navigation={navigation} />
+          <View style={{ paddingHorizontal: 15 }}>
+            <Header
+              navigation={navigation}
+              headertex="Search"
+              backIcon1
+            />
           </View>
           <View
             style={{
@@ -173,15 +177,7 @@ const SearchScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({ navigation }) => {
-  return (
-    <View style={styles.headerContainer}>
-      <TouchableRipple onPress={() => navigation.goBack()} style={styles.btn}>
-        <BackSvg />
-      </TouchableRipple>
-    </View>
-  );
-};
+
 export default SearchScreen;
 
 const styles = StyleSheet.create({
