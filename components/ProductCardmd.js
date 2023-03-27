@@ -1,21 +1,22 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { TouchableRipple } from 'react-native-paper';
-import { Colors } from '../assets/constants/Colors';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
+import {TouchableRipple} from 'react-native-paper';
+import {Colors} from '../assets/constants/Colors';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
 import Assets from '../assets';
+import {useNavigation} from '@react-navigation/native';
 
-const ProductCardmd = ({ onPress }) => {
+const ProductCardmd = ({}) => {
+  const navigation = useNavigation();
   return (
     <TouchableRipple
-
       style={{
         flex: 1,
         backgroundColor: Colors.cards.lightBlue,
         borderRadius: 20,
       }}
-      onPress={onPress}>
+      onPress={() => navigation.navigate('SportsScreen')}>
       <View
         style={{
           flexDirection: 'row',

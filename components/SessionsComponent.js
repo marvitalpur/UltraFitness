@@ -8,9 +8,9 @@ import {
   ImageBackground,
 } from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { Colors } from '../assets/constants/Colors';
-import { WIDTH } from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
+import {Colors} from '../assets/constants/Colors';
+import {WIDTH} from '../assets/constants/Dimensions';
 
 import {
   ProgressBar,
@@ -24,13 +24,14 @@ import Assets from '../assets';
 import RatingsItems from './RatingsItems';
 import CardBox from './CardBox';
 
-
 const SessionCompo = ({
   name,
   image,
   textColor,
   index,
   backgroundColor,
+  backgroundColor1,
+  backgroundColor2,
   progressName,
   onPress,
   progressColor,
@@ -45,7 +46,7 @@ const SessionCompo = ({
     <>
       {progresscompo && (
         <>
-          <View style={{ width: '100%', padding: 10 }}>
+          <View style={{width: '100%', padding: 10}}>
             <View
               style={[
                 styles.card,
@@ -68,7 +69,7 @@ const SessionCompo = ({
                 <View style={{}}>
                   <View style={{}}>{image}</View>
                 </View>
-                <View style={{ marginTop: 10 }}>
+                <View style={{marginTop: 10}}>
                   <Text numberOfLines={1} style={styles.name}>
                     {name}
                   </Text>
@@ -76,7 +77,7 @@ const SessionCompo = ({
                     numberOfLines={1}
                     style={[
                       styles.progressName,
-                      { color: progresstextColor, marginTop: 5 },
+                      {color: progresstextColor, marginTop: 5},
                     ]}>
                     {progressName}
                   </Text>
@@ -85,7 +86,7 @@ const SessionCompo = ({
                   <Text
                     style={[
                       styles.progressName,
-                      { textAlign: 'right', fontSize: 12, paddingHorizontal: 10 },
+                      {textAlign: 'right', fontSize: 12, paddingHorizontal: 10},
                     ]}>
                     22 video
                   </Text>
@@ -154,7 +155,6 @@ const SessionCompo = ({
                         fontFamily: Fonts.default,
                         fontWeight: '600',
                         fontSize: 16,
-
                         opacity: 0.85,
                         color: Colors.tertiary,
                       }}>
@@ -177,22 +177,8 @@ const SessionCompo = ({
                 </View>
                 <TouchableRipple
                   onPress={onPress}
-                  style={[styles.btn, { borderRadius: 100 }]}>
-                  <View
-                    style={{
-                      alignSelf: 'flex-end',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      marginTop: 25,
-                      marginBottom: 15,
-                      height: 54,
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      justifyContent: 'flex-start',
-                      backgroundColor: '#ffff',
-                      borderRadius: 30,
-                    }}>
+                  style={[styles.btn, {borderRadius: 100}]}>
+                  <View style={styles.wbtn}>
                     <Text
                       style={{
                         fontFamily: Fonts.default,
@@ -209,24 +195,25 @@ const SessionCompo = ({
               </ImageBackground>
             </View>
 
-            <View style={{
-              width: WIDTH / 2.5, flexDirection: 'row',
-              justifyContent: 'space-between',
-              padding: 15
-            }}>
-              <View style={{ width: WIDTH / 2.5, marginTop: 10 }}>
+            <View
+              style={{
+                width: WIDTH / 2.5,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                padding: 15,
+              }}>
+              <View style={{width: WIDTH / 2.1, marginTop: 10}}>
                 <Text
                   numberOfLines={2}
                   style={[
                     styles.productDesc,
-                    { fontSize: 14, color: '#00C569' },
+                    {fontSize: 14, color: '#00C569'},
                   ]}>
                   <Text style={[styles.progressName, {}]}>Reviews :</Text>
                   <RatingsItems />
-
                 </Text>
               </View>
-              <View style={{ width: WIDTH / 2.5, }}>
+              <View style={{width: WIDTH / 2.5}}>
                 <CardBox
                   name="Social Interection"
                   backgroundColor={backgroundColor}
@@ -234,53 +221,110 @@ const SessionCompo = ({
                 />
               </View>
             </View>
-
           </View>
-
         </>
       )}
 
       {ExerciseCompo && (
-
         <>
-          <View style={{}}>
+          <TouchableOpacity
+            onPress={onPress}
+            style={[
+              styles.card1,
+              {
+                height: 165,
+                marginBottom: 5,
+                backgroundColor: backgroundColor,
+                marginRight: index % 2 == 2 ? 0 : 5,
+                marginLeft: index % 2 == 0 ? 0 : 5,
+              },
+            ]}>
             <View
               style={[
-                styles.card,
                 {
-                  height: 165,
                   flexDirection: 'row',
-                  marginBottom: 5,
-                  backgroundColor: backgroundColor,
-                  marginRight: index % 2 == 2 ? 0 : 5,
-                  marginLeft: index % 2 == 0 ? 0 : 5,
                 },
               ]}>
-              <View style={{ paddingHorizental: 12 }}>
+              <View style={{flex: 1, flexWrap: 'wrap'}}>
                 <Text
-                  style={[
-                    styles.progressName,
-                    {},
-                  ]}>
+                  numberOfLines={1}
+                  style={{paddingTop: 30, color: Colors.secondary}}>
                   Excersie Name
                 </Text>
-                <Text
-                  numberOfLines={3}
-                  style={[
 
-                    { marginTop: 5, fontSize: 12, paddingHorizontal: 10 },
+                <Text
+                  numberOfLines={2}
+                  style={[
+                    styles.productName,
+                    {color: Colors.secondary, paddingVertical: 10},
                   ]}>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                  Lorem ipsum dolor sit amet,
+                  {'\n'} consetetur sadipscing elitr.
                 </Text>
               </View>
-              <View style={{}}>{image}</View>
+              <View
+                style={{
+                  height:
+                    WIDTH < 390 && WIDTH >= 375 ? 15 : WIDTH < 375 ? 15 : 50,
+                  position: 'absolute',
+                  top: WIDTH < 390 && WIDTH >= 375 ? -2 : WIDTH < 375 ? 18 : 25,
+                  right:
+                    WIDTH < 390 && WIDTH >= 375 ? 25 : WIDTH < 375 ? 2 : 15,
+                  zIndex: 10,
+                }}>
+                <Image
+                  source={image}
+                  // style={{width: '100%', height: '100%'}}
+                  resizeMode="contain"
+                />
+              </View>
             </View>
-          </View>
-
-
+            <View style={{flexDirection: 'row', paddingBottom: 10}}>
+              <View
+                style={[
+                  styles.wbtn,
+                  {
+                    height: 38,
+                    backgroundColor: backgroundColor2,
+                  },
+                ]}>
+                <Text
+                  style={{
+                    fontFamily: Fonts.default,
+                    color: Colors.secondary,
+                    fontSize: 14,
+                    paddingHorizontal: 10,
+                    opacity: 0.65,
+                    // marginTop: 10,
+                  }}>
+                  Book Now
+                </Text>
+              </View>
+              <View
+                style={[
+                  styles.wbtn,
+                  {
+                    height: 38,
+                    backgroundColor: backgroundColor1,
+                    marginLeft: 10,
+                  },
+                ]}>
+                <Text
+                  style={{
+                    fontFamily: Fonts.default,
+                    color: Colors.secondary,
+                    fontSize: 14,
+                    paddingHorizontal: 10,
+                    opacity: 0.65,
+                    // marginTop: 10,
+                  }}>
+                  Book Now
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         </>
       )}
-
     </>
   );
 };
@@ -291,11 +335,30 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     height: 86,
-    width: '100%',
+    // width: '100%',
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+    elevation: 15,
+  },
+  card1: {
+    flex: 1,
+
+    // width: '100%',
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    paddingLeft: 15,
+    // alignItems: 'center',
+    // padding: 10,
     borderRadius: 30,
     shadowColor: '#000',
     shadowOffset: {
@@ -361,7 +424,7 @@ const styles = StyleSheet.create({
   },
 
   progressName: {
-    // width: '70%',
+    width: '70%',
     fontFamily: Fonts.default,
     fontWeight: '600',
     color: Colors.tertiary,
@@ -389,5 +452,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 14,
     color: Colors.tertiary,
+  },
+  wbtn: {
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 25,
+    marginBottom: 15,
+    height: 54,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: '#ffff',
+    borderRadius: 30,
   },
 });

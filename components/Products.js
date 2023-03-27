@@ -6,17 +6,17 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import { FlatList } from 'react-native-gesture-handler';
+import {FlatList} from 'react-native-gesture-handler';
 import ProductCard from './ProductCard';
-import { Fonts } from '../assets/constants/Fonts';
+import {Fonts} from '../assets/constants/Fonts';
 import Assets from '../assets';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
-import { TouchableRipple } from 'react-native-paper';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {TouchableRipple} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-const Products = ({ }) => {
+const Products = ({}) => {
   const navigation = useNavigation();
   const data = [
     {
@@ -86,15 +86,14 @@ const Products = ({ }) => {
         }),
     },
   ];
-
   return (
     <View>
       <View style={styles.header}>
-        <Text style={[styles.headerText, { width: '50%' }]}>
+        <Text style={[styles.headerText, {width: '50%'}]}>
           Get Something Special For You!
         </Text>
         <TouchableRipple>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Text
               style={
                 (styles.headerText,
@@ -116,12 +115,12 @@ const Products = ({ }) => {
           padding: 25,
         }}
         numColumns={2}
-        ItemSeparatorComponent={<View style={{ marginVertical: 15 }} />}
-        renderItem={({ item, index }) => (
+        ItemSeparatorComponent={<View style={{marginVertical: 15}} />}
+        renderItem={({item, index}) => (
           <TouchableOpacity
             onPress={item.onPress}
             activeOpacity={0.75}
-            style={{ justifyContent: 'space-evenly', width: '50%' }}>
+            style={{justifyContent: 'space-evenly', width: '50%'}}>
             <ProductCard
               index={index}
               name={item.name}
@@ -148,6 +147,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerText: {
+    paddingTop: 10,
     fontSize: 15,
     fontWeight: 'bold',
     fontFamily: Fonts.default,

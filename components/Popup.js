@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   modalView: {
     width: '70%',
     backgroundColor: '#fff',
-    borderRadius: 20,
+    borderRadius: 15,
     padding: 15,
     alignItems: 'center',
     shadowColor: '#000',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
   },
   button: {
-    borderRadius: 15,
+    borderRadius: 12,
     height: 45,
     // padding: 15,
     elevation: 2,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     fontFamily: 'NoirPro-SemiBold',
   },
   modalText: {
-    padding: 10,
+    padding: 20,
     textAlign: 'center',
     fontSize: 18,
     color: '#000000',

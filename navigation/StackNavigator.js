@@ -1,6 +1,6 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Login, Onboarding, Signup, Home, Profile, Shope } from '../screens';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Login, Onboarding, Signup, Home, Profile, Shope} from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 import SearchScreen from '../screens/SearchScreen';
@@ -16,6 +16,8 @@ import MyOrders from '../screens/MyOrder';
 import ProductDetailScreen from '../screens/ProductDetailScreen';
 import OrderTracker from '../screens/TrackOrder';
 import SportsScreen from '../screens/sportsScreen';
+import AddcardScreen from '../screens/AddcardScreen';
+import ExcersizeDetail from '../screens/excersizeDetail';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -44,11 +46,14 @@ const StackNavigator = () => {
       <Stack.Screen name="CheckoutCart" component={CheckoutCart} />
       <Stack.Screen name="CheckoutOrder" component={CheckoutOrder} />
       <Stack.Screen name="MyOrders" component={MyOrders} />
-      <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
+      <Stack.Screen
+        name="ProductDetailScreen"
+        component={ProductDetailScreen}
+      />
       <Stack.Screen name="OrderTracker" component={OrderTracker} />
       <Stack.Screen name="SportsScreen" component={SportsScreen} />
-
-
+      <Stack.Screen name="AddcardScreen" component={AddcardScreen} />
+      <Stack.Screen name="ExcersizeDetail" component={ExcersizeDetail} />
     </Stack.Navigator>
   );
 };

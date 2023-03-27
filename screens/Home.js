@@ -8,32 +8,32 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
 import Lottie from 'lottie-react-native';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { CloudSvg } from '../assets/svgs/HomeSvgs';
-import { Fonts } from '../assets/constants/Fonts';
-import { TouchableRipple } from 'react-native-paper';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {CloudSvg} from '../assets/svgs/HomeSvgs';
+import {Fonts} from '../assets/constants/Fonts';
+import {TouchableRipple} from 'react-native-paper';
 import Products from '../components/Products';
 import ProductCardSm from '../components/ProductCardSm';
 import ProductCardmd from '../components/ProductCardmd';
 import ProductCardlg from '../components/ProductCardlg';
 import ButtonComponent from '../components/Button';
 
-const Home = ({ navigation }) => {
+const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1, paddingHorizontal: 15 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{flex: 1, paddingHorizontal: 15}}>
           <Header headercompo1 navigation={navigation} />
-          <View style={{ flexDirection: 'row', marginTop: 25 }}>
-            <View style={{ alignItems: 'center' }}>
+          <View style={{flexDirection: 'row', marginTop: 25}}>
+            <View style={{alignItems: 'center'}}>
               <Lottie
                 source={Assets.animation.onboardAnimationSun}
                 style={{
@@ -48,18 +48,18 @@ const Home = ({ navigation }) => {
               <CloudSvg />
             </View>
             <View
-              style={{ flex: 1, justifyContent: 'space-evenly', marginLeft: 10 }}>
+              style={{flex: 1, justifyContent: 'space-evenly', marginLeft: 10}}>
               <Text style={styles.text}>Good</Text>
               <Text style={styles.text}>Morning!</Text>
               <Text
                 style={[
                   styles.text,
-                  { letterSpacing: 0.6, fontSize: 12, fontWeight: '300' },
+                  {letterSpacing: 0.6, fontSize: 12, fontWeight: '300'},
                 ]}>
                 23 December 2023
               </Text>
             </View>
-            <View style={{ alignItems: 'center', flex: 1, marginTop: 5 }}>
+            <View style={{alignItems: 'center', flex: 1, marginTop: 10}}>
               <ButtonComponent
                 // icon1
                 btnfonSize={WIDTH <= 375 ? 12 : 14}
@@ -68,8 +68,8 @@ const Home = ({ navigation }) => {
                 buttonColor={Colors.primary}
                 textColor={Colors.secondary}
                 onPress={() => navigation.navigate('InstructorDetails')}
-                height={WIDTH <= 375 ? 55 : 55}
-                width={WIDTH <= 323 ? 100 : 127}
+                height={WIDTH <= 375 ? 44 : 44}
+                width={WIDTH <= 375 ? 100 : 115}
               />
             </View>
           </View>
@@ -80,9 +80,9 @@ const Home = ({ navigation }) => {
               flexDirection: 'row',
               marginTop: 45,
             }}>
-            <ProductCardmd onPress={navigation.navigate('SportsScreen')} />
-            <View style={{ width: 20 }} />
-            <View style={{ flex: 1 }}>
+            <ProductCardmd />
+            <View style={{width: 20}} />
+            <View style={{flex: 1}}>
               <ProductCardSm
                 OnpresCard={() => {
                   navigation.navigate('QRCode');
@@ -90,7 +90,7 @@ const Home = ({ navigation }) => {
                 img={Assets.backgroundImages.cardBackground1}
                 text="Training"
               />
-              <View style={{ height: 20 }} />
+              <View style={{height: 20}} />
               <ProductCardSm
                 img={Assets.backgroundImages.cardBackground2}
                 text="Training"
@@ -126,7 +126,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.secondary,
+    // backgroundColor: Colors.secondary,
   },
   text: {
     fontFamily: Fonts.default,

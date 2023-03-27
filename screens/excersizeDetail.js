@@ -10,7 +10,10 @@ import {Colors} from '../assets/constants/Colors';
 import Assets from '../assets';
 import {HEIGHT} from '../assets/constants/Dimensions';
 
-const SportsScreen = ({navigation}) => {
+const ExcersizeDetail = ({navigation, route}) => {
+  const {image1} = route.params;
+  const {Exname} = route.params;
+
   var data1 = [
     {
       name: `All`,
@@ -45,31 +48,6 @@ const SportsScreen = ({navigation}) => {
       backgroundColor2: '#EC8117',
       image1: Assets.cards.Ex1,
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
-      onPress: () =>
-        navigation.navigate('ExcersizeDetail', {
-          params: {image1: Assets.cards.Ex1, Exname: 'Excersie name '},
-        }),
-    },
-    {
-      backgroundColor: '#FF856E',
-      backgroundColor1: '#A42B32',
-      backgroundColor2: '#D67314',
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
-      image1: Assets.cards.Ex2,
-    },
-    {
-      backgroundColor: '#4B89B0',
-      backgroundColor2: '#B66842',
-      backgroundColor1: '#A42B32',
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
-      image1: Assets.cards.Ex3,
-    },
-    {
-      backgroundColor: '#83734F',
-      backgroundColor1: '#5F3817',
-      backgroundColor2: '#681515',
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
-      image1: Assets.cards.Ex4,
     },
   ];
   return (
@@ -80,71 +58,7 @@ const SportsScreen = ({navigation}) => {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{flexGrow: 1}}>
           <View style={{paddingHorizontal: 15}}>
-            <Header
-              navigation={navigation}
-              headertex="Exercise Session"
-              backIcon1
-            />
-          </View>
-          <View
-            style={{
-              height: HEIGHT / 3.7,
-              flexDirection: 'row',
-              marginTop: 45,
-              paddingHorizontal: 15,
-            }}>
-            <ProductCardlg
-              image3
-              BtnTouchable2
-              CardImageBG={Assets.cards.cardImage}
-              // CardImageBGMain={Assets.cards.cardImage11}
-              color1T="#000"
-              BoxtText1="Sports Vision Training"
-              BoxtText2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,"
-              BoxtbtnText={'Get your Mentor Here'}
-            />
-          </View>
-          <FlatList
-            data={data1}
-            showsHorizontalScrollIndicator={false}
-            horizontal={true}
-            contentContainerStyle={{
-              flexGrow: 1,
-              paddingHorizontal: 15,
-              // marginBottom: -15,
-            }}
-            ItemSeparatorComponent={<View style={{}} />}
-            renderItem={({item, index}) => (
-              <View
-                style={{
-                  // paddingLeft: 5,
-                  marginTop: 20,
-                  height: HEIGHT / 8.7,
-                  flexDirection: 'row',
-
-                  //   backgroundColor: 'red',
-                }}>
-                <CardLG
-                  // flexDirection={'row'}
-                  Wbox={true}
-                  ItemImage={true}
-                  image={item.image}
-                  name={item.name}
-                  progressName={item.progressName}
-                  backgroundColor={item.backgroundColor}
-                  textcolor={item.textcolor}
-                />
-              </View>
-            )}
-          />
-
-          <View
-            style={{
-              paddingHorizontal: 10,
-
-              paddingHorizontal: 15,
-            }}>
-            <Text style={styles.text}>Current Sessions:</Text>
+            <Header navigation={navigation} headertex="Details" backIcon1 />
           </View>
           <View
             style={{
@@ -198,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SportsScreen;
+export default ExcersizeDetail;

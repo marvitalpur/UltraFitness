@@ -29,6 +29,10 @@ const Assets = {
     card2x: require('../assets/images/card2x.png'),
     card22x: require('../assets/images/card22x.png'),
     card32x: require('../assets/images/card32x.png'),
+    Ex1: require('../assets/images/exsercise1.png'),
+    Ex2: require('../assets/images/exsercise2.png'),
+    Ex3: require('../assets/images/exsercise3.png'),
+    Ex4: require('../assets/images/exsercise4.png'),
   },
 
   animation: {
