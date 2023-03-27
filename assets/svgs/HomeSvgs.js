@@ -7,9 +7,10 @@ import Svg, {
   Stop,
   Circle,
   LinearGradient,
+  Ellipse,
   Rect,
 } from 'react-native-svg';
-function CloudSvg({width, height}) {
+function CloudSvg({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -178,4 +179,20 @@ const RiderIcon3 = () => {
     </>
   );
 };
-export {CloudSvg, SearchIcon, CheckIcon, RiderIcon1, RiderIcon2, RiderIcon3};
+
+const PlayIcon = () => {
+  return (
+    <>
+      <Svg xmlns="http://www.w3.org/2000/svg" width="64" height="67" viewBox="0 0 64 67">
+        <G id="Group_147" data-name="Group 147" transform="translate(-314 -399)">
+          <G id="Group_158" data-name="Group 158">
+            <Ellipse id="Ellipse_23" data-name="Ellipse 23" cx="32" cy="33.5" rx="32" ry="33.5" transform="translate(314 399)" fill="#ec8117" opacity="0.31" />
+            <Ellipse id="Ellipse_24" data-name="Ellipse 24" cx="24" cy="24.5" rx="24" ry="24.5" transform="translate(322 408)" fill="#ec8117" />
+            <Path id="Polygon_4" data-name="Polygon 4" d="M7.81,2.668a2,2,0,0,1,3.379,0l5.866,9.262A2,2,0,0,1,15.366,15H3.634a2,2,0,0,1-1.69-3.07Z" transform="translate(356 423) rotate(90)" fill="#fff" />
+          </G>
+        </G>
+      </Svg>
+    </>
+  )
+}
+export { CloudSvg, SearchIcon, CheckIcon, RiderIcon1, RiderIcon2, RiderIcon3, PlayIcon };

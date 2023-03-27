@@ -1,46 +1,45 @@
-import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import ProductCardlg from '../components/ProductCardlg';
-import CardLG from '../components/CArdComponentLG';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
-import {Colors} from '../assets/constants/Colors';
+import { Colors } from '../assets/constants/Colors';
 import Assets from '../assets';
-import {HEIGHT} from '../assets/constants/Dimensions';
+import { HEIGHT } from '../assets/constants/Dimensions';
 
-const ExcersizeDetail = ({navigation, route}) => {
-  const {image1} = route.params;
-  const {Exname} = route.params;
+const ExcersizeDetail = ({ navigation, route }) => {
+  const { image1 } = route.params;
+  const { Exname } = route.params;
 
   var data1 = [
     {
-      name: `All`,
-      backgroundColor: '#FFFF',
-      imagebackgroundColor1: '#FFFF',
-      textcolor: Colors.primary,
+      progressName: 'Social Interection',
+      backgroundColor: '#FBBF76',
+      backgroundColor1: '#486B81',
+      backgroundColor2: '#EC8117',
+      image1: Assets.cards.Ex1,
+      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
     },
-    {
-      name: `Daily Sessions`,
-      backgroundColor: '#FADDBA',
-      imagebackgroundColor1: '#FADDBA',
-      textcolor: '#F2AC57',
-    },
-    {
-      name: `Weekly Sessions`,
-      backgroundColor: '#C7EEF8',
-      imagebackgroundColor1: '#C7EEF8',
-      textcolor: '#FFFF',
-    },
-    {
-      name: 'Skill \n Development',
-      backgroundColor: '#E7C6C6',
-      imagebackgroundColor1: '#E7C6C6',
-      textcolor: '#fff',
-    },
-  ];
+  ]
+
   var data = [
+    {
+      progressName: 'Social Interection',
+      backgroundColor: '#FBBF76',
+      backgroundColor1: '#486B81',
+      backgroundColor2: '#EC8117',
+      image1: Assets.cards.Ex1,
+      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+    },
+    {
+      progressName: 'Social Interection',
+      backgroundColor: '#FBBF76',
+      backgroundColor1: '#486B81',
+      backgroundColor2: '#EC8117',
+      image1: Assets.cards.Ex1,
+      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+    },
     {
       progressName: 'Social Interection',
       backgroundColor: '#FBBF76',
@@ -56,27 +55,29 @@ const ExcersizeDetail = ({navigation, route}) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{flexGrow: 1}}>
-          <View style={{paddingHorizontal: 15}}>
+          contentContainerStyle={{ flexGrow: 1 }}>
+          <View style={{ paddingHorizontal: 15 }}>
             <Header navigation={navigation} headertex="Details" backIcon1 />
           </View>
           <View
             style={{
-              height: 200,
-              height: HEIGHT / 1.0,
+              // height: 200,
+
               marginTop: 20,
-              paddingBottom: 10,
+
               // backgroundColor: 'red',
               // paddingHorizontal: 15,
             }}>
             <FlatList
-              data={data}
+              data={data1}
               contentContainerStyle={{
                 flexGrow: 1,
+                paddingTop: 10,
                 paddingHorizontal: 15,
+
               }}
-              ItemSeparatorComponent={<View style={{marginTop: 15}} />}
-              renderItem={({item, index}) => (
+              ItemSeparatorComponent={<View style={{}} />}
+              renderItem={({ item, index }) => (
                 <SessionCompo
                   ExerciseCompo
                   index={index}
@@ -92,6 +93,18 @@ const ExcersizeDetail = ({navigation, route}) => {
                   onPress={item.onPress}
                 />
               )}></FlatList>
+            <View style={{ paddingTop: 10 }}>
+              <FlatList
+                data={data}
+
+                contentContainerStyle={{ marginTop: 20 }}
+                renderItem={({ item, index }) =>
+                (
+                  <SessionCompo playcompo
+                    image={item.image1}
+                  />)
+                }></FlatList>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
