@@ -40,7 +40,7 @@ const Header = ({
       {logo && <LogoSvg />}
 
       {backIcon ? (
-        <View style={{}}></View>
+        // <View style={{}}></View>
       ) : (
         <TouchableRipple style={styles.btn}>
           <NotificationSvg />
@@ -64,8 +64,6 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 10,
-    // marginLeft: 20,
-    // marginVertical: 10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.secondary,
