@@ -8,7 +8,7 @@ import {FlatList} from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
 import {Colors} from '../assets/constants/Colors';
 import Assets from '../assets';
-import {HEIGHT} from '../assets/constants/Dimensions';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 
 const SportsScreen = ({navigation}) => {
   var data1 = [
@@ -45,9 +45,14 @@ const SportsScreen = ({navigation}) => {
       backgroundColor2: '#EC8117',
       image1: Assets.cards.Ex1,
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+      // onPress: () =>
+      //   navigation.navigate('ExcersizeDetail', {
+      //     params: {image1: Assets.cards.Ex1, Exname: 'Excersie name '},
+      //   }),
       onPress: () =>
         navigation.navigate('ExcersizeDetail', {
-          params: {image1: Assets.cards.Ex1, Exname: 'Excersie name '},
+          image1: Assets.cards.Ex1,
+          Exname: 'Excersie name ',
         }),
     },
     {
@@ -55,6 +60,11 @@ const SportsScreen = ({navigation}) => {
       backgroundColor1: '#A42B32',
       backgroundColor2: '#D67314',
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+      onPress: () =>
+        navigation.navigate('ExcersizeDetail', {
+          image1: Assets.cards.Ex1,
+          Exname: 'Excersie name ',
+        }),
       image1: Assets.cards.Ex2,
     },
     {
@@ -63,6 +73,11 @@ const SportsScreen = ({navigation}) => {
       backgroundColor1: '#A42B32',
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
       image1: Assets.cards.Ex3,
+      onPress: () =>
+        navigation.navigate('ExcersizeDetail', {
+          image1: Assets.cards.Ex1,
+          Exname: 'Excersie name ',
+        }),
     },
     {
       backgroundColor: '#83734F',
@@ -164,6 +179,11 @@ const SportsScreen = ({navigation}) => {
               ItemSeparatorComponent={<View style={{marginTop: 15}} />}
               renderItem={({item, index}) => (
                 <SessionCompo
+                  height={
+                    WIDTH < 390 && WIDTH > 375 ? 15 : WIDTH < 375 ? 15 : 50
+                  }
+                  top={WIDTH < 390 && WIDTH > 375 ? -2 : WIDTH < 375 ? 18 : 25}
+                  right={WIDTH < 390 && WIDTH > 375 ? 25 : WIDTH < 375 ? 2 : 15}
                   ExerciseCompo
                   index={index}
                   name={item.name}

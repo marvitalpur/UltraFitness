@@ -1,24 +1,23 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
 import CartItems from '../components/CartITems';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
-import { TouchableRipple } from 'react-native-paper';
-import { BackSvg } from '../assets/svgs/HeaderSvgs';
 
-const CartScreen = ({ navigation }) => {
+
+const CartScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ paddingHorizontal: 15 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{paddingHorizontal: 15}}>
           <Header
             navigation={navigation}
             onlybackbutton
@@ -26,7 +25,7 @@ const CartScreen = ({ navigation }) => {
             headertex={'Cart'}
           />
         </View>
-        <View style={{ marginTop: 25, paddingHorizontal: 5 }} >
+        <View style={{marginTop: 25, paddingHorizontal: 5}}>
           <CartItems card1 />
         </View>
 
@@ -52,7 +51,7 @@ const CartScreen = ({ navigation }) => {
           }}>
           <Text style={styles.text}>Summary</Text>
         </View>
-        <View style={{ paddingHorizontal: 25, paddingTop: 25 }}>
+        <View style={{paddingHorizontal: 25, paddingTop: 25}}>
           <Table />
         </View>
         <View
@@ -99,8 +98,6 @@ const CartScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-
 
 export default CartScreen;
 

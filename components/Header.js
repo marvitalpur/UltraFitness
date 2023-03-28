@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, Image, View} from 'react-native';
 import React from 'react';
 import {TouchableRipple} from 'react-native-paper';
 import {
@@ -9,6 +9,7 @@ import {
 } from '../assets/svgs/HeaderSvgs';
 import {Colors} from '../assets/constants/Colors';
 import {Fonts} from '../assets/constants/Fonts';
+import Assets from '../assets';
 
 const Header = ({
   logo,
@@ -17,6 +18,8 @@ const Header = ({
   headertex,
   backIcon1,
   onlybackbutton,
+  Addbtn,
+  AddBtn,
 }) => {
   return (
     <View style={styles.container}>
@@ -35,6 +38,7 @@ const Header = ({
       </TouchableRipple>
       {headertex && <Text style={styles.headertex}>{headertex}</Text>}
       {logo && <LogoSvg />}
+
       {backIcon ? (
         <View style={{}}></View>
       ) : (

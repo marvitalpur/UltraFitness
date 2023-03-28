@@ -34,7 +34,18 @@ const Assets = {
     Ex3: require('../assets/images/exsercise3.png'),
     Ex4: require('../assets/images/exsercise4.png'),
   },
-
+  ProfileImages: {
+    image1: require('../assets/images/1.png'),
+    image2: require('../assets/images/2.png'),
+    image3: require('../assets/images/3.png'),
+    ex2px1: require('../assets/images/ex2px.png'),
+    ex2px2: require('../assets/images/ex2px3.png'),
+    ex2px3: require('../assets/images/ex2px3.png'),
+    ex2px4: require('../assets/images/ex2px4.png'),
+    card1: require('../assets/images/card1.png'),
+    card2: require('../assets/images/card2.png'),
+    card3: require('../assets/images/card3.png'),
+  },
   animation: {
     onboardAnimation2: require('./animation/animationOnboarding2.json'),
     onboardAnimation3: require('./animation/animationOnboarding3.json'),

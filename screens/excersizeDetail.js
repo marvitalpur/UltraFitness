@@ -1,27 +1,16 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
-import { Colors } from '../assets/constants/Colors';
 import Assets from '../assets';
-import { HEIGHT } from '../assets/constants/Dimensions';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 
-const ExcersizeDetail = ({ navigation, route }) => {
-  const { image1 } = route.params;
-  const { Exname } = route.params;
-
-  var data1 = [
-    {
-      progressName: 'Social Interection',
-      backgroundColor: '#FBBF76',
-      backgroundColor1: '#486B81',
-      backgroundColor2: '#EC8117',
-      image1: Assets.cards.Ex1,
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
-    },
-  ]
+const ExcersizeDetail = ({navigation, route}) => {
+  const {image1} = route.params;
+  const {Exercisename1} = route.params;
+  const {Exercisename2} = route.params;
 
   var data = [
     {
@@ -29,24 +18,35 @@ const ExcersizeDetail = ({ navigation, route }) => {
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.cards.Ex1,
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+      image1: Assets.ProfileImages.image1,
+      progressName: '',
     },
     {
       progressName: 'Social Interection',
+
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.cards.Ex1,
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+      image1: Assets.ProfileImages.image2,
+      progressName: '',
     },
     {
       progressName: 'Social Interection',
+
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.cards.Ex1,
-      progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+      image1: Assets.ProfileImages.image3,
+      progressName: '',
+    },
+    {
+      progressName: 'Social Interection',
+
+      backgroundColor: '#FBBF76',
+      backgroundColor1: '#486B81',
+      backgroundColor2: '#EC8117',
+      image1: Assets.ProfileImages.image1,
+      progressName: '',
     },
   ];
   return (
@@ -55,55 +55,46 @@ const ExcersizeDetail = ({ navigation, route }) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ paddingHorizontal: 15 }}>
+          contentContainerStyle={{flexGrow: 1}}>
+          <View style={{paddingHorizontal: 15}}>
             <Header navigation={navigation} headertex="Details" backIcon1 />
           </View>
           <View
             style={{
               // height: 200,
-
               marginTop: 20,
-
               // backgroundColor: 'red',
-              // paddingHorizontal: 15,
             }}>
-            <FlatList
-              data={data1}
-              contentContainerStyle={{
-                flexGrow: 1,
-                paddingTop: 10,
-                paddingHorizontal: 15,
-
-              }}
-              ItemSeparatorComponent={<View style={{}} />}
-              renderItem={({ item, index }) => (
-                <SessionCompo
-                  ExerciseCompo
-                  index={index}
-                  name={item.name}
-                  backgroundColor={item.backgroundColor}
-                  backgroundColor1={item.backgroundColor1}
-                  backgroundColor2={item.backgroundColor2}
-                  progressName={item.progressName}
-                  textColor={item.textcolor}
-                  progressColor={item.progressColor}
-                  progresstextColor={item.backgroundColor}
-                  image={item.image1}
-                  onPress={item.onPress}
-                />
-              )}></FlatList>
-            <View style={{ paddingTop: 10 }}>
+            <View style={{paddingHorizontal: 10}}>
+              <SessionCompo
+                // height={WIDTH < 390 && WIDTH > 375 ? 5 : WIDTH < 375 ? 50 : 10}
+                // top={WIDTH < 390 && WIDTH > 375 ? -22 : WIDTH < 375 ? 28 : 65}
+                // right={WIDTH < 390 && WIDTH > 375 ? 275 : WIDTH < 375 ? 32 : 65}
+                height={
+                  WIDTH < 390 && WIDTH >= 375 ? 125 : WIDTH < 375 ? 135 : 100
+                }
+                top={
+                  WIDTH < 390 && WIDTH >= 375 ? -35 : WIDTH < 375 ? -10 : -10
+                }
+                right={
+                  WIDTH < 390 && WIDTH >= 375 ? -100 : WIDTH < 375 ? -100 : -100
+                }
+                image={image1}
+                text1={Exercisename1}
+                text2={Exercisename2}
+                ExerciseCompo
+                backgroundColor="#FBBF76"
+                backgroundColor1="#486B81"
+                backgroundColor2="#EC8117"
+              />
+            </View>
+            <View style={{}}>
               <FlatList
                 data={data}
-
-                contentContainerStyle={{ marginTop: 20 }}
-                renderItem={({ item, index }) =>
-                (
-                  <SessionCompo playcompo
-                    image={item.image1}
-                  />)
-                }></FlatList>
+                contentContainerStyle={{marginTop: 10}}
+                renderItem={({item, index}) => (
+                  <SessionCompo playcompo image={item.image1} />
+                )}></FlatList>
             </View>
           </View>
         </ScrollView>
