@@ -8,15 +8,15 @@ import {
   ImageBackground,
 } from 'react-native';
 import React from 'react';
-import { Fonts } from '../assets/constants/Fonts';
-import { Colors } from '../assets/constants/Colors';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Avatar, TouchableRipple, FAB } from 'react-native-paper';
+import {Fonts} from '../assets/constants/Fonts';
+import {Colors} from '../assets/constants/Colors';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Avatar, TouchableRipple, FAB} from 'react-native-paper';
 import * as Progress from 'react-native-progress';
 import Assets from '../assets';
 import RatingsItems from './RatingsItems';
 import CardBox from './CardBox';
-import { PlayIcon } from '../assets/svgs/HomeSvgs';
+import {PlayIcon} from '../assets/svgs/HomeSvgs';
 
 const SessionCompo = ({
   name,
@@ -36,12 +36,13 @@ const SessionCompo = ({
   progresscompo,
   BGCardImag,
   ExerciseCompo,
+  Assisment1,
 }) => {
   return (
     <>
       {progresscompo && (
         <>
-          <View style={{ width: '100%', padding: 10 }}>
+          <View style={{width: '100%', padding: 10}}>
             <View
               style={[
                 styles.card,
@@ -64,7 +65,7 @@ const SessionCompo = ({
                 <View style={{}}>
                   <View style={{}}>{image}</View>
                 </View>
-                <View style={{ marginTop: 10 }}>
+                <View style={{marginTop: 10}}>
                   <Text numberOfLines={1} style={styles.name}>
                     {name}
                   </Text>
@@ -72,7 +73,7 @@ const SessionCompo = ({
                     numberOfLines={1}
                     style={[
                       styles.progressName,
-                      { color: progresstextColor, marginTop: 5 },
+                      {color: progresstextColor, marginTop: 5},
                     ]}>
                     {progressName}
                   </Text>
@@ -81,7 +82,7 @@ const SessionCompo = ({
                   <Text
                     style={[
                       styles.progressName,
-                      { textAlign: 'right', fontSize: 12, paddingHorizontal: 10 },
+                      {textAlign: 'right', fontSize: 12, paddingHorizontal: 10},
                     ]}>
                     22 video
                   </Text>
@@ -172,7 +173,7 @@ const SessionCompo = ({
                 </View>
                 <TouchableRipple
                   onPress={onPress}
-                  style={[styles.btn, { borderRadius: 100 }]}>
+                  style={[styles.btn, {borderRadius: 100}]}>
                   <View style={styles.wbtn}>
                     <Text
                       style={{
@@ -197,18 +198,18 @@ const SessionCompo = ({
                 justifyContent: 'space-between',
                 padding: 15,
               }}>
-              <View style={{ width: WIDTH / 2.1, marginTop: 10 }}>
+              <View style={{width: WIDTH / 2.1, marginTop: 10}}>
                 <Text
                   numberOfLines={2}
                   style={[
                     styles.productDesc,
-                    { fontSize: 14, color: '#00C569' },
+                    {fontSize: 14, color: '#00C569'},
                   ]}>
                   <Text style={[styles.progressName, {}]}>Reviews :</Text>
                   <RatingsItems />
                 </Text>
               </View>
-              <View style={{ width: WIDTH / 2.5 }}>
+              <View style={{width: WIDTH / 2.5}}>
                 <CardBox
                   name="Social Interection"
                   backgroundColor={backgroundColor}
@@ -240,10 +241,10 @@ const SessionCompo = ({
                   flexDirection: 'row',
                 },
               ]}>
-              <View style={{ flex: 1, flexWrap: 'wrap' }}>
+              <View style={{flex: 1, flexWrap: 'wrap'}}>
                 <Text
                   numberOfLines={1}
-                  style={{ paddingTop: 30, color: Colors.secondary }}>
+                  style={{paddingTop: 30, color: Colors.secondary}}>
                   Excersie Name
                 </Text>
 
@@ -251,7 +252,7 @@ const SessionCompo = ({
                   numberOfLines={2}
                   style={[
                     styles.productName,
-                    { color: Colors.secondary, paddingVertical: 10 },
+                    {color: Colors.secondary, paddingVertical: 10},
                   ]}>
                   Lorem ipsum dolor sit amet,
                   {'\n'} consetetur sadipscing elitr.
@@ -274,7 +275,7 @@ const SessionCompo = ({
                 />
               </View>
             </View>
-            <View style={{ flexDirection: 'row', paddingBottom: 10 }}>
+            <View style={{flexDirection: 'row', paddingBottom: 10}}>
               <View
                 style={[
                   styles.wbtn,
@@ -320,63 +321,141 @@ const SessionCompo = ({
           </TouchableOpacity>
         </>
       )}
+      {Assisment1 && (
+        <>
+          <TouchableOpacity
+            onPress={onPress}
+            style={[
+              styles.card1,
+              {
+                height: 165,
+                marginBottom: 5,
+                backgroundColor: backgroundColor,
+                marginRight: index % 2 == 2 ? 0 : 5,
+                marginLeft: index % 2 == 0 ? 0 : 5,
+              },
+            ]}>
+            <View
+              style={[
+                {
+                  flexDirection: 'row',
+                },
+              ]}>
+              <View style={{flex: 1, flexWrap: 'wrap'}}>
+                <Text
+                  numberOfLines={1}
+                  style={{paddingTop: 30, color: Colors.secondary}}>
+                  Excersie Name
+                </Text>
+                <View>
+               <Text>icon</Text>
+                </View>
+
+                <Text
+                  numberOfLines={2}
+                  style={[
+                    styles.productName,
+                    {color: Colors.secondary, paddingVertical: 10},
+                  ]}>
+                  Lorem ipsum dolor sit amet,
+                  {'\n'} consetetur sadipscing elitr.
+                </Text>
+              </View>
+              <View
+                style={{
+                  height:
+                    WIDTH < 390 && WIDTH >= 375 ? 15 : WIDTH < 375 ? 15 : 50,
+                  position: 'absolute',
+                  top: WIDTH < 390 && WIDTH >= 375 ? -2 : WIDTH < 375 ? 18 : 25,
+                  right:
+                    WIDTH < 390 && WIDTH >= 375 ? 25 : WIDTH < 375 ? 2 : 15,
+                  zIndex: 10,
+                }}>
+                <Image
+                  source={image}
+                  // style={{width: '100%', height: '100%'}}
+                  resizeMode="contain"
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+        </>
+      )}
+
       {playcompo && (
         <>
-          <TouchableOpacity onPress={onPress} style={{ width: '100%', padding: 10 }}>
+          <TouchableOpacity
+            onPress={onPress}
+            style={{width: '100%', paddingHorizontal: 15}}>
             <View
               style={[
                 styles.card,
                 {
                   height: 106,
                   flexDirection: 'row',
-                  justifyContent: 'space-evenly',
-                  // marginBottom: 5,
                   justifyContent: 'center',
+                  marginTop: 25,
 
                   backgroundColor: '#fff',
-                  // marginLeft: index % 2 == 0 ? 0 : 5,
-                  // marginRight: index % 2 == 0 ? 0 : 5,
-                  // paddingLeft: index % 2 == 0 ? 0 : 5,
-                  // paddingRight: index % 2 == 0 ? 0 : 5,
+
+                  paddingLeft: index % 2 == 0 ? 0 : 5,
+                  paddingRight: index % 2 == 0 ? 0 : 5,
                 },
               ]}>
-              <View style={{ backgroundColor: backgroundColor }}>
+              <View
+                style={{
+                  backgroundColor: '#EC8117',
+                  height: 28,
+                  width: 65,
+                  borderRadius: 30,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  position: 'absolute',
+                  overflow: 'hidden',
+                  left: 5,
+                  top: -14,
+                  overflow: 'visible',
+                }}>
+                <Text
+                  style={{
+                    fontSize: 10,
+                    color: '#fff',
+                  }}>
+                  30:00 min
+                </Text>
+              </View>
+              <View
+                style={{
+                  backgroundColor: backgroundColor,
+                }}>
                 <View
                   style={{
                     justifyContent: 'center',
                     height:
-                      WIDTH < 390 && WIDTH >= 375 ? 85 : WIDTH < 375 ? 15 : 50,
-                    // position: 'absolute',
-                    //     ? -62
-                    // top:
-                    //   WIDTH < 390 && WIDTH >= 375
-                    //     : WIDTH < 375
-                    //     ? 78
-                    //     : -55,
-
+                      WIDTH < 390 && WIDTH >= 375 ? 55 : WIDTH < 375 ? 25 : 15,
                     zIndex: 10,
                   }}>
                   <Image
                     source={image}
-                    // style={{width: '100%', height: '100%'}}
+                    style={{width: 63, height: 75}}
+                    // resizeMode="center"
                     resizeMode="contain"
                   />
                 </View>
               </View>
               <Text
-                numberOfLines={3}
+                numberOfLines={2}
                 style={[
                   styles.progressName,
-                  { color: progresstextColor, width: '60%' },
+                  {color: progresstextColor, width: '50%'},
                 ]}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
               </Text>
               <View
                 style={{
                   backgroundColor: backgroundColor,
-
                   borderRadius: 10,
-                  alignSelf: 'flex-end',
+                  padding: 5,
                 }}>
                 <PlayIcon />
               </View>
@@ -489,7 +568,7 @@ const styles = StyleSheet.create({
     color: Colors.tertiary,
     letterSpacing: 0.9,
     textTransform: 'capitalize',
-    fontSize: 16,
+    fontSize: 14,
   },
   productDesc: {
     // fontSize: 12,

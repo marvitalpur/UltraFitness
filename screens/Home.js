@@ -91,6 +91,9 @@ const Home = ({navigation}) => {
               />
               <View style={{height: 20}} />
               <ProductCardSm
+                OnpresCard={() => {
+                  navigation.navigate('AssismentScreen');
+                }}
                 img={Assets.backgroundImages.cardBackground2}
                 text="Training"
               />

@@ -1,16 +1,16 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 
-const ExcersizeDetail = ({ navigation, route }) => {
-  const { image1 } = route.params;
-  const { Exercisename1 } = route.params;
-  const { Exercisename2 } = route.params;
+const ExcersizeDetail = ({navigation, route}) => {
+  const {image1} = route.params;
+  const {Exercisename1} = route.params;
+  const {Exercisename2} = route.params;
 
   var data = [
     {
@@ -55,17 +55,17 @@ const ExcersizeDetail = ({ navigation, route }) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ paddingHorizontal: 15 }}>
+          contentContainerStyle={{flexGrow: 1}}>
+          <View style={{paddingHorizontal: 15}}>
             <Header navigation={navigation} headertex="Details" backIcon1 />
           </View>
           <View
             style={{
               // height: 200,
-              marginTop: 20,
+              marginTop: 25,
               // backgroundColor: 'red',
             }}>
-            <View style={{ paddingHorizontal: 10 }}>
+            <View style={{paddingHorizontal: 10}}>
               <SessionCompo
                 // height={WIDTH < 390 && WIDTH > 375 ? 5 : WIDTH < 375 ? 50 : 10}
                 // top={WIDTH < 390 && WIDTH > 375 ? -22 : WIDTH < 375 ? 28 : 65}
@@ -91,9 +91,13 @@ const ExcersizeDetail = ({ navigation, route }) => {
             <View style={{}}>
               <FlatList
                 data={data}
-                contentContainerStyle={{ marginTop: 10 }}
-                renderItem={({ item, index }) => (
-                  <SessionCompo playcompo image={item.image1} onPress={() => navigation.navigate('VideoScreen')} />
+                contentContainerStyle={{marginTop: 10}}
+                renderItem={({item, index}) => (
+                  <SessionCompo
+                    playcompo
+                    image={item.image1}
+                    onPress={() => navigation.navigate('VideoScreen')}
+                  />
                 )}></FlatList>
             </View>
           </View>
