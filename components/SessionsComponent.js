@@ -8,15 +8,15 @@ import {
   ImageBackground,
 } from 'react-native';
 import React from 'react';
-import {Fonts} from '../assets/constants/Fonts';
-import {Colors} from '../assets/constants/Colors';
-import {WIDTH} from '../assets/constants/Dimensions';
-import {Avatar, TouchableRipple, FAB} from 'react-native-paper';
+import { Fonts } from '../assets/constants/Fonts';
+import { Colors } from '../assets/constants/Colors';
+import { WIDTH } from '../assets/constants/Dimensions';
+import { Avatar, TouchableRipple, FAB } from 'react-native-paper';
 import * as Progress from 'react-native-progress';
 import Assets from '../assets';
 import RatingsItems from './RatingsItems';
 import CardBox from './CardBox';
-import {PlayIcon} from '../assets/svgs/HomeSvgs';
+import { PlayIcon } from '../assets/svgs/HomeSvgs';
 
 const SessionCompo = ({
   name,
@@ -42,7 +42,7 @@ const SessionCompo = ({
     <>
       {progresscompo && (
         <>
-          <View style={{width: '100%', padding: 10}}>
+          <View style={{ width: '100%', padding: 10 }}>
             <View
               style={[
                 styles.card,
@@ -65,7 +65,7 @@ const SessionCompo = ({
                 <View style={{}}>
                   <View style={{}}>{image}</View>
                 </View>
-                <View style={{marginTop: 10}}>
+                <View style={{ marginTop: 10 }}>
                   <Text numberOfLines={1} style={styles.name}>
                     {name}
                   </Text>
@@ -73,7 +73,7 @@ const SessionCompo = ({
                     numberOfLines={1}
                     style={[
                       styles.progressName,
-                      {color: progresstextColor, marginTop: 5},
+                      { color: progresstextColor, marginTop: 5 },
                     ]}>
                     {progressName}
                   </Text>
@@ -82,7 +82,7 @@ const SessionCompo = ({
                   <Text
                     style={[
                       styles.progressName,
-                      {textAlign: 'right', fontSize: 12, paddingHorizontal: 10},
+                      { textAlign: 'right', fontSize: 12, paddingHorizontal: 10 },
                     ]}>
                     22 video
                   </Text>
@@ -173,7 +173,7 @@ const SessionCompo = ({
                 </View>
                 <TouchableRipple
                   onPress={onPress}
-                  style={[styles.btn, {borderRadius: 100}]}>
+                  style={[styles.btn, { borderRadius: 100 }]}>
                   <View style={styles.wbtn}>
                     <Text
                       style={{
@@ -198,18 +198,18 @@ const SessionCompo = ({
                 justifyContent: 'space-between',
                 padding: 15,
               }}>
-              <View style={{width: WIDTH / 2.1, marginTop: 10}}>
+              <View style={{ width: WIDTH / 2.1, marginTop: 10 }}>
                 <Text
                   numberOfLines={2}
                   style={[
                     styles.productDesc,
-                    {fontSize: 14, color: '#00C569'},
+                    { fontSize: 14, color: '#00C569' },
                   ]}>
                   <Text style={[styles.progressName, {}]}>Reviews :</Text>
                   <RatingsItems />
                 </Text>
               </View>
-              <View style={{width: WIDTH / 2.5}}>
+              <View style={{ width: WIDTH / 2.5 }}>
                 <CardBox
                   name="Social Interection"
                   backgroundColor={backgroundColor}
@@ -241,10 +241,10 @@ const SessionCompo = ({
                   flexDirection: 'row',
                 },
               ]}>
-              <View style={{flex: 1, flexWrap: 'wrap'}}>
+              <View style={{ flex: 1, flexWrap: 'wrap' }}>
                 <Text
                   numberOfLines={1}
-                  style={{paddingTop: 30, color: Colors.secondary}}>
+                  style={{ paddingTop: 30, color: Colors.secondary }}>
                   Excersie Name
                 </Text>
 
@@ -252,7 +252,7 @@ const SessionCompo = ({
                   numberOfLines={2}
                   style={[
                     styles.productName,
-                    {color: Colors.secondary, paddingVertical: 10},
+                    { color: Colors.secondary, paddingVertical: 10 },
                   ]}>
                   Lorem ipsum dolor sit amet,
                   {'\n'} consetetur sadipscing elitr.
@@ -275,7 +275,7 @@ const SessionCompo = ({
                 />
               </View>
             </View>
-            <View style={{flexDirection: 'row', paddingBottom: 10}}>
+            <View style={{ flexDirection: 'row', paddingBottom: 10 }}>
               <View
                 style={[
                   styles.wbtn,
@@ -341,21 +341,21 @@ const SessionCompo = ({
                   flexDirection: 'row',
                 },
               ]}>
-              <View style={{flex: 1, flexWrap: 'wrap'}}>
+              <View style={{ flex: 1, flexWrap: 'wrap' }}>
                 <Text
                   numberOfLines={1}
-                  style={{paddingTop: 30, color: Colors.secondary}}>
+                  style={{ paddingTop: 30, color: Colors.secondary }}>
                   Excersie Name
                 </Text>
                 <View>
-               <Text>icon</Text>
+                  <Text>icon</Text>
                 </View>
 
                 <Text
                   numberOfLines={2}
                   style={[
                     styles.productName,
-                    {color: Colors.secondary, paddingVertical: 10},
+                    { color: Colors.secondary, paddingVertical: 10 },
                   ]}>
                   Lorem ipsum dolor sit amet,
                   {'\n'} consetetur sadipscing elitr.
@@ -386,7 +386,7 @@ const SessionCompo = ({
         <>
           <TouchableOpacity
             onPress={onPress}
-            style={{width: '100%', paddingHorizontal: 15}}>
+            style={{ width: '100%', paddingHorizontal: 15 }}>
             <View
               style={[
                 styles.card,
@@ -437,7 +437,7 @@ const SessionCompo = ({
                   }}>
                   <Image
                     source={image}
-                    style={{width: 63, height: 75}}
+                    style={{ width: 63, height: 75 }}
                     // resizeMode="center"
                     resizeMode="contain"
                   />
@@ -447,7 +447,7 @@ const SessionCompo = ({
                 numberOfLines={2}
                 style={[
                   styles.progressName,
-                  {color: progresstextColor, width: '50%'},
+                  { color: progresstextColor, width: '50%' },
                 ]}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
               </Text>

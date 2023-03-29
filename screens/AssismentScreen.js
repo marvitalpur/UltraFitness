@@ -1,48 +1,37 @@
-import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import Accordion1 from '../components/accordion1';
 
-const AssismentScreen = ({navigation, route}) => {
+const AssismentScreen = ({ navigation, route }) => {
   var data = [
     {
-      progressName: 'Social Interection',
-      backgroundColor: '#FBBF76',
-      backgroundColor1: '#486B81',
-      backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image1,
-      progressName: '',
+
+      backgroundColor: '#FF9B9B',
+      backgroundColor1: '#E69898',
+
     },
     {
-      progressName: 'Social Interection',
 
-      backgroundColor: '#FBBF76',
-      backgroundColor1: '#486B81',
-      backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image2,
-      progressName: '',
+      backgroundColor: '#4979BC',
+      backgroundColor1: '#4979BC',
+
     },
     {
-      progressName: 'Social Interection',
 
       backgroundColor: '#FBBF76',
-      backgroundColor1: '#486B81',
-      backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image3,
-      progressName: '',
+      backgroundColor1: '#FBBF76',
     },
     {
-      progressName: 'Social Interection',
 
-      backgroundColor: '#FBBF76',
-      backgroundColor1: '#486B81',
-      backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image1,
-      progressName: '',
+      backgroundColor: '#AABCC0',
+      backgroundColor1: '#AABCC0',
+
     },
   ];
   return (
@@ -51,52 +40,28 @@ const AssismentScreen = ({navigation, route}) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{flexGrow: 1}}>
-          <View style={{paddingHorizontal: 15}}>
-            <Header navigation={navigation} headertex="Details" backIcon1 />
+          contentContainerStyle={{ flexGrow: 1 }}>
+          <View style={{ paddingHorizontal: 15 }}>
+            <Header navigation={navigation} headertex="Fitness Assesment" backIcon1 />
           </View>
           <View
             style={{
-              // height: 200,
               marginTop: 25,
-              // backgroundColor: 'red',
             }}>
             <View style={{}}>
               <FlatList
                 data={data}
-                contentContainerStyle={{marginTop: 10}}
-                renderItem={({item, index}) => (
-                  <View style={{paddingHorizontal: 10}}>
-                    <SessionCompo
-                      Assisment1
-                      height={
-                        WIDTH < 390 && WIDTH >= 375
-                          ? 125
-                          : WIDTH < 375
-                          ? 135
-                          : 100
-                      }
-                      top={
-                        WIDTH < 390 && WIDTH >= 375
-                          ? -35
-                          : WIDTH < 375
-                          ? -10
-                          : -10
-                      }
-                      right={
-                        WIDTH < 390 && WIDTH >= 375
-                          ? -100
-                          : WIDTH < 375
-                          ? -100
-                          : -100
-                      }
-                      // image={image1}
-                      // text1={Exercisename1}
-                      // text2={Exercisename2}
-                      backgroundColor="#FBBF76"
-                      backgroundColor1="#486B81"
-                      backgroundColor2="#EC8117"
-                    />
+                contentContainerStyle={{}}
+                renderItem={({ item, index }) => (
+                  <View style={{ paddingHorizontal: 10 }}>
+                    <View
+                      style={{
+                        // height: 200,
+                        marginTop: 25,
+                        // backgroundColor: 'red',
+                      }}>
+                      <Accordion1 backgroundColor={item.backgroundColor} backgroundColor1={item.backgroundColor1} />
+                    </View>
                   </View>
                 )}></FlatList>
             </View>
@@ -121,3 +86,47 @@ const styles = StyleSheet.create({
 });
 
 export default AssismentScreen;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <SessionCompo
+//   Assisment1
+//   height={
+//     WIDTH < 390 && WIDTH >= 375
+//       ? 125
+//       : WIDTH < 375
+//         ? 135
+//         : 100
+//   }
+//   top={
+//     WIDTH < 390 && WIDTH >= 375
+//       ? -35
+//       : WIDTH < 375
+//         ? -10
+//         : -10
+//   }
+//   right={
+//     WIDTH < 390 && WIDTH >= 375
+//       ? -100
+//       : WIDTH < 375
+//         ? -100
+//         : -100
+//   }
+//   // image={image1}
+//   // text1={Exercisename1}
+//   // text2={Exercisename2}
+//   backgroundColor="#FBBF76"
+//   backgroundColor1="#486B81"
+//   backgroundColor2="#EC8117"
+// />

@@ -90,7 +90,7 @@ const ProductDetailScreen = ({ navigation }) => {
             buttonText="Proceed to Checkout"
             buttonColor={Colors.primary}
             textColor={Colors.secondary}
-            onPress={() => navigation.navigate('OrderTracker')}
+            onPress={() => navigation.navigate('Home')}
             // onPress={() => navigation.navigate('GoogleMapsScreen')}
             height={WIDTH <= 375 ? 55 : 55}
             width={WIDTH <= 323 ? 260 : 300}

@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Colors } from '../assets/constants/Colors';
-
 import Header from '../components/Header';
-import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 import StepIndicator from 'react-native-step-indicator';
-import MyStepIndicator from '../components/steps';
+import { WIDTH } from '../assets/constants/Dimensions';
+
 
 
 const OrderTracker = ({ navigation }) => {
@@ -31,19 +30,39 @@ const OrderTracker = ({ navigation }) => {
             headertex={'Track Orders'}
           />
         </View>
-        <View style={{ flex: 1, marginTop: 25, }}>
-          <StepIndicator
-            currentPosition={3}
-            labelSize={22}
-            labelColor='#000'
-            direction='vertical'
-            customStyles={styles.custom}
-            labels={Lables} />
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
+          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
+            <View>
+              <Text style={{ marginTop: 40 }}>{Lables}</Text>
+            </View>
+            <View style={{}}>
+              <StepIndicator
+                currentPosition={3}
+                labelAlign="left" // set labelAlign to left
+                labelSize={33}
+                direction='vertical'
+                customStyles={{
+                  ...styles.custom,
+                  // add style for left-aligned labels
+                  stepLabel: {
+                    alignSelf: 'flex-end',
+                  },
+                }}
+                labelColor="#00"
+              />
+            </View>
+            <View>
+              <View style={styles.textView}>
+                <Text style={[styles.text, { fontSize: 16 }]}>Order Signed</Text>
+                <Text style={[styles.text, { fontSize: 12, opacity: 0.5 }]}>Order Signed</Text>
+              </View>
 
+            </View>
+          </View>
         </View>
 
       </KeyboardAwareScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 };
 
@@ -62,12 +81,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   custom: {
-    stepIndicatorSize: 30,
-    currentStepIndicatorSize: 30,
+    // stepIndicatorSize: 30,
+    // currentStepIndicatorSize: 30,
     separatorStrokeWidth: 3,
     currentStepStrokeWidth: 5,
     stepStrokeCurrentColor: '#00B4D8',
-    stepStrokeWidth: 4,
+    stepStrokeWidth: 3,
     stepStrokeFinishedColor: '#00B4D8',
     stepStrokeUnFinishedColor: '#aaaaaa',
     separatorFinishedColor: '#00B4D8',
@@ -83,6 +102,18 @@ const styles = StyleSheet.create({
     labelColor: '#999999',
     labelSize: 13,
     currentStepLabelColor: '#00B4D8'
-  }
+  },
+  textView: {
+    position: 'absolute',
+    top:
+      WIDTH < 390 && WIDTH > 375 ? 35 : WIDTH < 375 ? 40 : 40,
+    right:
+      WIDTH < 390 && WIDTH > 375 ? 50 : WIDTH < 375 ? 50 : -10
+  },
+  text: {
+    color: '#000',
+    fontWeight: '500'
+
+  },
 
 });
