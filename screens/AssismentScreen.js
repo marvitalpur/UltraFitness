@@ -1,37 +1,30 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import Accordion1 from '../components/accordion1';
 
-const AssismentScreen = ({ navigation, route }) => {
+const AssismentScreen = ({navigation, route}) => {
   var data = [
     {
-
       backgroundColor: '#FF9B9B',
-      backgroundColor1: '#E69898',
-
+      backgroundColor1: '#FE8383',
     },
     {
-
       backgroundColor: '#4979BC',
       backgroundColor1: '#4979BC',
-
     },
     {
-
       backgroundColor: '#FBBF76',
       backgroundColor1: '#FBBF76',
     },
     {
-
       backgroundColor: '#AABCC0',
       backgroundColor1: '#AABCC0',
-
     },
   ];
   return (
@@ -40,9 +33,13 @@ const AssismentScreen = ({ navigation, route }) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ paddingHorizontal: 15 }}>
-            <Header navigation={navigation} headertex="Fitness Assesment" backIcon1 />
+          contentContainerStyle={{flexGrow: 1}}>
+          <View style={{paddingHorizontal: 15}}>
+            <Header
+              navigation={navigation}
+              headertex="Fitness Assesment"
+              backIcon1
+            />
           </View>
           <View
             style={{
@@ -52,15 +49,18 @@ const AssismentScreen = ({ navigation, route }) => {
               <FlatList
                 data={data}
                 contentContainerStyle={{}}
-                renderItem={({ item, index }) => (
-                  <View style={{ paddingHorizontal: 10 }}>
+                renderItem={({item, index}) => (
+                  <View style={{paddingHorizontal: 10}}>
                     <View
                       style={{
                         // height: 200,
                         marginTop: 25,
                         // backgroundColor: 'red',
                       }}>
-                      <Accordion1 backgroundColor={item.backgroundColor} backgroundColor1={item.backgroundColor1} />
+                      <Accordion1
+                        backgroundColor={item.backgroundColor}
+                        backgroundColor1={item.backgroundColor1}
+                      />
                     </View>
                   </View>
                 )}></FlatList>
@@ -86,19 +86,6 @@ const styles = StyleSheet.create({
 });
 
 export default AssismentScreen;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // <SessionCompo
 //   Assisment1

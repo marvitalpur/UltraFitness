@@ -235,7 +235,179 @@ const PlayIcon = () => {
     </>
   );
 };
+const Trashicon = () => {
+  return (
+    <>
+      <Svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24">
+        <G
+          id="Group_18421"
+          data-name="Group 18421"
+          transform="translate(-610 -4867)">
+          <Path
+            id="Vector"
+            d="M3.62,0,0,3.63"
+            transform="translate(615.19 4869)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-2"
+            data-name="Vector"
+            d="M0,0,3.62,3.63"
+            transform="translate(625.19 4869)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-3"
+            data-name="Vector"
+            d="M0,2C0,.15.99,0,2.22,0H17.78C19.01,0,20,.15,20,2c0,2.15-.99,2-2.22,2H2.22C.99,4,0,4.15,0,2Z"
+            transform="translate(612 4872.85)"
+            fill="none"
+            stroke="#fff"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-4"
+            data-name="Vector"
+            d="M0,0V3.55"
+            transform="translate(619.76 4881)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-5"
+            data-name="Vector"
+            d="M0,0V3.55"
+            transform="translate(624.36 4881)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-6"
+            data-name="Vector"
+            d="M0,0,1.41,8.64C1.73,10.58,2.5,12,5.36,12h6.03c3.11,0,3.57-1.36,3.93-3.24L17,0"
+            transform="translate(613.5 4877)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-7"
+            data-name="Vector"
+            d="M0,0H24V24H0Z"
+            transform="translate(610 4867)"
+            fill="none"
+            opacity="0"
+          />
+        </G>
+      </Svg>
+    </>
+  );
+};
 
+const LocationIcon = () => {
+  return (
+    <>
+      <Svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24">
+        <G id="card-receive" transform="translate(-556 -508)">
+          <Path
+            id="Vector"
+            d="M0,0H12.5"
+            transform="translate(558 516.5)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-2"
+            data-name="Vector"
+            d="M0,0H2"
+            transform="translate(562 524.5)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-3"
+            data-name="Vector"
+            d="M0,0H4"
+            transform="translate(566.5 524.5)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-4"
+            data-name="Vector"
+            d="M20,10.53v2.08c0,3.51-.89,4.39-4.44,4.39H4.44C.89,17,0,16.12,0,12.61V4.39C0,.88.89,0,4.44,0H12.5"
+            transform="translate(558 511.5)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-5"
+            data-name="Vector"
+            d="M0,0V6L2,4"
+            transform="translate(576 511.5)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-6"
+            data-name="Vector"
+            d="M2,2,0,0"
+            transform="translate(574 515.5)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <Path
+            id="Vector-7"
+            data-name="Vector"
+            d="M0,0H24V24H0Z"
+            transform="translate(556 508)"
+            fill="none"
+            opacity="0"
+          />
+        </G>
+      </Svg>
+    </>
+  );
+};
 export {
   CloudSvg,
   SearchIcon,
@@ -243,5 +415,7 @@ export {
   RiderIcon1,
   RiderIcon2,
   RiderIcon3,
+  LocationIcon,
+  Trashicon,
   PlayIcon,
 };

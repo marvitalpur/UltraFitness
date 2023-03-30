@@ -1,26 +1,26 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
 import ProductCard from '../components/ProductCard';
 import Products from '../components/Products';
 import CartItems from '../components/CartITems';
 import TableData from '../components/TableData';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
-import { TouchableRipple } from 'react-native-paper';
-import { BackSvg } from '../assets/svgs/HeaderSvgs';
+import {TouchableRipple} from 'react-native-paper';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import Icon from 'react-native-vector-icons/Feather';
-const MyOrders = ({ navigation }) => {
+const MyOrders = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
         <View
           style={{
             paddingTop: 25,
@@ -28,20 +28,22 @@ const MyOrders = ({ navigation }) => {
           }}>
           <HeaderComponent navigation={navigation} />
         </View>
-        <View style={{ padding: 25, flexDirection: 'row' }}>
-          <Text>Sept 23, 210
+        <View style={{padding: 25, flexDirection: 'row'}}>
+          <Text>
+            Sept 23, 210
             <Icon
               name="chevron-down"
               size={20}
               color={Colors.primary}
               // color={value.length < 1 ? color1 : color2}
-              style={{ marginLeft: 5 }}
+              style={{marginLeft: 5}}
             />
           </Text>
         </View>
-        <CartItems card2 onPress={() =>
-          navigation.navigate('ProductDetailScreen')
-        } />
+        <CartItems
+          card2
+          onPress={() => navigation.navigate('ProductDetailScreen')}
+        />
         <View
           style={{
             width: '25%',
@@ -58,7 +60,7 @@ const MyOrders = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({ navigation }) => {
+const HeaderComponent = ({navigation}) => {
   return (
     <View style={{}}>
       <TouchableRipple

@@ -7,18 +7,18 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 
-import { PlayIcon } from '../assets/svgs/HomeSvgs';
+import {PlayIcon} from '../assets/svgs/HomeSvgs';
 
-const VideoScreen = ({ navigation, route }) => {
+const VideoScreen = ({navigation, route}) => {
   // const { image1 } = route.params;
   // const { Exercisename1 } = route.params;
   // const { Exercisename2 } = route.params;
@@ -57,8 +57,8 @@ const VideoScreen = ({ navigation, route }) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ paddingHorizontal: 15 }}>
+          contentContainerStyle={{flexGrow: 1}}>
+          <View style={{paddingHorizontal: 15}}>
             <Header navigation={navigation} headertex="Session" backIcon1 />
           </View>
           <View
@@ -67,7 +67,7 @@ const VideoScreen = ({ navigation, route }) => {
               marginTop: 20,
               // backgroundColor: 'red',
             }}>
-            <View style={{ paddingHorizontal: 10 }}>
+            <View style={{paddingHorizontal: 10}}>
               <View>
                 <View style={{}}>
                   <Image
@@ -78,8 +78,8 @@ const VideoScreen = ({ navigation, route }) => {
                         WIDTH < 390 && WIDTH >= 375
                           ? 160
                           : WIDTH < 375
-                            ? 135
-                            : 274,
+                          ? 235
+                          : 274,
                       // position: 'absolute',
                       // top:
                       //   WIDTH < 390 && WIDTH >= 375
@@ -105,34 +105,34 @@ const VideoScreen = ({ navigation, route }) => {
                       WIDTH < 390 && WIDTH >= 375
                         ? -35
                         : WIDTH < 375
-                          ? -10
-                          : 100,
+                        ? 85
+                        : 100,
                     right:
                       WIDTH < 390 && WIDTH >= 375
-                        ? -170
+                        ? 130
                         : WIDTH < 375
-                          ? -10
-                          : 150,
+                        ? 150
+                        : 165,
                     zIndex: 10,
-                  }}
-                >
+                  }}>
                   <PlayIcon />
                 </View>
-
               </View>
             </View>
 
-            <View style={{
-              paddingHorizontal: 25, marginTop: 25,
-            }}>
+            <View
+              style={{
+                paddingHorizontal: 25,
+                marginTop: 25,
+              }}>
               <Text
                 numberOfLines={1}
-                style={[styles.text, { fontFamily: Fonts.default }]}>
+                style={[styles.text, {fontFamily: Fonts.default}]}>
                 Description:
               </Text>
               <Text
                 numberOfLines={10}
-                style={[styles.text, { fontSize: 10, marginVertical: 15 }]}>
+                style={[styles.text, {fontSize: 10, marginVertical: 15}]}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -141,15 +141,15 @@ const VideoScreen = ({ navigation, route }) => {
               </Text>
               <Text
                 numberOfLines={1}
-                style={[styles.text, { fontFamily: Fonts.default }]}>
+                style={[styles.text, {fontFamily: Fonts.default}]}>
                 Next Videos:
               </Text>
             </View>
 
             <FlatList
               data={data}
-              contentContainerStyle={{ marginTop: 10 }}
-              renderItem={({ item, index }) => (
+              contentContainerStyle={{marginTop: 10}}
+              renderItem={({item, index}) => (
                 <SessionCompo
                   playcompo
                   image={item.image1}
