@@ -1,6 +1,6 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Onboarding, Signup, Home, Profile, Shope} from '../screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Login, Onboarding, Signup, Home, Profile, Shope } from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 import SearchScreen from '../screens/SearchScreen';
@@ -20,6 +20,8 @@ import AddcardScreen from '../screens/AddcardScreen';
 import ExcersizeDetail from '../screens/excersizeDetail';
 import VideoScreen from '../screens/VideoScreen';
 import AssismentScreen from '../screens/AssismentScreen';
+import Account from '../screens/Account';
+import TermsConditionScreen from '../screens/TermsConditionScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -58,6 +60,8 @@ const StackNavigator = () => {
       <Stack.Screen name="ExcersizeDetail" component={ExcersizeDetail} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
       <Stack.Screen name="AssismentScreen" component={AssismentScreen} />
+      <Stack.Screen name='Account' component={Account} />
+      <Stack.Screen name='TermsConditionScreen ' component={TermsConditionScreen} />
     </Stack.Navigator>
   );
 };

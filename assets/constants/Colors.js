@@ -6,4 +6,7 @@ export const Colors = {
     lightBlue: '#ECF9FF',
     GreyText: '#a1a1a1'
   },
+  bgColors: {
+    lightblue: '#C7EEF8'
+  }
 };

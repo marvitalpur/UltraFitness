@@ -1,23 +1,23 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import ButtonComponent from '../components/Button';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
-import {Colors} from '../assets/constants/Colors';
-import {Avatar} from 'react-native-paper';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { Colors } from '../assets/constants/Colors';
+import { Avatar } from 'react-native-paper';
 import Assets from '../assets';
-import {Fonts} from '../assets/constants/Fonts';
+import { Fonts } from '../assets/constants/Fonts';
 import MyCalendar from '../components/MyCalendar';
 
-const InstructorDetails = ({navigation}) => {
+const InstructorDetails = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flexGrow: 1}}>
-        <View style={{flex: 1, paddingHorizontal: 20}}>
+        contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 20 }}>
           {/* <Header
             headercompo1
             navigation={navigation}
@@ -35,13 +35,13 @@ const InstructorDetails = ({navigation}) => {
               marginTop: 25,
               justifyContent: 'space-between',
             }}>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
               <Avatar.Image
                 size={90}
                 style={{}}
                 source={Assets.logos.avatarPlaceholder}
               />
-              <View style={{paddingLeft: 10, marginTop: 25, paddingRight: 5}}>
+              <View style={{ paddingLeft: 10, marginTop: 25, paddingRight: 5 }}>
                 <Text style={styles.text}>Kelvin Cole</Text>
                 <Text
                   style={[
@@ -57,7 +57,7 @@ const InstructorDetails = ({navigation}) => {
                 </Text>
               </View>
             </View>
-            <View style={{alignItems: 'center', flex: 1, marginTop: 10}}>
+            <View style={{ alignItems: 'center', flex: 1, marginTop: 10 }}>
               <ButtonComponent
                 // icon1
                 btnfonSize={WIDTH <= 375 ? 12 : 14}
@@ -115,7 +115,7 @@ const InstructorDetails = ({navigation}) => {
                 flexDirection: 'row',
                 // justifyContent: 'space-around',
               }}>
-              <View style={[styles.btn, {marginRight: 10}]}>
+              <View style={[styles.btn, { marginRight: 10 }]}>
                 <Text style={styles.text1}>5:30 PM to7::30 PM</Text>
               </View>
               <View style={styles.btn}>
@@ -123,7 +123,7 @@ const InstructorDetails = ({navigation}) => {
               </View>
             </View>
           </View>
-          <View style={{marginTop: 10, height: HEIGHT / 1.0}}>
+          <View style={{ marginTop: 10, height: HEIGHT / 1.0 }}>
             <MyCalendar />
           </View>
         </View>

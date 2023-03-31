@@ -1,16 +1,16 @@
-import {StyleSheet, Text, View, ScrollView, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
 import ProductCardlg from '../components/ProductCardlg';
 import CardLG from '../components/CArdComponentLG';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
-import {Colors} from '../assets/constants/Colors';
+import { Colors } from '../assets/constants/Colors';
 import Assets from '../assets';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
 
-const SportsScreen = ({navigation}) => {
+const SportsScreen = ({ navigation }) => {
   var data1 = [
     {
       name: `All`,
@@ -45,14 +45,12 @@ const SportsScreen = ({navigation}) => {
       backgroundColor2: '#EC8117',
       image1: Assets.cards.Ex1,
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
-      // onPress: () =>
-      //   navigation.navigate('ExcersizeDetail', {
-      //     params: {image1: Assets.cards.Ex1, Exname: 'Excersie name '},
-      //   }),
       onPress: () =>
         navigation.navigate('ExcersizeDetail', {
           image1: Assets.cards.Ex1,
-          Exname: 'Excersie name ',
+          text1: 'Excersie name ',
+          text2: 'gsfgilkjgfddfghjk',
+          bgColor: '#FBBF76',
         }),
     },
     {
@@ -60,12 +58,14 @@ const SportsScreen = ({navigation}) => {
       backgroundColor1: '#A42B32',
       backgroundColor2: '#D67314',
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+      image1: Assets.cards.Ex2,
       onPress: () =>
         navigation.navigate('ExcersizeDetail', {
-          image1: Assets.cards.Ex1,
-          Exname: 'Excersie name ',
+          image1: Assets.cards.Ex2,
+          text1: 'Excersie name ',
+          text2: 'gsfgilkjgfddfghjk',
+          bgColor: '#FF856E',
         }),
-      image1: Assets.cards.Ex2,
     },
     {
       backgroundColor: '#4B89B0',
@@ -75,9 +75,12 @@ const SportsScreen = ({navigation}) => {
       image1: Assets.cards.Ex3,
       onPress: () =>
         navigation.navigate('ExcersizeDetail', {
-          image1: Assets.cards.Ex1,
-          Exname: 'Excersie name ',
+          image1: Assets.cards.Ex3,
+          text1: 'Excersie name ',
+          text2: 'gsfgilkjgfddfghjk',
+          bgColor: '#4B89B0',
         }),
+
     },
     {
       backgroundColor: '#83734F',
@@ -85,6 +88,13 @@ const SportsScreen = ({navigation}) => {
       backgroundColor2: '#681515',
       progressName: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
       image1: Assets.cards.Ex4,
+      onPress: () =>
+        navigation.navigate('ExcersizeDetail', {
+          image1: Assets.cards.Ex4,
+          text1: 'Excersie name ',
+          text2: 'gsfgilkjgfddfghjk',
+          bgColor: '#83734F',
+        }),
     },
   ];
   return (
@@ -93,8 +103,8 @@ const SportsScreen = ({navigation}) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{flexGrow: 1}}>
-          <View style={{paddingHorizontal: 15}}>
+          contentContainerStyle={{ flexGrow: 1 }}>
+          <View style={{ paddingHorizontal: 15 }}>
             <Header
               navigation={navigation}
               headertex="Exercise Session"
@@ -129,7 +139,7 @@ const SportsScreen = ({navigation}) => {
               // marginBottom: -15,
             }}
             ItemSeparatorComponent={<View style={{}} />}
-            renderItem={({item, index}) => (
+            renderItem={({ item, index }) => (
               <View
                 style={{
                   // paddingLeft: 5,
@@ -176,8 +186,8 @@ const SportsScreen = ({navigation}) => {
                 flexGrow: 1,
                 paddingHorizontal: 15,
               }}
-              ItemSeparatorComponent={<View style={{marginTop: 15}} />}
-              renderItem={({item, index}) => (
+              ItemSeparatorComponent={<View style={{ marginTop: 15 }} />}
+              renderItem={({ item, index }) => (
                 <SessionCompo
                   height={
                     WIDTH < 390 && WIDTH > 375 ? 15 : WIDTH < 375 ? 15 : 50

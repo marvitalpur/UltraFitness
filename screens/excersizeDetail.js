@@ -5,48 +5,43 @@ import Header from '../components/Header';
 import { FlatList } from 'react-native';
 import SessionCompo from '../components/SessionsComponent';
 import Assets from '../assets';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import { HEIGHT, WIDTH, } from '../assets/constants/Dimensions';
 
-const ExcersizeDetail = ({ navigation, route }) => {
-  const { image1 } = route.params;
-  const { Exercisename1 } = route.params;
-  const { Exercisename2 } = route.params;
+const ExcersizeDetail = ({ navigation, route, }) => {
+  const { text1, text2, image1, bgColor } = route.params;
 
   var data = [
     {
-      progressName: 'Social Interection',
+      progressName: text1,
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image1,
-      progressName: '',
+      image1: image1,
+      progressName: text2
     },
     {
-      progressName: 'Social Interection',
-
+      progressName: text1,
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image2,
-      progressName: '',
+      image1: image1,
+      progressName: text2
     },
     {
-      progressName: 'Social Interection',
-
+      progressName: text1,
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image3,
-      progressName: '',
+      image1: image1,
+      progressName: text2
     },
     {
-      progressName: 'Social Interection',
-
+      progressName: text1,
       backgroundColor: '#FBBF76',
       backgroundColor1: '#486B81',
       backgroundColor2: '#EC8117',
-      image1: Assets.ProfileImages.image1,
-      progressName: '',
+      image1: image1,
+      progressName: text2,
     },
   ];
   return (
@@ -80,10 +75,10 @@ const ExcersizeDetail = ({ navigation, route }) => {
                   WIDTH < 390 && WIDTH >= 375 ? -100 : WIDTH < 375 ? -100 : -100
                 }
                 image={image1}
-                text1={Exercisename1}
-                text2={Exercisename2}
+                text1={text1}
+                text2={text2}
                 ExerciseCompo
-                backgroundColor="#FBBF76"
+                backgroundColor={bgColor}
                 backgroundColor1="#486B81"
                 backgroundColor2="#EC8117"
               />

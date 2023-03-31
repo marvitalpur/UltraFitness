@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {Courses, Home, Profile, Shope} from '../screens';
+import React, { useState } from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Courses, Home, Profile, Shope } from '../screens';
 import {
   FlatList,
   ImageBackground,
@@ -9,17 +9,18 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import {Colors} from '../assets/constants/Colors';
+import { Colors } from '../assets/constants/Colors';
 import Assets from '../assets';
-import {Avatar, TouchableRipple} from 'react-native-paper';
-import {Fonts} from '../assets/constants/Fonts';
+import { Avatar, TouchableRipple } from 'react-native-paper';
+import { Fonts } from '../assets/constants/Fonts';
 import ButtonComponent from '../components/Button';
-import {WIDTH} from '../assets/constants/Dimensions';
+import { WIDTH } from '../assets/constants/Dimensions';
 import MyOrders from '../screens/MyOrder';
 import CartScreen from '../screens/CartScreen';
 import AddcardScreen from '../screens/AddcardScreen';
+import Settings from '../screens/settings';
 
 const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator();
@@ -30,7 +31,7 @@ const DrawerNavigator = () => {
         headerTransparent: true,
         animationTypeForReplace: 'push',
         animation: 'slide_from_right',
-        drawerStyle: {width: '100%'},
+        drawerStyle: { width: '100%' },
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={Home} />
@@ -40,6 +41,7 @@ const DrawerNavigator = () => {
       <Drawer.Screen name="MyOrders" component={MyOrders} />
       <Drawer.Screen name="Cart" component={CartScreen} />
       <Drawer.Screen name="Payment Settings" component={AddcardScreen} />
+      <Drawer.Screen name="Settings" component={Settings} />
       {/* <Drawer.Screen name="InstructorDetails" component={InstructorDetails} /> */}
     </Drawer.Navigator>
   );
@@ -55,11 +57,11 @@ const CustomDrawerContent = props => {
       resizeMode="cover"
       style={styles.image}>
       <SafeAreaView style={styles.container}>
-        <View style={{paddingHorizontal: 15}}>
+        <View style={{ paddingHorizontal: 15 }}>
           <Header navigation={props.navigation} backIcon={true} />
         </View>
-        <View style={{paddingHorizontal: 30, marginTop: 25}}>
-          <View style={{width: 100, marginBottom: 25}}>
+        <View style={{ paddingHorizontal: 30, marginTop: 25 }}>
+          <View style={{ width: 100, marginBottom: 25 }}>
             <TouchableOpacity
               onPress={() => props.navigation.navigate('Profile')}
               style={{
@@ -114,10 +116,10 @@ const CustomDrawerContent = props => {
             // backgroundColor: 'red',
             paddingLeft: 25,
           }}
-          ItemSeparatorComponent={<View style={{marginVertical: -15}} />}
+          ItemSeparatorComponent={<View style={{ marginVertical: -15 }} />}
           data={sidebarData}
           scrollEnabled={false}
-          renderItem={({item, index}) => (
+          renderItem={({ item, index }) => (
             <SidebarButton
               item={item}
               index={index}
@@ -127,7 +129,7 @@ const CustomDrawerContent = props => {
             />
           )}
         />
-        <View style={{paddingLeft: 25}}>
+        <View style={{ paddingLeft: 25 }}>
           <ButtonComponent
             borderRadius={50}
             icon="logout"
@@ -194,7 +196,7 @@ const SidebarButton = ({
           height: 45,
           borderRadius: 15,
 
-          transform: [{rotate: '6deg'}],
+          transform: [{ rotate: '6deg' }],
         }}
       />
       <View
@@ -206,7 +208,7 @@ const SidebarButton = ({
           width: 300,
           height: 45,
           borderRadius: 15,
-          transform: [{rotate: '-6deg'}],
+          transform: [{ rotate: '-6deg' }],
         }}
       />
       <Text
@@ -230,7 +232,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: Colors.secondary,
   },
-  image: {flex: 1},
+  image: { flex: 1 },
 });
 
 const sidebarData = [
@@ -255,7 +257,7 @@ const sidebarData = [
     id: 5,
     screen: 'Cart',
   },
-  {id: 6, screen: 'Payment Settings'},
+  { id: 6, screen: 'Payment Settings' },
   {
     id: 8,
     screen: 'Settings',
