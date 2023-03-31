@@ -20,6 +20,7 @@ const ButtonComponent = ({
   paddingHorizontal,
   borderRadius,
   btnfonSize,
+  buttonI,
 }) => {
   return (
     <TouchableRipple
@@ -45,9 +46,7 @@ const ButtonComponent = ({
         }}>
         {icon1 && (
           <>
-            <View style={{margin: 5}}>
-              <BookIcon />
-            </View>
+            <View style={{margin: 5}}>{buttonI}</View>
           </>
         )}
 

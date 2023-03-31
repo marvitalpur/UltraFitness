@@ -19,6 +19,7 @@ import ButtonComponent from '../components/Button';
 import {WIDTH} from '../assets/constants/Dimensions';
 import MyOrders from '../screens/MyOrder';
 import CartScreen from '../screens/CartScreen';
+import AddcardScreen from '../screens/AddcardScreen';
 
 const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator();
@@ -33,11 +34,12 @@ const DrawerNavigator = () => {
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Shope" component={Shope} />
+      <Drawer.Screen name="Shop" component={Shope} />
       <Drawer.Screen name="Courses" component={Courses} />
       <Drawer.Screen name="Profile" component={Profile} />
       <Drawer.Screen name="MyOrders" component={MyOrders} />
       <Drawer.Screen name="Cart" component={CartScreen} />
+      <Drawer.Screen name="Payment Settings" component={AddcardScreen} />
       {/* <Drawer.Screen name="InstructorDetails" component={InstructorDetails} /> */}
     </Drawer.Navigator>
   );
@@ -112,7 +114,7 @@ const CustomDrawerContent = props => {
             // backgroundColor: 'red',
             paddingLeft: 25,
           }}
-          ItemSeparatorComponent={<View style={{marginVertical: -10}} />}
+          ItemSeparatorComponent={<View style={{marginVertical: -15}} />}
           data={sidebarData}
           scrollEnabled={false}
           renderItem={({item, index}) => (
@@ -238,23 +240,24 @@ const sidebarData = [
   },
   {
     id: 2,
-    screen: 'Shope',
+    screen: 'Shop',
   },
   {
     id: 3,
-    screen: 'MyOrders',
+    screen: 'My Orders',
   },
   {
-    id: 3,
-    screen: 'Cart',
+    id: 4,
+    screen: 'Profile',
   },
 
   {
-    id: 6,
-    screen: 'Profile',
+    id: 5,
+    screen: 'Cart',
   },
+  {id: 6, screen: 'Payment Settings'},
   {
-    id: 7,
+    id: 8,
     screen: 'Settings',
   },
 ];

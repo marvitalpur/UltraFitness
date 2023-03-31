@@ -12,6 +12,7 @@ const Assets = {
   logos: {
     blueSmall: require('./images/logoLogin.png'),
     avatarPlaceholder: require('./images/avatarPlaceholder.png'),
+    cardimg: require('../assets/images/cardimg.png'),
   },
   cards: {
     cardImage: require('./images/cardImage.png'),

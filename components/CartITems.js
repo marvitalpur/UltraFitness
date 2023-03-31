@@ -5,21 +5,31 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
-import { FlatList } from 'react-native-gesture-handler';
-import { Fonts } from '../assets/constants/Fonts';
+import React, {useState} from 'react';
+import {FlatList} from 'react-native-gesture-handler';
+import {Fonts} from '../assets/constants/Fonts';
 import Assets from '../assets';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { Colors } from '../assets/constants/Colors';
-import { FAB, TouchableRipple } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
-import { Image } from 'react-native';
-import { Checkbox } from 'react-native-paper';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {Colors} from '../assets/constants/Colors';
+import {FAB, TouchableRipple} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
+import {Image} from 'react-native';
+import {Checkbox} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 import ButtonComponent2 from './Botton2';
 
-
-const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
+const CartItems = ({
+  carddata,
+  card1,
+  card2,
+  card3,
+  colorbtn,
+  onPress,
+  ordernumber,
+  products,
+  price,
+  status,
+}) => {
   const [count, setCount] = useState(5);
   const [checked, setChecked] = useState();
 
@@ -51,32 +61,35 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
   const data1 = [
     {
       description: 'Home Equipment\nPush Up Bars',
-      description1: 'OD - 424923192 - N',
-      description2: '₹37.00',
-      image: Assets.cards.cardImage1,
+      description1: ordernumber,
+      description2: price,
+      image: products,
       colorbtn: '#FFB900',
       btntext: 'In Transit',
+      status: status,
     },
     {
       description: 'Home Equipment\nPush Up Bars',
-      description1: 'OD - 424923192 - N',
-      description2: '₹37.00',
-      image: Assets.cards.cardImage2,
+      description1: ordernumber,
+      description2: price,
+      image: products,
       colorbtn: Colors.primary,
       btntext: 'Delivered',
+      status: status,
     },
     {
       description: 'Home Equipment\nPush Up Bars',
-      description1: 'OD - 424923192 - N',
-      description2: '₹37.00',
-      image: Assets.cards.cardImage2,
+      description1: ordernumber,
+      description2: price,
+      image: products,
       colorbtn: Colors.primary,
       btntext: 'Delivered',
+      status: status,
     },
   ];
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <View>
         {card1 && (
           <>
@@ -84,14 +97,12 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
               data={data}
               contentContainerStyle={{}}
               // numColumns={2}
-              ItemSeparatorComponent={<View style={{ marginVertical: 5 }} />}
-              renderItem={({ item, index }) => (
+              ItemSeparatorComponent={<View style={{marginVertical: 5}} />}
+              renderItem={({item, index}) => (
                 <>
-
                   <View
-                    style={{ flexDirection: 'row', flex: 1, marginVertical: 10 }}>
-
-                    <View style={{ justifyContent: 'center' }}>
+                    style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
+                    <View style={{justifyContent: 'center'}}>
                       <Checkbox
                         size={12}
                         color="#000"
@@ -112,13 +123,19 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                           marginLeft: index % 2 == 0 ? 0 : 5,
                         },
                       ]}>
-                      <TouchableOpacity style={{
-                        width: 26, height: 26,
-                        justifyContent: 'center', alignItems: 'center',
-                        backgroundColor: 'red', borderRadius: 100,
-                        position: 'absolute', right: -5, top: -10
-                      }}>
-                        <Icon name='close' color={'#fff'} size={20} />
+                      <TouchableOpacity
+                        style={{
+                          width: 26,
+                          height: 26,
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          backgroundColor: 'red',
+                          borderRadius: 100,
+                          position: 'absolute',
+                          right: -5,
+                          top: -10,
+                        }}>
+                        <Icon name="close" color={'#fff'} size={20} />
                       </TouchableOpacity>
                       <View
                         style={[
@@ -143,7 +160,12 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                             }}
                           />
                         </View>
-                        <View style={{ width: WIDTH / 4.6, paddingTop: 15, paddingLeft: 5 }}>
+                        <View
+                          style={{
+                            width: WIDTH / 4.6,
+                            paddingTop: 15,
+                            paddingLeft: 5,
+                          }}>
                           <Text numberOfLines={2} style={styles.productDesc}>
                             {item.description}
                           </Text>
@@ -177,20 +199,23 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                             color="white"
                             onPress={decrement}
                           />
-                          <View style={[styles.fab, {
-                            backgroundColor: Colors.secondary,
-                            height: WIDTH < 375 ? 44 : 48,
-                            width: WIDTH < 375 ? 48 : 51,
-                            paddingHorizontal: 5,
-                            backgroundColor: Colors.secondary,
-                            shadowColor: Colors.tertiary,
-                            shadowOffset: {
-                              width: 0,
-                              height: 7,
-                            },
-                            elevation: 15,
-
-                          }]}>
+                          <View
+                            style={[
+                              styles.fab,
+                              {
+                                backgroundColor: Colors.secondary,
+                                height: WIDTH < 375 ? 44 : 48,
+                                width: WIDTH < 375 ? 48 : 51,
+                                paddingHorizontal: 5,
+                                backgroundColor: Colors.secondary,
+                                shadowColor: Colors.tertiary,
+                                shadowOffset: {
+                                  width: 0,
+                                  height: 7,
+                                },
+                                elevation: 15,
+                              },
+                            ]}>
                             <Text>{count}</Text>
                           </View>
                           <FAB
@@ -226,18 +251,19 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
           <>
             <FlatList
               data={data1}
-              contentContainerStyle={{ paddingHorizontal: 10 }}
+              contentContainerStyle={{paddingHorizontal: 10}}
               // numColumns={2}
-              ItemSeparatorComponent={<View style={{ marginVertical: 10 }} />}
-              renderItem={({ item, index }) => (
+              ItemSeparatorComponent={<View style={{marginVertical: 10}} />}
+              renderItem={({item, index}) => (
                 <View>
-                  <View
-                    style={{ flexDirection: 'row', flex: 1, }}>
+                  <TouchableOpacity
+                    onPress={onPress}
+                    activeOpacity={1}
+                    style={{flexDirection: 'row', flex: 1}}>
                     <View
                       style={[
                         styles.card,
                         {
-
                           height: 100,
                           elevation: 0.5,
                           paddingHorizontal: 15,
@@ -253,12 +279,12 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                             flexDirection: 'row',
                           },
                         ]}>
-                        <View style={{ width: WIDTH / 2.5, }}>
+                        <View style={{width: WIDTH / 2.5}}>
                           <Text
                             numberOfLines={2}
                             style={[
                               styles.productDesc,
-                              { fontSize: 16, color: Colors.tertiary },
+                              {fontSize: 16, color: Colors.tertiary},
                             ]}>
                             {item.description1}
                           </Text>
@@ -266,24 +292,23 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                             numberOfLines={2}
                             style={[
                               styles.productDesc,
-                              { fontSize: 14, color: '#00C569' },
+                              {fontSize: 14, color: '#00C569'},
                             ]}>
                             {item.description2}
                           </Text>
-                          <View style={{ marginTop: 15 }}>
+                          <View style={{marginTop: 15}}>
                             <ButtonComponent2
                               borderRadius={14}
                               buttonText={item.btntext}
                               buttonColor={item.colorbtn}
                               textColor={Colors.secondary}
-                              onPress={onPress}
                               // onPress={() => navigation.navigate('GoogleMapsScreen')}
                               height={WIDTH <= 375 ? 25 : 30}
                               width={WIDTH <= 323 ? 60 : 80}
                             />
                           </View>
                         </View>
-                        <View style={{ width: WIDTH / 5.2, paddingTop: 15 }} />
+                        <View style={{width: WIDTH / 5.2, paddingTop: 15}} />
                         <View
                           style={[
                             styles.productImage,
@@ -329,7 +354,6 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                             style={[
                               styles.fab,
                               {
-
                                 backgroundColor: 'red',
                                 // opacity: 0.5,
                                 marginLeft: 'auto',
@@ -347,7 +371,7 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                         </View>
                       </View>
                     </View>
-                  </View>
+                  </TouchableOpacity>
                 </View>
               )}
             />
@@ -357,13 +381,13 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
           <>
             <FlatList
               data={data1}
-              contentContainerStyle={{ paddingHorizontal: 10 }}
+              contentContainerStyle={{paddingHorizontal: 10}}
               // numColumns={2}
-              ItemSeparatorComponent={<View style={{ marginVertical: 5 }} />}
-              renderItem={({ item, index }) => (
+              ItemSeparatorComponent={<View style={{marginVertical: 5}} />}
+              renderItem={({item, index}) => (
                 <>
                   <View
-                    style={{ flexDirection: 'row', flex: 1, marginVertical: 10 }}>
+                    style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
                     <View
                       style={[
                         styles.card,
@@ -396,8 +420,15 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                             }}
                           />
                         </View>
-                        <View style={{ width: WIDTH / 2.2, paddingTop: 15, paddingLeft: 10 }}>
-                          <Text numberOfLines={2} style={[styles.productDesc, { fontSize: 16, }]}>
+                        <View
+                          style={{
+                            width: WIDTH / 2.2,
+                            paddingTop: 15,
+                            paddingLeft: 10,
+                          }}>
+                          <Text
+                            numberOfLines={2}
+                            style={[styles.productDesc, {fontSize: 16}]}>
                             {item.description}
                           </Text>
                         </View>
@@ -405,14 +436,15 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                           style={[
                             styles.headerContainer,
                             {
-                              flexDirection: 'column', width: WIDTH / 3.9,
+                              flexDirection: 'column',
+                              width: WIDTH / 3.9,
                               // backgroundColor: 'green',
                             },
                           ]}>
-                          <View style={{ marginTop: 5 }}>
+                          <View style={{marginTop: 5}}>
                             <ButtonComponent2
                               borderRadius={14}
-                              buttonText={'Delivered'}
+                              buttonText={status}
                               buttonColor={'#00C569'}
                               textColor={Colors.secondary}
                               onPress={onPress}
@@ -421,8 +453,12 @@ const CartItems = ({ carddata, card1, card2, card3, colorbtn, onPress }) => {
                               width={WIDTH <= 323 ? 60 : 80}
                             />
                           </View>
-                          <Text style={[styles.productDesc, { fontSize: 30, color: Colors.tertiary }]}>
-                            $12.00
+                          <Text
+                            style={[
+                              styles.productDesc,
+                              {fontSize: 30, color: Colors.tertiary},
+                            ]}>
+                            {price}
                           </Text>
                         </View>
                       </View>
@@ -511,7 +547,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 81,
     backgroundColor: '#FFFFFF',
-    // padding: 10,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
@@ -527,15 +562,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '55%',
-    // marginTop: 15,
-    // justifyContent: 'space-between',
   },
   fab: {
     height: 48,
     width: 51,
     borderRadius: 5,
     backgroundColor: '#fff',
-    // opacity: 0.06,
+
     alignItems: 'center',
     justifyContent: 'center',
   },

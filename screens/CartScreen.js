@@ -9,7 +9,6 @@ import CartItems from '../components/CartITems';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
 
-
 const CartScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -28,71 +27,48 @@ const CartScreen = ({navigation}) => {
         <View style={{marginTop: 25, paddingHorizontal: 5}}>
           <CartItems card1 />
         </View>
+        <View style={{marginTop: 25}}>
+          <View style={styles.line} />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingHorizontal: 25,
+            }}>
+            <Text style={styles.text}>Summary</Text>
+          </View>
+          <View style={{paddingHorizontal: 25, paddingTop: 25}}>
+            <Table />
+          </View>
+          <View style={[styles.line, {width: '80%'}]} />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingHorizontal: 25,
+            }}>
+            <Text style={styles.text}>Total Amount:</Text>
+            <Text style={styles.text}>$215.00</Text>
+          </View>
 
-        <View
-          style={{
-            marginTop: 25,
-            paddingTop: 25,
-            width: '25%',
-            alignSelf: 'center',
-            borderBottomColor: '#707070 ',
-            backgroundColor: '#707070 ',
-            opacity: 0.6,
-            borderBottomWidth: 2,
-            marginHorizontal: 25,
-          }}
-        />
-        <View
-          style={{
-            marginTop: 25,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingHorizontal: 25,
-          }}>
-          <Text style={styles.text}>Summary</Text>
-        </View>
-        <View style={{paddingHorizontal: 25, paddingTop: 25}}>
-          <Table />
-        </View>
-        <View
-          style={{
-            width: '80%',
-            alignSelf: 'center',
-            marginVertical: 25,
-            borderBottomColor: '#707070 ',
-            backgroundColor: '#707070 ',
-            opacity: 0.6,
-            borderBottomWidth: 2,
-            marginHorizontal: 25,
-          }}
-        />
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingHorizontal: 25,
-          }}>
-          <Text style={styles.text}>Total Amount:</Text>
-          <Text style={styles.text}>$215.00</Text>
-        </View>
-
-        <View
-          style={{
-            marginTop: 25,
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: 10,
-          }}>
-          <ButtonComponent
-            borderRadius={14}
-            buttonText="Proceed to Checkout"
-            buttonColor={Colors.tertiary}
-            textColor={Colors.secondary}
-            onPress={() => navigation.navigate('GoogleMapsScreen')}
-            // onPress={() => navigation.navigate('GoogleMapsScreen')}
-            height={WIDTH <= 375 ? 55 : 55}
-            width={WIDTH <= 323 ? 260 : 300}
-          />
+          <View
+            style={{
+              marginTop: 25,
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: 10,
+            }}>
+            <ButtonComponent
+              borderRadius={14}
+              buttonText="Proceed to Checkout"
+              buttonColor={Colors.tertiary}
+              textColor={Colors.secondary}
+              onPress={() => navigation.navigate('GoogleMapsScreen')}
+              // onPress={() => navigation.navigate('GoogleMapsScreen')}
+              height={WIDTH <= 375 ? 55 : 55}
+              width={WIDTH <= 323 ? 260 : 300}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -116,5 +92,14 @@ const styles = StyleSheet.create({
   boldtext: {
     textAlign: 'center',
     padding: 5,
+  },
+  line: {
+    width: '25%',
+    alignSelf: 'center',
+    borderBottomColor: '#000',
+    backgroundColor: '#707070 ',
+    opacity: 0.15,
+    borderBottomWidth: 2,
+    marginVertical: 15,
   },
 });

@@ -83,11 +83,12 @@ const Home = ({navigation}) => {
             <View style={{width: 20}} />
             <View style={{flex: 1}}>
               <ProductCardSm
+                cardicon
                 OnpresCard={() => {
                   navigation.navigate('QRCode');
                 }}
                 img={Assets.backgroundImages.cardBackground1}
-                text="Training"
+                text="QR Code"
               />
               <View style={{height: 20}} />
               <ProductCardSm
@@ -95,7 +96,7 @@ const Home = ({navigation}) => {
                   navigation.navigate('AssismentScreen');
                 }}
                 img={Assets.backgroundImages.cardBackground2}
-                text="Training"
+                text="Fitness Assesment"
               />
             </View>
           </View>
@@ -116,7 +117,7 @@ const Home = ({navigation}) => {
             />
           </View>
         </View>
-        <Products />
+        <Products color="#000" fontWeight="bold" />
       </ScrollView>
     </SafeAreaView>
   );

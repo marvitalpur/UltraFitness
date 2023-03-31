@@ -1,17 +1,16 @@
-import { ScrollView, StyleSheet, Text, View, Image, Modal } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
-import { Checkbox, FAB, TouchableRipple } from 'react-native-paper';
+import {ScrollView, StyleSheet, Text, View, Image, Modal} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
+import {Checkbox, FAB, TouchableRipple} from 'react-native-paper';
 import Assets from '../assets';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import ButtonComponent from '../components/Button';
 import Input from '../components/Input';
 
-
-const AddcardScreen = ({ navigation }) => {
+const AddcardScreen = ({navigation}) => {
   const [checked, setChecked] = useState();
   const [modalVisible, setModalVisible] = useState(false);
   const [data, setData] = useState({
@@ -29,8 +28,8 @@ const AddcardScreen = ({ navigation }) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ flex: 1, height: 200 }}>
+          contentContainerStyle={{flexGrow: 1}}>
+          <View style={{flex: 1, height: 200}}>
             <View
               style={{
                 paddingHorizontal: 15,
@@ -38,7 +37,7 @@ const AddcardScreen = ({ navigation }) => {
 
                 // backgroundColor: 'green',
               }}>
-              <HeaderComponent onpres1={() => setModalVisible(!modalVisible)} />
+              <HeaderComponent navigation={navigation} />
             </View>
             <View style={{}}>
               <View
@@ -66,21 +65,21 @@ const AddcardScreen = ({ navigation }) => {
                       WIDTH < 390 && WIDTH >= 375
                         ? 240
                         : WIDTH < 375
-                          ? 240
-                          : 240,
+                        ? 240
+                        : 240,
                     position: 'absolute',
                     top:
                       WIDTH < 390 && WIDTH >= 375
                         ? -24
                         : WIDTH < 375
-                          ? -24
-                          : -16,
+                        ? -24
+                        : -16,
                     left:
                       WIDTH < 390 && WIDTH >= 375
                         ? -170
                         : WIDTH < 375
-                          ? -365
-                          : -350,
+                        ? -365
+                        : -350,
                     // right:
                     //   WIDTH < 390 && WIDTH >= 375 ? -170 : WIDTH < 375 ? -320 : -390,
                     zIndex: 10,
@@ -111,16 +110,16 @@ const AddcardScreen = ({ navigation }) => {
                       WIDTH < 390 && WIDTH >= 375
                         ? 195
                         : WIDTH < 375
-                          ? 240
-                          : 240,
+                        ? 240
+                        : 240,
                     position: 'absolute',
                     top: WIDTH < 390 && WIDTH >= 375 ? 5 : WIDTH < 375 ? 5 : 5,
                     left:
                       WIDTH < 390 && WIDTH >= 375
                         ? -170
                         : WIDTH < 375
-                          ? -365
-                          : -350,
+                        ? -365
+                        : -350,
                     // right:
                     //   WIDTH < 390 && WIDTH >= 375 ? -170 : WIDTH < 375 ? -320 : -390,
                     zIndex: 10,
@@ -242,13 +241,29 @@ const AddcardScreen = ({ navigation }) => {
   );
 };
 
-const HeaderComponent = ({ navigation, onpres1 }) => {
+const HeaderComponent = ({
+  navigation,
+  onpres1,
+  onpress,
+  // modalVisible,
+  // setModalVisible,
+}) => {
+  const [data, setData] = useState({
+    fullName: '',
+    contactNo: '',
+    gender: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View style={[styles.headerContainer, {}]}>
-      <View style={{ flexDirection: 'row' }}>
+    <>
+      <View style={[styles.headerContainer, {}]}>
         <FAB
           style={[
-            styles.fab,
+            styles.btn,
             {
               height: WIDTH < 375 ? 40 : 55,
               width: WIDTH < 375 ? 40 : 55,
@@ -259,13 +274,124 @@ const HeaderComponent = ({ navigation, onpres1 }) => {
           color={Colors.tertiary}
           onPress={() => navigation.goBack()}
         />
+
+        <Text style={styles.headertex}>Cards</Text>
+        <TouchableOpacity
+          onPress={() => setModalVisible(!modalVisible)}
+          style={{flexDirection: 'row'}}>
+          <Image source={require('../assets/images/card-add.png')} />
+          <Text style={styles.addtext}>Add</Text>
+        </TouchableOpacity>
       </View>
-      <Text style={styles.headertex}>Cards</Text>
-      <TouchableOpacity onPress={onpres1} style={{ flexDirection: 'row' }}>
-        <Image source={require('../assets/images/card-add.png')} />
-        <Text style={styles.addtext}>Add</Text>
-      </TouchableOpacity>
-    </View>
+
+      <View style={{}}>
+        <Modal
+          transparent={true}
+          animationType="slide"
+          visible={modalVisible}
+          onRequestClose={() => {
+            // Alert.alert('Modal has been closed.');
+            setModalVisible(false);
+          }}>
+          <View style={styles.modalView}>
+            <View
+              style={{
+                marginVertical: 15,
+                backgroundColor: '#707070',
+                opacity: 0.22,
+                width: '30%',
+                height: 2,
+                alignSelf: 'center',
+              }}
+            />
+            <View
+              style={{
+                marginTop: 15,
+                // backgroundColor: 'yellow',
+                width: '90%',
+              }}>
+              <Input
+                placeholder="Full Name"
+                text={data.fullName}
+                setText={setData}
+                formKey="fullName"
+                textColor={Colors.tertiary}
+              />
+            </View>
+            <View
+              style={{
+                paddingTop: 10,
+                // backgroundColor: 'yellow',
+                width: '90%',
+              }}>
+              <Input
+                placeholder="Card Number"
+                text={data.fullName}
+                setText={setData}
+                formKey="fullName"
+                textColor={Colors.tertiary}
+              />
+            </View>
+            <View
+              style={{
+                paddingTop: 10,
+                // backgroundColor: 'yellow',
+                width: '90%',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <Input
+                placeholder="Expiry MM/YY"
+                text={data.fullName}
+                setText={setData}
+                formKey="fullName"
+                textColor={Colors.tertiary}
+              />
+              <Input
+                placeholder="CVV(3 Digits)"
+                text={data.fullName}
+                setText={setData}
+                formKey="fullName"
+                textColor={Colors.tertiary}
+              />
+            </View>
+            <View
+              style={{
+                paddingTop: 10,
+                // backgroundColor: 'yellow',
+                width: '90%',
+              }}>
+              <Input
+                placeholder="Card Holder Name"
+                text={data.fullName}
+                setText={setData}
+                formKey="fullName"
+                textColor={Colors.tertiary}
+              />
+            </View>
+            <View
+              style={{
+                paddingTop: 15,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 10,
+              }}>
+              <ButtonComponent
+                icon1
+                borderRadius={14}
+                buttonText="Save"
+                buttonColor={Colors.tertiary}
+                textColor={Colors.secondary}
+                onPress={() => setModalVisible(false)}
+                // onPress={() => navigation.navigate('GoogleMapsScreen')}
+                height={WIDTH <= 375 ? 55 : 55}
+                width={WIDTH <= 323 ? 260 : 255}
+              />
+            </View>
+          </View>
+        </Modal>
+      </View>
+    </>
   );
 };
 

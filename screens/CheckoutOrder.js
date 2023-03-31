@@ -7,26 +7,26 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
 import ButtonComponent from '../components/Button';
-import { TouchableRipple } from 'react-native-paper';
-import { BackSvg } from '../assets/svgs/HeaderSvgs';
+import {TouchableRipple} from 'react-native-paper';
+import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import Lottie from 'lottie-react-native';
-import { Fonts } from '../assets/constants/Fonts';
-import { RiderIcon1, RiderIcon2, RiderIcon3 } from '../assets/svgs/HomeSvgs';
+import {Fonts} from '../assets/constants/Fonts';
+import {RiderIcon1, RiderIcon2, RiderIcon3} from '../assets/svgs/HomeSvgs';
 import Assets from '../assets';
 
-const CheckoutOrder = ({ navigation }) => {
+const CheckoutOrder = ({navigation}) => {
   const [checked, setChecked] = useState();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
+        contentContainerStyle={{flexGrow: 1}}>
         <View
           style={{
             justifyContent: 'center',
@@ -34,29 +34,24 @@ const CheckoutOrder = ({ navigation }) => {
             paddingHorizontal: 25,
             // backgroundColor: 'green',
           }}>
-
-          <View>
-            <Text
-              style={[
-                styles.text,
-                {
-                  fontWeight: '300',
-                  fontFamily: Fonts.default,
-                  fontSize: 22,
-                  marginTop: 25,
-                },
-              ]}>
-              Checkout
-            </Text>
-          </View>
-
+          <Text
+            style={[
+              styles.text,
+              {
+                paddingTop: 25,
+                fontWeight: '300',
+                fontFamily: Fonts.default,
+              },
+            ]}>
+            Checkout
+          </Text>
           <View style={{}}>
             <Lottie
               source={Assets.animation.animationRides}
               style={{
                 width: WIDTH < 375 ? 230 : 230,
 
-                // height: WIDTH < 375 ? 250 : 250,
+                height: WIDTH < 375 ? 180 : 150,
               }}
               autoPlay
               loop
@@ -68,24 +63,23 @@ const CheckoutOrder = ({ navigation }) => {
           </Text>
           <Text
             numberOfLines={2}
-            style={[styles.text2, { color: Colors.tertiary, marginTop: 10 }]}>
+            style={[styles.text2, {color: Colors.tertiary, marginTop: 10}]}>
             example_mail@.com
           </Text>
-
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 5}} />
           <RiderIcon1 />
           <Text numberOfLines={4} style={styles.text2}>
             We will inform you when the {'\n'}package is ready
           </Text>
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 5}} />
           <RiderIcon2 />
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <Text numberOfLines={4} style={styles.text2}>
             Your products will be shipped in{'\n'} 2-3 days
           </Text>
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 5}} />
           <RiderIcon3 />
-          <View style={{ marginTop: 15 }} />
+          <View style={{marginTop: 15}} />
           <Text numberOfLines={4} style={styles.text2}>
             You will receive an email when the{'\n'}package is delivered
           </Text>
@@ -108,16 +102,19 @@ const CheckoutOrder = ({ navigation }) => {
             />
           </View>
         </View>
-
       </ScrollView>
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({ navigation }) => {
+const HeaderComponent = ({navigation}) => {
   return (
     <View style={{}}>
       <TouchableRipple
-        onPress={() => navigation.navigate('CheckoutOrder')}
+        onPress={() =>
+          navigation.navigate('CheckoutOrder', {
+            headtext: '',
+          })
+        }
         style={{
           width: 50,
           height: 50,
@@ -154,6 +151,7 @@ const styles = StyleSheet.create({
     color: Colors.cards.GreyText,
   },
   heading2: {
+    marginVertical: 10,
     fontWeight: '400',
     fontFamily: Fonts.default,
     fontSize: 18,

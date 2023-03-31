@@ -20,9 +20,9 @@ const Products = ({}) => {
   const navigation = useNavigation();
   const data = [
     {
-      name: 'product 1',
+      name: 'Home Equipmemnt',
+      description: 'Lorem ipsum dolor sit amet',
       price: '36',
-      description: 'Home Equipment',
       image: Assets.cards.cardImage1,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
@@ -31,9 +31,9 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 2',
+      name: 'Home Equipmemnt',
+      description: 'Lorem ipsum dolor sit amet',
       price: '36',
-      description: 'Home Equipment',
       image: Assets.cards.cardImage2,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
@@ -42,9 +42,9 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 3',
+      name: 'Home Equipmemnt',
+      description: 'Lorem ipsum dolor sit amet',
       price: '36',
-      description: 'Home Equipment',
       image: Assets.cards.cardImage3,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
@@ -53,9 +53,9 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 4',
+      name: 'Home Equipmemnt',
+      description: 'Lorem ipsum dolor sit amet',
       price: '36',
-      description: 'Home Equipment',
       image: Assets.cards.cardImage4,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
@@ -64,9 +64,9 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 5',
+      name: 'Home Equipmemnt',
+      description: 'Lorem ipsum dolor sit amet',
       price: '36',
-      description: 'Home Equipment',
       image: Assets.cards.cardImage5,
       onPress: () =>
         navigation.navigate('ProductSCreen', {
@@ -75,9 +75,9 @@ const Products = ({}) => {
         }),
     },
     {
-      name: 'product 6',
+      name: 'Home Equipmemnt',
+      description: 'Lorem ipsum dolor sit amet',
       price: '36',
-      description: 'Home Equipment',
       image: Assets.cards.cardImage6,
       onPress: () =>
         navigation.navigate('ProductSCreen', {

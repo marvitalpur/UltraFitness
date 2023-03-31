@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { TouchableRipple } from 'react-native-paper';
+import {TouchableRipple} from 'react-native-paper';
 import {
   BackSvg,
   LogoSvg,
   MenuSvg,
   NotificationSvg,
 } from '../assets/svgs/HeaderSvgs';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 
 const Header = ({
   logo,
@@ -25,10 +25,10 @@ const Header = ({
           backIcon1
             ? navigation.goBack()
             : onlybackbutton
-              ? navigation.goBack()
-              : backIcon
-                ? navigation.closeDrawer()
-                : navigation.openDrawer()
+            ? navigation.goBack()
+            : backIcon
+            ? navigation.closeDrawer()
+            : navigation.openDrawer()
         }
         style={styles.btn}>
         {backIcon1 ? <BackSvg /> : backIcon ? <BackSvg /> : <MenuSvg />}
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 22,
     color: Colors.tertiary,
+    textAlign: 'center',
     // letterSpacing: 0.9,
   },
 });

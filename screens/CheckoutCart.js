@@ -20,6 +20,7 @@ import {Fonts} from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
 import Header from '../components/Header';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Assets from '../assets';
 
 const CheckoutCart = ({navigation}) => {
   const [checked, setChecked] = useState();
@@ -37,21 +38,19 @@ const CheckoutCart = ({navigation}) => {
             navigation={navigation}
             onlybackbutton
             backIcon
-            headertex={'Cart'}
+            headertex={'Checkout'}
           />
         </View>
         <View
           style={{
             marginTop: 25,
-            // flexDirection: 'row',
-            // justifyContent: 'space-between',
             paddingHorizontal: 25,
           }}>
           <Text
             style={[
               styles.text,
               {
-                fontWeight: 'bold',
+                fontWeight: '500',
                 fontFamily: Fonts.default,
                 fontSize: 24,
               },
@@ -61,7 +60,6 @@ const CheckoutCart = ({navigation}) => {
           <Text
             numberOfLines={2}
             style={[
-              //   styles.text,
               {
                 // fontWeight: 'bold',
                 paddingTop: 10,
@@ -108,7 +106,6 @@ const CheckoutCart = ({navigation}) => {
                 numberOfLines={2}
                 style={[
                   styles.nametext,
-
                   {color: Colors.cards.GreyText, fontSize: 14},
                 ]}>
                 edit
@@ -147,58 +144,48 @@ const CheckoutCart = ({navigation}) => {
               style={{}}>
               <Text
                 numberOfLines={2}
-                style={[styles.nametext, {color: '#000'}]}>
+                style={[styles.nametext, {color: Colors.primary}]}>
                 Add new
                 <Icon name="plus" size={14} style={{paddingLeft: 5}} />
               </Text>
             </TouchableOpacity>
           </View>
           <Text numberOfLines={2} style={[styles.nametext]}>
+            <Image
+              source={Assets.logos.cardimg}
+              style={{width: 25, height: 25, paddingHorizontal: 5}}
+            />
             42201-336-2102-5214
           </Text>
         </View>
-        <View style={styles.boderline} />
+        <View style={[styles.line, {marginTop: 15}]} />
         <View
           style={{
-            paddingTop: 15,
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingHorizontal: 25,
           }}>
           <Text style={styles.text}>Summary</Text>
         </View>
-        <View style={{paddingHorizontal: 25, paddingTop: 25}}>
+        <View style={{paddingHorizontal: 25, paddingTop: 5}}>
           <Table />
         </View>
-        <View
-          style={{
-            width: '80%',
-            alignSelf: 'center',
-            marginVertical: 15,
-            borderBottomColor: '#707070 ',
-            backgroundColor: '#707070 ',
-            opacity: 0.6,
-            borderBottomWidth: 1,
-            marginHorizontal: 25,
-          }}
-        />
+        <View style={[styles.line, {width: '80%'}]} />
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingHorizontal: 25,
-            marginVertical: 5,
           }}>
           <Text style={styles.text}>Total Amount:</Text>
           <Text style={styles.text}>$215.00</Text>
         </View>
-
         <View
           style={{
-            marginTop: 15,
+            marginTop: 10,
             alignItems: 'center',
             justifyContent: 'center',
-            marginBottom: 10,
+            marginBottom: 5,
           }}>
           <ButtonComponent
             borderRadius={14}
@@ -257,15 +244,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Colors.cards.tertiarys,
   },
-  boderline: {
+  line: {
     width: '25%',
     alignSelf: 'center',
-    paddingVertical: 10,
-    // marginTop: 25,
-    borderBottomColor: '#707070 ',
+    borderBottomColor: '#000',
     backgroundColor: '#707070 ',
-    opacity: 0.25,
+    opacity: 0.15,
     borderBottomWidth: 2,
-    marginHorizontal: 25,
+    marginVertical: 15,
   },
 });

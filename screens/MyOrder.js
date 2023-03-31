@@ -3,30 +3,25 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
-import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+
 import {Fonts} from '../assets/constants/Fonts';
-import ProductCard from '../components/ProductCard';
-import Products from '../components/Products';
 import CartItems from '../components/CartITems';
-import TableData from '../components/TableData';
-import Table from '../components/TableData';
-import ButtonComponent from '../components/Button';
-import {TouchableRipple} from 'react-native-paper';
-import {BackSvg} from '../assets/svgs/HeaderSvgs';
 import Icon from 'react-native-vector-icons/Feather';
-const MyOrders = ({navigation}) => {
+import Assets from '../assets';
+const MyOrders = ({navigation, route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flexGrow: 1}}>
-        <View
-          style={{
-            paddingTop: 25,
-            padding: 15,
-          }}>
-          <HeaderComponent navigation={navigation} />
+        <View style={{paddingHorizontal: 15}}>
+          <Header
+            navigation={navigation}
+            onlybackbutton
+            backIcon
+            headertex={'Track Orders'}
+          />
         </View>
         <View style={{padding: 25, flexDirection: 'row'}}>
           <Text>
@@ -40,9 +35,20 @@ const MyOrders = ({navigation}) => {
             />
           </Text>
         </View>
+
         <CartItems
           card2
-          onPress={() => navigation.navigate('ProductDetailScreen')}
+          products={Assets.cards.cardImage1}
+          price={'₹37.00'}
+          ordernumber={'OD - 424923192 - N'}
+          onPress={() =>
+            navigation.navigate('ProductDetailScreen', {
+              status: 'Deleved',
+              price: '₹12.00',
+              products: Assets.cards.cardImage1,
+              ordernumber: 'OD - 424923192 - N',
+            })
+          }
         />
         <View
           style={{
@@ -60,25 +66,26 @@ const MyOrders = ({navigation}) => {
     </SafeAreaView>
   );
 };
-const HeaderComponent = ({navigation}) => {
-  return (
-    <View style={{}}>
-      <TouchableRipple
-        onPress={() => navigation.goBack()}
-        style={{
-          width: 50,
-          height: 50,
-          backgroundColor: '#fff',
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: 10,
-          elevation: 15,
-        }}>
-        <BackSvg />
-      </TouchableRipple>
-    </View>
-  );
-};
+// const HeaderComponent = ({navigation, ordernumber}) => {
+//   return (
+//     <View style={{}}>
+//       <TouchableRipple
+//         onPress={() => navigation.goBack()}
+//         style={{
+//           width: 50,
+//           height: 50,
+//           backgroundColor: '#fff',
+//           justifyContent: 'center',
+//           alignItems: 'center',
+//           borderRadius: 10,
+//           elevation: 15,
+//         }}>
+//         <BackSvg />
+//       </TouchableRipple>
+//       <Text style={styles.headertex}>{ordernumber}</Text>
+//     </View>
+//   );
+// };
 export default MyOrders;
 
 const styles = StyleSheet.create({
@@ -96,5 +103,15 @@ const styles = StyleSheet.create({
   boldtext: {
     textAlign: 'center',
     padding: 5,
+  },
+  headertex: {
+    fontSize: 22,
+    color: Colors.tertiary,
+    fontFamily: Fonts.default,
+    fontWeight: '600',
+    fontSize: 22,
+    color: Colors.tertiary,
+    textAlign: 'center',
+    // letterSpacing: 0.9,
   },
 });

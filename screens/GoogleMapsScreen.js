@@ -132,7 +132,10 @@ const GoogleMapsScreen = ({navigation}) => {
             justifyContent: 'space-between',
             paddingHorizontal: 25,
           }}>
-          <Text style={styles.text}>Payment Method</Text>
+          <Text
+            style={[styles.text, {fontWeight: 'bold', paddingVertical: 10}]}>
+            Payment Method
+          </Text>
           <View style={{flexDirection: 'row', paddingTop: 10}}>
             <Radiobutton
               onPress={() => setChecked(!checked)}
@@ -191,7 +194,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: Fonts.default,
-
     fontSize: 18,
     color: Colors.tertiary,
     letterSpacing: 0.9,

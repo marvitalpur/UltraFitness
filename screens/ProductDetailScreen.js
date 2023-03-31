@@ -9,9 +9,9 @@ import CartItems from '../components/CartITems';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
 import {LocationIcon, Trashicon} from '../assets/svgs/HomeSvgs';
-import {EditSvg} from '../assets/svgs/HeaderSvgs';
 
-const ProductDetailScreen = ({navigation}) => {
+const ProductDetailScreen = ({navigation, route}) => {
+  const {ordernumber, products, price, status} = route.params;
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -23,26 +23,14 @@ const ProductDetailScreen = ({navigation}) => {
             navigation={navigation}
             onlybackbutton
             backIcon
-            headertex={'Cart'}
+            headertex={ordernumber}
           />
         </View>
         <View style={{marginTop: 25, paddingHorizontal: 5}}>
-          <CartItems card3 />
+          <CartItems card3 products={products} price={price} status={status} />
         </View>
 
-        <View
-          style={{
-            marginTop: 25,
-            paddingTop: 25,
-            width: '25%',
-            alignSelf: 'center',
-            borderBottomColor: '#707070 ',
-            backgroundColor: '#707070 ',
-            opacity: 0.6,
-            borderBottomWidth: 2,
-            marginHorizontal: 25,
-          }}
-        />
+        <View style={[styles.line, {width: '25%'}]} />
         <View
           style={{
             marginTop: 25,
@@ -55,18 +43,7 @@ const ProductDetailScreen = ({navigation}) => {
         <View style={{paddingHorizontal: 25, paddingTop: 25}}>
           <Table />
         </View>
-        <View
-          style={{
-            width: '80%',
-            alignSelf: 'center',
-            marginVertical: 25,
-            borderBottomColor: '#707070 ',
-            backgroundColor: '#707070 ',
-            opacity: 0.6,
-            borderBottomWidth: 2,
-            marginHorizontal: 25,
-          }}
-        />
+        <View style={[styles.line, {width: '80%'}]} />
         <View
           style={{
             flexDirection: 'row',
@@ -85,9 +62,8 @@ const ProductDetailScreen = ({navigation}) => {
             marginBottom: 10,
           }}>
           <ButtonComponent
-       
             icon1
-            SvgICon={<Trashicon/>}
+            SvgICon={<Trashicon />}
             borderRadius={14}
             buttonText="Proceed to Checkout"
             buttonColor={Colors.primary}
