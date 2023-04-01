@@ -22,6 +22,7 @@ import VideoScreen from '../screens/VideoScreen';
 import AssismentScreen from '../screens/AssismentScreen';
 import Account from '../screens/Account';
 import TermsConditionScreen from '../screens/TermsConditionScreen';
+import Notification from '../screens/notification';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -60,6 +61,7 @@ const StackNavigator = () => {
       <Stack.Screen name="ExcersizeDetail" component={ExcersizeDetail} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
       <Stack.Screen name="AssismentScreen" component={AssismentScreen} />
+      <Stack.Screen name='Notification' component={Notification} />
       <Stack.Screen name='Account' component={Account} />
       <Stack.Screen name='TermsConditionScreen ' component={TermsConditionScreen} />
     </Stack.Navigator>

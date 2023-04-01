@@ -8,54 +8,47 @@ import { ScrollView } from 'react-native';
 import { FAB } from 'react-native-paper';
 import { Fonts } from '../assets/constants/Fonts';
 import { FlatList } from 'react-native-gesture-handler';
-import { Mesageicon, Notification, PolicyICon, Profile, TermsIcon } from '../assets/svgs/settingSvgs';
-import Icon from 'react-native-vector-icons/Feather';
+import { Mesageicon, PolicyICon, Profile, TermsIcon } from '../assets/svgs/settingSvgs';
+import { Switch } from 'react-native-paper';
 
-const Settings = ({ navigation }) => {
+const Notification = ({ navigation, }) => {
+    const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+    const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+
+
     data = [
         {
-            textitem: 'My Profile',
+            index: 1,
+            textitem: 'Block All Notifications',
             icon: <Profile />,
             icon1: 'chevron-right',
             IconColor: '#000',
-            onPress: () => navigation.navigate('Account')
+            // onPress: () => navigation.navigate('Account')
         },
         {
-            textitem: 'Notification',
-            textitem2: 'Allow',
+            index: 2,
+            textitem: 'Mute Messages Notification',
             icon: <Notification />,
             icon1: 'chevron-right',
             IconColor: '#000',
-            onPress: () => navigation.navigate('Notification')
+
         },
         {
-            textitem: 'Privacy Policy',
+            index: 3,
+            textitem: 'Hide Status Bar Notification',
             icon: <PolicyICon />,
             icon1: 'chevron-right',
             IconColor: '#ffff',
-            onPress: () => navigation.navigate('TermsConditionScreen', {
-                hedtext: "Privacy Policy"
-            })
 
         },
         {
-            textitem: 'Terms of Use',
+            index: 4,
+            textitem: 'Hide Lock Screen Notifications',
             icon: <TermsIcon />,
             icon1: 'chevron-right',
             IconColor: '#ffff',
-            onPress: () => navigation.navigate('TermsConditionScreen', {
-                hedtext: "Terms of Use"
-            })
+
         },
-        {
-            textitem: 'Recommende a friend',
-            icon: <Mesageicon />,
-            icon1: 'chevron-right',
-            IconColor: '#ffff',
-            onPress: () => navigation.navigate('')
-
-        }
-
 
     ]
     return (
@@ -73,29 +66,26 @@ const Settings = ({ navigation }) => {
                         flexDirection: 'row',
                         marginTop: 45,
                         paddingHorizontal: 15,
+                        // backgroundColor: 'yellow'
                     }}>
                     <FlatList
+
                         data={data}
+                        ItemSeparatorComponent={<View style={{ marginVertical: 5 }} />}
                         renderItem={({ item, index }) => {
+
                             return (
                                 <>
-                                    <TouchableOpacity onPress={item.onPress} style={styles.content}>
+                                    <View style={styles.content}>
                                         <View style={{ flexDirection: 'row' }}>
-                                            {item.icon}
                                             <Text style={[styles.headertex, {
-                                                textAlign: 'left', fontSize: 16,
+                                                textAlign: 'left', fontSize: 14,
                                                 paddingTop: 4,
                                             }]}>{item.textitem}</Text></View>
-                                        <View style={{ flexDirection: 'row' }}>
-                                            <Text style={[styles.headertex, {
-                                                textAlign: 'left', fontSize: 16,
-                                            }]}>{item.textitem2}</Text>
-                                            <Icon
-                                                name={item.icon1}
-                                                size={20}
-                                                color={item.IconColor} />
+                                        <View style={{ flexDirection: 'row', backgroundColor: Colors.secondary, }}>
+                                            <Switch value={isSwitchOn} onValueChange={onToggleSwitch} color={Colors.primary} />
                                         </View>
-                                    </TouchableOpacity>
+                                    </View>
                                 </>
                             )
                         }}>
@@ -106,7 +96,6 @@ const Settings = ({ navigation }) => {
     )
 }
 
-export default Settings;
 const HeaderComponent = ({ navigation }) => {
     return (
         <View style={styles.headerContainer}>
@@ -174,13 +163,16 @@ const styles = StyleSheet.create({
         // letterSpacing: 0.9,
     },
     content: {
-        paddingHorizentals: 15,
+        paddingVertical: 25,
         marginVertical: 10,
         paddingTop: 10,
         paddingBottom: 10,
-        backgroundColor: Colors.bgColors.lightblue,
+        borderBottomWidth: 0.25,
+        borderColor: '#C2C2C2',
         shadowColor: Colors.tertiary,
-        borderRaduis: 12, flexDirection: 'row',
+        borderRaduis: 5, flexDirection: 'row',
         justifyContent: 'space-between'
     },
 })
+
+export default Notification;

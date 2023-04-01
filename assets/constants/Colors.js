@@ -7,6 +7,7 @@ export const Colors = {
     GreyText: '#a1a1a1'
   },
   bgColors: {
-    lightblue: '#C7EEF8'
+    lightblue: '#C7EEF8',
+    grey: '#F2F2F2'
   }
 };
