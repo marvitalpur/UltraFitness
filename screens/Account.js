@@ -15,62 +15,17 @@ import Input from '../components/Input';
 const Account = ({ navigation }) => {
     const [data, setData] = useState({
         FirstName: '',
-        LAstName: '',
+        LastName: '',
         contactNo: '',
         email: '',
         password: '',
+        focus: '',
+        checked: false,
+        secureText: true,
 
 
     })
-    data1 = [
-        {
-            text2: 'First name',
-            textitem: 'David',
-            icon: <Profile />,
-            icon1: '../assets/svgs/',
-            IconColor: '#000',
-            onPress: () => navigation.navigate('Account')
-        },
-        {
-            text2: 'Last Name',
-            textitem: 'Michael',
-            textitem2: 'Allow',
-            icon: <Notification />,
-            icon1: 'chevron-right',
-            IconColor: '#000',
-            onPress: () => navigation.navigate('Notification')
-        },
-        {
-            text2: 'Email',
-            textitem: 'david@gmail.com',
-            icon: <PolicyICon />,
-            icon1: 'chevron-right',
-            IconColor: '#ffff',
-            onPress: () => navigation.navigate('TermsConditionScreen', {
-                hedtext: "Privacy Policy"
-            })
 
-        },
-        {
-            text2: 'Phone',
-            textitem: '(211)319-8396',
-            icon: <TermsIcon />,
-            icon1: 'chevron-right',
-            IconColor: '#ffff',
-            onPress: () => navigation.navigate('TermsConditionScreen', {
-                hedtext: "Terms of Use"
-            })
-        },
-        {
-            text2: 'Password',
-            textitem: 'Password',
-            icon: <Mesageicon />,
-            icon1: 'chevron-right',
-            IconColor: '#ffff',
-            onPress: () => navigation.navigate('')
-
-        }
-    ]
     return (
         <SafeAreaView style={styles.container} >
             <ScrollView
@@ -123,7 +78,8 @@ const Account = ({ navigation }) => {
                                 textAlign: 'left'
                             }]}>First name</Text>
                             <Input
-                                iconname="calendar"
+                                icon1
+                                iconname1="users"
                                 placeholder="David"
                                 text={data.FirstName}
                                 setText={setData}
@@ -139,6 +95,8 @@ const Account = ({ navigation }) => {
                                 textAlign: 'left'
                             }]}>Last name</Text>
                             <Input
+                                icon1
+                                iconname1="user"
                                 placeholder="Michael"
                                 text={data.LAstName}
                                 setText={setData}
@@ -152,9 +110,10 @@ const Account = ({ navigation }) => {
                                 textAlign: 'left'
                             }]}>Email</Text>
                             <Input
-
+                                icon1
+                                iconname1="email"
                                 placeholder="  david@gmail.com"
-                                text={data.LAstName}
+                                text={data.LastName}
                                 setText={setData}
                                 formKey="Email"
                                 textColor={Colors.tertiary}
@@ -163,10 +122,12 @@ const Account = ({ navigation }) => {
                             <View style={{ marginVertical: 15 }} />
                             <Text style={[styles.headertex, {
                                 marginLeft: 5, fontSize: 16,
-                                paddingVertical: 10,
+
                                 textAlign: 'left'
                             }]}>Phone</Text>
                             <Input
+                                icon1
+                                iconname1="phone"
                                 placeholder="(21)3198396"
                                 text={data.contactNo}
                                 setText={setData}
@@ -178,11 +139,15 @@ const Account = ({ navigation }) => {
                             <View style={{ marginVertical: 15 }} />
                             <Text style={[styles.headertex, {
                                 marginLeft: 5, fontSize: 16,
-                                paddingVertical: 10,
                                 textAlign: 'left'
                             }]}>Password</Text>
+
+
                             <Input
-                                placeholder="**************"
+                                icon1
+                                iconname1="lock"
+                                icon2
+                                iconname={data.secureText ? 'eye-with-line' : 'eye'}
                                 text={data.password}
                                 setText={setData}
                                 formKey="password"

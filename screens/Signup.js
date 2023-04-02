@@ -46,6 +46,8 @@ const Signup = ({ navigation }) => {
           setText={setData}
           formKey="fullName"
           textColor={Colors.primary}
+          backgroundColor={'#FFFFFF'}
+
         />
         <View style={{ marginVertical: 10 }} />
         <Input
@@ -54,6 +56,7 @@ const Signup = ({ navigation }) => {
           setText={setData}
           formKey="contactNo"
           textColor={Colors.primary}
+          backgroundColor={'#FFFFFF'}
         />
         <View style={{ marginVertical: 10 }} />
         <View
@@ -64,6 +67,9 @@ const Signup = ({ navigation }) => {
           }}>
           <View style={{ marginVertical: 10, width: '45%' }}>
             <Input
+              text1="jjhkljhgc"
+              text2="text2"
+              text3="text3"
               color={Colors.primary}
               color2={Colors.tertiary}
               gender={true}
@@ -71,6 +77,7 @@ const Signup = ({ navigation }) => {
               setText={setData}
               formKey="gender"
               textColor={Colors.primary}
+              backgroundColor={'#FFFFFF'}
             />
           </View>
           <View style={{ marginVertical: 10, width: '45%' }}>
@@ -82,6 +89,7 @@ const Signup = ({ navigation }) => {
               setText={setData}
               formKey="gender"
               textColor={Colors.primary}
+              backgroundColor={'#FFFFFF'}
             />
           </View>
         </View>
@@ -92,14 +100,17 @@ const Signup = ({ navigation }) => {
           setText={setData}
           formKey="email"
           textColor={Colors.primary}
+          backgroundColor={'#FFFFFF'}
         />
         <View style={{ marginVertical: 10 }} />
         <Input
+
           placeholder="Password"
           text={data.password}
           setText={setData}
           formKey="password"
           textColor={Colors.primary}
+          backgroundColor={'#FFFFFF'}
         />
         <View style={{ marginVertical: 10 }} />
         <Input
@@ -108,6 +119,7 @@ const Signup = ({ navigation }) => {
           setText={setData}
           formKey="confirmPassword"
           textColor={Colors.primary}
+          backgroundColor={'#FFFFFF'}
         />
         <TouchableOpacity
           style={styles.touchable}

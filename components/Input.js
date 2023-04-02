@@ -12,8 +12,10 @@ const Input = ({
   formKey,
   gender,
   iconname,
+  iconname1,
   textColor,
   backgroundColor,
+  icon1, icon2
 
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -37,8 +39,8 @@ const Input = ({
           placeholder={placeholder}
           value={text}
           onChangeText={text => onChangeHandler(text, formKey)}
-          right={<TextInput.Icon icon={iconname} iconColor="#00B4D8" />}
-          left={<TextInput.Icon icon={iconname} iconColor="#00B4D8" />}
+          left={icon1 ? <TextInput.Icon icon={iconname1} iconColor="#00B4D8" /> : null}
+          right={icon2 ? <TextInput.Icon icon={iconname} iconColor="#00B4D8" /> : null}
           activeUnderlineColor="transparent"
           underlineColor="transparent"
           selectionColor="#000"
@@ -49,7 +51,7 @@ const Input = ({
 
             fontWeight: '400',
             height: 50,
-            opacity: text.length < 1 ? 0.5 : 1,
+            opacity: !text ? 0.5 : 1, // add null or undefined check here
             fontSize: 14,
             borderRadius: 10,
             backgroundColor: backgroundColor,
@@ -81,7 +83,6 @@ const GenderMenu = ({
   const [visible, setVisible] = useState(false);
 
   const openMenu = () => setVisible(true);
-
   const closeMenu = () => setVisible(false);
   return (
     <Menu
@@ -129,7 +130,7 @@ const GenderMenu = ({
         <Menu.Item
           onPress={() => {
             closeMenu();
-            onChangeHandler('Male', formKey);
+            onChangeHandler('bhai', formKey);
           }}
           title="Male"
         />
