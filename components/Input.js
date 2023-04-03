@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
-import { Menu, TextInput, TouchableRipple } from 'react-native-paper';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Menu, TextInput, TouchableRipple} from 'react-native-paper';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
 import Icon from 'react-native-vector-icons/Feather';
-import { WIDTH } from '../assets/constants/Dimensions';
+import {WIDTH} from '../assets/constants/Dimensions';
 const Input = ({
   text,
   setText,
@@ -15,8 +15,8 @@ const Input = ({
   iconname1,
   textColor,
   backgroundColor,
-  icon1, icon2
-
+  icon1,
+  icon2,
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const onChangeHandler = (value, name) => {
@@ -39,13 +39,21 @@ const Input = ({
           placeholder={placeholder}
           value={text}
           onChangeText={text => onChangeHandler(text, formKey)}
-          left={icon1 ? <TextInput.Icon icon={iconname1} iconColor="#00B4D8" /> : null}
-          right={icon2 ? <TextInput.Icon icon={iconname} iconColor="#00B4D8" /> : null}
+          // left={
+          //   icon1 ? (
+          //     <TextInput.Icon icon={iconname1} iconColor="#00B4D8" />
+          //   ) : null
+          // }
+          right={
+            icon2 ? (
+              <TextInput.Icon icon={iconname} iconColor="#00B4D8" />
+            ) : null
+          }
           activeUnderlineColor="transparent"
           underlineColor="transparent"
           selectionColor="#000"
           placeholderTextColor={textColor}
-          theme={{ roundness: 10 }}
+          theme={{roundness: 10}}
           style={{
             // fontFamily: Fonts.default,
 
@@ -121,7 +129,7 @@ const GenderMenu = ({
               name="chevron-down"
               size={20}
               color={value.length < 1 ? color1 : color2}
-              style={{ marginLeft: 5 }}
+              style={{marginLeft: 5}}
             />
           </View>
         </TouchableRipple>
@@ -130,23 +138,23 @@ const GenderMenu = ({
         <Menu.Item
           onPress={() => {
             closeMenu();
-            onChangeHandler('bhai', formKey);
+            onChangeHandler('', formKey);
           }}
-          title="Male"
+          title=""
         />
         <Menu.Item
           onPress={() => {
             closeMenu();
-            onChangeHandler('Female', formKey);
+            onChangeHandler('', formKey);
           }}
-          title="Female"
+          title=""
         />
         <Menu.Item
           onPress={() => {
             closeMenu();
             onChangeHandler('Others', formKey);
           }}
-          title="Others"
+          title=""
         />
       </>
     </Menu>

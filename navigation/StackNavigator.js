@@ -1,6 +1,6 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Login, Onboarding, Signup, Home, Profile, Shope } from '../screens';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Login, Onboarding, Signup, Home, Profile, Shope} from '../screens';
 import DrawerNavigator from './DrawerStack';
 import ProductScreen from '../screens/ProductScreen';
 import SearchScreen from '../screens/SearchScreen';
@@ -50,7 +50,7 @@ const StackNavigator = () => {
       <Stack.Screen name="GoogleMapsScreen" component={GoogleMapsScreen} />
       <Stack.Screen name="CheckoutCart" component={CheckoutCart} />
       <Stack.Screen name="CheckoutOrder" component={CheckoutOrder} />
-      <Stack.Screen name="MyOrders" component={MyOrders} />
+
       <Stack.Screen
         name="ProductDetailScreen"
         component={ProductDetailScreen}
@@ -61,9 +61,12 @@ const StackNavigator = () => {
       <Stack.Screen name="ExcersizeDetail" component={ExcersizeDetail} />
       <Stack.Screen name="VideoScreen" component={VideoScreen} />
       <Stack.Screen name="AssismentScreen" component={AssismentScreen} />
-      <Stack.Screen name='Notification' component={Notification} />
-      <Stack.Screen name='Account' component={Account} />
-      <Stack.Screen name='TermsConditionScreen ' component={TermsConditionScreen} />
+      <Stack.Screen name="Notification" component={Notification} />
+      <Stack.Screen name="Account" component={Account} />
+      <Stack.Screen
+        name="TermsConditionScreen"
+        component={TermsConditionScreen}
+      />
     </Stack.Navigator>
   );
 };

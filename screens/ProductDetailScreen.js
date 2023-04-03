@@ -1,24 +1,25 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
-import { HEIGHT, WIDTH } from '../assets/constants/Dimensions';
-import { Fonts } from '../assets/constants/Fonts';
+import {HEIGHT, WIDTH} from '../assets/constants/Dimensions';
+import {Fonts} from '../assets/constants/Fonts';
 import CartItems from '../components/CartITems';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
-import { LocationIcon, Trashicon } from '../assets/svgs/HomeSvgs';
+import {LocationIcon, Trashicon} from '../assets/svgs/HomeSvgs';
+import ButtonComponent2 from '../components/Botton2';
 
-const ProductDetailScreen = ({ navigation, route }) => {
-  const { ordernumber, products, price, status } = route.params;
+const ProductDetailScreen = ({navigation, route}) => {
+  const {ordernumber, products, price, status} = route.params;
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ paddingHorizontal: 15 }}>
+        contentContainerStyle={{flexGrow: 1}}>
+        <View style={{paddingHorizontal: 15}}>
           <Header
             navigation={navigation}
             onlybackbutton
@@ -26,11 +27,11 @@ const ProductDetailScreen = ({ navigation, route }) => {
             headertex={ordernumber}
           />
         </View>
-        <View style={{ marginTop: 25, paddingHorizontal: 5 }}>
+        <View style={{marginTop: 25, paddingHorizontal: 5}}>
           <CartItems card3 products={products} price={price} status={status} />
         </View>
 
-        <View style={[styles.line, { width: '25%' }]} />
+        <View style={[styles.line, {width: '25%'}]} />
         <View
           style={{
             marginTop: 25,
@@ -40,10 +41,10 @@ const ProductDetailScreen = ({ navigation, route }) => {
           }}>
           <Text style={styles.text}>Summary</Text>
         </View>
-        <View style={{ paddingHorizontal: 25, paddingTop: 25 }}>
+        <View style={{paddingHorizontal: 25, paddingTop: 25}}>
           <Table />
         </View>
-        <View style={[styles.line, { width: '80%' }]} />
+        <View style={[styles.line, {width: '80%'}]} />
         <View
           style={{
             flexDirection: 'row',
@@ -61,9 +62,10 @@ const ProductDetailScreen = ({ navigation, route }) => {
             justifyContent: 'center',
             marginBottom: 10,
           }}>
-          <ButtonComponent
+          <ButtonComponent2
             icon1
-            SvgICon={<Trashicon />}
+            Iname="location-pin"
+            color={'#fff'}
             borderRadius={14}
             buttonText="Proceed to Checkout"
             buttonColor={Colors.primary}

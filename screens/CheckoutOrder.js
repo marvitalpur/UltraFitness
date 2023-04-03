@@ -96,7 +96,7 @@ const CheckoutOrder = ({navigation}) => {
               buttonText="Go to Dashboard"
               buttonColor={Colors.primary}
               textColor={Colors.secondary}
-              onPress={() => navigation.navigate('MyOrders')}
+              onPress={() => navigation.navigate('My Orders')}
               height={WIDTH <= 375 ? 55 : 55}
               width={WIDTH <= 323 ? 260 : 300}
             />

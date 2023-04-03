@@ -2,9 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Button, TouchableRipple} from 'react-native-paper';
 import {Colors} from '../assets/constants/Colors';
-import Icon from 'react-native-vector-icons/AntDesign';
-import Icon2 from 'react-native-vector-icons/MaterialIcons';
-import {BookIcon} from '../assets/svgs/HeaderSvgs';
+import Icon from 'react-native-vector-icons/Entypo';
 const ButtonComponent2 = ({
   icon,
   buttonColor,
@@ -20,6 +18,8 @@ const ButtonComponent2 = ({
   paddingHorizontal,
   borderRadius,
   btnfonSize,
+  Iname,
+  color,
 }) => {
   return (
     <TouchableRipple
@@ -41,7 +41,7 @@ const ButtonComponent2 = ({
         {icon1 && (
           <>
             <View style={{margin: 5}}>
-              <BookIcon />
+              <Icon name={Iname} color={color} size={18} />
             </View>
           </>
         )}
