@@ -1,16 +1,24 @@
-import { ScrollView, StyleSheet, Text, View, Image, Modal, TouchableWithoutFeedback } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '../assets/constants/Colors';
-import { Fonts } from '../assets/constants/Fonts';
-import { Checkbox, FAB, TouchableRipple } from 'react-native-paper';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Modal,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Colors} from '../assets/constants/Colors';
+import {Fonts} from '../assets/constants/Fonts';
+import {Checkbox, FAB, TouchableRipple} from 'react-native-paper';
 import Assets from '../assets';
-import { WIDTH } from '../assets/constants/Dimensions';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {WIDTH} from '../assets/constants/Dimensions';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import ButtonComponent from '../components/Button';
 import Input from '../components/Input';
 
-const AddcardScreen = ({ navigation }) => {
+const AddcardScreen = ({navigation}) => {
   const [checked, setChecked] = useState();
   const [modalVisible, setModalVisible] = useState(false);
   const [data, setData] = useState({
@@ -28,8 +36,8 @@ const AddcardScreen = ({ navigation }) => {
         <ScrollView
           bounces={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ flex: 1, height: 200 }}>
+          contentContainerStyle={{flexGrow: 1}}>
+          <View style={{flex: 1, height: 200}}>
             <View
               style={{
                 paddingHorizontal: 15,
@@ -65,21 +73,21 @@ const AddcardScreen = ({ navigation }) => {
                       WIDTH < 390 && WIDTH >= 375
                         ? 240
                         : WIDTH < 375
-                          ? 240
-                          : 240,
+                        ? 240
+                        : 240,
                     position: 'absolute',
                     top:
                       WIDTH < 390 && WIDTH >= 375
                         ? -24
                         : WIDTH < 375
-                          ? -24
-                          : -16,
+                        ? -24
+                        : -16,
                     left:
                       WIDTH < 390 && WIDTH >= 375
                         ? -170
                         : WIDTH < 375
-                          ? -365
-                          : -350,
+                        ? -365
+                        : -350,
                     // right:
                     //   WIDTH < 390 && WIDTH >= 375 ? -170 : WIDTH < 375 ? -320 : -390,
                     zIndex: 10,
@@ -110,16 +118,16 @@ const AddcardScreen = ({ navigation }) => {
                       WIDTH < 390 && WIDTH >= 375
                         ? 195
                         : WIDTH < 375
-                          ? 240
-                          : 240,
+                        ? 240
+                        : 240,
                     position: 'absolute',
                     top: WIDTH < 390 && WIDTH >= 375 ? 5 : WIDTH < 375 ? 5 : 5,
                     left:
                       WIDTH < 390 && WIDTH >= 375
                         ? -170
                         : WIDTH < 375
-                          ? -365
-                          : -350,
+                        ? -365
+                        : -350,
                     // right:
                     //   WIDTH < 390 && WIDTH >= 375 ? -170 : WIDTH < 375 ? -320 : -390,
                     zIndex: 10,
@@ -137,7 +145,6 @@ const AddcardScreen = ({ navigation }) => {
                   // Alert.alert('Modal has been closed.');
                   setModalVisible(false);
                 }}>
-
                 <View
                   style={{
                     marginVertical: 15,
@@ -236,7 +243,6 @@ const AddcardScreen = ({ navigation }) => {
                     width={WIDTH <= 323 ? 260 : 255}
                   />
                 </View>
-
               </Modal>
             </View>
           </View>
@@ -283,7 +289,7 @@ const HeaderComponent = ({
         <Text style={styles.headertex}>Cards</Text>
         <TouchableOpacity
           onPress={() => setModalVisible(!modalVisible)}
-          style={{ flexDirection: 'row' }}>
+          style={{flexDirection: 'row'}}>
           <Image source={require('../assets/images/card-add.png')} />
           <Text style={styles.addtext}>Add</Text>
         </TouchableOpacity>
@@ -321,6 +327,7 @@ const HeaderComponent = ({
                 setText={setData}
                 formKey="fullName"
                 textColor={Colors.tertiary}
+                backgroundColor={'#fff'}
               />
             </View>
             <View
@@ -335,6 +342,7 @@ const HeaderComponent = ({
                 setText={setData}
                 formKey="fullName"
                 textColor={Colors.tertiary}
+                backgroundColor={'#fff'}
               />
             </View>
             <View
@@ -351,6 +359,7 @@ const HeaderComponent = ({
                 setText={setData}
                 formKey="fullName"
                 textColor={Colors.tertiary}
+                backgroundColor={'#ff'}
               />
               <Input
                 placeholder="CVV(3 Digits)"
@@ -372,6 +381,7 @@ const HeaderComponent = ({
                 setText={setData}
                 formKey="fullName"
                 textColor={Colors.tertiary}
+                backgroundColor={'#fff'}
               />
             </View>
             <View
@@ -486,9 +496,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   modalView: {
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     width: '100%',
-    // backgroundColor: '#fff',
+    backgroundColor: '#fff',
     position: 'absolute',
     bottom: 0,
     justifyContent: 'center',
