@@ -1,5 +1,5 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Colors} from '../assets/constants/Colors';
 import Header from '../components/Header';
@@ -8,8 +8,55 @@ import {Fonts} from '../assets/constants/Fonts';
 import CartItems from '../components/CartITems';
 import Table from '../components/TableData';
 import ButtonComponent from '../components/Button';
+import Assets from '../assets';
+import {Checkbox} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {TouchableOpacity} from 'react-native';
 
 const CartScreen = ({navigation}) => {
+  const [check, setChecked] = useState(false);
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      image: Assets.cards.cardImage1,
+      description: 'Home Equipment Push Up Bars',
+      count: 2,
+      checked: false,
+    },
+    {
+      id: 2,
+      image: Assets.cards.cardImage2,
+      description: 'Fitness Tracker Watch',
+      count: 1,
+      checked: true,
+    },
+  ]);
+  const increment = id => {
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id ? {...item, count: item.count + 1} : item,
+      ),
+    );
+  };
+
+  const decrement = id => {
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id ? {...item, count: item.count - 1} : item,
+      ),
+    );
+  };
+  const toggleChecked = id => {
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id ? {...item, checked: !item.checked} : item,
+      ),
+    );
+  };
+  const removeItem = id => {
+    setItems(prevItems => prevItems.filter(item => item.id !== id));
+  };
+  const [count, setCount] = useState(2);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -25,8 +72,49 @@ const CartScreen = ({navigation}) => {
           />
         </View>
         <View style={{marginTop: 25, paddingHorizontal: 5}}>
-          <CartItems card1 />
+          {items.map(item => (
+            <>
+              <View
+                style={{
+                  paddingHorizontal: 5,
+                  flexDirection: 'row',
+                }}>
+                <View style={{justifyContent: 'center'}}>
+                  <Checkbox
+                    value={item.checked}
+                    onValueChange={() => toggleChecked(item.id)}
+                  />
+                </View>
+                <CartItems
+                  key={item.id}
+                  card1
+                  status={check}
+                  checkpress={item.checkpress}
+                  itemimage={item.image}
+                  itemdescription={item.description}
+                  count={item.count}
+                  increment={() => increment(item.id)}
+                  decrement={() => decrement(item.id)}
+                />
+              </View>
+              <TouchableOpacity
+                onPress={() => removeItem(item.id)}
+                style={{
+                  width: 26,
+                  height: 26,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: 'red',
+                  borderRadius: 100,
+                  position: 'absolute',
+                  right: 1,
+                }}>
+                <Icon name="close" color={'#fff'} size={20} />
+              </TouchableOpacity>
+            </>
+          ))}
         </View>
+
         <View style={{marginTop: 25}}>
           <View style={styles.line} />
           <View

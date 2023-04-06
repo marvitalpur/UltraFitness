@@ -1,17 +1,17 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Colors } from '../assets/constants/Colors';
-import { FAB } from 'react-native-paper';
-import { WIDTH } from '../assets/constants/Dimensions';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {Colors} from '../assets/constants/Colors';
+import {FAB} from 'react-native-paper';
+import {WIDTH} from '../assets/constants/Dimensions';
 import Assets from '../assets';
-import { Fonts } from '../assets/constants/Fonts';
+import {Fonts} from '../assets/constants/Fonts';
 import Input from '../components/Input';
 import Icon from 'react-native-vector-icons/Feather';
 import ButtonComponent from '../components/Button';
 
-const Signup = ({ navigation }) => {
+const Signup = ({navigation}) => {
   const [data, setData] = useState({
     fullName: '',
     contactNo: '',
@@ -30,7 +30,7 @@ const Signup = ({ navigation }) => {
         enableAutomaticScroll={true}
         bounces={false}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 25 }}>
+        contentContainerStyle={{flexGrow: 1, paddingHorizontal: 25}}>
         <HeaderComponent navigation={navigation} />
         <View style={styles.loginTextContainer}>
           <Text style={styles.loginText}>Sign Up</Text>
@@ -47,9 +47,8 @@ const Signup = ({ navigation }) => {
           formKey="fullName"
           textColor={Colors.primary}
           backgroundColor={'#FFFFFF'}
-
         />
-        <View style={{ marginVertical: 10 }} />
+        <View style={{marginVertical: 10}} />
         <Input
           placeholder="Contact No"
           text={data.contactNo}
@@ -58,15 +57,17 @@ const Signup = ({ navigation }) => {
           textColor={Colors.primary}
           backgroundColor={'#FFFFFF'}
         />
-        <View style={{ marginVertical: 10 }} />
+        <View style={{marginVertical: 10}} />
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <View style={{ marginVertical: 10, width: '45%' }}>
+          <View style={{marginVertical: 10, width: '45%'}}>
             <Input
+              selection
+              menu2={true}
               text1="jjhkljhgc"
               text2="text2"
               text3="text3"
@@ -80,7 +81,7 @@ const Signup = ({ navigation }) => {
               backgroundColor={'#FFFFFF'}
             />
           </View>
-          <View style={{ marginVertical: 10, width: '45%' }}>
+          <View style={{marginVertical: 10, width: '45%'}}>
             <Input
               color={Colors.primary}
               color2={Colors.tertiary}
@@ -93,7 +94,6 @@ const Signup = ({ navigation }) => {
             />
           </View>
         </View>
-
         <Input
           placeholder="Email Address"
           text={data.email}
@@ -102,9 +102,8 @@ const Signup = ({ navigation }) => {
           textColor={Colors.primary}
           backgroundColor={'#FFFFFF'}
         />
-        <View style={{ marginVertical: 10 }} />
+        <View style={{marginVertical: 10}} />
         <Input
-
           placeholder="Password"
           text={data.password}
           setText={setData}
@@ -112,7 +111,7 @@ const Signup = ({ navigation }) => {
           textColor={Colors.primary}
           backgroundColor={'#FFFFFF'}
         />
-        <View style={{ marginVertical: 10 }} />
+        <View style={{marginVertical: 10}} />
         <Input
           placeholder="Confirm Password"
           text={data.confirmPassword}
@@ -129,9 +128,9 @@ const Signup = ({ navigation }) => {
             size={20}
             color={agree ? Colors.primary : Colors.tertiary}
           />
-          <Text style={[styles.text, { marginLeft: 5 }]} numberOfLines={1}>
+          <Text style={[styles.text, {marginLeft: 5}]} numberOfLines={1}>
             I Agree with all{' '}
-            <Text style={{ color: Colors.primary }}>Terms & Conditions</Text>
+            <Text style={{color: Colors.primary}}>Terms & Conditions</Text>
           </Text>
         </TouchableOpacity>
         <View
@@ -157,7 +156,7 @@ const Signup = ({ navigation }) => {
 
 export default Signup;
 
-const HeaderComponent = ({ navigation }) => {
+const HeaderComponent = ({navigation}) => {
   return (
     <View style={styles.headerContainer}>
       <FAB
@@ -176,7 +175,6 @@ const HeaderComponent = ({ navigation }) => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -233,11 +231,6 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-
-
-
 // <View style={{ marginTop: 25, paddingTop: 25 }}>
 // <FlatList
 //     data={data1}
@@ -253,7 +246,6 @@ const styles = StyleSheet.create({
 //                         </View>
 //                         <TextInput placeholder={item.textitem} style={[styles.headertex, {
 //                             textAlign: 'left', fontSize: 16, color: '#000'
-
 
 //                         }]} />
 //                     </View>

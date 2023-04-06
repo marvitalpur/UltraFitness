@@ -114,6 +114,7 @@ const GoogleMapsScreen = ({navigation}) => {
               }
             }>
             <Input
+              menu2
               gender={true}
               text={data.gender}
               setText={setData}

@@ -123,7 +123,7 @@ const GenderMenu = ({
                   color: value.length < 1 ? color1 : color2,
                 },
               ]}>
-              {value ? value : Valueinput}
+              {value ? value : 'Gender'}
             </Text>
             <Icon
               name="chevron-down"
@@ -138,16 +138,16 @@ const GenderMenu = ({
         <Menu.Item
           onPress={() => {
             closeMenu();
-            onChangeHandler('', formKey);
+            onChangeHandler('male', formKey);
           }}
-          title=""
+          title="Male"
         />
         <Menu.Item
           onPress={() => {
             closeMenu();
-            onChangeHandler('', formKey);
+            onChangeHandler('Female', formKey);
           }}
-          title=""
+          title="Female"
         />
         <Menu.Item
           onPress={() => {

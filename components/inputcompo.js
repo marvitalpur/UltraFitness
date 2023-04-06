@@ -18,6 +18,7 @@ const InputCompo = ({
   icon2,
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
+
   const onChangeHandler = (value, name) => {
     // how to handle for each state field
     setText(form => ({
@@ -85,7 +86,6 @@ const styles = StyleSheet.create({
     // add null or undefined check here
     fontSize: 14,
     borderRadius: 10,
-
     shadowColor: Colors.tertiary,
     shadowOffset: {
       width: 0,

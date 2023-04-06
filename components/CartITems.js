@@ -29,16 +29,14 @@ const CartItems = ({
   products,
   price,
   status,
+  count,
+  increment,
+  decrement,
+  index,
+  itemimage,
+  itemdescription,
+  checkpress,
 }) => {
-  const [count, setCount] = useState(5);
-  const [checked, setChecked] = useState();
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-  const decrement = () => {
-    setCount(count - 1);
-  };
   const navigation = useNavigation();
   const data = [
     {
@@ -93,156 +91,120 @@ const CartItems = ({
       <View>
         {card1 && (
           <>
-            <FlatList
-              data={data}
-              contentContainerStyle={{}}
-              // numColumns={2}
-              ItemSeparatorComponent={<View style={{marginVertical: 5}} />}
-              renderItem={({item, index}) => (
-                <>
+            <View style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
+              <View
+                style={[
+                  styles.card,
+                  {
+                    // paddingHorizontal: 25,
+                    // padding: index % 2 == 0 ? 5 : 0,
+                    marginRight: index % 2 == 0 ? 5 : 5,
+                    marginLeft: index % 2 == 0 ? 0 : 5,
+                  },
+                ]}>
+                <View
+                  style={[
+                    // styles.headerContainer,
+                    {
+                      padding: 5,
+                      flexDirection: 'row',
+                      width: WIDTH / 5.5,
+                      height: WIDTH / 4.2,
+                      paddingRight: 10,
+                      // backgroundColor: 'blue',
+                    },
+                  ]}>
+                  <View style={styles.productImage}>
+                    <Image
+                      source={itemimage}
+                      resizeMode="contain"
+                      style={{
+                        width: WIDTH / 6.5,
+                        height: WIDTH / 4.9,
+                        marginLeft: 'auto',
+                      }}
+                    />
+                  </View>
                   <View
-                    style={{flexDirection: 'row', flex: 1, marginVertical: 10}}>
-                    <View style={{justifyContent: 'center'}}>
-                      <Checkbox
-                        size={12}
-                        color="#000"
-                        status={checked ? 'checked' : 'unchecked'}
-                        onPress={() => {
-                          setChecked(!checked);
-                        }}
-                      />
-                    </View>
+                    style={{
+                      width: WIDTH / 4.6,
+                      paddingTop: 15,
+                      paddingLeft: 5,
+                    }}>
+                    <Text numberOfLines={2} style={styles.productDesc}>
+                      {itemdescription}
+                    </Text>
+                  </View>
+                  <View
+                    style={[
+                      styles.headerContainer,
+                      {
+                        // backgroundColor: 'green',
+                        // padding: 15,
+                        paddingBottom: 12,
+                      },
+                    ]}>
+                    <FAB
+                      style={[
+                        styles.fab,
+                        {
+                          backgroundColor: 'red',
+                          // opacity: 0.5,
 
+                          backgroundColor: Colors.tertiary,
+                          height: WIDTH < 375 ? 44 : 48,
+                          width: WIDTH < 375 ? 48 : 51,
+                          // width: WIDTH / 7.5,
+                          // height: WIDTH / 7.5,
+                          // color: '#ffff',
+                        },
+                      ]}
+                      size="small"
+                      icon="minus"
+                      color="white"
+                      onPress={decrement}
+                    />
                     <View
                       style={[
-                        styles.card,
+                        styles.fab,
                         {
-                          // paddingHorizontal: 25,
-                          // padding: index % 2 == 0 ? 5 : 0,
-                          marginRight: index % 2 == 0 ? 5 : 5,
-                          marginLeft: index % 2 == 0 ? 0 : 5,
+                          backgroundColor: Colors.secondary,
+                          height: WIDTH < 375 ? 44 : 48,
+                          width: WIDTH < 375 ? 48 : 51,
+                          paddingHorizontal: 5,
+                          backgroundColor: Colors.secondary,
+                          shadowColor: Colors.tertiary,
+                          shadowOffset: {
+                            width: 0,
+                            height: 7,
+                          },
+                          elevation: 15,
                         },
                       ]}>
-                      <TouchableOpacity
-                        style={{
-                          width: 26,
-                          height: 26,
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          backgroundColor: 'red',
-                          borderRadius: 100,
-                          position: 'absolute',
-                          right: -5,
-                          top: -10,
-                        }}>
-                        <Icon name="close" color={'#fff'} size={20} />
-                      </TouchableOpacity>
-                      <View
-                        style={[
-                          // styles.headerContainer,
-                          {
-                            padding: 5,
-                            flexDirection: 'row',
-                            width: WIDTH / 5.5,
-                            height: WIDTH / 4.2,
-                            paddingRight: 10,
-                            // backgroundColor: 'blue',
-                          },
-                        ]}>
-                        <View style={styles.productImage}>
-                          <Image
-                            source={item.image}
-                            resizeMode="contain"
-                            style={{
-                              width: WIDTH / 6.5,
-                              height: WIDTH / 4.9,
-                              marginLeft: 'auto',
-                            }}
-                          />
-                        </View>
-                        <View
-                          style={{
-                            width: WIDTH / 4.6,
-                            paddingTop: 15,
-                            paddingLeft: 5,
-                          }}>
-                          <Text numberOfLines={2} style={styles.productDesc}>
-                            {item.description}
-                          </Text>
-                        </View>
-                        <View
-                          style={[
-                            styles.headerContainer,
-                            {
-                              // backgroundColor: 'green',
-                              // padding: 15,
-                              paddingBottom: 12,
-                            },
-                          ]}>
-                          <FAB
-                            style={[
-                              styles.fab,
-                              {
-                                backgroundColor: 'red',
-                                // opacity: 0.5,
-
-                                backgroundColor: Colors.tertiary,
-                                height: WIDTH < 375 ? 44 : 48,
-                                width: WIDTH < 375 ? 48 : 51,
-                                // width: WIDTH / 7.5,
-                                // height: WIDTH / 7.5,
-                                // color: '#ffff',
-                              },
-                            ]}
-                            size="small"
-                            icon="minus"
-                            color="white"
-                            onPress={decrement}
-                          />
-                          <View
-                            style={[
-                              styles.fab,
-                              {
-                                backgroundColor: Colors.secondary,
-                                height: WIDTH < 375 ? 44 : 48,
-                                width: WIDTH < 375 ? 48 : 51,
-                                paddingHorizontal: 5,
-                                backgroundColor: Colors.secondary,
-                                shadowColor: Colors.tertiary,
-                                shadowOffset: {
-                                  width: 0,
-                                  height: 7,
-                                },
-                                elevation: 15,
-                              },
-                            ]}>
-                            <Text>{count}</Text>
-                          </View>
-                          <FAB
-                            style={[
-                              styles.fab,
-                              {
-                                backgroundColor: 'red',
-                                // opacity: 0.5,
-                                backgroundColor: Colors.primary,
-                                height: WIDTH < 375 ? 44 : 48,
-                                width: WIDTH < 375 ? 48 : 51,
-
-                                color: '#FFFF',
-                              },
-                            ]}
-                            size="small"
-                            icon="plus"
-                            color="white"
-                            onPress={decrement}
-                          />
-                        </View>
-                      </View>
+                      <Text>{count}</Text>
                     </View>
+                    <FAB
+                      style={[
+                        styles.fab,
+                        {
+                          backgroundColor: 'red',
+                          // opacity: 0.5,
+                          backgroundColor: Colors.primary,
+                          height: WIDTH < 375 ? 44 : 48,
+                          width: WIDTH < 375 ? 48 : 51,
+
+                          color: '#FFFF',
+                        },
+                      ]}
+                      size="small"
+                      icon="plus"
+                      color="white"
+                      onPress={increment}
+                    />
                   </View>
-                </>
-              )}
-            />
+                </View>
+              </View>
+            </View>
           </>
         )}
       </View>
